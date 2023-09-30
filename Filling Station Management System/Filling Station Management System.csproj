@@ -26,13 +26,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/saleemkhan311/FSMS/main/Published/</InstallUrl>
+    <InstallUrl>https://raw.githubusercontent.com/saleemkhan311/FSMSForClient/main/Published/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/saleemkhan311/FSMSForClient/main/Published/</UpdateUrl>
     <ProductName>Filling Station Management System</ProductName>
     <PublisherName>Saleem Palal</PublisherName>
     <SuiteName>Manangement System</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
