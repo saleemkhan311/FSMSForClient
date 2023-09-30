@@ -391,20 +391,20 @@ namespace Filling_Station_Management_System
                 cmd.Parameters.AddWithValue("@Helper", HelperTextBox.Text);
 
 
-                cmd.Parameters.AddWithValue("@Opening_Reading", newOpenReading);
-                cmd.Parameters.AddWithValue("@Closing_Reading", _closeReading);
-                cmd.Parameters.AddWithValue("@Quantity", newQuantity);
-                cmd.Parameters.AddWithValue("@Test", _test);
-                cmd.Parameters.AddWithValue("@netQuantity", newNetQuantity);
-                cmd.Parameters.AddWithValue("@Unit_Price", _rate);
+                cmd.Parameters.AddWithValue("@Opening_Reading", OpenReadingTextBox.Text);
+                cmd.Parameters.AddWithValue("@Closing_Reading", CloseReadingTextBox.Text);
+                cmd.Parameters.AddWithValue("@Quantity", QuantityTextBox.Text);
+                cmd.Parameters.AddWithValue("@Test", CheckTextBox.Text);
+                cmd.Parameters.AddWithValue("@netQuantity", NetQuantityTextBox);
+                cmd.Parameters.AddWithValue("@Unit_Price", RateTextBox.Text);
 
 
-                cmd.Parameters.AddWithValue("@Amount", newPrice);
-                cmd.Parameters.AddWithValue("@Recovery", recovery);
-                cmd.Parameters.AddWithValue("@Deposited", deposit);
-                cmd.Parameters.AddWithValue("@Udhar", udhar);
-                cmd.Parameters.AddWithValue("@Discount", discount);
-                cmd.Parameters.AddWithValue("@Balance", newBalance);
+                cmd.Parameters.AddWithValue("@Amount", PriceTextBox);
+                cmd.Parameters.AddWithValue("@Recovery", RecoveryTextBox.Text);
+                cmd.Parameters.AddWithValue("@Deposited", DepositTextBox.Text);
+                cmd.Parameters.AddWithValue("@Udhar", UdharTextBox.Text);
+                cmd.Parameters.AddWithValue("@Discount", DiscountTextBox.Text);
+                cmd.Parameters.AddWithValue("@Balance", BalanceTB.Text);
 
                 cmd.ExecuteNonQuery();
 

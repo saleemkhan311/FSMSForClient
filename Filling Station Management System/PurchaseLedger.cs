@@ -1,21 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bunifu.UI.WinForms;
 using ComponentFactory.Krypton.Toolkit;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
 using MySql.Data.MySqlClient;
-using OfficeOpenXml;
 
 
 namespace Filling_Station_Management_System
@@ -46,13 +35,91 @@ namespace Filling_Station_Management_System
             viewDataPetrol();
         }
 
+
+        private void Calculate()
+        {
+            if (Validation(WeightBox.Text))
+            {
+                kantaWazan = Math.Round(Convert.ToDouble(WeightBox.Text), 2);
+                sharah = Math.Round(Double.Parse(SharahListBox.Items[SharahListBox.SelectedIndex].ToString()), 2);
+                miqdar = kantaWazan / sharah;
+
+                QuantityBox.Text = AppSettings.RoundToString(miqdar, 2);
+            }
+
+
+
+            if (Validation(KhorakiBox.Text) && Validation(WeightBox.Text))
+            {
+                Khoraki = Double.Parse(KhorakiBox.Text);
+                saafiMiqdar = miqdar - Khoraki;
+                NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2);
+
+            }
+            if (Khoraki <= 0)
+            {
+                saafiMiqdar = miqdar - Khoraki;
+                NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2);
+            }
+
+
+            if (Validation(RateBox.Text) && Validation(NetQuantityBox.Text))
+            {
+                ratePerLiter = Math.Round(Convert.ToDouble(RateBox.Text), 2);
+
+                Amount = saafiMiqdar * ratePerLiter;
+                AmountBox.Text = AppSettings.RoundToString(Amount, 0);
+            }
+
+            if (Validation(LabourBox.Text) && Validation(AmountBox.Text))
+            {
+                labour = Math.Round(Convert.ToDouble(LabourBox.Text), 2);
+
+                saafiRaqam = Amount - labour;
+                NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0);
+
+            }
+            if (labour <= 0)
+            {
+                saafiRaqam = Amount - labour;
+                NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0);
+            }
+
+
+
+            if (Validation(SabqaRaqamBox.Text) && Validation(NetPriceBox.Text))
+            {
+                sabqaBaqaya = Math.Round(Convert.ToDouble(SabqaRaqamBox.Text), 2);
+
+                totalAmount = saafiRaqam + sabqaBaqaya;
+                TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0);
+            }
+            totalAmount = saafiRaqam + sabqaBaqaya;
+            Double sum = 0;
+
+            // Loop through the first five TextBoxes and add their values if they are valid numbers
+            foreach (Bunifu.UI.WinForms.BunifuTextBox textBox in new[] { RecoveryAmountBox1, RecoveryAmountBox2, RecoveryAmountBox3, RecoveryAmountBox4, RecoveryAmountBox5 })
+            {
+                if (!string.IsNullOrWhiteSpace(textBox.Text) && Double.TryParse(textBox.Text, out double value))
+                {
+                    sum += value;
+                }
+            }
+
+            // Update the value of the sixth TextBox with the calculated sum
+
+
+            RemainingAmountBox.Text = AppSettings.RoundToString(totalAmount - sum, 0);
+
+
+        }
         private void WeightBox_TextChanged(object sender, EventArgs e)
         {
-
+            Calculate();
             if (Validation(WeightBox.Text))
             {
                 kantaWazan = Double.Parse(WeightBox.Text);
-                sharah = Double.Parse(SharahBox.Text);
+                sharah = Double.Parse(SharahListBox.Text);
                 miqdar = kantaWazan / sharah;
 
                 QuantityBox.Text = RoundToString(miqdar);
@@ -72,7 +139,7 @@ namespace Filling_Station_Management_System
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
 
-                string sql = $"SELECT * FROM purchase_data_{index}"; // Add your WHERE clause
+                string sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    ROUND(Sharah, 4) AS Sharah,\r\n    Malik_Name,\r\n    ROUND(Kanta_Wazan, 0) AS Kanta_Wazan,\r\n    ROUND(Miqdar, 2) AS Miqdar,\r\n    ROUND(Khoraki, 0) AS Khoraki,\r\n    ROUND(Saafi_Miqdar, 2) AS Saafi_Miqdar,\r\n    Rate_per_Liter,\r\n    ROUND(Amount, 0) AS Amount,\r\n    ROUND(Kharcha_Mazdoori, 0) AS Kharcha_Mazdoori,\r\n    ROUND(Saafi_Raqam, 0) AS Saafi_Raqam,\r\n    ROUND(Sabqa_Baqaya, 0) AS Sabqa_Baqaya,\r\n    ROUND(Total_Amount, 0) AS Total_Amount,\r\n    ROUND(Amount_Paid_1, 0) AS Amount_Paid_1,\r\n    Description_Details_1,\r\n    ROUND(Amount_Paid_2, 0) AS Amount_Paid_2,\r\n    Description_Details_2,\r\n    ROUND(Amount_Paid_3, 0) AS Amount_Paid_3,\r\n    Description_Details_3,\r\n    ROUND(Amount_Paid_4, 0) AS Amount_Paid_4,\r\n    Description_Details_4,\r\n    ROUND(Amount_Paid_5, 0) AS Amount_Paid_5,\r\n    Description_Details_5,\r\n    ROUND(Baqaya, 0) AS Baqaya\r\n FROM purchase_data_{index};\r\n"; // Add your WHERE clause
 
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -97,10 +164,11 @@ namespace Filling_Station_Management_System
 
         private void SharahBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Calculate();
             if (Validation(WeightBox.Text))
             {
                 kantaWazan = Math.Round(Convert.ToDouble(WeightBox.Text), 0);
-                sharah = Math.Round(Convert.ToDouble(SharahBox.Text), 0);
+                sharah = Math.Round(Convert.ToDouble(SharahListBox.Text), 0);
                 miqdar = kantaWazan / sharah;
 
                 QuantityBox.Text = RoundToString(miqdar);
@@ -110,6 +178,7 @@ namespace Filling_Station_Management_System
 
         private void KhorakiBox_TextChanged(object sender, EventArgs e)
         {
+            Calculate();
             if (Validation(KhorakiBox.Text) && Validation(WeightBox.Text))
             {
                 Khoraki = Math.Round(Convert.ToDouble(KhorakiBox.Text), 2);
@@ -120,6 +189,7 @@ namespace Filling_Station_Management_System
 
         private void RateBox_TextChanged(object sender, EventArgs e)
         {
+            Calculate();
             if (Validation(RateBox.Text) && Validation(NetQuantityBox.Text))
             {
                 ratePerLiter = Math.Round(Convert.ToDouble(RateBox.Text), 2);
@@ -131,6 +201,7 @@ namespace Filling_Station_Management_System
 
         private void LabourBox_TextChanged(object sender, EventArgs e)
         {
+            Calculate();
             if (Validation(LabourBox.Text) && Validation(AmountBox.Text))
             {
                 labour = Math.Round(Convert.ToDouble(LabourBox.Text), 2);
@@ -142,6 +213,7 @@ namespace Filling_Station_Management_System
 
         private void RecoveryAmountBox1_TextChanged(object sender, EventArgs e)
         {
+
             Double sum = 0;
 
             // Loop through the first five TextBoxes and add their values if they are valid numbers
@@ -155,6 +227,7 @@ namespace Filling_Station_Management_System
 
             // Update the value of the sixth TextBox with the calculated sum
             RemainingAmountBox.Text = RoundToString(totalAmount - sum);
+            Calculate();
         }
 
         private void RecoveryAmountBox2_TextChanged(object sender, EventArgs e)
@@ -172,6 +245,7 @@ namespace Filling_Station_Management_System
 
             // Update the value of the sixth TextBox with the calculated sum
             RemainingAmountBox.Text = RoundToString(totalAmount - sum);
+            Calculate();
         }
 
         private void RecoveryAmountBox3_TextChanged(object sender, EventArgs e)
@@ -189,6 +263,7 @@ namespace Filling_Station_Management_System
 
             // Update the value of the sixth TextBox with the calculated sum
             RemainingAmountBox.Text = RoundToString(totalAmount - sum);
+            Calculate();
         }
 
         private void RecoveryAmountBox4_TextChanged(object sender, EventArgs e)
@@ -206,6 +281,7 @@ namespace Filling_Station_Management_System
 
             // Update the value of the sixth TextBox with the calculated sum
             RemainingAmountBox.Text = RoundToString(totalAmount - sum);
+            Calculate();
         }
 
         private void RecoveryAmountBox5_TextChanged(object sender, EventArgs e)
@@ -223,6 +299,7 @@ namespace Filling_Station_Management_System
 
             // Update the value of the sixth TextBox with the calculated sum
             RemainingAmountBox.Text = RoundToString(totalAmount - sum);
+            Calculate();
         }
 
         private void UpdateData_Click(object sender, EventArgs e)
@@ -248,7 +325,7 @@ namespace Filling_Station_Management_System
                 cmd.Parameters.AddWithValue("@Ref_No", Convert.ToInt16(RefTextBox.Text));
                 cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
                 cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
-                cmd.Parameters.AddWithValue("@Sharah", SharahBox.Text);
+                cmd.Parameters.AddWithValue("@Sharah", SharahListBox.Text);
                 cmd.Parameters.AddWithValue("@Malik_Name", NameTextBox.Text);
 
 
@@ -300,6 +377,7 @@ namespace Filling_Station_Management_System
         List<string> NameSuggestions = new List<string>();
         private void AutoSuggestions()
         {
+
             string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString();
             index.ToLower();
             try
@@ -338,41 +416,14 @@ namespace Filling_Station_Management_System
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            Search();
-        }
-
-        private string NoNumbers(string value)
-        {
-            bool isValid = false;
-
-            if (value != string.Empty)
+            if (SearchTextBox.Text == string.Empty)
             {
-
-                if (Regex.IsMatch(value, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    MessageBox.Show("Invalid Entry");
-                    value = "";
-                }
-                else
-                {
-
-
-                }
+                LoadData();
             }
-
-            return value;
         }
 
-        string NoAlpha(string value)
-        {
-            if (value.Any(char.IsLetter))
-            {
-                MessageBox.Show("Please Enter in Numbers or Select Search by Name");
-                return "0";
 
-            }
-            else { return value; }
-        }
+
 
 
         private void Search()
@@ -390,14 +441,14 @@ namespace Filling_Station_Management_System
 
                 if (SearchByNameRadio.Checked)
                 {
-                    cmd.CommandText = $"SELECT * FROM purchase_data_{index} WHERE Malik_Name LIKE" + "'" + NoNumbers(SearchTextBox.Text) + "%'";
-                    cmd.Parameters.AddWithValue("@Malik_Name", NoNumbers(SearchTextBox.Text));
+                    cmd.CommandText = $"SELECT * FROM purchase_data_{index} WHERE Malik_Name LIKE" + "'" + AppSettings.ValidateTextBoxForNumbers(SearchTextBox) + "%'";
+                    cmd.Parameters.AddWithValue("@Malik_Name", AppSettings.ValidateTextBoxForNumbers(SearchTextBox));
 
                 }
                 else if (SearchByRefRadio.Checked)
                 {
-                    cmd.CommandText = $"SELECT * FROM FROM purchase_data_{index} WHERE Ref_No=@Ref_No";
-                    cmd.Parameters.AddWithValue("@Ref_No", NoAlpha(SearchTextBox.Text));
+                    cmd.CommandText = $"SELECT * FROM purchase_data_{index} WHERE Ref_No LIKE" + "'" + AppSettings.ValidateTextBoxForNumbers(SearchTextBox) + "%'";
+                    cmd.Parameters.AddWithValue("@Ref_No", AppSettings.ValidateTextBoxForAlphabets(SearchTextBox));
                 }
                 else
                 {
@@ -502,7 +553,7 @@ namespace Filling_Station_Management_System
 
             receipt.ref_no = RefTextBox.Text;
 
-            receipt.DateTime = dateTimePicker1.Value.ToString("d");
+            receipt.DateTimeValue = dateTimePicker1.Value.ToString("d");
 
             receipt.malikName = NameTextBox.Text;
             receipt.wazan = WeightBox.Text;
@@ -557,6 +608,7 @@ namespace Filling_Station_Management_System
 
         private void PurchaseLedger_Load(object sender, EventArgs e)
         {
+            KeyPreview = true;
             LoadData();
             SearchByNameRadio.Checked = true;
             ViewRecordsPanel.Hide();
@@ -579,9 +631,29 @@ namespace Filling_Station_Management_System
 
         }
 
+        private void PurchaseLedger_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Keys.Enter == e.KeyCode)
+            {
+                SendKeys.Send("{TAB}");
+                e.Handled = true;
+            }
+        }
 
+        private void SearchTextBox_OnIconRightClick(object sender, EventArgs e)
+        {
+            Search();
+        }
 
+        private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void QuantityBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private bool scrolling = false;
 
@@ -654,7 +726,7 @@ namespace Filling_Station_Management_System
             object date = PetrolDataGrid.SelectedRows[0].Cells[1].Value;
             FuelTypeBox.Text = PetrolDataGrid.SelectedRows[0].Cells[2].Value.ToString();
             SharahAssign();
-            SharahBox.Text = PetrolDataGrid.SelectedRows[0].Cells[3].Value.ToString();
+            SharahListBox.Text = PetrolDataGrid.SelectedRows[0].Cells[3].Value.ToString();
 
             NameTextBox.Text = PetrolDataGrid.SelectedRows[0].Cells[4].Value.ToString();
             WeightBox.Text = PetrolDataGrid.SelectedRows[0].Cells[5].Value.ToString();
@@ -703,7 +775,7 @@ namespace Filling_Station_Management_System
             object date = DieselDataGrid.SelectedRows[0].Cells[1].Value;
             FuelTypeBox.Text = DieselDataGrid.SelectedRows[0].Cells[2].Value.ToString();
             SharahAssign();
-            SharahBox.Text = DieselDataGrid.SelectedRows[0].Cells[3].Value.ToString();
+            SharahListBox.Text = DieselDataGrid.SelectedRows[0].Cells[3].Value.ToString();
             NameTextBox.Text = DieselDataGrid.SelectedRows[0].Cells[4].Value.ToString();
             WeightBox.Text = DieselDataGrid.SelectedRows[0].Cells[5].Value.ToString();
             QuantityBox.Text = DieselDataGrid.SelectedRows[0].Cells[6].Value.ToString();
@@ -747,6 +819,7 @@ namespace Filling_Station_Management_System
 
         private void SabqaRaqamBox_TextChanged(object sender, EventArgs e)
         {
+            Calculate();
             if (Validation(SabqaRaqamBox.Text) && Validation(NetPriceBox.Text))
             {
                 sabqaBaqaya = Math.Round(Convert.ToDouble(SabqaRaqamBox.Text), 2);
@@ -762,19 +835,19 @@ namespace Filling_Station_Management_System
         }
         private void SharahAssign()
         {
-            SharahBox.Items.Clear();
+            SharahListBox.Items.Clear();
             if (FuelTypeBox.Text == "Petrol")
             {
                 for (int i = 0; i < sharahPetrol.Length; i++)
                 {
-                    SharahBox.Items.Add(sharahPetrol[i]);
+                    SharahListBox.Items.Add(sharahPetrol[i]);
                 }
             }
             else if (FuelTypeBox.Text == "Diesel")
             {
                 for (int i = 0; i < sharahDiesel.Length; i++)
                 {
-                    SharahBox.Items.Add(sharahDiesel[i]);
+                    SharahListBox.Items.Add(sharahDiesel[i]);
                 }
             }
         }

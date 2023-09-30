@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Bunifu.UI.WinForms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Filling_Station_Management_System
 {
@@ -19,6 +22,45 @@ namespace Filling_Station_Management_System
         public static string UserConString()
         {
             return "server=localhost;Database=filling_station_management_system1;Uid=root;Pwd=''";
+        }
+
+
+        public static string ValidateTextBoxForNumbers(BunifuTextBox textBox)
+        {
+            string text = textBox.Text;
+
+            // Use a regular expression to check if the text contains numbers
+            if (Regex.IsMatch(text, @"\d"))
+            {
+                // If it contains numbers, clear the TextBox and show a MessageBox
+                textBox.Clear();
+                MessageBox.Show("Invalid Entry: Contains numbers", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Return the original text (even if it's cleared)
+            return text;
+        }
+
+        public static string ValidateTextBoxForAlphabets(BunifuTextBox textBox)
+        {
+            string text = textBox.Text;
+
+            // Use a regular expression to check if the text contains alphabets
+            if (Regex.IsMatch(text, "[a-zA-Z]"))
+            {
+                // If it contains alphabets, clear the TextBox and show a MessageBox
+                textBox.Clear();
+                MessageBox.Show("Invalid Entry: Contains alphabets", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Return the original text (even if it's cleared)
+            return text;
+        }
+
+        public static string RoundToString(double value, int decimals)
+        {
+
+            return Math.Round(value, decimals).ToString();
         }
     }
 }

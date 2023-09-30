@@ -378,10 +378,12 @@ namespace Filling_Station_Management_System
                     availableStockD = Convert.ToDouble(reader["Available_Stock"].ToString());
                     AvailableStockAmountD = Convert.ToDouble(reader["Available_Stock_Amount"].ToString());
                     AvailableUnitPriceD = Convert.ToDouble(reader["Available_Stock_Unit_Price"].ToString());
+                    var totalPurchaseD = Convert.ToDouble(reader["Total_Purchase"].ToString());
 
                     AvailableStockBoxD.Text = RoundToString(availableStockD);
                     AvailableRateBoxD.Text = RoundToString(AvailableUnitPriceD);
                     AvailableAmountBoxD.Text = RoundToString(AvailableStockAmountD);
+                    TotalPurchaseBoxD.Text = RoundToString(totalPurchaseD);
 
 
                     /* lastStockD = Convert.ToDouble(reader["Last_Stock"].ToString());
@@ -608,10 +610,12 @@ namespace Filling_Station_Management_System
                     availableStockPtrl = Convert.ToDouble(reader["Available_Stock"].ToString());
                     AvailableStockAmountPtrl = Convert.ToDouble(reader["Available_Stock_Amount"].ToString());
                     AvailableUnitPricePtrl = Convert.ToDouble(reader["Available_Stock_Unit_Price"].ToString());
+                    var totalpurchaseP = Convert.ToDouble(reader["Total_Purchase"].ToString());
 
                     AvailableStockBoxPetrol.Text = RoundToString(availableStockPtrl);
                     AvailableRateBoxPetrol.Text = RoundToString(AvailableUnitPricePtrl);
                     AvailableAmountBoxPetrol.Text = RoundToString(AvailableStockAmountPtrl);
+                    TotalPurchaseBoxP.Text = RoundToString(totalpurchaseP);
                 }
 
                 reader.Close();

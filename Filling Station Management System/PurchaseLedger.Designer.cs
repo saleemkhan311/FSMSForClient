@@ -227,7 +227,7 @@
             this.bunifuLabel32 = new Bunifu.UI.WinForms.BunifuLabel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.SharahBox = new System.Windows.Forms.ComboBox();
+            this.SharahListBox = new System.Windows.Forms.ComboBox();
             this.FuelTypeBox = new System.Windows.Forms.ComboBox();
             this.RefTextBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -240,9 +240,9 @@
             this.SearchTextBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.SearchByRefRadio = new Bunifu.UI.WinForms.BunifuRadioButton();
             this.SearchByNameRadio = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.SaveExcelButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.RefreshButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.RemoveButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.SaveExcelButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.TabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PetrolDataGrid)).BeginInit();
@@ -453,7 +453,7 @@
             this.ViewRecordsPanel.Controls.Add(this.bunifuShadowPanel2);
             this.ViewRecordsPanel.Controls.Add(this.dateTimePicker1);
             this.ViewRecordsPanel.Controls.Add(this.bunifuLabel19);
-            this.ViewRecordsPanel.Controls.Add(this.SharahBox);
+            this.ViewRecordsPanel.Controls.Add(this.SharahListBox);
             this.ViewRecordsPanel.Controls.Add(this.FuelTypeBox);
             this.ViewRecordsPanel.Controls.Add(this.RefTextBox);
             this.ViewRecordsPanel.Controls.Add(this.bunifuLabel3);
@@ -461,7 +461,7 @@
             this.ViewRecordsPanel.Controls.Add(this.bunifuLabel1);
             this.ViewRecordsPanel.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
             this.ViewRecordsPanel.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.ViewRecordsPanel.Location = new System.Drawing.Point(8, 7);
+            this.ViewRecordsPanel.Location = new System.Drawing.Point(9, 15);
             this.ViewRecordsPanel.Name = "ViewRecordsPanel";
             this.ViewRecordsPanel.PanelColor = System.Drawing.Color.WhiteSmoke;
             this.ViewRecordsPanel.PanelColor2 = System.Drawing.Color.WhiteSmoke;
@@ -1161,6 +1161,7 @@
             this.QuantityBox.TextPlaceholder = "";
             this.QuantityBox.UseSystemPasswordChar = false;
             this.QuantityBox.WordWrap = false;
+            this.QuantityBox.TextChanged += new System.EventHandler(this.QuantityBox_TextChanged);
             // 
             // bunifuLabel13
             // 
@@ -3602,16 +3603,16 @@
             this.bunifuLabel19.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel19.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // SharahBox
+            // SharahListBox
             // 
-            this.SharahBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SharahBox.FormattingEnabled = true;
-            this.SharahBox.Location = new System.Drawing.Point(385, 46);
-            this.SharahBox.Name = "SharahBox";
-            this.SharahBox.Size = new System.Drawing.Size(121, 25);
-            this.SharahBox.TabIndex = 67;
-            this.SharahBox.TabStop = false;
-            this.SharahBox.SelectedIndexChanged += new System.EventHandler(this.SharahBox_SelectedIndexChanged);
+            this.SharahListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SharahListBox.FormattingEnabled = true;
+            this.SharahListBox.Location = new System.Drawing.Point(385, 46);
+            this.SharahListBox.Name = "SharahListBox";
+            this.SharahListBox.Size = new System.Drawing.Size(121, 25);
+            this.SharahListBox.TabIndex = 67;
+            this.SharahListBox.TabStop = false;
+            this.SharahListBox.SelectedIndexChanged += new System.EventHandler(this.SharahBox_SelectedIndexChanged);
             // 
             // FuelTypeBox
             // 
@@ -3626,6 +3627,7 @@
             this.FuelTypeBox.Size = new System.Drawing.Size(121, 25);
             this.FuelTypeBox.TabIndex = 67;
             this.FuelTypeBox.TabStop = false;
+            this.FuelTypeBox.SelectedIndexChanged += new System.EventHandler(this.FuelTypeBox_SelectedIndexChanged);
             // 
             // RefTextBox
             // 
@@ -3796,7 +3798,7 @@
             this.bunifuLabel44.AutoEllipsis = false;
             this.bunifuLabel44.CursorType = null;
             this.bunifuLabel44.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel44.Location = new System.Drawing.Point(437, 31);
+            this.bunifuLabel44.Location = new System.Drawing.Point(538, 29);
             this.bunifuLabel44.Name = "bunifuLabel44";
             this.bunifuLabel44.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel44.Size = new System.Drawing.Size(97, 17);
@@ -3812,7 +3814,7 @@
             this.bunifuLabel43.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel43.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel43.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel43.Location = new System.Drawing.Point(287, 31);
+            this.bunifuLabel43.Location = new System.Drawing.Point(388, 29);
             this.bunifuLabel43.Name = "bunifuLabel43";
             this.bunifuLabel43.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel43.Size = new System.Drawing.Size(102, 17);
@@ -3834,7 +3836,7 @@
             this.SearchTextBox.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.SearchTextBox.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.SearchTextBox.BorderColorIdle = System.Drawing.Color.Silver;
-            this.SearchTextBox.BorderRadius = 10;
+            this.SearchTextBox.BorderRadius = 30;
             this.SearchTextBox.BorderThickness = 1;
             this.SearchTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.SearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -3844,9 +3846,9 @@
             this.SearchTextBox.HideSelection = true;
             this.SearchTextBox.IconLeft = null;
             this.SearchTextBox.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.SearchTextBox.IconPadding = 10;
-            this.SearchTextBox.IconRight = null;
-            this.SearchTextBox.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.SearchTextBox.IconPadding = 5;
+            this.SearchTextBox.IconRight = global::Filling_Station_Management_System.Properties.Resources.Search;
+            this.SearchTextBox.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.SearchTextBox.Lines = new string[0];
             this.SearchTextBox.Location = new System.Drawing.Point(5, 20);
             this.SearchTextBox.MaxLength = 32767;
@@ -3884,7 +3886,7 @@
             this.SearchTextBox.SelectionLength = 0;
             this.SearchTextBox.SelectionStart = 0;
             this.SearchTextBox.ShortcutsEnabled = true;
-            this.SearchTextBox.Size = new System.Drawing.Size(260, 37);
+            this.SearchTextBox.Size = new System.Drawing.Size(348, 37);
             this.SearchTextBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.SearchTextBox.TabIndex = 1;
             this.SearchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -3895,6 +3897,7 @@
             this.SearchTextBox.UseSystemPasswordChar = false;
             this.SearchTextBox.WordWrap = true;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            this.SearchTextBox.OnIconRightClick += new System.EventHandler(this.SearchTextBox_OnIconRightClick);
             // 
             // SearchByRefRadio
             // 
@@ -3903,7 +3906,7 @@
             this.SearchByRefRadio.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.SearchByRefRadio.BorderThickness = 1;
             this.SearchByRefRadio.Checked = false;
-            this.SearchByRefRadio.Location = new System.Drawing.Point(539, 31);
+            this.SearchByRefRadio.Location = new System.Drawing.Point(640, 29);
             this.SearchByRefRadio.Name = "SearchByRefRadio";
             this.SearchByRefRadio.OutlineColor = System.Drawing.Color.DodgerBlue;
             this.SearchByRefRadio.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
@@ -3921,7 +3924,7 @@
             this.SearchByNameRadio.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.SearchByNameRadio.BorderThickness = 1;
             this.SearchByNameRadio.Checked = true;
-            this.SearchByNameRadio.Location = new System.Drawing.Point(395, 31);
+            this.SearchByNameRadio.Location = new System.Drawing.Point(496, 29);
             this.SearchByNameRadio.Name = "SearchByNameRadio";
             this.SearchByNameRadio.OutlineColor = System.Drawing.Color.DodgerBlue;
             this.SearchByNameRadio.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
@@ -3931,6 +3934,97 @@
             this.SearchByNameRadio.Size = new System.Drawing.Size(21, 21);
             this.SearchByNameRadio.TabIndex = 2;
             this.SearchByNameRadio.Text = null;
+            // 
+            // SaveExcelButton
+            // 
+            this.SaveExcelButton.AllowAnimations = true;
+            this.SaveExcelButton.AllowMouseEffects = true;
+            this.SaveExcelButton.AllowToggling = false;
+            this.SaveExcelButton.AnimationSpeed = 200;
+            this.SaveExcelButton.AutoGenerateColors = false;
+            this.SaveExcelButton.AutoRoundBorders = false;
+            this.SaveExcelButton.AutoSizeLeftIcon = true;
+            this.SaveExcelButton.AutoSizeRightIcon = true;
+            this.SaveExcelButton.BackColor = System.Drawing.Color.Transparent;
+            this.SaveExcelButton.BackColor1 = System.Drawing.Color.CornflowerBlue;
+            this.SaveExcelButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveExcelButton.BackgroundImage")));
+            this.SaveExcelButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.SaveExcelButton.ButtonText = "Save To Excel";
+            this.SaveExcelButton.ButtonTextMarginLeft = 0;
+            this.SaveExcelButton.ColorContrastOnClick = 45;
+            this.SaveExcelButton.ColorContrastOnHover = 45;
+            this.SaveExcelButton.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.SaveExcelButton.CustomizableEdges = borderEdges4;
+            this.SaveExcelButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.SaveExcelButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.SaveExcelButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.SaveExcelButton.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.SaveExcelButton.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.SaveExcelButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveExcelButton.ForeColor = System.Drawing.Color.White;
+            this.SaveExcelButton.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SaveExcelButton.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.SaveExcelButton.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.SaveExcelButton.IconMarginLeft = 11;
+            this.SaveExcelButton.IconPadding = 10;
+            this.SaveExcelButton.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SaveExcelButton.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.SaveExcelButton.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.SaveExcelButton.IconSize = 25;
+            this.SaveExcelButton.IdleBorderColor = System.Drawing.Color.CornflowerBlue;
+            this.SaveExcelButton.IdleBorderRadius = 15;
+            this.SaveExcelButton.IdleBorderThickness = 1;
+            this.SaveExcelButton.IdleFillColor = System.Drawing.Color.CornflowerBlue;
+            this.SaveExcelButton.IdleIconLeftImage = null;
+            this.SaveExcelButton.IdleIconRightImage = null;
+            this.SaveExcelButton.IndicateFocus = false;
+            this.SaveExcelButton.Location = new System.Drawing.Point(444, 103);
+            this.SaveExcelButton.Name = "SaveExcelButton";
+            this.SaveExcelButton.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.SaveExcelButton.OnDisabledState.BorderRadius = 15;
+            this.SaveExcelButton.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.SaveExcelButton.OnDisabledState.BorderThickness = 1;
+            this.SaveExcelButton.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.SaveExcelButton.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.SaveExcelButton.OnDisabledState.IconLeftImage = null;
+            this.SaveExcelButton.OnDisabledState.IconRightImage = null;
+            this.SaveExcelButton.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.SaveExcelButton.onHoverState.BorderRadius = 15;
+            this.SaveExcelButton.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.SaveExcelButton.onHoverState.BorderThickness = 1;
+            this.SaveExcelButton.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.SaveExcelButton.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.SaveExcelButton.onHoverState.IconLeftImage = null;
+            this.SaveExcelButton.onHoverState.IconRightImage = null;
+            this.SaveExcelButton.OnIdleState.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.SaveExcelButton.OnIdleState.BorderRadius = 15;
+            this.SaveExcelButton.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.SaveExcelButton.OnIdleState.BorderThickness = 1;
+            this.SaveExcelButton.OnIdleState.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.SaveExcelButton.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.SaveExcelButton.OnIdleState.IconLeftImage = null;
+            this.SaveExcelButton.OnIdleState.IconRightImage = null;
+            this.SaveExcelButton.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.SaveExcelButton.OnPressedState.BorderRadius = 15;
+            this.SaveExcelButton.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.SaveExcelButton.OnPressedState.BorderThickness = 1;
+            this.SaveExcelButton.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.SaveExcelButton.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.SaveExcelButton.OnPressedState.IconLeftImage = null;
+            this.SaveExcelButton.OnPressedState.IconRightImage = null;
+            this.SaveExcelButton.Size = new System.Drawing.Size(114, 35);
+            this.SaveExcelButton.TabIndex = 205;
+            this.SaveExcelButton.TabStop = false;
+            this.SaveExcelButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SaveExcelButton.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SaveExcelButton.TextMarginLeft = 0;
+            this.SaveExcelButton.TextPadding = new System.Windows.Forms.Padding(0);
+            this.SaveExcelButton.UseDefaultRadiusAndThickness = true;
+            this.SaveExcelButton.Click += new System.EventHandler(this.SaveExcelButton_Click);
             // 
             // RefreshButton
             // 
@@ -3951,11 +4045,11 @@
             this.RefreshButton.ColorContrastOnClick = 45;
             this.RefreshButton.ColorContrastOnHover = 45;
             this.RefreshButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.RefreshButton.CustomizableEdges = borderEdges4;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.RefreshButton.CustomizableEdges = borderEdges5;
             this.RefreshButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.RefreshButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.RefreshButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -4042,11 +4136,11 @@
             this.RemoveButton.ColorContrastOnClick = 45;
             this.RemoveButton.ColorContrastOnHover = 45;
             this.RemoveButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.RemoveButton.CustomizableEdges = borderEdges5;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.RemoveButton.CustomizableEdges = borderEdges6;
             this.RemoveButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.RemoveButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.RemoveButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -4114,97 +4208,6 @@
             this.RemoveButton.UseDefaultRadiusAndThickness = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
-            // SaveExcelButton
-            // 
-            this.SaveExcelButton.AllowAnimations = true;
-            this.SaveExcelButton.AllowMouseEffects = true;
-            this.SaveExcelButton.AllowToggling = false;
-            this.SaveExcelButton.AnimationSpeed = 200;
-            this.SaveExcelButton.AutoGenerateColors = false;
-            this.SaveExcelButton.AutoRoundBorders = false;
-            this.SaveExcelButton.AutoSizeLeftIcon = true;
-            this.SaveExcelButton.AutoSizeRightIcon = true;
-            this.SaveExcelButton.BackColor = System.Drawing.Color.Transparent;
-            this.SaveExcelButton.BackColor1 = System.Drawing.Color.CornflowerBlue;
-            this.SaveExcelButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveExcelButton.BackgroundImage")));
-            this.SaveExcelButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.SaveExcelButton.ButtonText = "Save To Excel";
-            this.SaveExcelButton.ButtonTextMarginLeft = 0;
-            this.SaveExcelButton.ColorContrastOnClick = 45;
-            this.SaveExcelButton.ColorContrastOnHover = 45;
-            this.SaveExcelButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.SaveExcelButton.CustomizableEdges = borderEdges6;
-            this.SaveExcelButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.SaveExcelButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.SaveExcelButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.SaveExcelButton.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.SaveExcelButton.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.SaveExcelButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveExcelButton.ForeColor = System.Drawing.Color.White;
-            this.SaveExcelButton.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SaveExcelButton.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.SaveExcelButton.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.SaveExcelButton.IconMarginLeft = 11;
-            this.SaveExcelButton.IconPadding = 10;
-            this.SaveExcelButton.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SaveExcelButton.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.SaveExcelButton.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.SaveExcelButton.IconSize = 25;
-            this.SaveExcelButton.IdleBorderColor = System.Drawing.Color.CornflowerBlue;
-            this.SaveExcelButton.IdleBorderRadius = 15;
-            this.SaveExcelButton.IdleBorderThickness = 1;
-            this.SaveExcelButton.IdleFillColor = System.Drawing.Color.CornflowerBlue;
-            this.SaveExcelButton.IdleIconLeftImage = null;
-            this.SaveExcelButton.IdleIconRightImage = null;
-            this.SaveExcelButton.IndicateFocus = false;
-            this.SaveExcelButton.Location = new System.Drawing.Point(444, 103);
-            this.SaveExcelButton.Name = "SaveExcelButton";
-            this.SaveExcelButton.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.SaveExcelButton.OnDisabledState.BorderRadius = 15;
-            this.SaveExcelButton.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.SaveExcelButton.OnDisabledState.BorderThickness = 1;
-            this.SaveExcelButton.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.SaveExcelButton.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.SaveExcelButton.OnDisabledState.IconLeftImage = null;
-            this.SaveExcelButton.OnDisabledState.IconRightImage = null;
-            this.SaveExcelButton.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.SaveExcelButton.onHoverState.BorderRadius = 15;
-            this.SaveExcelButton.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.SaveExcelButton.onHoverState.BorderThickness = 1;
-            this.SaveExcelButton.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.SaveExcelButton.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.SaveExcelButton.onHoverState.IconLeftImage = null;
-            this.SaveExcelButton.onHoverState.IconRightImage = null;
-            this.SaveExcelButton.OnIdleState.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.SaveExcelButton.OnIdleState.BorderRadius = 15;
-            this.SaveExcelButton.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.SaveExcelButton.OnIdleState.BorderThickness = 1;
-            this.SaveExcelButton.OnIdleState.FillColor = System.Drawing.Color.CornflowerBlue;
-            this.SaveExcelButton.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.SaveExcelButton.OnIdleState.IconLeftImage = null;
-            this.SaveExcelButton.OnIdleState.IconRightImage = null;
-            this.SaveExcelButton.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.SaveExcelButton.OnPressedState.BorderRadius = 15;
-            this.SaveExcelButton.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.SaveExcelButton.OnPressedState.BorderThickness = 1;
-            this.SaveExcelButton.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.SaveExcelButton.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.SaveExcelButton.OnPressedState.IconLeftImage = null;
-            this.SaveExcelButton.OnPressedState.IconRightImage = null;
-            this.SaveExcelButton.Size = new System.Drawing.Size(114, 35);
-            this.SaveExcelButton.TabIndex = 205;
-            this.SaveExcelButton.TabStop = false;
-            this.SaveExcelButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SaveExcelButton.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SaveExcelButton.TextMarginLeft = 0;
-            this.SaveExcelButton.TextPadding = new System.Windows.Forms.Padding(0);
-            this.SaveExcelButton.UseDefaultRadiusAndThickness = true;
-            this.SaveExcelButton.Click += new System.EventHandler(this.SaveExcelButton_Click);
-            // 
             // PurchaseLedger
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -4226,6 +4229,7 @@
             this.Text = "PurchaseLedger";
             this.Load += new System.EventHandler(this.PurchaseLedger_Load);
             this.Enter += new System.EventHandler(this.PurchaseLedger_Enter);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PurchaseLedger_KeyDown);
             this.TabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PetrolDataGrid)).EndInit();
@@ -4373,7 +4377,7 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton CloseButton;
-        private System.Windows.Forms.ComboBox SharahBox;
+        private System.Windows.Forms.ComboBox SharahListBox;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel1;
         private Bunifu.UI.WinForms.BunifuTextBox SearchTextBox;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel43;

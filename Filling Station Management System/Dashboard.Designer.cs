@@ -523,8 +523,8 @@
             this.DieselStockGuage.Suffix = "%";
             this.DieselStockGuage.TabIndex = 1;
             this.DieselStockGuage.Thickness = 20;
-            this.DieselStockGuage.Value = 10;
-            this.DieselStockGuage.ValueByTransition = 10;
+            this.DieselStockGuage.Value = 0;
+            this.DieselStockGuage.ValueByTransition = 0;
             this.DieselStockGuage.ValueLabelColor = System.Drawing.Color.Black;
             this.DieselStockGuage.WarningMark = 20;
             this.DieselStockGuage.ValueChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuRadialGauge.ValueChangedEventArgs>(this.bunifuRadialGauge2_ValueChanged);
@@ -722,8 +722,8 @@
             this.PetrolStockGuage.Suffix = "%";
             this.PetrolStockGuage.TabIndex = 1;
             this.PetrolStockGuage.Thickness = 20;
-            this.PetrolStockGuage.Value = 15;
-            this.PetrolStockGuage.ValueByTransition = 15;
+            this.PetrolStockGuage.Value = 0;
+            this.PetrolStockGuage.ValueByTransition = 0;
             this.PetrolStockGuage.ValueLabelColor = System.Drawing.Color.Black;
             this.PetrolStockGuage.WarningMark = 20;
             // 
@@ -938,8 +938,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
-            this.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.StateActive.Border.Rounding = 20;
             this.Text = "Dashboard";

@@ -201,7 +201,7 @@ namespace Filling_Station_Management_System
 
         private double GetLastAvailableStockPetrol()
         {
-            double lastPetrolStock = 0;
+
             float availableStock = 0;
             float totalSale = 0;
             try
@@ -263,12 +263,12 @@ namespace Filling_Station_Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            TotalSaleDieselLabel.Text = GetTotalSaleDiesel().ToString();
-            TotalSalePetrolLabel.Text = GetTotalSalePetrol().ToString();
-            TotalPurchaseDiesel.Text = GetTotalPurchaseDiesel().ToString();
-            TotalPurchasePetrol.Text = GetTotalPurchasePetrol().ToString();
-            UnitPriceLabelDiesel.Text = GetLastRateDiesel().ToString();
-            UnitPriceLabelPetrol.Text = GetLastRatePetrol().ToString();
+            TotalSaleDieselLabel.Text = AppSettings.RoundToString(GetTotalSaleDiesel(), 0);
+            TotalSalePetrolLabel.Text = AppSettings.RoundToString(GetTotalSalePetrol(), 0);
+            TotalPurchaseDiesel.Text = AppSettings.RoundToString(GetTotalPurchaseDiesel(), 0);
+            TotalPurchasePetrol.Text = AppSettings.RoundToString(GetTotalPurchasePetrol(), 0);
+            UnitPriceLabelDiesel.Text = AppSettings.RoundToString(GetLastRateDiesel(), 0);
+            UnitPriceLabelPetrol.Text = AppSettings.RoundToString(GetLastRatePetrol(), 0);
             PetrolPercent();
             DeiselPercent();
             DieselChartSetup();
@@ -278,15 +278,16 @@ namespace Filling_Station_Management_System
         void PetrolPercent()
         {
 
-            totalStockPetrol = GetTotalPurchasePetrol();
-            availableStockPetrol = GetTotalPurchasePetrol() - GetTotalSalePetrol();
-            PetrolStockLable.Text = (availableStockPetrol).ToString();
+            totalStockPetrol = Convert.ToInt32(GetTotalPurchasePetrol());
+            availableStockPetrol = Convert.ToInt32(GetTotalPurchasePetrol() - GetTotalSalePetrol());
+            PetrolStockLable.Text = ((int)availableStockPetrol).ToString();
             if (availableStockPetrol > 0)
             {
-                var value = (Convert.ToInt16((availableStockPetrol / totalStockPetrol) * 100));
-                PetrolStockGuage.Value = value;
+                var value = ((availableStockPetrol / totalStockPetrol) * 100);
 
-                PetrolStockGuage.TransitionValue(value, 1500);
+                PetrolStockGuage.Value = (int)value;
+
+                PetrolStockGuage.TransitionValue((int)value, 1500);
 
 
             }
@@ -300,14 +301,14 @@ namespace Filling_Station_Management_System
 
         void DeiselPercent()
         {
-            totalStockDiesel = GetTotalPurchaseDiesel();
-            availableStockDiesel = GetTotalPurchaseDiesel() - GetTotalSaleDiesel();
-            DieselStockLable.Text = (availableStockDiesel).ToString();
+            totalStockDiesel = Convert.ToInt32(GetTotalPurchaseDiesel());
+            availableStockDiesel = Convert.ToInt32(GetTotalPurchaseDiesel() - GetTotalSaleDiesel());
+            DieselStockLable.Text = ((int)availableStockDiesel).ToString();
             if (availableStockDiesel > 0)
             {
-                var value = (Convert.ToInt16((availableStockDiesel / totalStockDiesel) * 100));
-                DieselStockGuage.Value = value;
-                DieselStockGuage.TransitionValue(value, 1500);
+                var value = ((availableStockDiesel / totalStockDiesel) * 100);
+                DieselStockGuage.Value = (int)value;
+                DieselStockGuage.TransitionValue((int)value, 1500);
 
             }
             else
@@ -359,12 +360,12 @@ namespace Filling_Station_Management_System
                 // Create series for unit1_sales_data
                 Series series1 = new Series("Unit 1 Sales");
                 series1.ChartType = SeriesChartType.Column;
-                int i = 0;
+                int i = 1;
                 foreach (DataRow row in unit1Table.Rows)
                 {
 
                     double netQuantity = Convert.ToDouble(row["netQuantity"]);
-                    series1.Points.AddXY($"Day {i++}", netQuantity);
+                    series1.Points.AddXY($"{i++}", netQuantity);
                     series1.Label = netQuantity.ToString(); // Assign the netQuantity as the label
 
 
@@ -380,7 +381,7 @@ namespace Filling_Station_Management_System
                 {
 
                     double netQuantity = Convert.ToDouble(row["netQuantity"]);
-                    series2.Points.AddXY($"Day {j++}", netQuantity);
+                    series2.Points.AddXY($"{j++}", netQuantity);
                     series2.Label = netQuantity.ToString();
                 }
 
@@ -394,7 +395,7 @@ namespace Filling_Station_Management_System
                 {
 
                     double netQuantity = Convert.ToDouble(row["netQuantity"]);
-                    series3.Points.AddXY($"Day {k + 1}", netQuantity);
+                    series3.Points.AddXY($"{k + 1}", netQuantity);
                     series3.Label = netQuantity.ToString();
                 }
                 int l = 0;
@@ -406,7 +407,7 @@ namespace Filling_Station_Management_System
                 {
 
                     double netQuantity = Convert.ToDouble(row["netQuantity"]);
-                    series4.Points.AddXY($"Day {l + 1}", netQuantity);
+                    series4.Points.AddXY($"{l + 1}", netQuantity);
                     series4.Label = netQuantity.ToString();
                 }
 

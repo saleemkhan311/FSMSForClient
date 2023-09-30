@@ -831,6 +831,7 @@
             this.QuantityBox.TextPlaceholder = "";
             this.QuantityBox.UseSystemPasswordChar = false;
             this.QuantityBox.WordWrap = false;
+            this.QuantityBox.TextChanged += new System.EventHandler(this.QuantityBox_TextChanged);
             // 
             // bunifuLabel13
             // 
@@ -910,7 +911,7 @@
             this.KhorakiBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.KhorakiBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.KhorakiBox.DefaultFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KhorakiBox.DefaultText = "";
+            this.KhorakiBox.DefaultText = "0";
             this.KhorakiBox.FillColor = System.Drawing.Color.White;
             this.KhorakiBox.HideSelection = true;
             this.KhorakiBox.IconLeft = null;
@@ -918,7 +919,8 @@
             this.KhorakiBox.IconPadding = 10;
             this.KhorakiBox.IconRight = null;
             this.KhorakiBox.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.KhorakiBox.Lines = new string[0];
+            this.KhorakiBox.Lines = new string[] {
+        "0"};
             this.KhorakiBox.Location = new System.Drawing.Point(81, 12);
             this.KhorakiBox.MaxLength = 32767;
             this.KhorakiBox.MinimumSize = new System.Drawing.Size(1, 1);
@@ -953,7 +955,7 @@
             this.KhorakiBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.KhorakiBox.SelectedText = "";
             this.KhorakiBox.SelectionLength = 0;
-            this.KhorakiBox.SelectionStart = 0;
+            this.KhorakiBox.SelectionStart = 1;
             this.KhorakiBox.ShortcutsEnabled = true;
             this.KhorakiBox.Size = new System.Drawing.Size(203, 40);
             this.KhorakiBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
@@ -1453,7 +1455,7 @@
             this.LabourBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.LabourBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.LabourBox.DefaultFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabourBox.DefaultText = "";
+            this.LabourBox.DefaultText = "0";
             this.LabourBox.FillColor = System.Drawing.Color.White;
             this.LabourBox.HideSelection = true;
             this.LabourBox.IconLeft = null;
@@ -1461,7 +1463,8 @@
             this.LabourBox.IconPadding = 10;
             this.LabourBox.IconRight = null;
             this.LabourBox.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.LabourBox.Lines = new string[0];
+            this.LabourBox.Lines = new string[] {
+        "0"};
             this.LabourBox.Location = new System.Drawing.Point(81, 12);
             this.LabourBox.MaxLength = 32767;
             this.LabourBox.MinimumSize = new System.Drawing.Size(1, 1);
@@ -1496,7 +1499,7 @@
             this.LabourBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.LabourBox.SelectedText = "";
             this.LabourBox.SelectionLength = 0;
-            this.LabourBox.SelectionStart = 0;
+            this.LabourBox.SelectionStart = 1;
             this.LabourBox.ShortcutsEnabled = true;
             this.LabourBox.Size = new System.Drawing.Size(203, 40);
             this.LabourBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
@@ -2506,7 +2509,6 @@
             this.RecoveryAmountBox3.UseSystemPasswordChar = false;
             this.RecoveryAmountBox3.WordWrap = false;
             this.RecoveryAmountBox3.TextChanged += new System.EventHandler(this.RecoveryAmountBox3_TextChanged);
-            this.RecoveryAmountBox3.Enter += new System.EventHandler(this.RecoveryAmountBox3_Enter);
             // 
             // bunifuLabel9
             // 
@@ -3432,10 +3434,6 @@
             this.bunifuLabel19.Text = "Date Time:";
             this.bunifuLabel19.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel19.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // PrintDocument
-            // 
-            this.PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
             // 
             // printPreviewDialog1
             // 

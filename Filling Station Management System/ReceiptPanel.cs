@@ -13,7 +13,7 @@ namespace Filling_Station_Management_System
     {
         public string ref_no { get; set; }
         public string malikName { get; set; }
-        public string DateTime { get; set; }
+        public string DateTimeValue { get; set; }
         public string wazan { get; set; }
         public string miqdar { get; set; }
         public string khoraki { get; set; }
@@ -59,6 +59,7 @@ namespace Filling_Station_Management_System
         {
 
             RefLabel.Text = "Ref# :------------------------ " + ref_no;
+            DateLabel.Text = DateTimeValue;
             MalikNameLabel.Text = malikName;
             WazanLabel.Text = wazan;
             MiqdarLabel.Text = miqdar;
@@ -67,9 +68,10 @@ namespace Filling_Station_Management_System
             RateFiLiterLabel.Text = rateFiLiter;
             KulRaqamLAbel.Text = kulRaqam;
             MazdooriLabel.Text = mazdoori;
-            SabqaRaqamLabel.Text = safiRaqam;
-            SabqaRaqamLabel.Text = safiRaqam;
+            SafiRaqmLabel.Text = safiRaqam;
+            SabqaRaqamLabel.Text = sabqaRaqam;
             TotalRaqamLabel.Text = totalRaqam;
+
 
             RaqamWasoolValue1Label.Text = raqamWasoolValue1;
             RaqamWasoolTafseel1Label.Text = raqamWasoolTafseel1;

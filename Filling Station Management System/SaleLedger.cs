@@ -100,7 +100,7 @@ namespace Filling_Station_Management_System
             MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
             connection.Open();
 
-            string sql = $"SELECT * FROM unit{unit}_sales_data"; // Add your WHERE clause
+            string sql = $"SELECT Ref_No, Date,Fuel_Type,Helper,ROUND( Opening_Reading, 2) AS  Opening_Reading,ROUND( Closing_Reading, 2) AS  Closing_Reading,ROUND(Quantity, 2) AS Quantity,ROUND(Test, 2) AS Test,ROUND(netQuantity, 2) AS netQuantity,ROUND(Unit_Price, 0) AS Unit_Price,ROUND(Amount, 0) AS Amount, ROUND(Recovery, 0) AS Recovery, ROUND(Deposited, 0) AS Deposited, ROUND(Udhar, 0) AS Udhar,    ROUND(Discount, 0) AS Discount,ROUND(Balance, 0) AS Balance FROM unit{unit}_sales_data"; // Add your WHERE clause
 
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -222,39 +222,6 @@ namespace Filling_Station_Management_System
 
         }
 
-        private string NoNumbers(string value)
-        {
-            bool isValid = false;
-
-            if (value != string.Empty)
-            {
-
-                if (Regex.IsMatch(value, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    MessageBox.Show("Invalid Entry");
-                    value = "";
-                }
-                else
-                {
-
-
-                }
-            }
-
-            return value;
-        }
-
-        string NoAlpha(string value)
-        {
-            if (value.Any(char.IsLetter))
-            {
-                MessageBox.Show("Please Enter in Numbers or Select Search by Name");
-                return "0";
-
-            }
-            else { return value; }
-        }
-
         private void SearchControl()
         {
             try
@@ -270,15 +237,15 @@ namespace Filling_Station_Management_System
                 if (SearchByNameRadio.Checked)
                 {
 
-                    cmd.CommandText = $"SELECT * FROM unit{index}_sales_data WHERE Helper LIKE" + "'" + NoNumbers(SearchTextBox.Text) + "%'";
-                    cmd.Parameters.AddWithValue("@Helper", NoNumbers(SearchTextBox.Text));
+                    cmd.CommandText = $"SELECT * FROM unit{index}_sales_data WHERE Helper LIKE" + "'" + AppSettings.ValidateTextBoxForNumbers(SearchTextBox) + "%'";
+                    cmd.Parameters.AddWithValue("@Helper", AppSettings.ValidateTextBoxForNumbers(SearchTextBox));
 
                 }
                 else if (SearchByRefRadio.Checked)
                 {
 
-                    cmd.CommandText = $"SELECT * FROM FROM unit{index}_sales_data WHERE Ref_No=@Ref_No";
-                    cmd.Parameters.AddWithValue("@Ref_No", NoAlpha(SearchTextBox.Text));
+                    cmd.CommandText = $"SELECT * FROM unit{index}_sales_data WHERE Ref_No LIKE" + "'" + AppSettings.ValidateTextBoxForNumbers(SearchTextBox) + "%'";
+                    cmd.Parameters.AddWithValue("@Ref_No", AppSettings.ValidateTextBoxForAlphabets(SearchTextBox));
                 }
                 else
                 {
@@ -545,7 +512,7 @@ namespace Filling_Station_Management_System
             }
             else
             {
-                //CloseReadingTextBox.Text = "0";
+
             }
         }
 
@@ -556,45 +523,50 @@ namespace Filling_Station_Management_System
         List<string> helperNames = new List<string>();
         private void AutoSuggestions()
         {
-            int unit = TabControl.SelectedIndex + 1;
-
-
-            using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+            try
             {
-                connection.Open();
+                int unit = TabControl.SelectedIndex + 1;
 
-                // SQL query to retrieve "Helper Name" values
-                string query = $"SELECT `Helper` FROM unit{unit}_sales_data";
-
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    connection.Open();
+
+                    // SQL query to retrieve "Helper Name" values
+                    string query = $"SELECT `Helper` FROM unit{unit}_sales_data";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string helperName = reader["Helper"].ToString();
-                            helperNames.Add(helperName);
+                            while (reader.Read())
+                            {
+                                string helperName = reader["Helper"].ToString();
+                                helperNames.Add(helperName);
+                            }
                         }
                     }
                 }
+
+
+
+                AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+                autoCompleteCollection.AddRange(helperNames.ToArray());
+
+                HelperTextBox.AutoCompleteCustomSource = autoCompleteCollection;
             }
-
-
-
-            AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
-            autoCompleteCollection.AddRange(helperNames.ToArray());
-
-            HelperTextBox.AutoCompleteCustomSource = autoCompleteCollection;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "Helper Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void bunifuButton1_Click(object sender, EventArgs e)
-        {
-            SearchControl();
-        }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            SearchControl();
+            if (SearchTextBox.Text == string.Empty)
+            {
+                LoadData();
+            }
         }
 
         private void CheckTextBox_TextChanged(object sender, EventArgs e)
@@ -623,6 +595,14 @@ namespace Filling_Station_Management_System
             else if (TabControl.SelectedIndex == 1) { SaveLedger.SaveDataGridToExcel(DataGrid2); }
             else if (TabControl.SelectedIndex == 2) { SaveLedger.SaveDataGridToExcel(DataGrid3); }
             else if (TabControl.SelectedIndex == 3) { SaveLedger.SaveDataGridToExcel(DataGrid4); }
+        }
+
+        private void SearchTextBox_OnIconRightClick(object sender, EventArgs e)
+        {
+            SearchControl();
+            // SearchTextBox.IconRight.Size = new Size(50, 50); 
+
+
         }
 
         private void RateTextBox_TextChanged(object sender, EventArgs e)
@@ -696,36 +676,36 @@ namespace Filling_Station_Management_System
             if (Keys.Enter == e.KeyCode)
             {
                 SendKeys.Send("{TAB}");
-                e.Handled = false;
+                e.Handled = true;
             }
         }
 
         private void ClearBox()
         {
 
-            CloseReadingTextBox.Clear();
+            CloseReadingTextBox.Text = "0";
             _closeReading = 0;
-            CheckTextBox.Clear();
+            CheckTextBox.Text = "0";
             _test = 0;
-            PriceTextBox.Clear();
+            PriceTextBox.Text = "0";
             _price = 0;
-            RateTextBox.Clear();
+            RateTextBox.Text = "0";
             _rate = 0;
-            NetQuantityTextBox.Clear();
+            NetQuantityTextBox.Text = "0";
             _netQuantity = 0;
-            QuantityTextBox.Clear();
+            QuantityTextBox.Text = "0";
             _quantity = 0;
 
 
-            RecoveryTextBox.Clear();
+            RecoveryTextBox.Text = "0";
             recovery = 0;
-            UdharTextBox.Clear();
+            UdharTextBox.Text = "0";
             udhar = 0;
-            DepositTextBox.Clear();
+            DepositTextBox.Text = "0";
             deposit = 0;
-            DiscountTextBox.Clear();
+            DiscountTextBox.Text = "0";
             discount = 0;
-            BalanceTB.Clear();
+            BalanceTB.Text = "0";
             balance = 0;
 
 
@@ -741,12 +721,12 @@ namespace Filling_Station_Management_System
 
         private bool isFilled()
         {
-            return RecoveryTextBox.Text != string.Empty && DepositTextBox.Text != string.Empty && UdharTextBox.Text != string.Empty && DiscountTextBox.Text != string.Empty;
+            return RecoveryTextBox.Text != string.Empty && DepositTextBox.Text != string.Empty && UdharTextBox.Text != string.Empty;
         }
 
         public bool isFilled2()
         {
-            return RateTextBox.Text != string.Empty && CloseReadingTextBox.Text != string.Empty && CheckTextBox.Text != string.Empty;
+            return RateTextBox.Text != string.Empty && CloseReadingTextBox.Text != string.Empty;
         }
 
         public void Calculations2()
