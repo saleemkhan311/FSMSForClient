@@ -120,5 +120,15 @@ namespace Filling_Station_Management_System
         {
             AppSettings.PumpSelect = PumpSelectBox.SelectedIndex;
         }
+
+        private void LoginButton_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginButton.PerformClick();
+                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                e.Handled = true; // Prevent normal Enter behavior.
+            }
+        }
     }
 }

@@ -300,5 +300,24 @@ namespace Filling_Station_Management_System
                 ConfirmationPassTextBox.UseSystemPasswordChar = false;
             }
         }
+
+        private void RegisterButton_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                RegisterButton.PerformClick();
+                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                e.Handled = true; // Prevent normal Enter behavior.
+            }
+        }
+
+        private void UserSettings_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Keys.Enter == e.KeyCode)
+            {
+                SendKeys.Send("{TAB}");
+                e.Handled = true;
+            }
+        }
     }
 }

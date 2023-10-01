@@ -353,6 +353,16 @@ namespace Filling_Station_Management_System
 
         }
 
+        private void InsertData_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                InsertData.PerformClick();
+                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                e.Handled = true; // Prevent normal Enter behavior.
+            }
+        }
+
         private void OpenReadingTextBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -360,8 +370,7 @@ namespace Filling_Station_Management_System
 
         private void EnterySale_KeyDown(object sender, KeyEventArgs e)
         {
-            InsertData1.TabStop = true;
-            InsertData1.TabIndex = 8;
+
             if (Keys.Enter == e.KeyCode)
             {
                 SendKeys.Send("{TAB}");

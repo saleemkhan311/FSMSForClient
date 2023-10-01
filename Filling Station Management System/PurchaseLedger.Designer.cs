@@ -461,7 +461,7 @@
             this.ViewRecordsPanel.Controls.Add(this.bunifuLabel1);
             this.ViewRecordsPanel.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
             this.ViewRecordsPanel.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.ViewRecordsPanel.Location = new System.Drawing.Point(9, 15);
+            this.ViewRecordsPanel.Location = new System.Drawing.Point(9, 12);
             this.ViewRecordsPanel.Name = "ViewRecordsPanel";
             this.ViewRecordsPanel.PanelColor = System.Drawing.Color.WhiteSmoke;
             this.ViewRecordsPanel.PanelColor2 = System.Drawing.Color.WhiteSmoke;
@@ -768,6 +768,7 @@
             this.UpdateData.TextPadding = new System.Windows.Forms.Padding(0);
             this.UpdateData.UseDefaultRadiusAndThickness = true;
             this.UpdateData.Click += new System.EventHandler(this.UpdateData_Click);
+            this.UpdateData.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UpdateData_KeyUp);
             // 
             // flowLayoutPanel1
             // 

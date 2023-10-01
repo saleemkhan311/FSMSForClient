@@ -296,7 +296,7 @@
             this.UserTypeBox.Location = new System.Drawing.Point(35, 245);
             this.UserTypeBox.Name = "UserTypeBox";
             this.UserTypeBox.Size = new System.Drawing.Size(121, 27);
-            this.UserTypeBox.TabIndex = 7;
+            this.UserTypeBox.TabIndex = 1;
             // 
             // PasswordCheckBox
             // 
@@ -614,13 +614,14 @@
             this.RegisterButton.OnPressedState.IconLeftImage = null;
             this.RegisterButton.OnPressedState.IconRightImage = null;
             this.RegisterButton.Size = new System.Drawing.Size(263, 39);
-            this.RegisterButton.TabIndex = 3;
+            this.RegisterButton.TabIndex = 4;
             this.RegisterButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.RegisterButton.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.RegisterButton.TextMarginLeft = 0;
             this.RegisterButton.TextPadding = new System.Windows.Forms.Padding(0);
             this.RegisterButton.UseDefaultRadiusAndThickness = true;
             this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            this.RegisterButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RegisterButton_KeyUp);
             // 
             // bunifuLabel2
             // 
@@ -653,7 +654,7 @@
             this.ConfirmationPassTextBox.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.ConfirmationPassTextBox.BorderColorIdle = System.Drawing.Color.Silver;
             this.ConfirmationPassTextBox.BorderRadius = 15;
-            this.ConfirmationPassTextBox.BorderThickness = 1;
+            this.ConfirmationPassTextBox.BorderThickness = 3;
             this.ConfirmationPassTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.ConfirmationPassTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ConfirmationPassTextBox.DefaultFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -702,7 +703,7 @@
             this.ConfirmationPassTextBox.SelectionLength = 0;
             this.ConfirmationPassTextBox.SelectionStart = 0;
             this.ConfirmationPassTextBox.ShortcutsEnabled = true;
-            this.ConfirmationPassTextBox.Size = new System.Drawing.Size(306, 42);
+            this.ConfirmationPassTextBox.Size = new System.Drawing.Size(306, 58);
             this.ConfirmationPassTextBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.ConfirmationPassTextBox.TabIndex = 2;
             this.ConfirmationPassTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -761,7 +762,7 @@
             this.PasswordTextBox.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.PasswordTextBox.BorderColorIdle = System.Drawing.Color.Silver;
             this.PasswordTextBox.BorderRadius = 15;
-            this.PasswordTextBox.BorderThickness = 1;
+            this.PasswordTextBox.BorderThickness = 2;
             this.PasswordTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.PasswordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.PasswordTextBox.DefaultFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -810,7 +811,7 @@
             this.PasswordTextBox.SelectionLength = 0;
             this.PasswordTextBox.SelectionStart = 0;
             this.PasswordTextBox.ShortcutsEnabled = true;
-            this.PasswordTextBox.Size = new System.Drawing.Size(306, 42);
+            this.PasswordTextBox.Size = new System.Drawing.Size(306, 50);
             this.PasswordTextBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.PasswordTextBox.TabIndex = 1;
             this.PasswordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -958,7 +959,7 @@
             this.UsersDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -985,7 +986,7 @@
             this.UsersDataGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -1042,6 +1043,7 @@
             this.StateActive.Border.Rounding = 15;
             this.Text = "UserSettings";
             this.Load += new System.EventHandler(this.UserSettings_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UserSettings_KeyDown);
             this.bunifuShadowPanel1.ResumeLayout(false);
             this.bunifuShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGrid)).EndInit();

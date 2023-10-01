@@ -144,7 +144,7 @@
             this.ContinueButton.IdleIconLeftImage = null;
             this.ContinueButton.IdleIconRightImage = null;
             this.ContinueButton.IndicateFocus = false;
-            this.ContinueButton.Location = new System.Drawing.Point(31, 183);
+            this.ContinueButton.Location = new System.Drawing.Point(43, 183);
             this.ContinueButton.Name = "ContinueButton";
             this.ContinueButton.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.ContinueButton.OnDisabledState.BorderRadius = 30;
@@ -186,6 +186,7 @@
             this.ContinueButton.TextPadding = new System.Windows.Forms.Padding(0);
             this.ContinueButton.UseDefaultRadiusAndThickness = true;
             this.ContinueButton.Click += new System.EventHandler(this.ContinueButton_Click);
+            this.ContinueButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ContinueButton_KeyUp);
             // 
             // PasswordTextBox
             // 

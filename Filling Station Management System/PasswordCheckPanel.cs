@@ -86,5 +86,15 @@ namespace Filling_Station_Management_System
             this.DialogResult = DialogResult.No;
             this.Close();
         }
+
+        private void ContinueButton_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ContinueButton.PerformClick();
+                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                e.Handled = true; // Prevent normal Enter behavior.
+            }
+        }
     }
 }

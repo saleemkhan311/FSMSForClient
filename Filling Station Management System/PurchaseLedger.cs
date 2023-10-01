@@ -655,6 +655,16 @@ namespace Filling_Station_Management_System
 
         }
 
+        private void UpdateData_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                UpdateData.PerformClick();
+                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                e.Handled = true; // Prevent normal Enter behavior.
+            }
+        }
+
         private bool scrolling = false;
 
         private void autoScroll(object sender)

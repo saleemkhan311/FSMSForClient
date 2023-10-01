@@ -257,7 +257,12 @@ namespace Filling_Station_Management_System
         bool isFilledAll()
         {
 
-            foreach (Bunifu.UI.WinForms.BunifuTextBox textBox in new[] { RefTextBox, WeightBox, NameTextBox, QuantityBox, KhorakiBox, NetQuantityBox, RateBox, AmountBox, LabourBox, NetQuantityBox, NetPriceBox, SabqaRaqamBox, RecoveryAmountBox1 })
+            if (KhorakiBox.Text == string.Empty)
+            {
+                KhorakiBox.Text = "";
+            }
+            else if (LabourBox.Text == string.Empty) { LabourBox.Text = "0"; }
+            foreach (Bunifu.UI.WinForms.BunifuTextBox textBox in new[] { RefTextBox, WeightBox, NameTextBox, QuantityBox, NetQuantityBox, RateBox, AmountBox, NetQuantityBox, NetPriceBox, SabqaRaqamBox, RecoveryAmountBox1 })
             {
                 if (textBox.Text != string.Empty)
                 {
@@ -265,8 +270,8 @@ namespace Filling_Station_Management_System
                 }
                 else
                 {
-                    textBox.Text = "0";
-                    isFilled = true;
+
+                    isFilled = false;
 
                 }
             }
@@ -284,7 +289,7 @@ namespace Filling_Station_Management_System
             }
             else
             {
-                MessageBox.Show("Please Fill All The Fields To Procced");
+                MessageBox.Show("Please Fill All The Necessory Fields To Procced");
             }
 
         }
@@ -424,6 +429,16 @@ namespace Filling_Station_Management_System
 
         }
 
+        private void InsertData_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                InsertData.PerformClick();
+                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                e.Handled = true; // Prevent normal Enter behavior.
+            }
+        }
+
         private void SharahListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Calculate();
@@ -512,66 +527,67 @@ namespace Filling_Station_Management_System
         private void Query()
         {
 
-            /* try
-             {
-            
- */
-            string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString();
-            index.ToLower();
-
-            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-            connection.Open();
-            string sql = $"INSERT INTO purchase_data_{index} (Ref_No,Date,Fuel_Type,Sharah,Malik_Name,Kanta_Wazan,Miqdar,Khoraki,Saafi_Miqdar,Rate_per_Liter,Amount,Kharcha_Mazdoori,Saafi_Raqam,Sabqa_Baqaya,Total_Amount,Amount_Paid_1,Description_Details_1,Amount_Paid_2,Description_Details_2,Amount_Paid_3,Description_Details_3,Amount_Paid_4,Description_Details_4,Amount_Paid_5,Description_Details_5,Baqaya) VALUES " +
-                                                      "(@Ref_No,@Date,@Fuel_Type,@Sharah,@Malik_Name,@Kanta_Wazan,@Miqdar,@Khoraki,@Saafi_Miqdar,@Rate_per_Liter,@Amount,@Kharcha_Mazdoori,@Saafi_Raqam,@Sabqa_Baqaya,@Total_Amount,@Amount_Paid_1,@Description_Details_1,@Amount_Paid_2,@Description_Details_2,@Amount_Paid_3,@Description_Details_3,@Amount_Paid_4,@Description_Details_4,@Amount_Paid_5,@Description_Details_5,@Baqaya)";
-
-
-
-
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-
-            cmd.Parameters.AddWithValue("@Ref_No", Convert.ToInt16(RefTextBox.Text));
-            cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
-            cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
-            cmd.Parameters.AddWithValue("@Sharah", SharahListBox.Items[SharahListBox.SelectedIndex]);
-            cmd.Parameters.AddWithValue("@Malik_Name", NameTextBox.Text);
-
-
-            cmd.Parameters.AddWithValue("@Kanta_Wazan", WeightBox.Text);
-            cmd.Parameters.AddWithValue("@Miqdar", QuantityBox.Text);
-            cmd.Parameters.AddWithValue("@Khoraki", KhorakiBox.Text);
-            cmd.Parameters.AddWithValue("@Saafi_Miqdar", NetQuantityBox.Text);
-            cmd.Parameters.AddWithValue("@Rate_per_Liter", RateBox.Text);
-
-
-            cmd.Parameters.AddWithValue("@Amount", AmountBox.Text);
-            cmd.Parameters.AddWithValue("@Kharcha_Mazdoori", LabourBox);
-            cmd.Parameters.AddWithValue("@Saafi_Raqam", NetPriceBox.Text);
-            cmd.Parameters.AddWithValue("@Sabqa_Baqaya", SabqaRaqamBox.Text);
-            cmd.Parameters.AddWithValue("@Total_Amount", TotalRaqamBox.Text);
-            cmd.Parameters.AddWithValue("@Amount_Paid_1", RecoveryAmountBox1.Text);
-            cmd.Parameters.AddWithValue("@Description_Details_1", RecoveryDescriptionBox1.Text);
-
-            cmd.Parameters.AddWithValue("@Amount_Paid_2", RecoveryAmountBox2.Text);
-            cmd.Parameters.AddWithValue("@Description_Details_2", RecoveryDescriptionBox2.Text);
-
-            cmd.Parameters.AddWithValue("@Amount_Paid_3", RecoveryAmountBox3.Text);
-            cmd.Parameters.AddWithValue("@Description_Details_3", RecoveryDescriptionBox3.Text);
-
-            cmd.Parameters.AddWithValue("@Amount_Paid_4", RecoveryAmountBox4.Text);
-            cmd.Parameters.AddWithValue("@Description_Details_4", RecoveryDescriptionBox4.Text);
-
-            cmd.Parameters.AddWithValue("@Amount_Paid_5", RecoveryAmountBox5.Text);
-            cmd.Parameters.AddWithValue("@Description_Details_5", RecoveryDescriptionBox5.Text);
-
-            cmd.Parameters.AddWithValue("@Baqaya", RemainingAmountBox.Text);
-
-            cmd.ExecuteNonQuery();
-
-            MessageBox.Show("Records Inserted Successfully");
-            /*} catch(Exception ex)
+            try
             {
-                MessageBox.Show("Error: "+ex.Message);
-            }*/
+
+
+                string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString();
+                index.ToLower();
+
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+                string sql = $"INSERT INTO purchase_data_{index} (Ref_No,Date,Fuel_Type,Sharah,Malik_Name,Kanta_Wazan,Miqdar,Khoraki,Saafi_Miqdar,Rate_per_Liter,Amount,Kharcha_Mazdoori,Saafi_Raqam,Sabqa_Baqaya,Total_Amount,Amount_Paid_1,Description_Details_1,Amount_Paid_2,Description_Details_2,Amount_Paid_3,Description_Details_3,Amount_Paid_4,Description_Details_4,Amount_Paid_5,Description_Details_5,Baqaya) VALUES " +
+                                                          "(@Ref_No,@Date,@Fuel_Type,@Sharah,@Malik_Name,@Kanta_Wazan,@Miqdar,@Khoraki,@Saafi_Miqdar,@Rate_per_Liter,@Amount,@Kharcha_Mazdoori,@Saafi_Raqam,@Sabqa_Baqaya,@Total_Amount,@Amount_Paid_1,@Description_Details_1,@Amount_Paid_2,@Description_Details_2,@Amount_Paid_3,@Description_Details_3,@Amount_Paid_4,@Description_Details_4,@Amount_Paid_5,@Description_Details_5,@Baqaya)";
+
+
+
+
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+
+                cmd.Parameters.AddWithValue("@Ref_No", Convert.ToInt16(RefTextBox.Text));
+                cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
+                cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
+                cmd.Parameters.AddWithValue("@Sharah", SharahListBox.Items[SharahListBox.SelectedIndex]);
+                cmd.Parameters.AddWithValue("@Malik_Name", NameTextBox.Text);
+
+
+                cmd.Parameters.AddWithValue("@Kanta_Wazan", WeightBox.Text);
+                cmd.Parameters.AddWithValue("@Miqdar", QuantityBox.Text);
+                cmd.Parameters.AddWithValue("@Khoraki", KhorakiBox.Text);
+                cmd.Parameters.AddWithValue("@Saafi_Miqdar", NetQuantityBox.Text);
+                cmd.Parameters.AddWithValue("@Rate_per_Liter", RateBox.Text);
+
+
+                cmd.Parameters.AddWithValue("@Amount", AmountBox.Text);
+                cmd.Parameters.AddWithValue("@Kharcha_Mazdoori", LabourBox);
+                cmd.Parameters.AddWithValue("@Saafi_Raqam", NetPriceBox.Text);
+                cmd.Parameters.AddWithValue("@Sabqa_Baqaya", SabqaRaqamBox.Text);
+                cmd.Parameters.AddWithValue("@Total_Amount", TotalRaqamBox.Text);
+                cmd.Parameters.AddWithValue("@Amount_Paid_1", RecoveryAmountBox1.Text);
+                cmd.Parameters.AddWithValue("@Description_Details_1", RecoveryDescriptionBox1.Text);
+
+                cmd.Parameters.AddWithValue("@Amount_Paid_2", RecoveryAmountBox2.Text);
+                cmd.Parameters.AddWithValue("@Description_Details_2", RecoveryDescriptionBox2.Text);
+
+                cmd.Parameters.AddWithValue("@Amount_Paid_3", RecoveryAmountBox3.Text);
+                cmd.Parameters.AddWithValue("@Description_Details_3", RecoveryDescriptionBox3.Text);
+
+                cmd.Parameters.AddWithValue("@Amount_Paid_4", RecoveryAmountBox4.Text);
+                cmd.Parameters.AddWithValue("@Description_Details_4", RecoveryDescriptionBox4.Text);
+
+                cmd.Parameters.AddWithValue("@Amount_Paid_5", RecoveryAmountBox5.Text);
+                cmd.Parameters.AddWithValue("@Description_Details_5", RecoveryDescriptionBox5.Text);
+
+                cmd.Parameters.AddWithValue("@Baqaya", RemainingAmountBox.Text);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Records Inserted Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
 
