@@ -38,78 +38,78 @@ namespace Filling_Station_Management_System
 
         private void Calculate()
         {
-            if (Validation(WeightBox.Text))
-            {
-                kantaWazan = Math.Round(Convert.ToDouble(WeightBox.Text), 2);
-                sharah = Math.Round(Double.Parse(SharahListBox.Items[SharahListBox.SelectedIndex].ToString()), 2);
-                miqdar = kantaWazan / sharah;
+            /* if (Validation(WeightBox.Text))
+             {
+                 kantaWazan = Math.Round(Convert.ToDouble(WeightBox.Text), 2);
+                 sharah = Math.Round(Double.Parse(SharahListBox.Items[SharahListBox.SelectedIndex].ToString()), 2);
+                 miqdar = kantaWazan / sharah;
 
-                QuantityBox.Text = AppSettings.RoundToString(miqdar, 2);
-            }
-
-
-
-            if (Validation(KhorakiBox.Text) && Validation(WeightBox.Text))
-            {
-                Khoraki = Double.Parse(KhorakiBox.Text);
-                saafiMiqdar = miqdar - Khoraki;
-                NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2);
-
-            }
-            if (Khoraki <= 0)
-            {
-                saafiMiqdar = miqdar - Khoraki;
-                NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2);
-            }
-
-
-            if (Validation(RateBox.Text) && Validation(NetQuantityBox.Text))
-            {
-                ratePerLiter = Math.Round(Convert.ToDouble(RateBox.Text), 2);
-
-                Amount = saafiMiqdar * ratePerLiter;
-                AmountBox.Text = AppSettings.RoundToString(Amount, 0);
-            }
-
-            if (Validation(LabourBox.Text) && Validation(AmountBox.Text))
-            {
-                labour = Math.Round(Convert.ToDouble(LabourBox.Text), 2);
-
-                saafiRaqam = Amount - labour;
-                NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0);
-
-            }
-            if (labour <= 0)
-            {
-                saafiRaqam = Amount - labour;
-                NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0);
-            }
+                 QuantityBox.Text = AppSettings.RoundToString(miqdar, 2);
+             }
 
 
 
-            if (Validation(SabqaRaqamBox.Text) && Validation(NetPriceBox.Text))
-            {
-                sabqaBaqaya = Math.Round(Convert.ToDouble(SabqaRaqamBox.Text), 2);
+             if (Validation(KhorakiBox.Text) && Validation(WeightBox.Text))
+             {
+                 Khoraki = Double.Parse(KhorakiBox.Text);
+                 saafiMiqdar = miqdar - Khoraki;
+                 NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2);
 
-                totalAmount = saafiRaqam + sabqaBaqaya;
-                TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0);
-            }
-            totalAmount = saafiRaqam + sabqaBaqaya;
-            Double sum = 0;
-
-            // Loop through the first five TextBoxes and add their values if they are valid numbers
-            foreach (Bunifu.UI.WinForms.BunifuTextBox textBox in new[] { RecoveryAmountBox1, RecoveryAmountBox2, RecoveryAmountBox3, RecoveryAmountBox4, RecoveryAmountBox5 })
-            {
-                if (!string.IsNullOrWhiteSpace(textBox.Text) && Double.TryParse(textBox.Text, out double value))
-                {
-                    sum += value;
-                }
-            }
-
-            // Update the value of the sixth TextBox with the calculated sum
+             }
+             if (Khoraki <= 0)
+             {
+                 saafiMiqdar = miqdar - Khoraki;
+                 NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2);
+             }
 
 
-            RemainingAmountBox.Text = AppSettings.RoundToString(totalAmount - sum, 0);
+             if (Validation(RateBox.Text) && Validation(NetQuantityBox.Text))
+             {
+                 ratePerLiter = Math.Round(Convert.ToDouble(RateBox.Text), 2);
+
+                 Amount = saafiMiqdar * ratePerLiter;
+                 AmountBox.Text = AppSettings.RoundToString(Amount, 0);
+             }
+
+             if (Validation(LabourBox.Text) && Validation(AmountBox.Text))
+             {
+                 labour = Math.Round(Convert.ToDouble(LabourBox.Text), 2);
+
+                 saafiRaqam = Amount - labour;
+                 NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0);
+
+             }
+             if (labour <= 0)
+             {
+                 saafiRaqam = Amount - labour;
+                 NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0);
+             }
+
+
+
+             if (Validation(SabqaRaqamBox.Text) && Validation(NetPriceBox.Text))
+             {
+                 sabqaBaqaya = Math.Round(Convert.ToDouble(SabqaRaqamBox.Text), 2);
+
+                 totalAmount = saafiRaqam + sabqaBaqaya;
+                 TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0);
+             }
+             totalAmount = saafiRaqam + sabqaBaqaya;
+             Double sum = 0;
+
+             // Loop through the first five TextBoxes and add their values if they are valid numbers
+             foreach (Bunifu.UI.WinForms.BunifuTextBox textBox in new[] { RecoveryAmountBox1, RecoveryAmountBox2, RecoveryAmountBox3, RecoveryAmountBox4, RecoveryAmountBox5 })
+             {
+                 if (!string.IsNullOrWhiteSpace(textBox.Text) && Double.TryParse(textBox.Text, out double value))
+                 {
+                     sum += value;
+                 }
+             }
+
+             // Update the value of the sixth TextBox with the calculated sum
+
+
+             RemainingAmountBox.Text = AppSettings.RoundToString(totalAmount - sum, 0);*/
 
 
         }

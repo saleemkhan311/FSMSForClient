@@ -37,46 +37,46 @@ namespace Filling_Station_Management_System
         private void Query()
         {
             int unit = TabControl.SelectedIndex + 1;
-            /* try
-             {
- */
-            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-            connection.Open();
+            try
+            {
 
-            sql = $"UPDATE unit{unit}_sales_data SET Ref_No = @Ref_No,Date=@Date,Fuel_Type=@Fuel_Type,Helper=@Helper,Closing_Reading=@Closing_Reading,Quantity=@Quantity,Test=@Test,netQuantity=@netQuantity,Unit_Price=@Unit_Price,Amount=@Amount,Recovery=@Recovery,Deposited=@Deposited,Udhar=@Udhar,Discount=@Discount,Balance=@Balance WHERE Ref_No=@Ref_No";
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
 
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
+                sql = $"UPDATE unit{unit}_sales_data SET Ref_No = @Ref_No,Date=@Date,Fuel_Type=@Fuel_Type,Helper=@Helper,Closing_Reading=@Closing_Reading,Quantity=@Quantity,Test=@Test,netQuantity=@netQuantity,Unit_Price=@Unit_Price,Amount=@Amount,Recovery=@Recovery,Deposited=@Deposited,Udhar=@Udhar,Discount=@Discount,Balance=@Balance WHERE Ref_No=@Ref_No";
 
-            cmd.Parameters.AddWithValue("@Ref_No", ConvertFloat(RefTextBox.Text));
-            cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
-            cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
-            cmd.Parameters.AddWithValue("@Helper", HelperTextBox.Text);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
 
-
-            //cmd.Parameters.AddWithValue("@Opening_Reading", ConvertFloat(OpenReadingTextBox.Text));
-            cmd.Parameters.AddWithValue("@Closing_Reading", ConvertFloat(CloseReadingTextBox.Text));
-            cmd.Parameters.AddWithValue("@Quantity", newQuantity);
-            cmd.Parameters.AddWithValue("@Test", ConvertFloat(CheckTextBox.Text));
-            cmd.Parameters.AddWithValue("@netQuantity", newNetQuantity);
-            cmd.Parameters.AddWithValue("@Unit_Price", ConvertFloat(RateTextBox.Text));
+                cmd.Parameters.AddWithValue("@Ref_No", ConvertFloat(RefTextBox.Text));
+                cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
+                cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
+                cmd.Parameters.AddWithValue("@Helper", HelperTextBox.Text);
 
 
-            cmd.Parameters.AddWithValue("@Amount", newPrice);
-            cmd.Parameters.AddWithValue("@Recovery", ConvertFloat(RecoveryTextBox.Text));
-            cmd.Parameters.AddWithValue("@Deposited", ConvertFloat(DepositTextBox.Text));
-            cmd.Parameters.AddWithValue("@Udhar", ConvertFloat(UdharTextBox.Text));
-            cmd.Parameters.AddWithValue("@Discount", ConvertFloat(DepositTextBox.Text));
-            cmd.Parameters.AddWithValue("@Balance", newPrice);
+                //cmd.Parameters.AddWithValue("@Opening_Reading", ConvertFloat(OpenReadingTextBox.Text));
+                cmd.Parameters.AddWithValue("@Closing_Reading", ConvertFloat(CloseReadingTextBox.Text));
+                cmd.Parameters.AddWithValue("@Quantity", newQuantity);
+                cmd.Parameters.AddWithValue("@Test", ConvertFloat(CheckTextBox.Text));
+                cmd.Parameters.AddWithValue("@netQuantity", newNetQuantity);
+                cmd.Parameters.AddWithValue("@Unit_Price", ConvertFloat(RateTextBox.Text));
 
-            cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Records Updated Successfully");
-            UnitBox.SelectedIndex = 0;
-            /* }
-             catch (Exception ex)
-             {
-                 MessageBox.Show("Error: " + ex.Message);
-             }*/
+                cmd.Parameters.AddWithValue("@Amount", newPrice);
+                cmd.Parameters.AddWithValue("@Recovery", ConvertFloat(RecoveryTextBox.Text));
+                cmd.Parameters.AddWithValue("@Deposited", ConvertFloat(DepositTextBox.Text));
+                cmd.Parameters.AddWithValue("@Udhar", ConvertFloat(UdharTextBox.Text));
+                cmd.Parameters.AddWithValue("@Discount", ConvertFloat(DepositTextBox.Text));
+                cmd.Parameters.AddWithValue("@Balance", newPrice);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Records Updated Successfully");
+                UnitBox.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void tabPage1_Click(object sender, EventArgs e)

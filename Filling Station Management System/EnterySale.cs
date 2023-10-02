@@ -404,7 +404,7 @@ namespace Filling_Station_Management_System
                 cmd.Parameters.AddWithValue("@Closing_Reading", CloseReadingTextBox.Text);
                 cmd.Parameters.AddWithValue("@Quantity", QuantityTextBox.Text);
                 cmd.Parameters.AddWithValue("@Test", CheckTextBox.Text);
-                cmd.Parameters.AddWithValue("@netQuantity", NetQuantityTextBox);
+                cmd.Parameters.AddWithValue("@netQuantity", NetQuantityTextBox.Text);
                 cmd.Parameters.AddWithValue("@Unit_Price", RateTextBox.Text);
 
 

@@ -309,7 +309,7 @@ namespace Filling_Station_Management_System
 
         private void Calculate()
         {
-            if (Validation(WeightBox.Text))
+            /*if (Validation(WeightBox.Text))
             {
                 kantaWazan = Math.Round(Convert.ToDouble(WeightBox.Text), 2);
                 sharah = Math.Round(Double.Parse(SharahListBox.Items[SharahListBox.SelectedIndex].ToString()), 2);
@@ -380,7 +380,7 @@ namespace Filling_Station_Management_System
             // Update the value of the sixth TextBox with the calculated sum
 
 
-            RemainingAmountBox.Text = AppSettings.RoundToString(totalAmount - sum, 0);
+            RemainingAmountBox.Text = AppSettings.RoundToString(totalAmount - sum, 0);*/
 
         }
 
@@ -497,6 +497,8 @@ namespace Filling_Station_Management_System
         {
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
             KeyPreview = true;
+
+
         }
 
 
@@ -507,19 +509,20 @@ namespace Filling_Station_Management_System
             bool isValid = false;
             if (value == "0")
                 return isValid;
-            if (value != string.Empty)
-            {
+            if (value == string.Empty)
+                return isValid;
 
-                if (Regex.IsMatch(value, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    isValid = true;
-                }
-                else
-                {
-                    isValid = false;
-                    MessageBox.Show("Invalid Entry");
-                }
+
+            if (Regex.IsMatch(value, @"^[0-9]*(?:\.[0-9]*)?$"))
+            {
+                isValid = true;
             }
+            else
+            {
+                isValid = false;
+                MessageBox.Show("Invalid Entry");
+            }
+
 
             return isValid;
         }
