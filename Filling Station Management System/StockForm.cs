@@ -230,58 +230,22 @@ namespace Filling_Station_Management_System
         private void InsertData_Click(object sender, EventArgs e)
         {
             if (AvailableStockBoxD.Text != "0" || AvailableStockBoxD.Text != string.Empty)
-            { Query(); }
+            { QuerryDiesel(); }
             else { MessageBox.Show("Fill out the Available Stock to insert Data", "Diesel Stock", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-        }
-
-        private void TurnDownButtonD_Click(object sender, EventArgs e)
-        {
-            Calculations();
-
-            LastStockBoxD.Text = RoundToString(availableStockD);
-            LastAmountBoxD.Text = RoundToString(AvailableStockAmountD);
-            LastRateBoxD.Text = RoundToString(AvailableUnitPriceD);
-
-            AvailableStockBoxD.Text = "0";
-            AvailableAmountBoxD.Text = "0";
-            AvailableRateBoxD.Text = "0";
-
-            Calculations();
-
-
-
-
-        }
-
-        private void GetNewStockButtonD_Click(object sender, EventArgs e)
-        {
-            NewStockCalDiesel();
-            tempD = true;
-        }
-
-        private void NewStockClearButtonD_Click(object sender, EventArgs e)
-        {
-            NewStockBoxD.Text = string.Empty;
-            NewAmountBoxD.Text = string.Empty;
-            NewRateBoxD.Text = string.Empty;
-
-            newStockD = 0;
-            newStockAmountD = 0;
-            newUnitPriceD = 0;
-            tempD = false;
-
-
         }
 
 
 
         private void StockForm_Load(object sender, EventArgs e)
         {
-            // NewStockCal();
-            //GetStockDiesel();
-            //GetStockPetrol();
+
             SetStockPetrol();
+            GetLastStockPetrol();
+            NewStockCalPetrol();
+
             SetDieselStock();
+            GetLastStockDiesel();
+            NewStockCalDiesel();
         }
 
         private void TotalSaleTextBox_TextChanged(object sender, EventArgs e)
@@ -292,27 +256,27 @@ namespace Filling_Station_Management_System
         private double GetLastSaafiMiqdarDiesel()
         {
             double lastSaafiMiqdar = 0;
-            /*try
-            {*/
-
-            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-            connection.Open();
-
-            string sqlCom = $"SELECT Round(Saafi_Miqdar,2) FROM purchase_data_diesel ORDER BY Ref_No DESC LIMIT 1";
-
-            MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-            object result = cmd.ExecuteScalar();
-
-            if (result != null && result != DBNull.Value)
+            try
             {
-                lastSaafiMiqdar = float.Parse(result.ToString());
-            }
-            /* }
-             catch (Exception ex)
-             {
 
-                 MessageBox.Show("Error: " + ex.Message,"Saafi Miqdar");
-             }*/
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+
+                string sqlCom = $"SELECT Round(Saafi_Miqdar,2) FROM purchase_data_diesel ORDER BY Ref_No DESC LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    lastSaafiMiqdar = float.Parse(result.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message, "Saafi Miqdar");
+            }
             return lastSaafiMiqdar;
         }
 
@@ -364,37 +328,28 @@ namespace Filling_Station_Management_System
 
 
 
-        void GetStockDiesel()
+        void GetLastStockDiesel()
         {
             try
             {
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
-                string query = "SELECT * FROM diesel_stock ORDER BY Ref_No DESC LIMIT 1"; // Assuming 'id' is the primary key.
+                string query = "SELECT * FROM diesel_stock ORDER BY Ref_No DESC LIMIT 1";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    // Assuming column names are "column1", "column2", ..., "column6"
-
-                    availableStockD = Convert.ToDouble(reader["Available_Stock"].ToString());
-                    AvailableStockAmountD = Convert.ToDouble(reader["Available_Stock_Amount"].ToString());
-                    AvailableUnitPriceD = Convert.ToDouble(reader["Available_Stock_Unit_Price"].ToString());
-                    var totalPurchaseD = Convert.ToDouble(reader["Total_Purchase"].ToString());
-
-                    AvailableStockBoxD.Text = RoundToString(availableStockD);
-                    AvailableRateBoxD.Text = RoundToString(AvailableUnitPriceD);
-                    AvailableAmountBoxD.Text = RoundToString(AvailableStockAmountD);
-                    TotalPurchaseBoxD.Text = RoundToString(totalPurchaseD);
 
 
-                    /* lastStockD = Convert.ToDouble(reader["Last_Stock"].ToString());
-                     lastStockAmountD = Convert.ToDouble(reader["Last_Stock_Amount"].ToString());
-                     lastUnitPriceD = Convert.ToDouble(reader["Last_Stock_Unit_Price"].ToString());
- */
+                    lastStockD = Convert.ToDouble(reader["Available_Stock"].ToString());
+                    lastStockAmountD = Convert.ToDouble(reader["Available_Stock_Amount"].ToString());
+                    lastUnitPriceD = Convert.ToDouble(reader["Available_Stock_Unit_Price"].ToString());
 
 
+                    LastStockBoxD.Text = RoundToString(lastStockD);
+                    LastRateBoxD.Text = RoundToString(lastStockAmountD);
+                    LastAmountBoxD.Text = RoundToString(lastUnitPriceD);
 
                 }
 
@@ -407,50 +362,37 @@ namespace Filling_Station_Management_System
 
         }
 
-        private void Query()
+        private void QuerryDiesel()
         {
 
-            try
-            {
+            /* try
+             {*/
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-                string sql = $"INSERT INTO diesel_stock (Ref_No, Date, Total_Sale, Total_Purchase, Available_Stock, Available_Stock_Amount, Available_Stock_Unit_Price, Last_Stock, Last_Stock_Amount, Last_Stock_Unit_Price, New_Stock, New_Stock_Amount, New_Stock_Unit_Price) VALUES " +
-                                                        "(@Ref_No, @Date, @Total_Sale, @Total_Purchase, @Available_Stock, @Available_Stock_Amount, @Available_Stock_Unit_Price, @Last_Stock, @Last_Stock_Amount, @Last_Stock_Unit_Price, @New_Stock, @New_Stock_Amount, @New_Stock_Unit_Price)";
-
-
+            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+            connection.Open();
+            string sql = $"INSERT INTO diesel_stock (Ref_No, Date, Total_Sale, Total_Purchase, Available_Stock, Available_Stock_Amount, Available_Stock_Unit_Price) VALUES " +
+                                                   "(@Ref_No, @Date, @Total_Sale, @Total_Purchase, @Available_Stock, @Available_Stock_Amount, @Available_Stock_Unit_Price)";
 
 
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
 
-                cmd.Parameters.AddWithValue("@Ref_No", GetLastRefDiesel() + 1);
-                cmd.Parameters.AddWithValue("@Date", DatePicker.Value);
-                cmd.Parameters.AddWithValue("@Total_Sale", TotalSaleTextBoxD.Text);
-                cmd.Parameters.AddWithValue("@Total_Purchase", TotalPurchaseBoxD.Text);
-
-
-                cmd.Parameters.AddWithValue("@Available_Stock", AvailableStockBoxD.Text);
-                cmd.Parameters.AddWithValue("@Available_Stock_Amount", AvailableAmountBoxD.Text);
-                cmd.Parameters.AddWithValue("@Available_Stock_Unit_Price", AvailableRateBoxD.Text);
-
-                cmd.Parameters.AddWithValue("@Last_Stock", LastStockBoxD.Text);
-                cmd.Parameters.AddWithValue("@Last_Stock_Amount", LastAmountBoxD.Text);
-                cmd.Parameters.AddWithValue("@Last_Stock_Unit_Price", LastRateBoxD.Text);
-
-                cmd.Parameters.AddWithValue("@New_Stock", NewStockBoxD.Text);
-                cmd.Parameters.AddWithValue("@New_Stock_Amount", NewAmountBoxD.Text);
-                cmd.Parameters.AddWithValue("@New_Stock_Unit_Price", NewRateBoxD.Text);
+            cmd.Parameters.AddWithValue("@Ref_No", GetLastRefDiesel() + 1);
+            cmd.Parameters.AddWithValue("@Date", DateTime.Now.ToString());
+            cmd.Parameters.AddWithValue("@Total_Sale", TotalSaleTextBoxD.Text);
+            cmd.Parameters.AddWithValue("@Total_Purchase", TotalPurchaseBoxD.Text);
 
 
+            cmd.Parameters.AddWithValue("@Available_Stock", AvailableStockBoxD.Text);
+            cmd.Parameters.AddWithValue("@Available_Stock_Amount", AvailableAmountBoxD.Text);
+            cmd.Parameters.AddWithValue("@Available_Stock_Unit_Price", AvailableRateBoxD.Text);
+            cmd.ExecuteNonQuery();
 
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Records Inserted Successfully");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            MessageBox.Show("Diesel Stock Inserted Successfully", "Diesel Stock Querry", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            /* }
+             catch (Exception ex)
+             {
+                 MessageBox.Show("Error: " + ex.Message, "Diesel Stock Querry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }*/
         }
         #endregion
         //Diesel-End--------------------------------------
@@ -462,16 +404,11 @@ namespace Filling_Station_Management_System
         #region Petrol
 
 
-        private void GetNewStockButtonP_Click(object sender, EventArgs e)
-        {
-            NewStockCalPetrol();
-            tempP = true;
-        }
 
-        private void QueryPetrol()
+        private void QuerryPetrol()
         {
             int ref_no = GetLastRefPetrol() + 1;
-            MessageBox.Show("Last " + GetLastRefPetrol().ToString() + " Current " + ref_no.ToString());
+
             try
             {
 
@@ -486,7 +423,7 @@ namespace Filling_Station_Management_System
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
 
                 cmd.Parameters.AddWithValue("@Ref_No", ref_no);
-                cmd.Parameters.AddWithValue("@Date", DatePicker.Value);
+                cmd.Parameters.AddWithValue("@Date", DateTime.Now.ToString());
                 cmd.Parameters.AddWithValue("@Total_Sale", TotalSaleTextBoxP.Text);
                 cmd.Parameters.AddWithValue("@Total_Purchase", TotalPurchaseBoxP.Text);
 
@@ -500,33 +437,19 @@ namespace Filling_Station_Management_System
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Records Inserted Successfully");
+                MessageBox.Show("Petrol Stock Inserted Successfully", "Petrol Stock Querry", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Petrol Stock Querry", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void TurnDownButtonP_Click(object sender, EventArgs e)
-        {
-            CalculationsPetrol();
-
-            LastStockBoxP.Text = RoundToString(availableStockPtrl);
-            LastAmountBoxP.Text = RoundToString(AvailableStockAmountPtrl);
-            LastRateBoxP.Text = RoundToString(AvailableUnitPricePtrl);
-
-            AvailableStockBoxPetrol.Text = "0";
-            AvailableAmountBoxPetrol.Text = "0";
-            AvailableRateBoxPetrol.Text = "0";
-
-            CalculationsPetrol();
-        }
 
         private void InsertDataPetrol_Click(object sender, EventArgs e)
         {
             if (AvailableStockBoxPetrol.Text != "0" || AvailableStockBoxPetrol.Text != string.Empty)
-            { QueryPetrol(); }
+            { QuerryPetrol(); }
             else { MessageBox.Show("Fill Out Available Stock to Insert Data", "Petrol Stock", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
@@ -544,63 +467,7 @@ namespace Filling_Station_Management_System
             NewRateBoxP.Text = RoundToString(newUnitPriceP);
         }
 
-        private void AddNewStockButtonP_Click(object sender, EventArgs e)
-        {
-            /*if (tempP)
-            {
-
-                if (Validation(AvailableStockBoxPetrol.Text))
-                {
-                    CalculationsPetrol();
-                    *//*LastStockBoxD.Text = RoundToString(availableStockD);
-                    LastAmountBoxD.Text = RoundToString(AvailableStockAmountD);
-                    LastRateBoxD.Text = RoundToString(AvailableUnitPriceD);
-                    Calculations();*//*
-
-
-
-                    if (lastStockP > 0 || availableStockPtrl == 0)
-                    {
-
-                        availableStockPtrl = lastStockP + newStockP - (GetTotalSalePetrol());
-
-                        if (lastStockP == 0)
-                        {
-                            AvailableUnitPricePtrl = newUnitPriceP;
-                        }
-                        else { AvailableUnitPricePtrl = (lastStockAmountP + newStockAmountP) / (availableStockPtrl); }
-
-                        AvailableStockAmountPtrl = availableStockPtrl * AvailableUnitPricePtrl;
-
-
-
-                        AvailableStockBoxPetrol.Text = RoundToString(availableStockPtrl);
-                        AvailableAmountBoxPetrol.Text = RoundToString(AvailableStockAmountPtrl);
-                        AvailableRateBoxPetrol.Text = RoundToString(AvailableUnitPricePtrl);
-
-                        LastStockBoxP.Text = "0";
-                        LastAmountBoxP.Text = "0";
-                        LastRateBoxP.Text = "0";
-
-                        NewAmountBoxP.Text = "0";
-                        NewStockBoxP.Text = "0";
-                        NewRateBoxP.Text = "0";
-                        tempP = false;
-
-                    }
-                    else { MessageBox.Show("Please fill the Last Stock Row to procced"); }
-
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Add New Stock to Procced", "Stock Renewal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }*/
-        }
-
-        void GetStockPetrol()
+        void GetLastStockPetrol()
         {
             try
             {
@@ -612,15 +479,15 @@ namespace Filling_Station_Management_System
 
                 if (reader.Read())
                 {
-                    availableStockPtrl = Convert.ToDouble(reader["Available_Stock"].ToString());
-                    AvailableStockAmountPtrl = Convert.ToDouble(reader["Available_Stock_Amount"].ToString());
-                    AvailableUnitPricePtrl = Convert.ToDouble(reader["Available_Stock_Unit_Price"].ToString());
-                    var totalpurchaseP = Convert.ToDouble(reader["Total_Purchase"].ToString());
+                    lastStockP = Convert.ToDouble(reader["Available_Stock"].ToString());
+                    lastStockAmountP = Convert.ToDouble(reader["Available_Stock_Amount"].ToString());
+                    lastUnitPriceP = Convert.ToDouble(reader["Available_Stock_Unit_Price"].ToString());
 
-                    AvailableStockBoxPetrol.Text = RoundToString(availableStockPtrl);
-                    AvailableRateBoxPetrol.Text = RoundToString(AvailableUnitPricePtrl);
-                    AvailableAmountBoxPetrol.Text = RoundToString(AvailableStockAmountPtrl);
-                    TotalPurchaseBoxP.Text = RoundToString(totalpurchaseP);
+
+                    LastStockBoxP.Text = RoundToString(lastStockP);
+                    LastRateBoxP.Text = RoundToString(lastUnitPriceP);
+                    LastAmountBoxP.Text = RoundToString(lastStockAmountP);
+
                 }
 
                 reader.Close();
@@ -808,7 +675,7 @@ namespace Filling_Station_Management_System
             try
             {
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.UserConString());
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
 
                 string Idsql = $"SELECT Ref_No FROM diesel_stock ORDER BY Ref_No DESC LIMIT 1";
@@ -825,38 +692,13 @@ namespace Filling_Station_Management_System
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Ref_No Diesel");
             }
 
             return lastRef;
         }
 
-        private bool Validation(string value)
-        {
-            bool isValid = false;
 
-            if (value != string.Empty)
-            {
-
-                if (Regex.IsMatch(value, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    isValid = true;
-                }
-                else
-                {
-                    isValid = false;
-                    MessageBox.Show("Invalid Entry: Enter Data in Numbers Only", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                isValid = false;
-                MessageBox.Show("Invalid Entry: Empty Input", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-            return isValid;
-        }
         void SetDieselStock()
         {
             decimal lastStockQuatity = 0;
@@ -897,6 +739,8 @@ namespace Filling_Station_Management_System
                             lastStockAmount = reader.GetDecimal(1);
                             newPurchaseQunatity = reader.GetDecimal(2);
                             newPurchaseAmount = reader.GetDecimal(3);
+
+
                         }
                     }
                 }
@@ -934,6 +778,7 @@ namespace Filling_Station_Management_System
 
 
             //decimal unitPrice = SumSafiMiqdar == 0 ? 0 : SumAmount / SumSafiMiqdar;
+
             decimal availableStock = SumSafiMiqdar - SumSale;
             decimal unitPrice = SumSafiMiqdar == 0 ? 0 : (lastStockAmount + newPurchaseAmount) / (lastStockQuatity + newPurchaseQunatity);
             decimal availableAmount = unitPrice * availableStock;
@@ -944,15 +789,42 @@ namespace Filling_Station_Management_System
             AvailableAmountBoxD.Text = Math.Round(availableAmount, 3).ToString();
 
         }
+
+        public void RemoteQuerryDiesel()
+        {
+            TotalPurchaseBoxD.Text = GetTotalPurchaseDiesel().ToString();
+            TotalSaleTextBoxD.Text = GetTotalSaleDiesel().ToString();
+            SetDieselStock();
+            QuerryDiesel();
+        }
+
+
+
+        public void RemoteQureyPetrol()
+        {
+            TotalSaleTextBoxP.Text = GetTotalSalePetrol().ToString();
+            TotalPurchaseBoxP.Text = GetTotalPurchasePetrol().ToString();
+            SetStockPetrol();
+            QuerryPetrol();
+        }
+
+
         void SetStockPetrol()
         {
             decimal lastStockQuatity = 0;
             decimal lastStockAmount = 0;
+            decimal lastStockPurchase = 0;
+            decimal lastStockUnitPrice = 0;
             decimal newPurchaseQunatity = 0;
             decimal newPurchaseAmount = 0;
             decimal SumSafiMiqdar = 0;
             decimal SumAmount = 0;
             decimal SumSale = 0;
+
+
+            decimal availableStock = 0;
+            decimal unitPrice = 0;
+            decimal availableAmount = 0;
 
 
             using (MySqlConnection conn = new MySqlConnection(AppSettings.ConString()))
@@ -961,6 +833,8 @@ namespace Filling_Station_Management_System
                 string sqlQuerryLast = @"SELECT
                                           ps.Available_Stock,
                                           ps.Available_Stock_Amount,
+                                          ps.Total_Purchase,
+                                          ps.Available_Stock_Unit_Price,
                                           pdp.Saafi_Miqdar,
                                           pdp.Amount
                                         FROM
@@ -982,8 +856,10 @@ namespace Filling_Station_Management_System
                         {
                             lastStockQuatity = reader.GetDecimal(0);
                             lastStockAmount = reader.GetDecimal(1);
-                            newPurchaseQunatity = reader.GetDecimal(2);
-                            newPurchaseAmount = reader.GetDecimal(3);
+                            lastStockPurchase = reader.GetDecimal(2);
+                            lastStockUnitPrice = reader.GetDecimal(3);
+                            newPurchaseQunatity = reader.GetDecimal(4);
+                            newPurchaseAmount = reader.GetDecimal(5);
                         }
                     }
                 }
@@ -1023,16 +899,23 @@ namespace Filling_Station_Management_System
 
 
             //decimal unitPrice = SumSafiMiqdar == 0 ? 0 : SumAmount / SumSafiMiqdar;
-            decimal availableStock = SumSafiMiqdar - SumSale;
-            decimal unitPrice = SumSafiMiqdar == 0 ? 0 : (lastStockAmount + newPurchaseAmount) / (lastStockQuatity + newPurchaseQunatity);
-            decimal availableAmount = unitPrice * availableStock;
 
+            if (lastStockPurchase != SumSafiMiqdar)
+            {
+                availableStock = SumSafiMiqdar - SumSale;
+                unitPrice = SumSafiMiqdar == 0 ? 0 : (lastStockAmount + newPurchaseAmount) / (lastStockQuatity + newPurchaseQunatity);
+                availableAmount = unitPrice * availableStock;
+            }
+            else
+            {
+                availableStock = SumSafiMiqdar - SumSale;
+                unitPrice = lastStockUnitPrice;
+                availableAmount = unitPrice * availableStock;
+            }
 
             AvailableStockBoxPetrol.Text = Math.Round(availableStock, 3).ToString();
             AvailableRateBoxPetrol.Text = Math.Round(unitPrice, 3).ToString();
             AvailableAmountBoxPetrol.Text = Math.Round(availableAmount, 3).ToString();
-
-
         }
 
         string RoundToString(double value)

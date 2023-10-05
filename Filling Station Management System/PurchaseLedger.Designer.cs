@@ -1977,6 +1977,7 @@
             this.NetPriceBox.TextPlaceholder = "";
             this.NetPriceBox.UseSystemPasswordChar = false;
             this.NetPriceBox.WordWrap = false;
+            this.NetPriceBox.TextChanged += new System.EventHandler(this.NetPriceBox_TextChanged);
             // 
             // bunifuLabel26
             // 

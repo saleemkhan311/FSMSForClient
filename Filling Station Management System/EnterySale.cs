@@ -165,13 +165,31 @@ namespace Filling_Station_Management_System
             if (isFilled() && isFilled2() && isFilledMandatory())
             {
                 Query();
-                ClearBox();
+
+
                 AutoIncrement();
             }
             else
             {
                 MessageBox.Show("Error: Please Fill All the Fields To Procced");
             }
+
+            if (FuelTypeBox.SelectedIndex == 0)
+            {
+                StockForm stock = new StockForm();
+
+                stock.RemoteQureyPetrol();
+                stock.Dispose();
+            }
+            else if (FuelTypeBox.SelectedIndex == 1)
+            {
+                StockForm stock = new StockForm();
+
+                stock.RemoteQuerryDiesel();
+                stock.Dispose();
+            }
+            ClearBox();
+
         }
 
         // Total Enrty ----------------------------------------------------------------------------------------

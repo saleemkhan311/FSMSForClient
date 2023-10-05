@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using ComponentFactory.Krypton.Toolkit;
@@ -35,7 +29,6 @@ namespace Filling_Station_Management_System
                 connection.Open();
 
                 string sqlCom = $"SELECT Round(SUM(netQuantity),2) FROM unit1_sales_data;";
-
 
                 MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
                 object result = cmd.ExecuteScalar();
@@ -366,11 +359,10 @@ namespace Filling_Station_Management_System
 
                     double netQuantity = Convert.ToDouble(row["netQuantity"]);
                     series1.Points.AddXY($"{i++}", netQuantity);
-                    series1.Label = netQuantity.ToString(); // Assign the netQuantity as the label
+                    series1.Label = AppSettings.RoundToString(netQuantity, 0); // Assign the netQuantity as the label
 
 
                 }
-
 
                 int j = 1;
                 // Create series for unit2_sales_data
@@ -408,7 +400,7 @@ namespace Filling_Station_Management_System
 
                     double netQuantity = Convert.ToDouble(row["netQuantity"]);
                     series4.Points.AddXY($"{l + 1}", netQuantity);
-                    series4.Label = netQuantity.ToString();
+                    series4.Label = AppSettings.RoundToString(netQuantity, 0);
                 }
 
                 // Add the series to the chart

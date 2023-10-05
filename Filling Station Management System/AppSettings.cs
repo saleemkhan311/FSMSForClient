@@ -45,17 +45,30 @@ namespace Filling_Station_Management_System
         {
             string text = textBox.Text;
 
-            // Use a regular expression to check if the text contains alphabets
+
             if (Regex.IsMatch(text, "[a-zA-Z]"))
             {
-                // If it contains alphabets, clear the TextBox and show a MessageBox
+
                 textBox.Clear();
                 MessageBox.Show("Invalid Entry: Contains alphabets", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            // Return the original text (even if it's cleared)
+
             return text;
         }
+
+        public static Func<string, double> convertToDouble = (input) =>
+        {
+            double result;
+            if (string.IsNullOrWhiteSpace(input) || !double.TryParse(input, out result))
+            {
+                return 0.0;
+            }
+            else
+            {
+                return result;
+            }
+        };
 
         public static string RoundToString(double value, int decimals)
         {
