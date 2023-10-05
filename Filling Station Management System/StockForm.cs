@@ -246,6 +246,7 @@ namespace Filling_Station_Management_System
             SetDieselStock();
             GetLastStockDiesel();
             NewStockCalDiesel();
+            DatePicker.Value = DateTime.Now;
         }
 
         private void TotalSaleTextBox_TextChanged(object sender, EventArgs e)
@@ -365,34 +366,34 @@ namespace Filling_Station_Management_System
         private void QuerryDiesel()
         {
 
-            /* try
-             {*/
+            try
+            {
 
-            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-            connection.Open();
-            string sql = $"INSERT INTO diesel_stock (Ref_No, Date, Total_Sale, Total_Purchase, Available_Stock, Available_Stock_Amount, Available_Stock_Unit_Price) VALUES " +
-                                                   "(@Ref_No, @Date, @Total_Sale, @Total_Purchase, @Available_Stock, @Available_Stock_Amount, @Available_Stock_Unit_Price)";
-
-
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-
-            cmd.Parameters.AddWithValue("@Ref_No", GetLastRefDiesel() + 1);
-            cmd.Parameters.AddWithValue("@Date", DateTime.Now.ToString());
-            cmd.Parameters.AddWithValue("@Total_Sale", TotalSaleTextBoxD.Text);
-            cmd.Parameters.AddWithValue("@Total_Purchase", TotalPurchaseBoxD.Text);
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+                string sql = $"INSERT INTO diesel_stock (Ref_No, Date, Total_Sale, Total_Purchase, Available_Stock, Available_Stock_Amount, Available_Stock_Unit_Price) VALUES " +
+                                                       "(@Ref_No, @Date, @Total_Sale, @Total_Purchase, @Available_Stock, @Available_Stock_Amount, @Available_Stock_Unit_Price)";
 
 
-            cmd.Parameters.AddWithValue("@Available_Stock", AvailableStockBoxD.Text);
-            cmd.Parameters.AddWithValue("@Available_Stock_Amount", AvailableAmountBoxD.Text);
-            cmd.Parameters.AddWithValue("@Available_Stock_Unit_Price", AvailableRateBoxD.Text);
-            cmd.ExecuteNonQuery();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
 
-            MessageBox.Show("Diesel Stock Inserted Successfully", "Diesel Stock Querry", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            /* }
-             catch (Exception ex)
-             {
-                 MessageBox.Show("Error: " + ex.Message, "Diesel Stock Querry", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }*/
+                cmd.Parameters.AddWithValue("@Ref_No", GetLastRefDiesel() + 1);
+                cmd.Parameters.AddWithValue("@Date", DatePicker.Value);
+                cmd.Parameters.AddWithValue("@Total_Sale", TotalSaleTextBoxD.Text);
+                cmd.Parameters.AddWithValue("@Total_Purchase", TotalPurchaseBoxD.Text);
+
+
+                cmd.Parameters.AddWithValue("@Available_Stock", AvailableStockBoxD.Text);
+                cmd.Parameters.AddWithValue("@Available_Stock_Amount", AvailableAmountBoxD.Text);
+                cmd.Parameters.AddWithValue("@Available_Stock_Unit_Price", AvailableRateBoxD.Text);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Diesel Stock Inserted Successfully", "Diesel Stock Querry", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Diesel Stock Querry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         #endregion
         //Diesel-End--------------------------------------
@@ -411,7 +412,7 @@ namespace Filling_Station_Management_System
 
             try
             {
-
+                DatePicker.Value = DateTime.Now;
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
                 string sql = $"INSERT INTO petrol_stock (Ref_No, Date, Total_Sale, Total_Purchase, Available_Stock, Available_Stock_Amount, Available_Stock_Unit_Price) VALUES " +
@@ -423,7 +424,7 @@ namespace Filling_Station_Management_System
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
 
                 cmd.Parameters.AddWithValue("@Ref_No", ref_no);
-                cmd.Parameters.AddWithValue("@Date", DateTime.Now.ToString());
+                cmd.Parameters.AddWithValue("@Date", DatePicker.Value);
                 cmd.Parameters.AddWithValue("@Total_Sale", TotalSaleTextBoxP.Text);
                 cmd.Parameters.AddWithValue("@Total_Purchase", TotalPurchaseBoxP.Text);
 

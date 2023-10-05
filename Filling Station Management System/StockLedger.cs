@@ -21,38 +21,53 @@ namespace Filling_Station_Management_System
 
         void PetrolStockLoad()
         {
-            string sqlPetrolStock;
+            try
+            {
 
-            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-            connection.Open();
+                string sqlPetrolStock;
 
-            sqlPetrolStock = $"SELECT * FROM `petrol_stock`";
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
 
-            MySqlCommand cmd = new MySqlCommand(sqlPetrolStock, connection);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
+                sqlPetrolStock = $"SELECT * FROM `petrol_stock`";
 
-            PetrolStockDataGrid.DataSource = dataTable;
+                MySqlCommand cmd = new MySqlCommand(sqlPetrolStock, connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                PetrolStockDataGrid.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Diesel Stock Load", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
 
         void DieselStockLoad()
         {
-            string sqlDieselStock;
+            try
+            {
+                string sqlDieselStock;
 
-            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-            connection.Open();
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
 
-            sqlDieselStock = $"SELECT * FROM `diesel_stock`";
+                sqlDieselStock = $"SELECT * FROM `diesel_stock`";
 
-            MySqlCommand cmd = new MySqlCommand(sqlDieselStock, connection);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
+                MySqlCommand cmd = new MySqlCommand(sqlDieselStock, connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
 
-            DieselStockDataGrid.DataSource = dataTable;
+                DieselStockDataGrid.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Diesel Stock Load", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void StockLedger_Load(object sender, EventArgs e)

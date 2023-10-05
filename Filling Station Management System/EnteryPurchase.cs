@@ -373,26 +373,13 @@ namespace Filling_Station_Management_System
 
         private void InsertData_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                InsertData.PerformClick();
-                this.SelectNextControl(this.ActiveControl, true, true, true, true);
-                e.Handled = true; // Prevent normal Enter behavior.
-            }
+
         }
 
         private void SharahListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Calculate();
-            /*if (Validation(WeightBox.Text))
-            {
-                kantaWazan = Math.Round(double.Parse(WeightBox.Text), 2);
-                sharah = Math.Round(double.Parse(SharahListBox.Items[SharahListBox.SelectedIndex].ToString()), 4);
-                miqdar = kantaWazan / sharah;
 
-                QuantityBox.Text = AppSettings.RoundToString(miqdar, 2);
-
-            }*/
         }
 
 
@@ -400,14 +387,7 @@ namespace Filling_Station_Management_System
         {
             Calculate();
 
-            /*   if (Validation(WeightBox.Text))
-               {
-                   kantaWazan = Math.Round(Convert.ToDouble(WeightBox.Text), 2);
-                   sharah = Math.Round(Double.Parse(SharahListBox.Items[SharahListBox.SelectedIndex].ToString()), 2);
-                   miqdar = kantaWazan / sharah;
 
-                   QuantityBox.Text = AppSettings.RoundToString(miqdar, 2);
-               }*/
         }
 
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)

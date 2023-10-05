@@ -373,12 +373,7 @@ namespace Filling_Station_Management_System
 
         private void InsertData_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                InsertData.PerformClick();
-                this.SelectNextControl(this.ActiveControl, true, true, true, true);
-                e.Handled = true; // Prevent normal Enter behavior.
-            }
+
         }
 
         private void OpenReadingTextBox_TextChanged(object sender, EventArgs e)
