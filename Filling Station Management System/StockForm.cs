@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using MySql.Data.MySqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Filling_Station_Management_System
 {
@@ -23,7 +13,6 @@ namespace Filling_Station_Management_System
         }
 
         //Diesel----------------------------------
-        private double availableStockD, AvailableStockAmountD, AvailableUnitPriceD;
         private double newStockD, newStockAmountD, newUnitPriceD;
         private double lastStockD, lastStockAmountD, lastUnitPriceD;
         //-----------------------------------------------
@@ -31,12 +20,8 @@ namespace Filling_Station_Management_System
 
 
         //Petrol------------------------------------
-        private double availableStockPtrl, AvailableStockAmountPtrl, AvailableUnitPricePtrl;
         private double newStockP, newStockAmountP, newUnitPriceP;
         private double lastStockP, lastStockAmountP, lastUnitPriceP;
-        private bool tempD = false;
-        private bool tempP = false;
-
         //-------------------------------------------------
 
         //*****************************************************************************
@@ -118,86 +103,6 @@ namespace Filling_Station_Management_System
         {
 
         }
-
-        private void AddNewStockButtonD_Click(object sender, EventArgs e)
-        {
-
-            /* if (tempD)
-             {
-
-                 if (Validation(AvailableStockBoxD.Text))
-                 {
-                     Calculations();
-                     *//*LastStockBoxD.Text = RoundToString(availableStockD);
-                     LastAmountBoxD.Text = RoundToString(AvailableStockAmountD);
-                     LastRateBoxD.Text = RoundToString(AvailableUnitPriceD);
-                     Calculations();*//*
-
-
-                     if (lastStockD > 0 || availableStockD == 0)
-                     {
-
-                         availableStockD = lastStockD + newStockD - (GetTotalSaleDiesel());
-
-                         if (lastStockD == 0)
-                         {
-                             AvailableUnitPriceD = newUnitPriceD;
-                         }
-                         else { AvailableUnitPriceD = (lastStockAmountD + newStockAmountD) / (availableStockD); }
-
-                         AvailableStockAmountD = availableStockD * AvailableUnitPriceD;
-                         //AvailableUnitPriceD = (lastStockAmountD + newStockAmountD) / (availableStockD);
-
-
-                         AvailableStockBoxD.Text = RoundToString(availableStockD);
-                         AvailableAmountBoxD.Text = RoundToString(AvailableStockAmountD);
-                         AvailableRateBoxD.Text = RoundToString(AvailableUnitPriceD);
-
-                         LastStockBoxD.Text = "0";
-                         LastAmountBoxD.Text = "0";
-                         LastRateBoxD.Text = "0";
-
-                         NewAmountBoxD.Text = "0";
-                         NewStockBoxD.Text = "0";
-                         NewRateBoxD.Text = "0"; tempD = false;
-
-                     }
-                     else { MessageBox.Show("Please fill the Last Stock Row to procced"); }
-
-                 }
-
-             }
-             else
-             {
-                 MessageBox.Show("Add New Stock to Procced", "Stock Renewal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                 *//* if (MessageBox.Show("Add New Stock to Procced", "Stock Renewal", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                  {
-                      temp = true;
-                  }*//*
-
-             }*/
-
-        }
-
-
-
-
-        private void Calculations()
-        {
-            AvailableUnitPriceD = ConvertDouble(AvailableRateBoxD.Text);
-            availableStockD = ConvertDouble(AvailableStockBoxD.Text);
-            AvailableStockAmountD = availableStockD * AvailableUnitPriceD;
-
-            lastStockAmountD = ConvertDouble(LastAmountBoxD.Text);
-            lastStockD = ConvertDouble(LastStockBoxD.Text);
-            lastUnitPriceD = ConvertDouble(LastRateBoxD.Text);
-
-            newStockD = ConvertDouble(NewStockBoxD.Text);
-            newStockAmountD = ConvertDouble(NewAmountBoxD.Text);
-            newUnitPriceD = ConvertDouble(NewRateBoxD.Text);
-        }
-
 
 
 
@@ -286,27 +191,27 @@ namespace Filling_Station_Management_System
         private double GetLastRateDiesel()
         {
             double lastRate = 0;
-            /*try
-            {*/
-
-            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-            connection.Open();
-
-            string sqlCom = $"SELECT Round(Rate_per_Liter,2) FROM purchase_data_diesel ORDER BY Ref_No DESC LIMIT 1;";
-
-            MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-            object result = cmd.ExecuteScalar();
-
-            if (result != null && result != DBNull.Value)
+            try
             {
-                lastRate = float.Parse(result.ToString());
-            }
-            /* }
-             catch (Exception ex)
-             {
 
-                 MessageBox.Show("Error: " + ex.Message);
-             }*/
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+
+                string sqlCom = $"SELECT Round(Rate_per_Liter,2) FROM purchase_data_diesel ORDER BY Ref_No DESC LIMIT 1;";
+
+                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    lastRate = float.Parse(result.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
             return lastRate;
         }
 
@@ -335,7 +240,7 @@ namespace Filling_Station_Management_System
             {
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
-                string query = "SELECT * FROM diesel_stock ORDER BY Ref_No DESC LIMIT 1";
+                string query = "SELECT * FROM diesel_stock ORDER BY Ref_No DESC LIMIT 1 OFFSET 1;";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -349,8 +254,8 @@ namespace Filling_Station_Management_System
 
 
                     LastStockBoxD.Text = RoundToString(lastStockD);
-                    LastRateBoxD.Text = RoundToString(lastStockAmountD);
-                    LastAmountBoxD.Text = RoundToString(lastUnitPriceD);
+                    LastRateBoxD.Text = RoundToString(lastUnitPriceD);
+                    LastAmountBoxD.Text = RoundToString(lastStockAmountD);
 
                 }
 
@@ -474,7 +379,7 @@ namespace Filling_Station_Management_System
             {
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
-                string query = "SELECT * FROM petrol_stock ORDER BY Ref_No DESC LIMIT 1"; // Assuming 'id' is the primary key.
+                string query = "SELECT * FROM petrol_stock ORDER BY Ref_No DESC LIMIT 1 OFFSET 1;"; // Assuming 'id' is the primary key.
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -500,46 +405,30 @@ namespace Filling_Station_Management_System
 
         }
 
-        private void CalculationsPetrol()
-        {
-            AvailableUnitPricePtrl = ConvertDouble(AvailableRateBoxPetrol.Text);
-            availableStockPtrl = ConvertDouble(AvailableStockBoxPetrol.Text);
-            AvailableStockAmountPtrl = availableStockPtrl * AvailableUnitPricePtrl;
-
-            lastStockAmountP = ConvertDouble(LastAmountBoxP.Text);
-            lastStockP = ConvertDouble(LastStockBoxP.Text);
-            lastUnitPriceP = ConvertDouble(LastRateBoxP.Text);
-
-            newStockP = ConvertDouble(NewStockBoxP.Text);
-            newStockAmountP = ConvertDouble(NewAmountBoxP.Text);
-            newUnitPriceP = ConvertDouble(NewRateBoxP.Text);
-        }
-
-
         private double GetLastSaafiMiqdarPetrol()
         {
             double lastSaafiMiqdar = 0;
-            /*try
-            {*/
-
-            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-            connection.Open();
-
-            string sqlCom = $"SELECT Round(Saafi_Miqdar,2) FROM purchase_data_petrol ORDER BY Ref_No DESC LIMIT 1";
-
-            MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-            object result = cmd.ExecuteScalar();
-
-            if (result != null && result != DBNull.Value)
+            try
             {
-                lastSaafiMiqdar = float.Parse(result.ToString());
-            }
-            /* }
-             catch (Exception ex)
-             {
 
-                 MessageBox.Show("Error: " + ex.Message,"Saafi Miqdar");
-             }*/
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+
+                string sqlCom = $"SELECT Round(Saafi_Miqdar,2) FROM purchase_data_petrol ORDER BY Ref_No DESC LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    lastSaafiMiqdar = float.Parse(result.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message, "Saafi Miqdar");
+            }
             return lastSaafiMiqdar;
         }
 
@@ -547,27 +436,27 @@ namespace Filling_Station_Management_System
         private double GetLastRatePetrol()
         {
             double lastRate = 0;
-            /*try
-            {*/
-
-            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-            connection.Open();
-
-            string sqlCom = $"SELECT Round(Rate_per_Liter,2) FROM purchase_data_petrol ORDER BY Ref_No DESC LIMIT 1;";
-
-            MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-            object result = cmd.ExecuteScalar();
-
-            if (result != null && result != DBNull.Value)
+            try
             {
-                lastRate = float.Parse(result.ToString());
-            }
-            /* }
-             catch (Exception ex)
-             {
 
-                 MessageBox.Show("Error: " + ex.Message);
-             }*/
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+
+                string sqlCom = $"SELECT Round(Rate_per_Liter,2) FROM purchase_data_petrol ORDER BY Ref_No DESC LIMIT 1;";
+
+                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    lastRate = float.Parse(result.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
             return lastRate;
         }
 
@@ -778,7 +667,7 @@ namespace Filling_Station_Management_System
             }
 
 
-            //decimal unitPrice = SumSafiMiqdar == 0 ? 0 : SumAmount / SumSafiMiqdar;
+
 
             decimal availableStock = SumSafiMiqdar - SumSale;
             decimal unitPrice = SumSafiMiqdar == 0 ? 0 : (lastStockAmount + newPurchaseAmount) / (lastStockQuatity + newPurchaseQunatity);
@@ -888,9 +777,6 @@ namespace Filling_Station_Management_System
                             SumAmount = reader.GetDecimal(1);
                             SumSale = Convert.ToDecimal(GetTotalSalePetrol());
 
-                            /* decimal availableStock = reader.GetDecimal(3);
-                             decimal unitPrice = reader.GetDecimal(4);
-                             decimal availableAmount = reader.GetDecimal(5);*/
 
 
                         }
@@ -899,7 +785,7 @@ namespace Filling_Station_Management_System
             }
 
 
-            //decimal unitPrice = SumSafiMiqdar == 0 ? 0 : SumAmount / SumSafiMiqdar;
+
 
             if (lastStockPurchase != SumSafiMiqdar)
             {

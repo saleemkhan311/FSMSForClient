@@ -74,13 +74,13 @@ namespace Filling_Station_Management_System
 
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            AutoSuggestions();
         }
 
         private void UnitBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _openReading = GetLastClosingReading();
-            //newOpenReading = Math.Round(GetLastClosingReading(), 2);
+
             AutoIncrement();
             OpenReadingTextBox.Text = _openReading.ToString();
             if (UnitBox.SelectedIndex == 0)
@@ -148,7 +148,7 @@ namespace Filling_Station_Management_System
             OpenReadingTextBox.Text = _openReading.ToString();
             QuantityTextBox.Text = newQuantity.ToString();
             NetQuantityTextBox.Text = newNetQuantity.ToString();
-            PriceTextBox.Text = newPrice.ToString();
+            AmountTextBox.Text = newPrice.ToString();
 
 
 
@@ -214,7 +214,7 @@ namespace Filling_Station_Management_System
 
         private void HelperTextBox_TextChanged(object sender, EventArgs e)
         {
-            AutoSuggestions();
+
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
@@ -232,7 +232,7 @@ namespace Filling_Station_Management_System
             _closeReading = 0;
             CheckTextBox.Clear();
             _test = 0;
-            PriceTextBox.Clear();
+            AmountTextBox.Clear();
             _price = 0;
             RateTextBox.Clear();
             _rate = 0;
@@ -376,6 +376,19 @@ namespace Filling_Station_Management_System
 
         }
 
+        private void DesKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true; // Suppress the Enter key
+            }
+        }
+
+        private void EnterySale_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void OpenReadingTextBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -421,7 +434,7 @@ namespace Filling_Station_Management_System
                 cmd.Parameters.AddWithValue("@Unit_Price", RateTextBox.Text);
 
 
-                cmd.Parameters.AddWithValue("@Amount", PriceTextBox);
+                cmd.Parameters.AddWithValue("@Amount", AmountTextBox.Text);
                 cmd.Parameters.AddWithValue("@Recovery", RecoveryTextBox.Text);
                 cmd.Parameters.AddWithValue("@Deposited", DepositTextBox.Text);
                 cmd.Parameters.AddWithValue("@Udhar", UdharTextBox.Text);
@@ -440,7 +453,7 @@ namespace Filling_Station_Management_System
 
         private void HelperTextBox_TextChanged_1(object sender, EventArgs e)
         {
-            AutoSuggestions();
+
         }
 
         string sqlCom;
@@ -519,32 +532,39 @@ namespace Filling_Station_Management_System
         List<string> helperNames = new List<string>();
         private void AutoSuggestions()
         {
-            int unit = UnitBox.SelectedIndex + 1;
-
-            using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+            try
             {
-                connection.Open();
+                int unit = UnitBox.SelectedIndex + 1;
 
-
-                string query = $"SELECT `Helper` FROM unit{unit}_sales_data";
-
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    connection.Open();
+
+
+                    string query = $"SELECT `Helper` FROM unit{unit}_sales_data LIMIT 50";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string helperName = reader["Helper"].ToString();
-                            helperNames.Add(helperName);
+                            while (reader.Read())
+                            {
+                                string helperName = reader["Helper"].ToString();
+                                helperNames.Add(helperName);
+                            }
                         }
                     }
                 }
+                AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+                autoCompleteCollection.AddRange(helperNames.ToArray());
+
+                HelperTextBox.AutoCompleteCustomSource = autoCompleteCollection;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error :" + ex.Message, "Helper Fetch", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
 
-            AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
-            autoCompleteCollection.AddRange(helperNames.ToArray());
-
-            HelperTextBox.AutoCompleteCustomSource = autoCompleteCollection;
         }
 
         private static float ConvertFloat(string value)

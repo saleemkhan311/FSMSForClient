@@ -119,41 +119,49 @@ namespace Filling_Station_Management_System
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
-            AutoSuggestions();
+
+
         }
 
         List<string> NameSuggestions = new List<string>();
         private void AutoSuggestions()
         {
-            string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString();
-            index.ToLower();
-
-            using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+            try
             {
-                connection.Open();
+                string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString();
+                index.ToLower();
 
-                // SQL query to retrieve "Helper Name" values
-                string query = $"SELECT `Malik_Name` FROM purchase_data_{index}";
-
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    connection.Open();
+
+                    // SQL query to retrieve "Helper Name" values
+                    string query = $"SELECT `Malik_Name` FROM purchase_data_{index}";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string Names = reader["Malik_Name"].ToString();
-                            NameSuggestions.Add(Names);
+                            while (reader.Read())
+                            {
+                                string Names = reader["Malik_Name"].ToString();
+                                NameSuggestions.Add(Names);
+                            }
                         }
                     }
                 }
+                AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+                autoCompleteCollection.AddRange(NameSuggestions.ToArray());
+
+                NameTextBox.AutoCompleteCustomSource = autoCompleteCollection;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Helper Fetch Purchase", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
-
-            AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
-            autoCompleteCollection.AddRange(NameSuggestions.ToArray());
-
-            NameTextBox.AutoCompleteCustomSource = autoCompleteCollection;
         }
 
         private void LabourBox_Enter(object sender, EventArgs e)
@@ -376,6 +384,19 @@ namespace Filling_Station_Management_System
 
         }
 
+        private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void DesKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true; // Suppress the Enter key
+            }
+        }
+
         private void SharahListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Calculate();
@@ -392,7 +413,7 @@ namespace Filling_Station_Management_System
 
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            AutoSuggestions();
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
             SharahListBox.Items.Clear();
             if (FuelTypeBox.SelectedIndex == 0)
@@ -419,7 +440,7 @@ namespace Filling_Station_Management_System
         {
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
             KeyPreview = true;
-
+            AutoSuggestions();
 
         }
 

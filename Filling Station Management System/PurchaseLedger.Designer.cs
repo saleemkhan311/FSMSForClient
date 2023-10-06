@@ -312,7 +312,7 @@
             this.PetrolDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Noto Nastaliq Urdu", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -383,6 +383,7 @@
             this.DieselDataGrid.AllowUserToAddRows = false;
             this.DieselDataGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Noto Nastaliq Urdu", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.DieselDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DieselDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -810,7 +811,7 @@
             this.bunifuCards13.Name = "bunifuCards13";
             this.bunifuCards13.RightSahddow = false;
             this.bunifuCards13.ShadowDepth = 20;
-            this.bunifuCards13.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards13.Size = new System.Drawing.Size(432, 73);
             this.bunifuCards13.TabIndex = 0;
             // 
             // NameTextBox
@@ -833,7 +834,7 @@
             this.NameTextBox.BorderThickness = 1;
             this.NameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.NameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NameTextBox.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameTextBox.DefaultFont = new System.Drawing.Font("Noto Nastaliq Urdu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameTextBox.DefaultText = "";
             this.NameTextBox.FillColor = System.Drawing.Color.White;
             this.NameTextBox.HideSelection = true;
@@ -880,7 +881,7 @@
             this.NameTextBox.SelectionLength = 0;
             this.NameTextBox.SelectionStart = 0;
             this.NameTextBox.ShortcutsEnabled = true;
-            this.NameTextBox.Size = new System.Drawing.Size(203, 38);
+            this.NameTextBox.Size = new System.Drawing.Size(203, 53);
             this.NameTextBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.NameTextBox.TabIndex = 0;
             this.NameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -891,6 +892,7 @@
             this.NameTextBox.UseSystemPasswordChar = false;
             this.NameTextBox.WordWrap = false;
             this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
+            this.NameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel7
             // 
@@ -922,7 +924,7 @@
             this.bunifuCards2.Controls.Add(this.WeightBox);
             this.bunifuCards2.Controls.Add(this.bunifuLabel11);
             this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(3, 70);
+            this.bunifuCards2.Location = new System.Drawing.Point(3, 82);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = false;
             this.bunifuCards2.ShadowDepth = 20;
@@ -1026,6 +1028,7 @@
             this.WeightBox.UseSystemPasswordChar = false;
             this.WeightBox.WordWrap = false;
             this.WeightBox.TextChanged += new System.EventHandler(this.WeightBox_TextChanged);
+            this.WeightBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel11
             // 
@@ -1057,7 +1060,7 @@
             this.bunifuCards3.Controls.Add(this.QuantityBox);
             this.bunifuCards3.Controls.Add(this.bunifuLabel13);
             this.bunifuCards3.LeftSahddow = false;
-            this.bunifuCards3.Location = new System.Drawing.Point(3, 137);
+            this.bunifuCards3.Location = new System.Drawing.Point(3, 149);
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = false;
             this.bunifuCards3.ShadowDepth = 20;
@@ -1163,6 +1166,7 @@
             this.QuantityBox.UseSystemPasswordChar = false;
             this.QuantityBox.WordWrap = false;
             this.QuantityBox.TextChanged += new System.EventHandler(this.QuantityBox_TextChanged);
+            this.QuantityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel13
             // 
@@ -1194,7 +1198,7 @@
             this.bunifuCards1.Controls.Add(this.KhorakiBox);
             this.bunifuCards1.Controls.Add(this.bunifuLabel10);
             this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(3, 204);
+            this.bunifuCards1.Location = new System.Drawing.Point(3, 216);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = false;
             this.bunifuCards1.ShadowDepth = 20;
@@ -1298,6 +1302,7 @@
             this.KhorakiBox.UseSystemPasswordChar = false;
             this.KhorakiBox.WordWrap = false;
             this.KhorakiBox.TextChanged += new System.EventHandler(this.KhorakiBox_TextChanged);
+            this.KhorakiBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel10
             // 
@@ -1329,7 +1334,7 @@
             this.bunifuCards8.Controls.Add(this.NetQuantityBox);
             this.bunifuCards8.Controls.Add(this.bunifuLabel24);
             this.bunifuCards8.LeftSahddow = false;
-            this.bunifuCards8.Location = new System.Drawing.Point(3, 271);
+            this.bunifuCards8.Location = new System.Drawing.Point(3, 283);
             this.bunifuCards8.Name = "bunifuCards8";
             this.bunifuCards8.RightSahddow = false;
             this.bunifuCards8.ShadowDepth = 20;
@@ -1434,6 +1439,7 @@
             this.NetQuantityBox.TextPlaceholder = "";
             this.NetQuantityBox.UseSystemPasswordChar = false;
             this.NetQuantityBox.WordWrap = false;
+            this.NetQuantityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel24
             // 
@@ -1465,7 +1471,7 @@
             this.bunifuCards5.Controls.Add(this.RateBox);
             this.bunifuCards5.Controls.Add(this.bunifuLabel17);
             this.bunifuCards5.LeftSahddow = false;
-            this.bunifuCards5.Location = new System.Drawing.Point(3, 338);
+            this.bunifuCards5.Location = new System.Drawing.Point(3, 350);
             this.bunifuCards5.Name = "bunifuCards5";
             this.bunifuCards5.RightSahddow = false;
             this.bunifuCards5.ShadowDepth = 20;
@@ -1569,6 +1575,7 @@
             this.RateBox.UseSystemPasswordChar = false;
             this.RateBox.WordWrap = false;
             this.RateBox.TextChanged += new System.EventHandler(this.RateBox_TextChanged);
+            this.RateBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             this.RateBox.Enter += new System.EventHandler(this.RateBox_Enter);
             // 
             // bunifuLabel17
@@ -1601,7 +1608,7 @@
             this.bunifuCards6.Controls.Add(this.AmountBox);
             this.bunifuCards6.Controls.Add(this.bunifuLabel20);
             this.bunifuCards6.LeftSahddow = false;
-            this.bunifuCards6.Location = new System.Drawing.Point(3, 405);
+            this.bunifuCards6.Location = new System.Drawing.Point(3, 417);
             this.bunifuCards6.Name = "bunifuCards6";
             this.bunifuCards6.RightSahddow = false;
             this.bunifuCards6.ShadowDepth = 20;
@@ -1706,6 +1713,7 @@
             this.AmountBox.TextPlaceholder = "";
             this.AmountBox.UseSystemPasswordChar = false;
             this.AmountBox.WordWrap = false;
+            this.AmountBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel20
             // 
@@ -1737,7 +1745,7 @@
             this.bunifuCards4.Controls.Add(this.LabourBox);
             this.bunifuCards4.Controls.Add(this.bunifuLabel15);
             this.bunifuCards4.LeftSahddow = false;
-            this.bunifuCards4.Location = new System.Drawing.Point(3, 472);
+            this.bunifuCards4.Location = new System.Drawing.Point(3, 484);
             this.bunifuCards4.Name = "bunifuCards4";
             this.bunifuCards4.RightSahddow = false;
             this.bunifuCards4.ShadowDepth = 20;
@@ -1841,6 +1849,7 @@
             this.LabourBox.UseSystemPasswordChar = false;
             this.LabourBox.WordWrap = false;
             this.LabourBox.TextChanged += new System.EventHandler(this.LabourBox_TextChanged);
+            this.LabourBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel15
             // 
@@ -1872,7 +1881,7 @@
             this.bunifuCards9.Controls.Add(this.NetPriceBox);
             this.bunifuCards9.Controls.Add(this.bunifuLabel26);
             this.bunifuCards9.LeftSahddow = false;
-            this.bunifuCards9.Location = new System.Drawing.Point(3, 539);
+            this.bunifuCards9.Location = new System.Drawing.Point(3, 551);
             this.bunifuCards9.Name = "bunifuCards9";
             this.bunifuCards9.RightSahddow = false;
             this.bunifuCards9.ShadowDepth = 20;
@@ -1978,6 +1987,7 @@
             this.NetPriceBox.UseSystemPasswordChar = false;
             this.NetPriceBox.WordWrap = false;
             this.NetPriceBox.TextChanged += new System.EventHandler(this.NetPriceBox_TextChanged);
+            this.NetPriceBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel26
             // 
@@ -2009,7 +2019,7 @@
             this.bunifuCards10.Controls.Add(this.SabqaRaqamBox);
             this.bunifuCards10.Controls.Add(this.bunifuLabel28);
             this.bunifuCards10.LeftSahddow = false;
-            this.bunifuCards10.Location = new System.Drawing.Point(3, 606);
+            this.bunifuCards10.Location = new System.Drawing.Point(3, 618);
             this.bunifuCards10.Name = "bunifuCards10";
             this.bunifuCards10.RightSahddow = false;
             this.bunifuCards10.ShadowDepth = 20;
@@ -2113,6 +2123,7 @@
             this.SabqaRaqamBox.UseSystemPasswordChar = false;
             this.SabqaRaqamBox.WordWrap = false;
             this.SabqaRaqamBox.TextChanged += new System.EventHandler(this.SabqaRaqamBox_TextChanged);
+            this.SabqaRaqamBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel28
             // 
@@ -2144,7 +2155,7 @@
             this.bunifuCards17.Controls.Add(this.TotalRaqamBox);
             this.bunifuCards17.Controls.Add(this.bunifuLabel37);
             this.bunifuCards17.LeftSahddow = false;
-            this.bunifuCards17.Location = new System.Drawing.Point(3, 673);
+            this.bunifuCards17.Location = new System.Drawing.Point(3, 685);
             this.bunifuCards17.Name = "bunifuCards17";
             this.bunifuCards17.RightSahddow = false;
             this.bunifuCards17.ShadowDepth = 20;
@@ -2249,6 +2260,7 @@
             this.TotalRaqamBox.TextPlaceholder = "";
             this.TotalRaqamBox.UseSystemPasswordChar = false;
             this.TotalRaqamBox.WordWrap = false;
+            this.TotalRaqamBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel37
             // 
@@ -2282,7 +2294,7 @@
             this.bunifuCards7.Controls.Add(this.RecoveryDescriptionBox1);
             this.bunifuCards7.Controls.Add(this.bunifuLabel22);
             this.bunifuCards7.LeftSahddow = false;
-            this.bunifuCards7.Location = new System.Drawing.Point(3, 740);
+            this.bunifuCards7.Location = new System.Drawing.Point(3, 752);
             this.bunifuCards7.Name = "bunifuCards7";
             this.bunifuCards7.RightSahddow = false;
             this.bunifuCards7.ShadowDepth = 20;
@@ -2386,6 +2398,7 @@
             this.RecoveryAmountBox1.UseSystemPasswordChar = false;
             this.RecoveryAmountBox1.WordWrap = false;
             this.RecoveryAmountBox1.TextChanged += new System.EventHandler(this.RecoveryAmountBox1_TextChanged);
+            this.RecoveryAmountBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel21
             // 
@@ -2484,6 +2497,7 @@
             this.RecoveryDescriptionBox1.TextPlaceholder = "رقم وصولی کی تفصیل.";
             this.RecoveryDescriptionBox1.UseSystemPasswordChar = false;
             this.RecoveryDescriptionBox1.WordWrap = false;
+            this.RecoveryDescriptionBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel22
             // 
@@ -2517,7 +2531,7 @@
             this.bunifuCards11.Controls.Add(this.RecoveryAmountBox2);
             this.bunifuCards11.Controls.Add(this.bunifuLabel6);
             this.bunifuCards11.LeftSahddow = false;
-            this.bunifuCards11.Location = new System.Drawing.Point(3, 897);
+            this.bunifuCards11.Location = new System.Drawing.Point(3, 909);
             this.bunifuCards11.Name = "bunifuCards11";
             this.bunifuCards11.RightSahddow = false;
             this.bunifuCards11.ShadowDepth = 20;
@@ -2641,6 +2655,7 @@
             this.RecoveryDescriptionBox2.TextPlaceholder = "رقم وصولی کی تفصیل.";
             this.RecoveryDescriptionBox2.UseSystemPasswordChar = false;
             this.RecoveryDescriptionBox2.WordWrap = false;
+            this.RecoveryDescriptionBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // RecoveryAmountBox2
             // 
@@ -2719,6 +2734,7 @@
             this.RecoveryAmountBox2.UseSystemPasswordChar = false;
             this.RecoveryAmountBox2.WordWrap = false;
             this.RecoveryAmountBox2.TextChanged += new System.EventHandler(this.RecoveryAmountBox2_TextChanged);
+            this.RecoveryAmountBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel6
             // 
@@ -2752,7 +2768,7 @@
             this.bunifuCards14.Controls.Add(this.bunifuLabel38);
             this.bunifuCards14.Controls.Add(this.bunifuLabel29);
             this.bunifuCards14.LeftSahddow = false;
-            this.bunifuCards14.Location = new System.Drawing.Point(3, 1054);
+            this.bunifuCards14.Location = new System.Drawing.Point(3, 1066);
             this.bunifuCards14.Name = "bunifuCards14";
             this.bunifuCards14.RightSahddow = false;
             this.bunifuCards14.ShadowDepth = 20;
@@ -2836,6 +2852,7 @@
             this.RecoveryAmountBox3.UseSystemPasswordChar = false;
             this.RecoveryAmountBox3.WordWrap = false;
             this.RecoveryAmountBox3.TextChanged += new System.EventHandler(this.RecoveryAmountBox3_TextChanged);
+            this.RecoveryAmountBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel9
             // 
@@ -2934,6 +2951,8 @@
             this.RecoveryDescriptionBox3.TextPlaceholder = "رقم وصولی کی تفصیل.";
             this.RecoveryDescriptionBox3.UseSystemPasswordChar = false;
             this.RecoveryDescriptionBox3.WordWrap = false;
+            this.RecoveryDescriptionBox3.TextChanged += new System.EventHandler(this.RecoveryDescriptionBox3_TextChanged);
+            this.RecoveryDescriptionBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel38
             // 
@@ -2987,7 +3006,7 @@
             this.bunifuCards15.Controls.Add(this.RecoveryAmountBox4);
             this.bunifuCards15.Controls.Add(this.bunifuLabel30);
             this.bunifuCards15.LeftSahddow = false;
-            this.bunifuCards15.Location = new System.Drawing.Point(3, 1211);
+            this.bunifuCards15.Location = new System.Drawing.Point(3, 1223);
             this.bunifuCards15.Name = "bunifuCards15";
             this.bunifuCards15.RightSahddow = false;
             this.bunifuCards15.ShadowDepth = 20;
@@ -3111,6 +3130,7 @@
             this.RecoveryDescriptionBox4.TextPlaceholder = "رقم وصولی کی تفصیل.";
             this.RecoveryDescriptionBox4.UseSystemPasswordChar = false;
             this.RecoveryDescriptionBox4.WordWrap = false;
+            this.RecoveryDescriptionBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // RecoveryAmountBox4
             // 
@@ -3189,6 +3209,7 @@
             this.RecoveryAmountBox4.UseSystemPasswordChar = false;
             this.RecoveryAmountBox4.WordWrap = false;
             this.RecoveryAmountBox4.TextChanged += new System.EventHandler(this.RecoveryAmountBox4_TextChanged);
+            this.RecoveryAmountBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel30
             // 
@@ -3222,7 +3243,7 @@
             this.bunifuCards16.Controls.Add(this.RecoveryAmountBox5);
             this.bunifuCards16.Controls.Add(this.bunifuLabel34);
             this.bunifuCards16.LeftSahddow = false;
-            this.bunifuCards16.Location = new System.Drawing.Point(3, 1368);
+            this.bunifuCards16.Location = new System.Drawing.Point(3, 1380);
             this.bunifuCards16.Name = "bunifuCards16";
             this.bunifuCards16.RightSahddow = false;
             this.bunifuCards16.ShadowDepth = 20;
@@ -3346,6 +3367,7 @@
             this.RecoveryDescriptionBox5.TextPlaceholder = "رقم وصولی کی تفصیل.";
             this.RecoveryDescriptionBox5.UseSystemPasswordChar = false;
             this.RecoveryDescriptionBox5.WordWrap = false;
+            this.RecoveryDescriptionBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // RecoveryAmountBox5
             // 
@@ -3424,6 +3446,7 @@
             this.RecoveryAmountBox5.UseSystemPasswordChar = false;
             this.RecoveryAmountBox5.WordWrap = false;
             this.RecoveryAmountBox5.TextChanged += new System.EventHandler(this.RecoveryAmountBox5_TextChanged);
+            this.RecoveryAmountBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel34
             // 
@@ -3455,7 +3478,7 @@
             this.bunifuCards12.Controls.Add(this.RemainingAmountBox);
             this.bunifuCards12.Controls.Add(this.bunifuLabel32);
             this.bunifuCards12.LeftSahddow = false;
-            this.bunifuCards12.Location = new System.Drawing.Point(3, 1525);
+            this.bunifuCards12.Location = new System.Drawing.Point(3, 1537);
             this.bunifuCards12.Name = "bunifuCards12";
             this.bunifuCards12.RightSahddow = false;
             this.bunifuCards12.ShadowDepth = 20;
@@ -3559,6 +3582,7 @@
             this.RemainingAmountBox.TextPlaceholder = "";
             this.RemainingAmountBox.UseSystemPasswordChar = false;
             this.RemainingAmountBox.WordWrap = false;
+            this.RemainingAmountBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
             // bunifuLabel32
             // 

@@ -237,5 +237,14 @@ namespace Filling_Station_Management_System
                 }
             }
         }
+
+        private void ReceiptPanel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.PrintScreen)
+            {
+                // Call your function here
+                printReceipt();
+            }
+        }
     }
 }

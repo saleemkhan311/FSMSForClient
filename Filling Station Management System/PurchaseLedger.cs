@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using Microsoft.Office.Interop.Excel;
 using MySql.Data.MySqlClient;
 
 
@@ -27,6 +28,7 @@ namespace Filling_Station_Management_System
         private void DieselDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             viewDataDiesel();
+
 
         }
 
@@ -102,7 +104,7 @@ namespace Filling_Station_Management_System
         private void WeightBox_TextChanged(object sender, EventArgs e)
         {
             Calculate();
-           
+
         }
 
         private void LoadData()
@@ -157,50 +159,50 @@ namespace Filling_Station_Management_System
         private void KhorakiBox_TextChanged(object sender, EventArgs e)
         {
             Calculate();
-           
+
         }
 
         private void RateBox_TextChanged(object sender, EventArgs e)
         {
             Calculate();
-           
+
         }
 
         private void LabourBox_TextChanged(object sender, EventArgs e)
         {
             Calculate();
-            
+
         }
 
         private void RecoveryAmountBox1_TextChanged(object sender, EventArgs e)
         {
 
-           
+
             Calculate();
         }
 
         private void RecoveryAmountBox2_TextChanged(object sender, EventArgs e)
         {
-         
+
             Calculate();
         }
 
         private void RecoveryAmountBox3_TextChanged(object sender, EventArgs e)
         {
-           
+
             Calculate();
         }
 
         private void RecoveryAmountBox4_TextChanged(object sender, EventArgs e)
         {
-            Double sum = 0;
+
 
             Calculate();
         }
 
         private void RecoveryAmountBox5_TextChanged(object sender, EventArgs e)
         {
-            
+
             Calculate();
         }
 
@@ -272,8 +274,8 @@ namespace Filling_Station_Management_System
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (DieselDataGrid.Rows.Count > 1)
-                AutoSuggestions();
+
+
         }
 
         List<string> NameSuggestions = new List<string>();
@@ -282,6 +284,8 @@ namespace Filling_Station_Management_System
 
             string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString();
             index.ToLower();
+            NameSuggestions.Clear();
+            MessageBox.Show($"SELECT `Malik_Name` FROM purchase_data_{index}");
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
@@ -299,10 +303,14 @@ namespace Filling_Station_Management_System
                             {
                                 string Names = reader["Malik_Name"].ToString();
                                 NameSuggestions.Add(Names);
+
                             }
                         }
                     }
                 }
+                AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+                autoCompleteCollection.AddRange(NameSuggestions.ToArray());
+                NameTextBox.AutoCompleteCustomSource = autoCompleteCollection;
 
             }
             catch (Exception ex)
@@ -310,10 +318,6 @@ namespace Filling_Station_Management_System
                 MessageBox.Show("Error: ", "Auto Suggest Purchase Ledger" + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
-            autoCompleteCollection.AddRange(NameSuggestions.ToArray());
-
-            NameTextBox.AutoCompleteCustomSource = autoCompleteCollection;
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
@@ -510,6 +514,7 @@ namespace Filling_Station_Management_System
 
         private void PurchaseLedger_Load(object sender, EventArgs e)
         {
+
             KeyPreview = true;
             LoadData();
             SearchByNameRadio.Checked = true;
@@ -570,6 +575,39 @@ namespace Filling_Station_Management_System
         private void NetPriceBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void RecoveryDescriptionBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void RecoveryDescriptionBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void RecoveryDescriptionBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RecoveryDescriptionBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void DesKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true; // Suppress the Enter key
+            }
         }
 
         private bool scrolling = false;
@@ -683,7 +721,10 @@ namespace Filling_Station_Management_System
             PasswordCheckPanel passCheck = new PasswordCheckPanel();
             passCheck.ShowDialog();
             if (passCheck.DialogResult == DialogResult.OK)
+            {
                 ViewRecordsPanel.Show();
+                AutoSuggestions();
+            }
         }
 
         private void viewDataDiesel()
@@ -731,13 +772,16 @@ namespace Filling_Station_Management_System
             PasswordCheckPanel passCheck = new PasswordCheckPanel();
             passCheck.ShowDialog();
             if (passCheck.DialogResult == DialogResult.OK)
+            {
                 ViewRecordsPanel.Show();
+                AutoSuggestions();
+            }
         }
 
         private void SabqaRaqamBox_TextChanged(object sender, EventArgs e)
         {
             Calculate();
-            
+
         }
 
         private void CloseButton_Click(object sender, EventArgs e)

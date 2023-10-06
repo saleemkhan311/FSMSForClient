@@ -28,8 +28,8 @@ namespace Filling_Station_Management_System
 
         string Username;
 
-        float recovery, deposit, discount, udhar;
-        float balance;
+        double recovery, deposit, discount, udhar;
+        double balance;
         private float _openReading, _closeReading, _rate, _test, _price, _quantity, _netQuantity, _readCount;
         Double newPrice, newBalance, newQuantity, newNetQuantity;
 
@@ -338,6 +338,7 @@ namespace Filling_Station_Management_System
             BalanceTB.Text = DataGrid2.SelectedRows[0].Cells[15].Value.ToString();
 
             UnitBox.SelectedIndex = TabControl.SelectedIndex;
+            AutoSuggestions();
 
 
 
@@ -375,6 +376,7 @@ namespace Filling_Station_Management_System
             BalanceTB.Text = DataGrid3.SelectedRows[0].Cells[15].Value.ToString();
 
             UnitBox.SelectedIndex = TabControl.SelectedIndex;
+            AutoSuggestions();
 
 
 
@@ -450,7 +452,8 @@ namespace Filling_Station_Management_System
 
         private void DataGrid1DoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show($"{Unit1DataGrid.SelectedRows[0].Cells[5].Value}");
+
+            AutoSuggestions();
 
             RefTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[0].Value.ToString();
             object date = Unit1DataGrid.SelectedRows[0].Cells[1].Value;
@@ -518,7 +521,9 @@ namespace Filling_Station_Management_System
 
         private void HelperTextBox_TextChanged(object sender, EventArgs e)
         {
-            AutoSuggestions();
+
+
+
         }
         List<string> helperNames = new List<string>();
         private void AutoSuggestions()
@@ -526,13 +531,14 @@ namespace Filling_Station_Management_System
             try
             {
                 int unit = TabControl.SelectedIndex + 1;
-
+                helperNames.Clear();
                 using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
                     connection.Open();
 
                     // SQL query to retrieve "Helper Name" values
                     string query = $"SELECT `Helper` FROM unit{unit}_sales_data";
+
 
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
@@ -544,14 +550,12 @@ namespace Filling_Station_Management_System
                                 helperNames.Add(helperName);
                             }
                         }
+
                     }
                 }
 
-
-
                 AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
                 autoCompleteCollection.AddRange(helperNames.ToArray());
-
                 HelperTextBox.AutoCompleteCustomSource = autoCompleteCollection;
             }
             catch (Exception ex)
@@ -615,6 +619,15 @@ namespace Filling_Station_Management_System
             }
         }
 
+        private void DesKeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true; // Suppress the Enter key
+            }
+        }
+
         private void RateTextBox_TextChanged(object sender, EventArgs e)
         {
             if (isFilled2())
@@ -664,7 +677,7 @@ namespace Filling_Station_Management_System
             BalanceTB.Text = DataGrid4.SelectedRows[0].Cells[15].Value.ToString();
 
             UnitBox.SelectedIndex = TabControl.SelectedIndex;
-
+            AutoSuggestions();
 
 
             DateTime newDate;
@@ -777,10 +790,10 @@ namespace Filling_Station_Management_System
                 try
                 {
 
-                    deposit = ConvertFloat(DepositTextBox.Text);
-                    udhar = ConvertFloat(UdharTextBox.Text.ToString());
-                    recovery = ConvertFloat(RecoveryTextBox.Text);
-                    discount = ConvertFloat(DiscountTextBox.Text);
+                    deposit = AppSettings.convertToDouble(DepositTextBox.Text);
+                    udhar = AppSettings.convertToDouble(UdharTextBox.Text);
+                    recovery = AppSettings.convertToDouble(RecoveryTextBox.Text);
+                    discount = AppSettings.convertToDouble(DiscountTextBox.Text);
                 }
                 catch (Exception ex)
                 {
