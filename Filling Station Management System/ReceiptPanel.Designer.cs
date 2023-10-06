@@ -515,7 +515,7 @@
             this.MalikNameLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.MalikNameLabel.Font = new System.Drawing.Font("Nafees Naskh v2.01", 14.25F, System.Drawing.FontStyle.Bold);
             this.MalikNameLabel.ForeColor = System.Drawing.Color.Black;
-            this.MalikNameLabel.Location = new System.Drawing.Point(65, 45);
+            this.MalikNameLabel.Location = new System.Drawing.Point(63, 45);
             this.MalikNameLabel.Margin = new System.Windows.Forms.Padding(1);
             this.MalikNameLabel.Name = "MalikNameLabel";
             this.MalikNameLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
@@ -537,7 +537,7 @@
             this.WazanLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.WazanLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WazanLabel.ForeColor = System.Drawing.Color.Black;
-            this.WazanLabel.Location = new System.Drawing.Point(173, 90);
+            this.WazanLabel.Location = new System.Drawing.Point(171, 90);
             this.WazanLabel.Name = "WazanLabel";
             this.WazanLabel.Padding = new System.Windows.Forms.Padding(6);
             this.WazanLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -558,7 +558,7 @@
             this.MiqdarLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.MiqdarLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MiqdarLabel.ForeColor = System.Drawing.Color.Black;
-            this.MiqdarLabel.Location = new System.Drawing.Point(173, 133);
+            this.MiqdarLabel.Location = new System.Drawing.Point(171, 133);
             this.MiqdarLabel.Name = "MiqdarLabel";
             this.MiqdarLabel.Padding = new System.Windows.Forms.Padding(6);
             this.MiqdarLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -579,7 +579,7 @@
             this.KhorakiLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.KhorakiLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KhorakiLabel.ForeColor = System.Drawing.Color.Black;
-            this.KhorakiLabel.Location = new System.Drawing.Point(173, 176);
+            this.KhorakiLabel.Location = new System.Drawing.Point(171, 176);
             this.KhorakiLabel.Name = "KhorakiLabel";
             this.KhorakiLabel.Padding = new System.Windows.Forms.Padding(6);
             this.KhorakiLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -600,7 +600,7 @@
             this.SafiMiqdarLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.SafiMiqdarLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SafiMiqdarLabel.ForeColor = System.Drawing.Color.Black;
-            this.SafiMiqdarLabel.Location = new System.Drawing.Point(173, 219);
+            this.SafiMiqdarLabel.Location = new System.Drawing.Point(171, 219);
             this.SafiMiqdarLabel.Name = "SafiMiqdarLabel";
             this.SafiMiqdarLabel.Padding = new System.Windows.Forms.Padding(6);
             this.SafiMiqdarLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -621,7 +621,7 @@
             this.RateFiLiterLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.RateFiLiterLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RateFiLiterLabel.ForeColor = System.Drawing.Color.Black;
-            this.RateFiLiterLabel.Location = new System.Drawing.Point(173, 262);
+            this.RateFiLiterLabel.Location = new System.Drawing.Point(171, 262);
             this.RateFiLiterLabel.Name = "RateFiLiterLabel";
             this.RateFiLiterLabel.Padding = new System.Windows.Forms.Padding(6);
             this.RateFiLiterLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -642,7 +642,7 @@
             this.KulRaqamLAbel.CursorType = System.Windows.Forms.Cursors.Default;
             this.KulRaqamLAbel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KulRaqamLAbel.ForeColor = System.Drawing.Color.Black;
-            this.KulRaqamLAbel.Location = new System.Drawing.Point(173, 305);
+            this.KulRaqamLAbel.Location = new System.Drawing.Point(171, 305);
             this.KulRaqamLAbel.Name = "KulRaqamLAbel";
             this.KulRaqamLAbel.Padding = new System.Windows.Forms.Padding(6);
             this.KulRaqamLAbel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -663,7 +663,7 @@
             this.MazdooriLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.MazdooriLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MazdooriLabel.ForeColor = System.Drawing.Color.Black;
-            this.MazdooriLabel.Location = new System.Drawing.Point(173, 348);
+            this.MazdooriLabel.Location = new System.Drawing.Point(171, 348);
             this.MazdooriLabel.Name = "MazdooriLabel";
             this.MazdooriLabel.Padding = new System.Windows.Forms.Padding(6);
             this.MazdooriLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -684,7 +684,7 @@
             this.SafiRaqmLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.SafiRaqmLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SafiRaqmLabel.ForeColor = System.Drawing.Color.Black;
-            this.SafiRaqmLabel.Location = new System.Drawing.Point(173, 391);
+            this.SafiRaqmLabel.Location = new System.Drawing.Point(171, 391);
             this.SafiRaqmLabel.Name = "SafiRaqmLabel";
             this.SafiRaqmLabel.Padding = new System.Windows.Forms.Padding(6);
             this.SafiRaqmLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -705,7 +705,7 @@
             this.SabqaRaqamLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.SabqaRaqamLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SabqaRaqamLabel.ForeColor = System.Drawing.Color.Black;
-            this.SabqaRaqamLabel.Location = new System.Drawing.Point(173, 434);
+            this.SabqaRaqamLabel.Location = new System.Drawing.Point(171, 434);
             this.SabqaRaqamLabel.Name = "SabqaRaqamLabel";
             this.SabqaRaqamLabel.Padding = new System.Windows.Forms.Padding(6);
             this.SabqaRaqamLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -726,7 +726,7 @@
             this.TotalRaqamLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.TotalRaqamLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalRaqamLabel.ForeColor = System.Drawing.Color.Black;
-            this.TotalRaqamLabel.Location = new System.Drawing.Point(173, 477);
+            this.TotalRaqamLabel.Location = new System.Drawing.Point(171, 477);
             this.TotalRaqamLabel.Name = "TotalRaqamLabel";
             this.TotalRaqamLabel.Padding = new System.Windows.Forms.Padding(6);
             this.TotalRaqamLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -747,7 +747,7 @@
             this.RaqamWasoolValue1Label.CursorType = System.Windows.Forms.Cursors.Default;
             this.RaqamWasoolValue1Label.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RaqamWasoolValue1Label.ForeColor = System.Drawing.Color.Black;
-            this.RaqamWasoolValue1Label.Location = new System.Drawing.Point(173, 520);
+            this.RaqamWasoolValue1Label.Location = new System.Drawing.Point(171, 520);
             this.RaqamWasoolValue1Label.Name = "RaqamWasoolValue1Label";
             this.RaqamWasoolValue1Label.Padding = new System.Windows.Forms.Padding(6);
             this.RaqamWasoolValue1Label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1034,7 +1034,7 @@
             this.RaqamWasoolValue2Label.CursorType = System.Windows.Forms.Cursors.Default;
             this.RaqamWasoolValue2Label.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RaqamWasoolValue2Label.ForeColor = System.Drawing.Color.Black;
-            this.RaqamWasoolValue2Label.Location = new System.Drawing.Point(173, 563);
+            this.RaqamWasoolValue2Label.Location = new System.Drawing.Point(171, 563);
             this.RaqamWasoolValue2Label.Name = "RaqamWasoolValue2Label";
             this.RaqamWasoolValue2Label.Padding = new System.Windows.Forms.Padding(6);
             this.RaqamWasoolValue2Label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1076,7 +1076,7 @@
             this.RaqamWasoolValue3Label.CursorType = System.Windows.Forms.Cursors.Default;
             this.RaqamWasoolValue3Label.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RaqamWasoolValue3Label.ForeColor = System.Drawing.Color.Black;
-            this.RaqamWasoolValue3Label.Location = new System.Drawing.Point(173, 606);
+            this.RaqamWasoolValue3Label.Location = new System.Drawing.Point(171, 606);
             this.RaqamWasoolValue3Label.Name = "RaqamWasoolValue3Label";
             this.RaqamWasoolValue3Label.Padding = new System.Windows.Forms.Padding(6);
             this.RaqamWasoolValue3Label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1158,7 +1158,7 @@
             this.BaqayaLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.BaqayaLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaqayaLabel.ForeColor = System.Drawing.Color.Black;
-            this.BaqayaLabel.Location = new System.Drawing.Point(175, 735);
+            this.BaqayaLabel.Location = new System.Drawing.Point(173, 735);
             this.BaqayaLabel.Name = "BaqayaLabel";
             this.BaqayaLabel.Padding = new System.Windows.Forms.Padding(8);
             this.BaqayaLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1200,7 +1200,7 @@
             this.RaqamWasoolValue5Label.CursorType = System.Windows.Forms.Cursors.Default;
             this.RaqamWasoolValue5Label.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RaqamWasoolValue5Label.ForeColor = System.Drawing.Color.Black;
-            this.RaqamWasoolValue5Label.Location = new System.Drawing.Point(173, 692);
+            this.RaqamWasoolValue5Label.Location = new System.Drawing.Point(171, 692);
             this.RaqamWasoolValue5Label.Name = "RaqamWasoolValue5Label";
             this.RaqamWasoolValue5Label.Padding = new System.Windows.Forms.Padding(6);
             this.RaqamWasoolValue5Label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1221,7 +1221,7 @@
             this.RaqamWasoolValue4Label.CursorType = System.Windows.Forms.Cursors.Default;
             this.RaqamWasoolValue4Label.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RaqamWasoolValue4Label.ForeColor = System.Drawing.Color.Black;
-            this.RaqamWasoolValue4Label.Location = new System.Drawing.Point(173, 649);
+            this.RaqamWasoolValue4Label.Location = new System.Drawing.Point(171, 649);
             this.RaqamWasoolValue4Label.Name = "RaqamWasoolValue4Label";
             this.RaqamWasoolValue4Label.Padding = new System.Windows.Forms.Padding(6);
             this.RaqamWasoolValue4Label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1264,7 +1264,7 @@
             this.RefLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.RefLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.RefLabel.ForeColor = System.Drawing.Color.Black;
-            this.RefLabel.Location = new System.Drawing.Point(270, 1);
+            this.RefLabel.Location = new System.Drawing.Point(268, 1);
             this.RefLabel.Margin = new System.Windows.Forms.Padding(15, 0, 1, 1);
             this.RefLabel.Name = "RefLabel";
             this.RefLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1286,7 +1286,7 @@
             this.DateLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.DateLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.DateLabel.ForeColor = System.Drawing.Color.Black;
-            this.DateLabel.Location = new System.Drawing.Point(60, 2);
+            this.DateLabel.Location = new System.Drawing.Point(59, 2);
             this.DateLabel.Margin = new System.Windows.Forms.Padding(1);
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1350,7 +1350,7 @@
             this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(1);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(55, 40);
+            this.bunifuLabel5.Size = new System.Drawing.Size(54, 40);
             this.bunifuLabel5.TabIndex = 1;
             this.bunifuLabel5.TabStop = false;
             this.bunifuLabel5.Text = "Date";
@@ -1404,7 +1404,7 @@
             this.PrintReceipt.IdleIconLeftImage = null;
             this.PrintReceipt.IdleIconRightImage = null;
             this.PrintReceipt.IndicateFocus = false;
-            this.PrintReceipt.Location = new System.Drawing.Point(511, 959);
+            this.PrintReceipt.Location = new System.Drawing.Point(255, 5);
             this.PrintReceipt.Name = "PrintReceipt";
             this.PrintReceipt.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.PrintReceipt.OnDisabledState.BorderRadius = 15;
@@ -1494,7 +1494,7 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(261, 959);
+            this.bunifuButton1.Location = new System.Drawing.Point(511, 5);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 15;
@@ -1584,7 +1584,7 @@
             this.bunifuButton2.IdleIconLeftImage = null;
             this.bunifuButton2.IdleIconRightImage = null;
             this.bunifuButton2.IndicateFocus = false;
-            this.bunifuButton2.Location = new System.Drawing.Point(12, 959);
+            this.bunifuButton2.Location = new System.Drawing.Point(12, 5);
             this.bunifuButton2.Name = "bunifuButton2";
             this.bunifuButton2.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton2.OnDisabledState.BorderRadius = 15;
@@ -1634,7 +1634,7 @@
             this.Receipt.Controls.Add(this.tableLayoutPanel2);
             this.Receipt.Controls.Add(this.tableLayoutPanel3);
             this.Receipt.ForeColor = System.Drawing.Color.White;
-            this.Receipt.Location = new System.Drawing.Point(12, 6);
+            this.Receipt.Location = new System.Drawing.Point(12, 53);
             this.Receipt.Name = "Receipt";
             this.Receipt.Size = new System.Drawing.Size(645, 945);
             this.Receipt.TabIndex = 24;
@@ -1645,7 +1645,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.68908F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.31092F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 363F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 365F));
             this.tableLayoutPanel3.Controls.Add(this.bunifuLabel6, 2, 17);
             this.tableLayoutPanel3.Controls.Add(this.RaqamWasoolTafseel5Label, 2, 16);
             this.tableLayoutPanel3.Controls.Add(this.RaqamWasoolTafseel4Label, 2, 15);
@@ -2800,10 +2800,10 @@
             // 
             // ReceiptPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(670, 1010);
+            this.ClientSize = new System.Drawing.Size(669, 1009);
             this.Controls.Add(this.Receipt);
             this.Controls.Add(this.bunifuButton2);
             this.Controls.Add(this.bunifuButton1);

@@ -260,7 +260,7 @@
             this.Unit1DataGrid.EnableHeadersVisualStyles = false;
             this.Unit1DataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.Unit1DataGrid.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            //this.Unit1DataGrid.HeaderBgColor = System.Drawing.Color.Empty;
+            this.Unit1DataGrid.HeaderBgColor = System.Drawing.Color.Empty;
             this.Unit1DataGrid.HeaderForeColor = System.Drawing.Color.White;
             this.Unit1DataGrid.Location = new System.Drawing.Point(3, 3);
             this.Unit1DataGrid.Name = "Unit1DataGrid";
@@ -340,7 +340,7 @@
             this.DataGrid2.EnableHeadersVisualStyles = false;
             this.DataGrid2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.DataGrid2.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            //this.DataGrid2.HeaderBgColor = System.Drawing.Color.Empty;
+            this.DataGrid2.HeaderBgColor = System.Drawing.Color.Empty;
             this.DataGrid2.HeaderForeColor = System.Drawing.Color.White;
             this.DataGrid2.Location = new System.Drawing.Point(3, 3);
             this.DataGrid2.Name = "DataGrid2";
@@ -418,7 +418,7 @@
             this.DataGrid3.EnableHeadersVisualStyles = false;
             this.DataGrid3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.DataGrid3.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            //this.DataGrid3.HeaderBgColor = System.Drawing.Color.Empty;
+            this.DataGrid3.HeaderBgColor = System.Drawing.Color.Empty;
             this.DataGrid3.HeaderForeColor = System.Drawing.Color.White;
             this.DataGrid3.Location = new System.Drawing.Point(0, 0);
             this.DataGrid3.Name = "DataGrid3";
@@ -496,7 +496,7 @@
             this.DataGrid4.EnableHeadersVisualStyles = false;
             this.DataGrid4.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.DataGrid4.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            //this.DataGrid4.HeaderBgColor = System.Drawing.Color.Empty;
+            this.DataGrid4.HeaderBgColor = System.Drawing.Color.Empty;
             this.DataGrid4.HeaderForeColor = System.Drawing.Color.White;
             this.DataGrid4.Location = new System.Drawing.Point(3, 3);
             this.DataGrid4.Name = "DataGrid4";
@@ -533,7 +533,7 @@
             this.ViewRecordsPanel.Controls.Add(this.RefTextBox);
             this.ViewRecordsPanel.Controls.Add(this.UnitBox);
             this.ViewRecordsPanel.Controls.Add(this.bunifuLabel19);
-            this.ViewRecordsPanel.Location = new System.Drawing.Point(8, 12);
+            this.ViewRecordsPanel.Location = new System.Drawing.Point(8, 14);
             this.ViewRecordsPanel.Name = "ViewRecordsPanel";
             this.ViewRecordsPanel.ShowBorders = false;
             this.ViewRecordsPanel.Size = new System.Drawing.Size(826, 615);

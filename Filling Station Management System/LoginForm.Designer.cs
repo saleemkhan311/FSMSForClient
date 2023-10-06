@@ -66,13 +66,13 @@
             this.bunifuLabel21.AutoEllipsis = false;
             this.bunifuLabel21.CursorType = null;
             this.bunifuLabel21.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel21.Location = new System.Drawing.Point(35, 199);
+            this.bunifuLabel21.Location = new System.Drawing.Point(33, 199);
             this.bunifuLabel21.Name = "bunifuLabel21";
             this.bunifuLabel21.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel21.Size = new System.Drawing.Size(206, 61);
             this.bunifuLabel21.TabIndex = 13;
             this.bunifuLabel21.TabStop = false;
-            this.bunifuLabel21.Text = "Filling Stattion\r\nManagement System";
+            this.bunifuLabel21.Text = "Filling Station\r\nManagement System";
             this.bunifuLabel21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel21.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -391,7 +391,7 @@
             this.UserTextBox.UseSystemPasswordChar = false;
             this.UserTextBox.WordWrap = true;
             // 
-            // RegisterButton
+            // LoginButton
             // 
             this.LoginButton.AllowAnimations = true;
             this.LoginButton.AllowMouseEffects = true;
@@ -403,7 +403,7 @@
             this.LoginButton.AutoSizeRightIcon = true;
             this.LoginButton.BackColor = System.Drawing.Color.Transparent;
             this.LoginButton.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.LoginButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RegisterButton.BackgroundImage")));
+            this.LoginButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LoginButton.BackgroundImage")));
             this.LoginButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.LoginButton.ButtonText = "Login";
             this.LoginButton.ButtonTextMarginLeft = 0;
@@ -439,7 +439,7 @@
             this.LoginButton.IdleIconRightImage = null;
             this.LoginButton.IndicateFocus = false;
             this.LoginButton.Location = new System.Drawing.Point(32, 376);
-            this.LoginButton.Name = "RegisterButton";
+            this.LoginButton.Name = "LoginButton";
             this.LoginButton.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.LoginButton.OnDisabledState.BorderRadius = 30;
             this.LoginButton.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;

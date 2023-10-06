@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseLedger));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -137,11 +131,15 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.PetrolDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.DieselDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.ViewRecordsPanel = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.CloseButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuShadowPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
@@ -243,11 +241,11 @@
             this.SaveExcelButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.RefreshButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.RemoveButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.PetrolDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.DieselDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.TabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PetrolDataGrid)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DieselDataGrid)).BeginInit();
             this.ViewRecordsPanel.SuspendLayout();
             this.bunifuShadowPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -270,6 +268,8 @@
             this.bunifuCards12.SuspendLayout();
             this.bunifuShadowPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PetrolDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DieselDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl
@@ -297,74 +297,6 @@
             this.tabPage1.Text = "Petrol";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // PetrolDataGrid
-            // 
-            this.PetrolDataGrid.AllowCustomTheming = false;
-            this.PetrolDataGrid.AllowDrop = true;
-            this.PetrolDataGrid.AllowUserToAddRows = false;
-            this.PetrolDataGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.PetrolDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.PetrolDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.PetrolDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PetrolDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.PetrolDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PetrolDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.PetrolDataGrid.ColumnHeadersHeight = 40;
-            this.PetrolDataGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.PetrolDataGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.PetrolDataGrid.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.PetrolDataGrid.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.PetrolDataGrid.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.PetrolDataGrid.CurrentTheme.BackColor = System.Drawing.Color.White;
-            this.PetrolDataGrid.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.PetrolDataGrid.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.PetrolDataGrid.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.PetrolDataGrid.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.PetrolDataGrid.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            this.PetrolDataGrid.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.PetrolDataGrid.CurrentTheme.Name = null;
-            this.PetrolDataGrid.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.PetrolDataGrid.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.PetrolDataGrid.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.PetrolDataGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.PetrolDataGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.PetrolDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.PetrolDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PetrolDataGrid.EnableHeadersVisualStyles = false;
-            this.PetrolDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.PetrolDataGrid.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.PetrolDataGrid.HeaderBgColor = System.Drawing.Color.Empty;
-            this.PetrolDataGrid.HeaderForeColor = System.Drawing.Color.White;
-            this.PetrolDataGrid.Location = new System.Drawing.Point(3, 3);
-            this.PetrolDataGrid.Name = "PetrolDataGrid";
-            this.PetrolDataGrid.ReadOnly = true;
-            this.PetrolDataGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.PetrolDataGrid.RowHeadersVisible = false;
-            this.PetrolDataGrid.RowTemplate.Height = 40;
-            this.PetrolDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.PetrolDataGrid.Size = new System.Drawing.Size(811, 463);
-            this.PetrolDataGrid.TabIndex = 0;
-            this.PetrolDataGrid.TabStop = false;
-            this.PetrolDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            this.PetrolDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PetrolDataGrid_CellDoubleClick);
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.DieselDataGrid);
@@ -376,74 +308,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Diesel";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // DieselDataGrid
-            // 
-            this.DieselDataGrid.AllowCustomTheming = false;
-            this.DieselDataGrid.AllowDrop = true;
-            this.DieselDataGrid.AllowUserToAddRows = false;
-            this.DieselDataGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.DieselDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.DieselDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DieselDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DieselDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DieselDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DieselDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.DieselDataGrid.ColumnHeadersHeight = 40;
-            this.DieselDataGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.DieselDataGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.DieselDataGrid.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.DieselDataGrid.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.DieselDataGrid.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.DieselDataGrid.CurrentTheme.BackColor = System.Drawing.Color.White;
-            this.DieselDataGrid.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.DieselDataGrid.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.DieselDataGrid.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.DieselDataGrid.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.DieselDataGrid.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            this.DieselDataGrid.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.DieselDataGrid.CurrentTheme.Name = null;
-            this.DieselDataGrid.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.DieselDataGrid.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.DieselDataGrid.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.DieselDataGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.DieselDataGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DieselDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DieselDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DieselDataGrid.EnableHeadersVisualStyles = false;
-            this.DieselDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.DieselDataGrid.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.DieselDataGrid.HeaderBgColor = System.Drawing.Color.Empty;
-            this.DieselDataGrid.HeaderForeColor = System.Drawing.Color.White;
-            this.DieselDataGrid.Location = new System.Drawing.Point(3, 3);
-            this.DieselDataGrid.Name = "DieselDataGrid";
-            this.DieselDataGrid.ReadOnly = true;
-            this.DieselDataGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DieselDataGrid.RowHeadersVisible = false;
-            this.DieselDataGrid.RowTemplate.Height = 40;
-            this.DieselDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DieselDataGrid.Size = new System.Drawing.Size(811, 463);
-            this.DieselDataGrid.TabIndex = 100;
-            this.DieselDataGrid.TabStop = false;
-            this.DieselDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            this.DieselDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DieselDataGrid_CellDoubleClick);
             // 
             // ViewRecordsPanel
             // 
@@ -463,7 +327,7 @@
             this.ViewRecordsPanel.Controls.Add(this.bunifuLabel1);
             this.ViewRecordsPanel.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
             this.ViewRecordsPanel.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.ViewRecordsPanel.Location = new System.Drawing.Point(7, 18);
+            this.ViewRecordsPanel.Location = new System.Drawing.Point(9, 12);
             this.ViewRecordsPanel.Name = "ViewRecordsPanel";
             this.ViewRecordsPanel.PanelColor = System.Drawing.Color.WhiteSmoke;
             this.ViewRecordsPanel.PanelColor2 = System.Drawing.Color.WhiteSmoke;
@@ -4234,6 +4098,140 @@
             this.RemoveButton.UseDefaultRadiusAndThickness = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
+            // PetrolDataGrid
+            // 
+            this.PetrolDataGrid.AllowCustomTheming = false;
+            this.PetrolDataGrid.AllowDrop = true;
+            this.PetrolDataGrid.AllowUserToAddRows = false;
+            this.PetrolDataGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.PetrolDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.PetrolDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.PetrolDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PetrolDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.PetrolDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PetrolDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.PetrolDataGrid.ColumnHeadersHeight = 40;
+            this.PetrolDataGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.PetrolDataGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.PetrolDataGrid.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.PetrolDataGrid.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.PetrolDataGrid.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.PetrolDataGrid.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.PetrolDataGrid.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.PetrolDataGrid.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.PetrolDataGrid.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.PetrolDataGrid.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.PetrolDataGrid.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.PetrolDataGrid.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.PetrolDataGrid.CurrentTheme.Name = null;
+            this.PetrolDataGrid.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.PetrolDataGrid.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.PetrolDataGrid.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.PetrolDataGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.PetrolDataGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PetrolDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.PetrolDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PetrolDataGrid.EnableHeadersVisualStyles = false;
+            this.PetrolDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.PetrolDataGrid.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.PetrolDataGrid.HeaderBgColor = System.Drawing.Color.Empty;
+            this.PetrolDataGrid.HeaderForeColor = System.Drawing.Color.White;
+            this.PetrolDataGrid.Location = new System.Drawing.Point(3, 3);
+            this.PetrolDataGrid.Name = "PetrolDataGrid";
+            this.PetrolDataGrid.ReadOnly = true;
+            this.PetrolDataGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PetrolDataGrid.RowHeadersVisible = false;
+            this.PetrolDataGrid.RowTemplate.Height = 40;
+            this.PetrolDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.PetrolDataGrid.Size = new System.Drawing.Size(811, 463);
+            this.PetrolDataGrid.TabIndex = 1;
+            this.PetrolDataGrid.TabStop = false;
+            this.PetrolDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.PetrolDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PetrolDataGrid_CellDoubleClick);
+            // 
+            // DieselDataGrid
+            // 
+            this.DieselDataGrid.AllowCustomTheming = false;
+            this.DieselDataGrid.AllowDrop = true;
+            this.DieselDataGrid.AllowUserToAddRows = false;
+            this.DieselDataGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.DieselDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DieselDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DieselDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DieselDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DieselDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DieselDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.DieselDataGrid.ColumnHeadersHeight = 40;
+            this.DieselDataGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.DieselDataGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.DieselDataGrid.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DieselDataGrid.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.DieselDataGrid.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DieselDataGrid.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.DieselDataGrid.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.DieselDataGrid.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.DieselDataGrid.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.DieselDataGrid.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DieselDataGrid.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.DieselDataGrid.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.DieselDataGrid.CurrentTheme.Name = null;
+            this.DieselDataGrid.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DieselDataGrid.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.DieselDataGrid.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DieselDataGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.DieselDataGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DieselDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DieselDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DieselDataGrid.EnableHeadersVisualStyles = false;
+            this.DieselDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.DieselDataGrid.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.DieselDataGrid.HeaderBgColor = System.Drawing.Color.Empty;
+            this.DieselDataGrid.HeaderForeColor = System.Drawing.Color.White;
+            this.DieselDataGrid.Location = new System.Drawing.Point(3, 3);
+            this.DieselDataGrid.Name = "DieselDataGrid";
+            this.DieselDataGrid.ReadOnly = true;
+            this.DieselDataGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DieselDataGrid.RowHeadersVisible = false;
+            this.DieselDataGrid.RowTemplate.Height = 40;
+            this.DieselDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DieselDataGrid.Size = new System.Drawing.Size(811, 463);
+            this.DieselDataGrid.TabIndex = 206;
+            this.DieselDataGrid.TabStop = false;
+            this.DieselDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.DieselDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DieselDataGrid_CellDoubleClick);
+            // 
             // PurchaseLedger
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -4258,9 +4256,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PurchaseLedger_KeyDown);
             this.TabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PetrolDataGrid)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DieselDataGrid)).EndInit();
             this.ViewRecordsPanel.ResumeLayout(false);
             this.ViewRecordsPanel.PerformLayout();
             this.bunifuShadowPanel2.ResumeLayout(false);
@@ -4302,6 +4298,8 @@
             this.bunifuShadowPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PetrolDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DieselDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4310,9 +4308,7 @@
 
         private System.Windows.Forms.TabControl TabControl;
         private System.Windows.Forms.TabPage tabPage1;
-        private Bunifu.UI.WinForms.BunifuDataGridView PetrolDataGrid;
         private System.Windows.Forms.TabPage tabPage2;
-        private Bunifu.UI.WinForms.BunifuDataGridView DieselDataGrid;
         private Bunifu.UI.WinForms.BunifuShadowPanel ViewRecordsPanel;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton GenerateReceipt;
@@ -4414,5 +4410,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton RefreshButton;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton RemoveButton;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton SaveExcelButton;
+        private Bunifu.UI.WinForms.BunifuDataGridView PetrolDataGrid;
+        private Bunifu.UI.WinForms.BunifuDataGridView DieselDataGrid;
     }
 }

@@ -112,10 +112,10 @@ namespace Filling_Station_Management_System
 
             Point point = Receipt.PointToScreen(Receipt.Location);
 
-            graphics.CopyFromScreen(point.X, point.Y, 0, 0, size);
+            graphics.CopyFromScreen(point.X - 5, point.Y - 50, 0, 0, size);
 
 
-            printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("Invoice", 645, 945);
+            printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("Invoice", 660, 975);
 
             using (PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog())
             {
@@ -135,7 +135,9 @@ namespace Filling_Station_Management_System
                 label1.Hide();
                 label2.Hide();
                 label3.Hide();
+
             }
+
         }
 
         private void CloseReceiptButton_Click(object sender, EventArgs e)

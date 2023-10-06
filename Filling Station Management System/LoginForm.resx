@@ -745,7 +745,7 @@
         /wA8UqIlFNTCkwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="RegisterButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="LoginButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQcAAAAnCAYAAAACcI0lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKPSURBVHhe7d0/b9NgEMdxj4yMDH5iRkbGjoxMiAWJkRHx

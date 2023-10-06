@@ -23,21 +23,6 @@ namespace Filling_Station_Management_System
 
         }
 
-
-
-        private void DieselDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            viewDataDiesel();
-
-
-        }
-
-        private void PetrolDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            viewDataPetrol();
-        }
-
-
         private void Calculate()
         {
             kantaWazan = AppSettings.convertToDouble(WeightBox.Text);
@@ -280,7 +265,6 @@ namespace Filling_Station_Management_System
             string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString();
             index.ToLower();
             NameSuggestions.Clear();
-            MessageBox.Show($"SELECT `Malik_Name` FROM purchase_data_{index}");
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
@@ -587,15 +571,17 @@ namespace Filling_Station_Management_System
 
         }
 
-        private void RecoveryDescriptionBox3_KeyPress(object sender, KeyPressEventArgs e)
+        private void DieselDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            viewDataDiesel();
         }
 
-        private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void PetrolDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            viewDataPetrol();
         }
+
+
 
         private void DesKeyPress(object sender, KeyPressEventArgs e)
         {

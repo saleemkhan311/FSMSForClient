@@ -452,7 +452,7 @@
             this.bunifuLabel21.Size = new System.Drawing.Size(140, 39);
             this.bunifuLabel21.TabIndex = 6;
             this.bunifuLabel21.TabStop = false;
-            this.bunifuLabel21.Text = "Filling Stattion\r\nManagement System";
+            this.bunifuLabel21.Text = "Filling Station\r\nManagement System";
             this.bunifuLabel21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel21.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -1342,7 +1342,7 @@
             this.bunifuImageButton1.FadeWhenInactive = false;
             this.bunifuImageButton1.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.bunifuImageButton1.Image = global::Filling_Station_Management_System.Properties.Resources.logout1;
-            //this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.ImageLocation = null;
             this.bunifuImageButton1.ImageMargin = 0;
             this.bunifuImageButton1.ImageSize = new System.Drawing.Size(29, 29);
@@ -1359,7 +1359,7 @@
             this.bunifuImageButton1.TabIndex = 82;
             this.bunifuImageButton1.ToolTipText = "";
             this.bunifuImageButton1.WaitOnLoad = false;
-            //this.bunifuImageButton1.Zoom = 0;
+            this.bunifuImageButton1.Zoom = 0;
             this.bunifuImageButton1.ZoomSpeed = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
@@ -1447,7 +1447,7 @@
             this.MinimizeButton.FadeWhenInactive = false;
             this.MinimizeButton.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.MinimizeButton.Image = global::Filling_Station_Management_System.Properties.Resources.minimize;
-            //this.MinimizeButton.ImageActive = global::Filling_Station_Management_System.Properties.Resources.minimize_gray;
+            this.MinimizeButton.ImageActive = global::Filling_Station_Management_System.Properties.Resources.minimize_gray;
             this.MinimizeButton.ImageLocation = null;
             this.MinimizeButton.ImageMargin = 30;
             this.MinimizeButton.ImageSize = new System.Drawing.Size(20, 20);
@@ -1465,7 +1465,7 @@
             this.MinimizeButton.TabStop = false;
             this.MinimizeButton.ToolTipText = "";
             this.MinimizeButton.WaitOnLoad = false;
-            //this.MinimizeButton.Zoom = 30;
+            this.MinimizeButton.Zoom = 30;
             this.MinimizeButton.ZoomSpeed = 10;
             this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
@@ -1483,7 +1483,7 @@
             this.bunifuImageButton2.FadeWhenInactive = false;
             this.bunifuImageButton2.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.bunifuImageButton2.Image = global::Filling_Station_Management_System.Properties.Resources.squares;
-            //this.bunifuImageButton2.ImageActive = global::Filling_Station_Management_System.Properties.Resources.squares_gray;
+            this.bunifuImageButton2.ImageActive = global::Filling_Station_Management_System.Properties.Resources.squares_gray;
             this.bunifuImageButton2.ImageLocation = null;
             this.bunifuImageButton2.ImageMargin = 30;
             this.bunifuImageButton2.ImageSize = new System.Drawing.Size(20, 20);
@@ -1501,7 +1501,7 @@
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.ToolTipText = "";
             this.bunifuImageButton2.WaitOnLoad = false;
-            //this.bunifuImageButton2.Zoom = 30;
+            this.bunifuImageButton2.Zoom = 30;
             this.bunifuImageButton2.ZoomSpeed = 10;
             this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
@@ -1519,7 +1519,7 @@
             this.CloseAppBtn.FadeWhenInactive = false;
             this.CloseAppBtn.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.CloseAppBtn.Image = global::Filling_Station_Management_System.Properties.Resources.close;
-            //this.CloseAppBtn.ImageActive = global::Filling_Station_Management_System.Properties.Resources.close_red;
+            this.CloseAppBtn.ImageActive = global::Filling_Station_Management_System.Properties.Resources.close_red;
             this.CloseAppBtn.ImageLocation = null;
             this.CloseAppBtn.ImageMargin = 30;
             this.CloseAppBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -1555,12 +1555,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.StateActive.Border.Rounding = 15;
-            this.StateActive.Header.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.StateActive.Header.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.Text = "Filling Station Management System";
             this.Load += new System.EventHandler(this.Form1_Load);
