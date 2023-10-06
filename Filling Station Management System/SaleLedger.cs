@@ -30,7 +30,7 @@ namespace Filling_Station_Management_System
 
         double recovery, deposit, discount, udhar;
         double balance;
-        private float _openReading, _closeReading, _rate, _test, _price, _quantity, _netQuantity, _readCount;
+        private Double _openReading, _closeReading, _rate, _test, _price, _quantity, _netQuantity, _readCount;
         Double newPrice, newBalance, newQuantity, newNetQuantity;
 
         string sql;
@@ -120,69 +120,22 @@ namespace Filling_Station_Management_System
 
         private void UdharTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (isFilled())
-            {
-                if (Regex.IsMatch(DiscountTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    Calculations();
-                    Calculations2();
 
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                    UdharTextBox.Text = string.Empty;
-                }
-            }
-            else
-            {
-
-            }
+            Calculations();
 
         }
 
 
         private void RecoveryTextBox_TextChanged_1(object sender, EventArgs e)
         {
-            if (isFilled())
-            {
-                if (Regex.IsMatch(RecoveryTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    Calculations();
-                    Calculations2();
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                    RecoveryTextBox.Text = string.Empty;
-                }
-            }
-            else
-            {
 
-            }
+            Calculations();
         }
 
         private void DiscountTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (isFilled())
-            {
-                if (Regex.IsMatch(DiscountTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    Calculations();
-                    Calculations2();
 
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                    DiscountTextBox.Text = string.Empty;
-                }
-            }
-            else
-            {
-
-            }
+            Calculations();
         }
 
         private void UpdateData_Click(object sender, EventArgs e)
@@ -244,7 +197,7 @@ namespace Filling_Station_Management_System
                 else if (SearchByRefRadio.Checked)
                 {
 
-                    cmd.CommandText = $"SELECT * FROM unit{index}_sales_data WHERE Ref_No LIKE" + "'" + AppSettings.ValidateTextBoxForNumbers(SearchTextBox) + "%'";
+                    cmd.CommandText = $"SELECT * FROM unit{index}_sales_data WHERE Ref_No LIKE" + "'" + AppSettings.ValidateTextBoxForAlphabets(SearchTextBox) + "%'";
                     cmd.Parameters.AddWithValue("@Ref_No", AppSettings.ValidateTextBoxForAlphabets(SearchTextBox));
                 }
                 else
@@ -329,7 +282,7 @@ namespace Filling_Station_Management_System
             CheckTextBox.Text = DataGrid2.SelectedRows[0].Cells[7].Value.ToString();
             NetQuantityTextBox.Text = DataGrid2.SelectedRows[0].Cells[8].Value.ToString();
             RateTextBox.Text = DataGrid2.SelectedRows[0].Cells[9].Value.ToString();
-            PriceTextBox.Text = DataGrid2.SelectedRows[0].Cells[10].Value.ToString();
+            AmountTextBox.Text = DataGrid2.SelectedRows[0].Cells[10].Value.ToString();
             RecoveryTextBox.Text = DataGrid2.SelectedRows[0].Cells[11].Value.ToString();
             DepositTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[12].Value.ToString();
             UdharTextBox.Text = DataGrid2.SelectedRows[0].Cells[13].Value.ToString();
@@ -367,7 +320,7 @@ namespace Filling_Station_Management_System
             CheckTextBox.Text = DataGrid3.SelectedRows[0].Cells[7].Value.ToString();
             NetQuantityTextBox.Text = DataGrid3.SelectedRows[0].Cells[8].Value.ToString();
             RateTextBox.Text = DataGrid3.SelectedRows[0].Cells[9].Value.ToString();
-            PriceTextBox.Text = DataGrid3.SelectedRows[0].Cells[10].Value.ToString();
+            AmountTextBox.Text = DataGrid3.SelectedRows[0].Cells[10].Value.ToString();
             RecoveryTextBox.Text = DataGrid3.SelectedRows[0].Cells[11].Value.ToString();
             DepositTextBox.Text = DataGrid3.SelectedRows[0].Cells[12].Value.ToString();
             UdharTextBox.Text = DataGrid3.SelectedRows[0].Cells[13].Value.ToString();
@@ -465,7 +418,7 @@ namespace Filling_Station_Management_System
             CheckTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[7].Value.ToString();
             NetQuantityTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[8].Value.ToString();
             RateTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[9].Value.ToString();
-            PriceTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[10].Value.ToString();
+            AmountTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[10].Value.ToString();
             RecoveryTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[11].Value.ToString();
             DepositTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[12].Value.ToString();
             UdharTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[13].Value.ToString();
@@ -500,23 +453,10 @@ namespace Filling_Station_Management_System
 
         private void CloseReadingTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (isFilled2())
-            {
-                if (Regex.IsMatch(CloseReadingTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
 
-                    Calculations2();
-                    Calculations();
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                }
-            }
-            else
-            {
+            // Calculations2();
+            Calculations();
 
-            }
         }
 
         private void HelperTextBox_TextChanged(object sender, EventArgs e)
@@ -575,22 +515,8 @@ namespace Filling_Station_Management_System
 
         private void CheckTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (isFilled2())
-            {
-                if (Regex.IsMatch(CheckTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    Calculations2();
-                    Calculations();
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                }
-            }
-            else
-            {
-                //CheckTextBox.Text = "0";
-            }
+            Calculations();
+
         }
 
         private void SaveExcelButton_Click(object sender, EventArgs e)
@@ -628,25 +554,16 @@ namespace Filling_Station_Management_System
             }
         }
 
+        private void DepositTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Calculations();
+        }
+
         private void RateTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (isFilled2())
-            {
-                if (Regex.IsMatch(RateTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    Calculations2();
-                    Calculations();
+            // Calculations2();
+            Calculations();
 
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                }
-            }
-            else
-            {
-                // RateTextBox.Text = "0";
-            }
         }
 
         private void UnitBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -668,7 +585,7 @@ namespace Filling_Station_Management_System
             CheckTextBox.Text = DataGrid4.SelectedRows[0].Cells[7].Value.ToString();
             NetQuantityTextBox.Text = DataGrid4.SelectedRows[0].Cells[8].Value.ToString();
             RateTextBox.Text = DataGrid4.SelectedRows[0].Cells[9].Value.ToString();
-            PriceTextBox.Text = DataGrid4.SelectedRows[0].Cells[10].Value.ToString();
+            AmountTextBox.Text = DataGrid4.SelectedRows[0].Cells[10].Value.ToString();
             RecoveryTextBox.Text = DataGrid4.SelectedRows[0].Cells[11].Value.ToString();
             DepositTextBox.Text = DataGrid4.SelectedRows[0].Cells[12].Value.ToString();
             UdharTextBox.Text = DataGrid4.SelectedRows[0].Cells[13].Value.ToString();
@@ -710,7 +627,7 @@ namespace Filling_Station_Management_System
             _closeReading = 0;
             CheckTextBox.Text = "0";
             _test = 0;
-            PriceTextBox.Text = "0";
+            AmountTextBox.Text = "0";
             _price = 0;
             RateTextBox.Text = "0";
             _rate = 0;
@@ -752,59 +669,57 @@ namespace Filling_Station_Management_System
             return RateTextBox.Text != string.Empty && CloseReadingTextBox.Text != string.Empty;
         }
 
-        public void Calculations2()
+
+        private void Calculations()
         {
             try
             {
-                _closeReading = ConvertFloat(CloseReadingTextBox.Text);
-                _rate = ConvertFloat(RateTextBox.Text);
-                _test = ConvertFloat(CheckTextBox.Text);
+
+                deposit = AppSettings.convertToDouble(DepositTextBox.Text);
+                udhar = AppSettings.convertToDouble(UdharTextBox.Text);
+                recovery = AppSettings.convertToDouble(RecoveryTextBox.Text);
+                discount = AppSettings.convertToDouble(DiscountTextBox.Text);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Calculations", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            _openReading = ConvertFloat(OpenReadingTextBox.Text);
+
+            balance = _price + recovery - deposit - udhar - discount;
+            newBalance = Math.Round(balance, 0);
+            BalanceTB.Text = newBalance.ToString();
+
+
+            // Calculations 2 ***************************
+
+            try
+            {
+                _closeReading = AppSettings.convertToDouble(CloseReadingTextBox.Text);
+                _rate = AppSettings.convertToDouble(RateTextBox.Text);
+                _test = AppSettings.convertToDouble(CheckTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Calculations II", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
             _quantity = _closeReading - _openReading;
             _netQuantity = _quantity - _test;
-            _price = _netQuantity * _rate;
+            _price = (_netQuantity * _rate);
+
 
 
             newPrice = Math.Round(_price, 0);
             newQuantity = Math.Round(_quantity, 2);
             newNetQuantity = Math.Round(_netQuantity, 2);
 
-            // OpenReadingTextBox.Text = _openReading.ToString();
+
+            OpenReadingTextBox.Text = _openReading.ToString();
             QuantityTextBox.Text = newQuantity.ToString();
             NetQuantityTextBox.Text = newNetQuantity.ToString();
-            PriceTextBox.Text = newPrice.ToString();
-
-
-        }
-
-        private void Calculations()
-        {
-            if (isFilled())
-            {
-                try
-                {
-
-                    deposit = AppSettings.convertToDouble(DepositTextBox.Text);
-                    udhar = AppSettings.convertToDouble(UdharTextBox.Text);
-                    recovery = AppSettings.convertToDouble(RecoveryTextBox.Text);
-                    discount = AppSettings.convertToDouble(DiscountTextBox.Text);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-
-
-                balance = _price + recovery - deposit - udhar - discount;
-                newBalance = Math.Round(balance, 0);
-                BalanceTB.Text = newBalance.ToString();
-            }
+            AmountTextBox.Text = newPrice.ToString();
         }
 
         private bool isFilledMandatory()

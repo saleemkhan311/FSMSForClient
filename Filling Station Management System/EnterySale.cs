@@ -22,9 +22,9 @@ namespace Filling_Station_Management_System
 
 
 
-        float recovery, deposit, discount, udhar;
-        float balance;
-        private float _openReading, _closeReading, _rate, _test, _price, _quantity, _netQuantity;
+        Double recovery, deposit, discount, udhar;
+        Double balance;
+        private Double _openReading, _closeReading, _rate, _test, _price, _quantity, _netQuantity;
         Double newPrice, newBalance, newOpenReading, newQuantity, newNetQuantity;
 
         // Reading Entry -------------------------------------------------------------------------------------------
@@ -32,44 +32,15 @@ namespace Filling_Station_Management_System
 
         private void CloseReadingTextBox_TextChanged_1(object sender, EventArgs e)
         {
-            if (isFilled2())
-            {
-                if (Regex.IsMatch(CloseReadingTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-
-                    Calculations2();
-                    Calculations();
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                }
-            }
-            else
-            {
-
-            }
+            // Calculations2();
+            Calculations();
         }
 
         private void RateTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (isFilled2())
-            {
-                if (Regex.IsMatch(RateTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    Calculations2();
-                    Calculations();
+            //Calculations2();
+            Calculations();
 
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                }
-            }
-            else
-            {
-
-            }
         }
 
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -95,22 +66,9 @@ namespace Filling_Station_Management_System
 
         private void CheckTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (isFilled2())
-            {
-                if (Regex.IsMatch(CheckTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    Calculations2();
-                    Calculations();
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                }
-            }
-            else
-            {
+            // Calculations2();
+            Calculations();
 
-            }
         }
 
 
@@ -120,53 +78,15 @@ namespace Filling_Station_Management_System
             return RateTextBox.Text != string.Empty && CloseReadingTextBox.Text != string.Empty && CheckTextBox.Text != string.Empty;
         }
 
-        public void Calculations2()
-        {
-            try
-            {
-                _closeReading = ConvertFloat(CloseReadingTextBox.Text);
-                _rate = ConvertFloat(RateTextBox.Text);
-                _test = ConvertFloat(CheckTextBox.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Calculations2", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-            _quantity = _closeReading - _openReading;
-            _netQuantity = _quantity - _test;
-            _price = (_netQuantity * _rate);
-
-
-
-            newPrice = Math.Round(_price, 0);
-            newQuantity = Math.Round(_quantity, 2);
-            newNetQuantity = Math.Round(_netQuantity, 2);
-
-
-            OpenReadingTextBox.Text = _openReading.ToString();
-            QuantityTextBox.Text = newQuantity.ToString();
-            NetQuantityTextBox.Text = newNetQuantity.ToString();
-            AmountTextBox.Text = newPrice.ToString();
-
-
-
-
-
-
-
-        }
+        
 
         private void InsertData_Click(object sender, EventArgs e)
         {
 
 
-            if (isFilled() && isFilled2() && isFilledMandatory())
+            if (isFilled2() && isFilledMandatory())
             {
                 Query();
-
-
                 AutoIncrement();
             }
             else
@@ -197,18 +117,8 @@ namespace Filling_Station_Management_System
 
         private void bunifuTextBox25_TextChanged(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(DepositTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-            {
-                Calculations();
-
-                Calculations2();
-
-            }
-            else
-            {
-                MessageBox.Show("Enter Data in Numbers");
-                DepositTextBox.Text = string.Empty;
-            }
+            Calculations();
+            // Calculations2();
         }
 
 
@@ -261,69 +171,22 @@ namespace Filling_Station_Management_System
 
         private void RecoveryTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (isFilled())
-            {
-                if (Regex.IsMatch(RecoveryTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    Calculations();
 
-                    Calculations2();
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                    RecoveryTextBox.Text = string.Empty;
-                }
-            }
-            else
-            {
+            Calculations();
 
-            }
+           
+
         }
         private void UdharTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (isFilled())
-            {
-                if (Regex.IsMatch(DiscountTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    Calculations();
-                    Calculations2();
-
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                    UdharTextBox.Text = string.Empty;
-                }
-            }
-            else
-            {
-
-            }
+            Calculations();
+           
         }
 
         private void DiscountTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (isFilled())
-            {
-                if (Regex.IsMatch(DiscountTextBox.Text, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    Calculations();
-                    Calculations2();
-
-                }
-                else
-                {
-                    MessageBox.Show("Enter Data in Numbers");
-                    DiscountTextBox.Text = string.Empty;
-                }
-            }
-            else
-            {
-
-            }
-
-
+            Calculations();
+           
         }
 
 
@@ -333,36 +196,57 @@ namespace Filling_Station_Management_System
 
         private void Calculations()
         {
-            if (isFilled())
+
+            try
             {
-                try
-                {
 
-                    deposit = ConvertFloat(DepositTextBox.Text);
-                    udhar = ConvertFloat(UdharTextBox.Text.ToString());
-                    recovery = ConvertFloat(RecoveryTextBox.Text);
-                    discount = ConvertFloat(DiscountTextBox.Text);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message, "Calculations", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-
-                balance = _price + recovery - deposit - udhar - discount;
-                newBalance = Math.Round(balance, 0);
-                BalanceTB.Text = newBalance.ToString();
+                deposit = AppSettings.convertToDouble(DepositTextBox.Text);
+                udhar = AppSettings.convertToDouble(UdharTextBox.Text);
+                recovery = AppSettings.convertToDouble(RecoveryTextBox.Text);
+                discount = AppSettings.convertToDouble(DiscountTextBox.Text);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Calculations", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            balance = _price + recovery - deposit - udhar - discount;
+            newBalance = Math.Round(balance, 0);
+            BalanceTB.Text = newBalance.ToString();
+
+
+            // Calculations 2 ***************************
+
+            try
+            {
+                _closeReading = AppSettings.convertToDouble(CloseReadingTextBox.Text);
+                _rate = AppSettings.convertToDouble(RateTextBox.Text);
+                _test = AppSettings.convertToDouble(CheckTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Calculations II", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            _quantity = _closeReading - _openReading;
+            _netQuantity = _quantity - _test;
+            _price = (_netQuantity * _rate);
+
+
+
+            newPrice = Math.Round(_price, 0);
+            newQuantity = Math.Round(_quantity, 2);
+            newNetQuantity = Math.Round(_netQuantity, 2);
+
+
+            OpenReadingTextBox.Text = _openReading.ToString();
+            QuantityTextBox.Text = newQuantity.ToString();
+            NetQuantityTextBox.Text = newNetQuantity.ToString();
+            AmountTextBox.Text = newPrice.ToString();
+
         }
-
-
-
-        private bool isFilled()
-        {
-            return RecoveryTextBox.Text != string.Empty && DepositTextBox.Text != string.Empty && UdharTextBox.Text != string.Empty && DiscountTextBox.Text != string.Empty;
-        }
-
-
 
         string sql;
 
@@ -457,9 +341,9 @@ namespace Filling_Station_Management_System
         }
 
         string sqlCom;
-        private float GetLastClosingReading()
+        private Double GetLastClosingReading()
         {
-            float lastClosingReading = 0;
+            Double lastClosingReading = 0;
 
             int unit = UnitBox.SelectedIndex + 1;
             try
@@ -475,7 +359,7 @@ namespace Filling_Station_Management_System
 
                 if (result != null && result != DBNull.Value)
                 {
-                    lastClosingReading = ConvertFloat(result.ToString());
+                    lastClosingReading = AppSettings.convertToDouble(result.ToString());
                 }
             }
             catch (Exception ex)
@@ -567,20 +451,20 @@ namespace Filling_Station_Management_System
 
         }
 
-        private static float ConvertFloat(string value)
-        {
-            value = string.IsNullOrEmpty(value) ? "0" : value;
+        /*  private static float ConvertFloat(string value)
+          {
+              value = string.IsNullOrEmpty(value) ? "0" : value;
 
-            if (float.TryParse(value, out float floatValue))
-            {
+              if (float.TryParse(value, out float floatValue))
+              {
 
-                return floatValue;
-            }
-            else
-            {
-                throw new ArgumentException("Invalid Input: Not a Valid Entry");
-            }
+                  return floatValue;
+              }
+              else
+              {
+                  throw new ArgumentException("Invalid Input: Not a Valid Entry");
+              }
 
-        }
+          }*/
     }
 }

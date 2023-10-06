@@ -282,7 +282,6 @@
             this.SaleEntery.ShowBorders = false;
             this.SaleEntery.Size = new System.Drawing.Size(845, 640);
             this.SaleEntery.TabIndex = 100;
-            this.SaleEntery.Click += new System.EventHandler(this.SaleEntery_Click);
             // 
             // InsertData
             // 

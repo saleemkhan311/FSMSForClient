@@ -147,7 +147,7 @@ namespace Filling_Station_Management_System
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
 
-                string sqlCom = $"SELECT Round(Available_Stock_Unit_Price,2) FROM petrol_stock ORDER BY Ref_No DESC LIMIT 1;;";
+                string sqlCom = $"SELECT Round(Available_Stock_Unit_Price,2) FROM petrol_stock ORDER BY Ref_No DESC LIMIT 1;";
 
                 MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
                 object result = cmd.ExecuteScalar();

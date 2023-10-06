@@ -125,13 +125,17 @@ namespace Filling_Station_Management_System
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 System.Data.DataTable dataTable = new System.Data.DataTable();
                 adapter.Fill(dataTable);
+
                 if (TabControl.SelectedIndex == 1)
                 {
                     DieselDataGrid.DataSource = dataTable;
+
                 }
                 else if (TabControl.SelectedIndex == 0)
                 {
                     PetrolDataGrid.DataSource = dataTable;
+
+
                 }
 
             }
@@ -145,15 +149,7 @@ namespace Filling_Station_Management_System
         private void SharahBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Calculate();
-            if (Validation(WeightBox.Text))
-            {
-                kantaWazan = Math.Round(Convert.ToDouble(WeightBox.Text), 0);
-                sharah = Math.Round(Convert.ToDouble(SharahListBox.Text), 0);
-                miqdar = kantaWazan / sharah;
 
-                QuantityBox.Text = RoundToString(miqdar);
-
-            }
         }
 
         private void KhorakiBox_TextChanged(object sender, EventArgs e)
@@ -189,7 +185,6 @@ namespace Filling_Station_Management_System
 
         private void RecoveryAmountBox3_TextChanged(object sender, EventArgs e)
         {
-
             Calculate();
         }
 
@@ -353,7 +348,7 @@ namespace Filling_Station_Management_System
                 }
                 else if (SearchByRefRadio.Checked)
                 {
-                    cmd.CommandText = $"SELECT * FROM purchase_data_{index} WHERE Ref_No LIKE" + "'" + AppSettings.ValidateTextBoxForNumbers(SearchTextBox) + "%'";
+                    cmd.CommandText = $"SELECT * FROM purchase_data_{index} WHERE Ref_No LIKE" + "'" + AppSettings.ValidateTextBoxForAlphabets(SearchTextBox) + "%'";
                     cmd.Parameters.AddWithValue("@Ref_No", AppSettings.ValidateTextBoxForAlphabets(SearchTextBox));
                 }
                 else
@@ -781,7 +776,6 @@ namespace Filling_Station_Management_System
         private void SabqaRaqamBox_TextChanged(object sender, EventArgs e)
         {
             Calculate();
-
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -807,42 +801,6 @@ namespace Filling_Station_Management_System
             }
         }
 
-        string RoundToString(Double value)
-        {
-            return Math.Round(value, 0).ToString();
-        }
-
-        private bool Validation(string value)
-        {
-            bool isValid = false;
-
-            if (value != string.Empty)
-            {
-
-                if (Regex.IsMatch(value, @"^[0-9]*(?:\.[0-9]*)?$"))
-                {
-                    isValid = true;
-                }
-                else
-                {
-                    isValid = false;
-                    MessageBox.Show("Invalid Entry");
-                }
-            }
-
-            return isValid;
-        }
-
-
-
-
-        private float GetTextWidth(string text, System.Drawing.Font font)
-        {
-            using (Graphics g = Graphics.FromImage(new Bitmap(1, 1)))
-            {
-                return g.MeasureString(text, font).Width;
-            }
-        }
 
 
     }

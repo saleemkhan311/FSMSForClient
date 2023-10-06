@@ -35,8 +35,12 @@ namespace Filling_Station_Management_System
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
+                if (dataTable.Rows.Count > 0)
+                {
+                    PetrolStockDataGrid.DataSource = dataTable;
+                }
+                else { MessageBox.Show("No Entries in Database"); }
 
-                PetrolStockDataGrid.DataSource = dataTable;
             }
             catch (Exception ex)
             {
@@ -61,8 +65,9 @@ namespace Filling_Station_Management_System
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
-
-                DieselStockDataGrid.DataSource = dataTable;
+                if (dataTable.Rows.Count > 0)
+                { DieselStockDataGrid.DataSource = dataTable; }
+                else { MessageBox.Show("No Entries in Database"); }
             }
             catch (Exception ex)
             {
