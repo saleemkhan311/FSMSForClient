@@ -1271,7 +1271,7 @@
             this.RefLabel.Size = new System.Drawing.Size(280, 41);
             this.RefLabel.TabIndex = 1;
             this.RefLabel.TabStop = false;
-            this.RefLabel.Text = "Ref# :--------1012";
+            this.RefLabel.Text = "Ref# :--1012";
             this.RefLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.RefLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 

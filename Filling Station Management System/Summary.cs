@@ -16,7 +16,7 @@ namespace Filling_Station_Management_System
         private void Summery_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
-            TotalSaleLabel.Text = "Total Sale Diesel: " + GetTotalSale().ToString();
+
         }
 
 
@@ -161,7 +161,7 @@ namespace Filling_Station_Management_System
 
             // Bind the DataTable to the DataGridView
             DieselSummaryDataGrid.DataSource = dataTable;
-            TotalSaleLabel.Text = "Total Sale Diesel: " + GetTotalSale().ToString();
+
         }
 
         void PetrolSummaryPurchase()
@@ -223,45 +223,6 @@ namespace Filling_Station_Management_System
 
         }
 
-
-        private float GetTotalSale()
-        {
-            float lastClosingReading = 0;
-
-
-            try
-            {
-
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                string sqlCom = $"SELECT \r\n    (SELECT Round(SUM(netQuantity),2) FROM unit2_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit3_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit4_sales_data) AS TotalSumQuantity;";
-
-
-
-
-
-                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
-                {
-                    lastClosingReading = float.Parse(result.ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error: " + ex.Message);
-            }
-
-            return lastClosingReading;
-        }
-
-
-
-
-
         void PetrolSummarySale()
         {
             string sqlPetrolSale;
@@ -272,8 +233,29 @@ namespace Filling_Station_Management_System
                 connection.Open();
 
 
-                sqlPetrolSale = @"";
-
+                sqlPetrolSale = @"SELECT
+                                    sales_date,
+                                    ROUND(SUM(NetQuantityUnit1), 2) AS Total_NetQuantity,
+                                    ROUND(SUM(NetQuantityUnit1), 2) AS Total_Quantity,
+                                    ROUND(SUM(AmountUnit1), 2) AS Total_Amount,
+                                    ROUND(SUM(DiscountUnit1), 2) AS Total_Discount,
+                                    ROUND(SUM(BalanceUnit1), 2) AS Net_Amount
+                                FROM
+                                    (
+                                        SELECT
+                                            DATE(date) AS sales_date,
+                                            NetQuantity AS NetQuantityUnit1,
+                                            Amount AS AmountUnit1,
+                                            Discount AS DiscountUnit1,
+                                            Balance AS BalanceUnit1
+                                        FROM
+                                            unit1_sales_data
+                                    ) AS combined_data
+                                GROUP BY
+                                    sales_date
+                                ORDER BY
+                                    sales_date;
+                                ";
 
                 MySqlCommand cmd = new MySqlCommand(sqlPetrolSale, connection);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);

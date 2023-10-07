@@ -41,7 +41,6 @@
             this.PetrolSummaryDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.DieselSummaryDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.TotalSaleLabel = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SaveExcelButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -220,22 +219,6 @@
             this.DieselSummaryDataGrid.TabStop = false;
             this.DieselSummaryDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
-            // TotalSaleLabel
-            // 
-            this.TotalSaleLabel.AllowParentOverrides = false;
-            this.TotalSaleLabel.AutoEllipsis = false;
-            this.TotalSaleLabel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TotalSaleLabel.CursorType = System.Windows.Forms.Cursors.Default;
-            this.TotalSaleLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.TotalSaleLabel.Location = new System.Drawing.Point(15, 45);
-            this.TotalSaleLabel.Name = "TotalSaleLabel";
-            this.TotalSaleLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TotalSaleLabel.Size = new System.Drawing.Size(102, 30);
-            this.TotalSaleLabel.TabIndex = 205;
-            this.TotalSaleLabel.Text = "Total Sale: ";
-            this.TotalSaleLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.TotalSaleLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuLabel3
             // 
             this.bunifuLabel3.AllowParentOverrides = false;
@@ -362,7 +345,6 @@
             this.ClientSize = new System.Drawing.Size(845, 640);
             this.Controls.Add(this.SaveExcelButton);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.TotalSaleLabel);
             this.Controls.Add(this.bunifuLabel3);
             this.Controls.Add(this.TabControl);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -391,7 +373,6 @@
         private Bunifu.UI.WinForms.BunifuDataGridView PetrolSummaryDataGrid;
         private System.Windows.Forms.TabPage tabPage2;
         private Bunifu.UI.WinForms.BunifuDataGridView DieselSummaryDataGrid;
-        private Bunifu.UI.WinForms.BunifuLabel TotalSaleLabel;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private System.Windows.Forms.ComboBox comboBox1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton SaveExcelButton;

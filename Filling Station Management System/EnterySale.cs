@@ -78,7 +78,7 @@ namespace Filling_Station_Management_System
             return RateTextBox.Text != string.Empty && CloseReadingTextBox.Text != string.Empty && CheckTextBox.Text != string.Empty;
         }
 
-        
+
 
         private void InsertData_Click(object sender, EventArgs e)
         {
@@ -174,19 +174,19 @@ namespace Filling_Station_Management_System
 
             Calculations();
 
-           
+
 
         }
         private void UdharTextBox_TextChanged(object sender, EventArgs e)
         {
             Calculations();
-           
+
         }
 
         private void DiscountTextBox_TextChanged(object sender, EventArgs e)
         {
             Calculations();
-           
+
         }
 
 
@@ -197,23 +197,7 @@ namespace Filling_Station_Management_System
         private void Calculations()
         {
 
-            try
-            {
 
-                deposit = AppSettings.convertToDouble(DepositTextBox.Text);
-                udhar = AppSettings.convertToDouble(UdharTextBox.Text);
-                recovery = AppSettings.convertToDouble(RecoveryTextBox.Text);
-                discount = AppSettings.convertToDouble(DiscountTextBox.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Calculations", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-            balance = _price + recovery - deposit - udhar - discount;
-            newBalance = Math.Round(balance, 0);
-            BalanceTB.Text = newBalance.ToString();
 
 
             // Calculations 2 ***************************
@@ -246,14 +230,30 @@ namespace Filling_Station_Management_System
             NetQuantityTextBox.Text = newNetQuantity.ToString();
             AmountTextBox.Text = newPrice.ToString();
 
+            //----------
+
+            try
+            {
+
+                deposit = AppSettings.convertToDouble(DepositTextBox.Text);
+                udhar = AppSettings.convertToDouble(UdharTextBox.Text);
+                recovery = AppSettings.convertToDouble(RecoveryTextBox.Text);
+                discount = AppSettings.convertToDouble(DiscountTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Calculations", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            balance = _price + recovery - deposit - udhar - discount;
+            newBalance = Math.Round(balance, 0);
+            BalanceTB.Text = newBalance.ToString();
+
         }
 
         string sql;
 
-        private void SaleEntery_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void InsertData_KeyUp(object sender, KeyEventArgs e)
         {
@@ -267,12 +267,6 @@ namespace Filling_Station_Management_System
                 e.Handled = true; // Suppress the Enter key
             }
         }
-
-        private void EnterySale_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void OpenReadingTextBox_TextChanged(object sender, EventArgs e)
         {
 

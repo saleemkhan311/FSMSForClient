@@ -320,7 +320,6 @@ namespace Filling_Station_Management_System
                 // Retrieve data for unit1_sales_data for the last 7 days
                 string unit1Query = "SELECT Date,  netQuantity FROM unit1_sales_data WHERE Date >= DATE(NOW()) - INTERVAL 7 DAY";
 
-
                 string unit2Query = "SELECT  netQuantity FROM unit2_sales_data WHERE Date >= DATE(NOW()) - INTERVAL 7 DAY";
                 string unit3Query = "SELECT  netQuantity FROM unit3_sales_data WHERE Date >= DATE(NOW()) - INTERVAL 7 DAY";
                 string unit4Query = "SELECT  netQuantity FROM unit4_sales_data WHERE Date >= DATE(NOW()) - INTERVAL 7 DAY";

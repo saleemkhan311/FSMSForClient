@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using MySql.Data.MySqlClient;
-using System.Text.Json;
-using System.Text.RegularExpressions;
 
 
 namespace Filling_Station_Management_System
@@ -453,10 +446,7 @@ namespace Filling_Station_Management_System
 
         private void CloseReadingTextBox_TextChanged(object sender, EventArgs e)
         {
-
-            // Calculations2();
             Calculations();
-
         }
 
         private void HelperTextBox_TextChanged(object sender, EventArgs e)
@@ -530,19 +520,13 @@ namespace Filling_Station_Management_System
         private void SearchTextBox_OnIconRightClick(object sender, EventArgs e)
         {
             SearchControl();
-            // SearchTextBox.IconRight.Size = new Size(50, 50); 
 
 
         }
 
         private void UpdateData_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                UpdateData.PerformClick();
-                this.SelectNextControl(this.ActiveControl, true, true, true, true);
-                e.Handled = true; // Prevent normal Enter behavior.
-            }
+
         }
 
         private void DesKeyPress(object sender, KeyPressEventArgs e)
@@ -561,7 +545,7 @@ namespace Filling_Station_Management_System
 
         private void RateTextBox_TextChanged(object sender, EventArgs e)
         {
-            // Calculations2();
+
             Calculations();
 
         }
@@ -672,23 +656,7 @@ namespace Filling_Station_Management_System
 
         private void Calculations()
         {
-            try
-            {
 
-                deposit = AppSettings.convertToDouble(DepositTextBox.Text);
-                udhar = AppSettings.convertToDouble(UdharTextBox.Text);
-                recovery = AppSettings.convertToDouble(RecoveryTextBox.Text);
-                discount = AppSettings.convertToDouble(DiscountTextBox.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Calculations", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-            balance = _price + recovery - deposit - udhar - discount;
-            newBalance = Math.Round(balance, 0);
-            BalanceTB.Text = newBalance.ToString();
 
 
             // Calculations 2 ***************************
@@ -720,6 +688,26 @@ namespace Filling_Station_Management_System
             QuantityTextBox.Text = newQuantity.ToString();
             NetQuantityTextBox.Text = newNetQuantity.ToString();
             AmountTextBox.Text = newPrice.ToString();
+
+            //----------------------------------------------
+
+            try
+            {
+
+                deposit = AppSettings.convertToDouble(DepositTextBox.Text);
+                udhar = AppSettings.convertToDouble(UdharTextBox.Text);
+                recovery = AppSettings.convertToDouble(RecoveryTextBox.Text);
+                discount = AppSettings.convertToDouble(DiscountTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Calculations", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            balance = _price + recovery - deposit - udhar - discount;
+            newBalance = Math.Round(balance, 0);
+            BalanceTB.Text = newBalance.ToString();
         }
 
         private bool isFilledMandatory()
