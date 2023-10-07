@@ -84,15 +84,10 @@ namespace Filling_Station_Management_System
         {
 
 
-            if (isFilled2() && isFilledMandatory())
-            {
-                Query();
-                AutoIncrement();
-            }
-            else
-            {
-                MessageBox.Show("Error: Please Fill All the Fields To Procced");
-            }
+
+            Query();
+            AutoIncrement();
+
 
             if (FuelTypeBox.SelectedIndex == 0)
             {
@@ -118,7 +113,6 @@ namespace Filling_Station_Management_System
         private void bunifuTextBox25_TextChanged(object sender, EventArgs e)
         {
             Calculations();
-            // Calculations2();
         }
 
 
@@ -173,9 +167,6 @@ namespace Filling_Station_Management_System
         {
 
             Calculations();
-
-
-
         }
         private void UdharTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -196,8 +187,6 @@ namespace Filling_Station_Management_System
 
         private void Calculations()
         {
-
-
 
 
             // Calculations 2 ***************************
@@ -264,7 +253,7 @@ namespace Filling_Station_Management_System
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                e.Handled = true; // Suppress the Enter key
+                e.Handled = true;
             }
         }
         private void OpenReadingTextBox_TextChanged(object sender, EventArgs e)
@@ -292,8 +281,6 @@ namespace Filling_Station_Management_System
                 connection.Open();
                 sql = $"INSERT INTO unit{unit}_sales_data (Ref_No,Date,Fuel_Type,Helper,Opening_Reading,Closing_Reading,Quantity,Test,netQuantity,Unit_Price,Amount,Recovery,Deposited,Udhar,Discount,Balance) VALUES " +
                                                          "(@Ref_No,@Date,@Fuel_Type,@Helper,@Opening_Reading,@Closing_Reading,@Quantity,@Test,@netQuantity,@Unit_Price,@Amount,@Recovery,@Deposited,@Udhar,@Discount,@Balance)";
-
-
 
 
                 MySqlCommand cmd = new MySqlCommand(sql, connection);

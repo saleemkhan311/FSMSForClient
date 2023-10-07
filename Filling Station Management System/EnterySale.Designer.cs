@@ -372,7 +372,6 @@
             this.InsertData.TextPadding = new System.Windows.Forms.Padding(0);
             this.InsertData.UseDefaultRadiusAndThickness = true;
             this.InsertData.Click += new System.EventHandler(this.InsertData_Click);
-            this.InsertData.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InsertData_KeyUp);
             // 
             // HelperTextBox
             // 
