@@ -243,6 +243,9 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="PrinterUtility, Version=1.0.2.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\PrinterUtility.1.2.0\lib\PrinterUtility.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp, Version=100.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharpSigned.105.2.3\lib\net46\RestSharp.dll</HintPath>
     </Reference>
@@ -611,6 +614,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pump.ico" />
+    <None Include="Resources\PDF.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\PSOT5.png" />
+    <None Include="Resources\PSOT3.png" />
+    <None Include="Resources\PSOT2.png" />
+    <None Include="Resources\PSOT.png" />
+    <None Include="Resources\PSO.png" />
     <None Include="Resources\Search.png" />
     <None Include="Resources\SearchIcon.png" />
     <None Include="Resources\StockLedger.png" />

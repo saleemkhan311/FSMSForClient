@@ -117,235 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bunifuLabel7.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 30pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel4.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel9.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel12.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel13.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel14.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel15.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel16.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel17.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel18.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel19.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel20.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel21.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="NameLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="MalikNameLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="WazanLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="MiqdarLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="KhorakiLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="SafiMiqdarLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RateFiLiterLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="KulRaqamLAbel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="MazdooriLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="SafiRaqmLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="SabqaRaqamLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="TotalRaqamLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RaqamWasoolValue1Label.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel33.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel56.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel11.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel57.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel58.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel59.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel60.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel61.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel62.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="Rupay1.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="Rupay2.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="Rupay3.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="Rupay4.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="Rupay5.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RaqamWasoolValue2Label.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RaqamWasoolTafseel2Label.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RaqamWasoolValue3Label.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RaqamWasoolTafseel3Label.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RaqamWasoolTafseel4Label.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RaqamWasoolTafseel5Label.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="BaqayaLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RaqamWasoolTafseel1Label.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RaqamWasoolValue5Label.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RaqamWasoolValue4Label.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel10.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="RefLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 7px;font-family: 'Segoe UI Semibold'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
-  </data>
-  <data name="DateLabel.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 7px;font-family: 'Segoe UI Semibold'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
-  </data>
-  <data name="bunifuLabel6.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel3.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
-  </data>
-  <data name="bunifuLabel5.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 7px;font-family: 'Segoe UI Semibold'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PrintReceipt.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJIAAAAnCAYAAADkfBFIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIzSURBVHhe7dyhbxVBFMXhlUgkEolE4qijnSXZfU2a4KhE
-        IpF1lUhkJbKy8hnezuMvqKysrESWuTt32930cKECBO/3JZN0z7bP9GRmmnSmAf6Jrls/7dq8t2rzCWMH
-        Rxr2uzf5udfhcd6/Xj9ZtdvTvh2uy4fdMhirlG/6tP16lL4/85rEVvvbV33Kl8sPGdaHKX8uX+vWMv7T
-        sT21333f5h/l+a5QNkt5XTQr0fQDY5nKs7/Cjjt8u3lRVqg89aNL+dhfLdlyNpuJzm1v5K+AO6UbNlvd
-        2iwl907l5ZfxG0qZrFQeAw+UEl3UMg3Zo3vj2mezEcsZfsM23NO+abH5tvXPG3btERCaZqXuYNN71DT2
-        UIuULzwCQuNfdNaZtPnk0f0Gyl56BISsQLUz+cSjeZFmIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQ
-        kJ2RIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQ
-        kJ3pD4YPHp57BITkv9p26dtLC+1Mm0dAyCadWqTNO4/8lK06pwQI9ZKR4cr6YpOQx5VdFlAbxvKGWOnI
-        uD+yc5APTmXXSwLqrGR7Jo+BhfG2Gu/J4nDk3GzTXcZwxkUSmLMN9lQi64fH2mw3Pk5ddrmSZzadMXZs
-        dO3w0UqzvDNrOPuji0bkZVsMRso3v1zOIlYou1CpfIhsK2M3hm157B5RrjvCX9Y0PwFmiiCfgdOaHgAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJIAAAAnCAYAAADkfBFIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIzSURBVHhe7dyhbxVBFMXhlUgkEolE4qijnSXZfU2a4KhE
-        IpF1lUhkJbKy8hnezuMvqKysrESWuTt32930cKECBO/3JZN0z7bP9GRmmnSmAf6Jrls/7dq8t2rzCWMH
-        Rxr2uzf5udfhcd6/Xj9ZtdvTvh2uy4fdMhirlG/6tP16lL4/85rEVvvbV33Kl8sPGdaHKX8uX+vWMv7T
-        sT21333f5h/l+a5QNkt5XTQr0fQDY5nKs7/Cjjt8u3lRVqg89aNL+dhfLdlyNpuJzm1v5K+AO6UbNlvd
-        2iwl907l5ZfxG0qZrFQeAw+UEl3UMg3Zo3vj2mezEcsZfsM23NO+abH5tvXPG3btERCaZqXuYNN71DT2
-        UIuULzwCQuNfdNaZtPnk0f0Gyl56BISsQLUz+cSjeZFmIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQ
-        kJ2RIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQ
-        kJ3pD4YPHp57BITkv9p26dtLC+1Mm0dAyCadWqTNO4/8lK06pwQI9ZKR4cr6YpOQx5VdFlAbxvKGWOnI
-        uD+yc5APTmXXSwLqrGR7Jo+BhfG2Gu/J4nDk3GzTXcZwxkUSmLMN9lQi64fH2mw3Pk5ddrmSZzadMXZs
-        dO3w0UqzvDNrOPuji0bkZVsMRso3v1zOIlYou1CpfIhsK2M3hm157B5RrjvCX9Y0PwFmiiCfgdOaHgAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="bunifuButton2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJIAAAAnCAYAAADkfBFIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIzSURBVHhe7dyhbxVBFMXhlUgkEolE4qijnSXZfU2a4KhE
-        IpF1lUhkJbKy8hnezuMvqKysrESWuTt32930cKECBO/3JZN0z7bP9GRmmnSmAf6Jrls/7dq8t2rzCWMH
-        Rxr2uzf5udfhcd6/Xj9ZtdvTvh2uy4fdMhirlG/6tP16lL4/85rEVvvbV33Kl8sPGdaHKX8uX+vWMv7T
-        sT21333f5h/l+a5QNkt5XTQr0fQDY5nKs7/Cjjt8u3lRVqg89aNL+dhfLdlyNpuJzm1v5K+AO6UbNlvd
-        2iwl907l5ZfxG0qZrFQeAw+UEl3UMg3Zo3vj2mezEcsZfsM23NO+abH5tvXPG3btERCaZqXuYNN71DT2
-        UIuULzwCQuNfdNaZtPnk0f0Gyl56BISsQLUz+cSjeZFmIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQ
-        kJ2RIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQkJ2RIRCQnZEhEJCdkSEQ
-        kJ3pD4YPHp57BITkv9p26dtLC+1Mm0dAyCadWqTNO4/8lK06pwQI9ZKR4cr6YpOQx5VdFlAbxvKGWOnI
-        uD+yc5APTmXXSwLqrGR7Jo+BhfG2Gu/J4nDk3GzTXcZwxkUSmLMN9lQi64fH2mw3Pk5ddrmSZzadMXZs
-        dO3w0UqzvDNrOPuji0bkZVsMRso3v1zOIlYou1CpfIhsK2M3hm157B5RrjvCX9Y0PwFmiiCfgdOaHgAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="printDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>14, 13</value>
   </metadata>
   <metadata name="printPreviewDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>158, 17</value>
+    <value>170, 16</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="printPreviewDialog1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAICAQAAAAAADoAgAAZgAAABAQEAAAAAAAKAEAAE4DAAAgIAAAAQAIAKgIAAB2BAAAEBAAAAEA
@@ -677,6 +455,226 @@
   </data>
   <data name="bunifuLabel8.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 0px;font-family: 'Segoe UI Semibold'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+  </data>
+  <data name="TitleLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 30pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="NameLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="WazaTextLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="MiqTextLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="KhorakiTextLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel15.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel16.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel17.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel18.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel19.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel20.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel21.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RaqamWasoolTafseel1Label.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RaqamWasoolTafseel2Label.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel6.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 16.2pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RaqamWasoolTafseel5Label.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RaqamWasoolTafseel4Label.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RaqamWasoolTafseel3Label.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel7.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="WazaKgLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel59.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel4.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel5.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel9.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel10.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel61.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="Rupay1.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="Rupay2.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="Rupay3.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="Rupay4.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="Rupay5.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuLabel3.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="DateLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 3px;font-family: 'Segoe UI'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+  </data>
+  <data name="DateNameLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 3px;font-family: 'Segoe UI'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+  </data>
+  <data name="MalikNameLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Noto Nastaliq Urdu'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="WazanLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RefLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 3px;font-family: 'Segoe UI'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+  </data>
+  <data name="MiqdarLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RaqamWasoolValue3Label.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="KhorakiLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="SafiMiqdarLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RateFiLiterLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RaqamWasoolValue2Label.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="KulRaqamLAbel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RaqamWasoolValue1Label.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="MazdooriLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="SafiRaqmLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="SabqaRaqamLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="TotalRaqamLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RaqamWasoolValue4Label.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="RaqamWasoolValue5Label.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="BaqayaLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="ManNumLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="ManLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="PropNumLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="PropLabel.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Nafees Naskh v2.01'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; direction: rtl; }</value>
+  </data>
+  <data name="bunifuButton2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJMAAAAqCAYAAAC3IGmoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIwSURBVHhe7ZyhUhxBFEVbIpHISCQSGYlERiKRkUjcysjI
+        yEgkEsknrIxciYyD3Dt5k93JXngVkYjsOVWveuZ2z5o91dNm3gD4Z7yMcax6r7qlDrOex7jQ+K6U+DP0
+        4JF+YKXa6PqFolzy4Un1VdcnpcrbaPG5av3bjzyoPuk6mkv9v6X/3ZuK///vut+V6qKUyWjB+c4Da9/X
+        FIDfWKdy4nF2RHVVU0s04VfbtCNpvNN4XFMAC+SGdy174t1q/yylic+1wEIdVQwQkSf35ctjRVsUPtUk
+        rzZokSsncmU+R20P5Lo5LZE2FQG0yJdpd1JdVjTJdFky3VcE0CJfViXTTUWTTPOBalURQIslKpluK9rK
+        tAgBGqI3MQRoiN7EEKAhehNDgIboTQwBGqI3MQRoiN7EEKAhehNDgIboTQwBGqI3MQRoiN7EEKAhehND
+        gIboTQwBGqI3MQRoiN7EEKAhehNDgIboTQwBGqI3MQRoiN7EEKAhehNDgIboTQwBGqI3z2NcO9R4VxFA
+        i5yJX6eclUzrigBavPmUNx8qmmRy04r9T30BXqGc+VbOnFX8E008eMK2VQTwKnJlOi/JFzeEWzY6UeDe
+        O9PupPG6YoA95Icbws1vsm2fgV0sUS2wUF800qMJFsiJm1kkO1Jxxou9sBZvVO5h6MzbGnWAJQc+WhzV
+        r/aUvtfY9/HSwr2+lhTlkhfu45VfbW9hqfTglSoaSx1OyQUfgdzCm66C8LcZ4wcaR7x/yj2s0gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="PrintReciept.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJMAAAAqCAYAAAC3IGmoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIeSURBVHhe7ZyvUwJREMeJRqPRaLQpd85gNBqNRqORpkXe
+        aTEaiUaj0eifQDQyDvcjGvXtY084eXjq7BDk85nZwPcdFD6zbwlsB2Bl9G6rzdRVh6krLqn1rINBcbTn
+        qm1V4nf0Ll42Ele4xJXjNCvfKUoqyYoqdeV97+Z1S1X5njTL9/0bR80PKZ+S6/I2Zi31vys0Ffn+s/Jt
+        5kNRSbdSZeKoSLVEXqh8X48AOt2ryY6/rZ4/pXL5qR41kattKlB48EFmJT0CaBC6lsjku1V0lvKHdyrS
+        SMTSGCCKF+kxCOU7lUYzwnAVZOJqg3ZkCK/nqMZALnehWjbWCKCVujt1ryfHGnmZ/Isgkz/UCKAV+aU3
+        vc3KvkZzA5U/1AigFZEoyOT90WgmUyMEaCHqDTLBX0AmMAOZwAxkAjOQCcxAJjADmcAMZAIzkAnMQCYw
+        A5nADGQCM5AJzEAmMAOZwAxkAjOQCcxAJjADmcAMZAIzot4kg+IshFn5oBFAK96XxX+nJDfVrso00gig
+        FWk+4k03K0400n1Msb/6AixhuuikeBFnpBlpPMXL9CQHYptGAEup5yVZKbCw6CTs3tHuJDOUxgALyHKT
+        2pXGnoF55gZxqSE7muAr3ot+LZI4onEceVgfDC1MdhiGTNoatZ6V5ecijq/59ZTDH+3x0nWEjb2WFCUl
+        e7yWXm3fEe5Gl59GbaXWqsII5KpDtgrCCuh0PgCUzYmrN07mAwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJMAAAAqCAYAAAC3IGmoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIQSURBVHhe7ZytTwNBEEcrkUgkEonE7UpkJRKJRCJxSCQS
+        WdneQYKs5E9AVjblSpCVZWZvrp8LB2SCoO8lk+Z+m9T0ZXYqbjoAf8Z7P+xXDyFWRbimdrMmRTgVDw5N
+        iZ8xGoa96UO8mRZxPC3jnKK0qjK+y2dv8hgOTJWvmRbhRCR62fii4VsZb3PWUv+7UlOR31+cmDU+qFTa
+        rUyZPEmkRiAVSp7tCKBTleFIRHpeOhLO7WiddLU1HamIfZ2V7AhgjdSxak9m2VlK2tld05FULIsBsogr
+        T+qLdiqLlthwpa2Lqw1a0SFcO5M6szaQ611oXWlsEUAry+4UuhYlmbpJJjm0CKAV+6c3rwbhyqKVgUoO
+        LQJoRSVKMok/Fi1lWgsBWsh6g0zwG5AJ3EAmcAOZwA1kAjeQCdxAJnADmcANZAI3kAncQCZwA5nADWQC
+        N5AJ3EAmcAOZwA1kAjeQCdxAJnADmcCNvEyDcKGhvhZuEUAr2bdTJv1wbDK9WATQijYf9eZ1EM4sWiyt
+        2H7VF+ATkjNlHCVnpBlZXCPhUA+46uA7NPOS+DLeWnSS9g1Yd9IZymKALWwhXO3K6p6BVRaDuNRbGe/Z
+        0QSbpKHbRFJHLM7TTOip6p2WPc20rVG7Wa9FuFRxxIfFekp9/tYeL2tjm3stKSrts/z0avuKWqpwnrOV
+        2rGSEUhXeLNVEP6ATucDEIE+ea3eZggAAAAASUVORK5CYII=
+</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>

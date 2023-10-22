@@ -127,6 +127,7 @@
             this.bunifuShadowPanel1.Size = new System.Drawing.Size(160, 140);
             this.bunifuShadowPanel1.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel1.TabIndex = 0;
+            this.bunifuShadowPanel1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.bunifuShadowPanel1_ControlAdded);
             // 
             // pictureBox1
             // 
@@ -505,11 +506,11 @@
             this.DieselStockGuage.Name = "DieselStockGuage";
             this.DieselStockGuage.Prefix = "";
             this.DieselStockGuage.ProgressBackColor = System.Drawing.Color.Lavender;
-            //this.DieselStockGuage.ProgressBgColor = System.Drawing.Color.Lavender;
+            this.DieselStockGuage.ProgressBgColor = System.Drawing.Color.Lavender;
             this.DieselStockGuage.ProgressCap = Bunifu.UI.WinForms.BunifuRadialGauge.CapStyles.Round;
-           // this.DieselStockGuage.ProgressColor = System.Drawing.Color.Crimson;
-           // this.DieselStockGuage.ProgressColor1 = System.Drawing.Color.Crimson;
-           // this.DieselStockGuage.ProgressColor2 = System.Drawing.Color.DodgerBlue;
+            this.DieselStockGuage.ProgressColor = System.Drawing.Color.Crimson;
+            this.DieselStockGuage.ProgressColor1 = System.Drawing.Color.Crimson;
+            this.DieselStockGuage.ProgressColor2 = System.Drawing.Color.DodgerBlue;
             this.DieselStockGuage.ProgressColorHigh = System.Drawing.Color.DodgerBlue;
             this.DieselStockGuage.ProgressColorLow = System.Drawing.Color.Crimson;
             this.DieselStockGuage.ProgressHighValueMark = 20;
@@ -704,11 +705,11 @@
             this.PetrolStockGuage.Name = "PetrolStockGuage";
             this.PetrolStockGuage.Prefix = "";
             this.PetrolStockGuage.ProgressBackColor = System.Drawing.Color.Lavender;
-            //this.PetrolStockGuage.ProgressBgColor = System.Drawing.Color.Lavender;
+            this.PetrolStockGuage.ProgressBgColor = System.Drawing.Color.Lavender;
             this.PetrolStockGuage.ProgressCap = Bunifu.UI.WinForms.BunifuRadialGauge.CapStyles.Round;
-            //this.PetrolStockGuage.ProgressColor = System.Drawing.Color.Crimson;
-            //this.PetrolStockGuage.ProgressColor1 = System.Drawing.Color.Crimson;
-            //this.PetrolStockGuage.ProgressColor2 = System.Drawing.Color.DodgerBlue;
+            this.PetrolStockGuage.ProgressColor = System.Drawing.Color.Crimson;
+            this.PetrolStockGuage.ProgressColor1 = System.Drawing.Color.Crimson;
+            this.PetrolStockGuage.ProgressColor2 = System.Drawing.Color.DodgerBlue;
             this.PetrolStockGuage.ProgressColorHigh = System.Drawing.Color.DodgerBlue;
             this.PetrolStockGuage.ProgressColorLow = System.Drawing.Color.Crimson;
             this.PetrolStockGuage.ProgressHighValueMark = 20;
@@ -904,6 +905,7 @@
             title1.Name = "Title1";
             title1.Text = "Last 7 Days Sales in Liters";
             this.SalesChart.Titles.Add(title1);
+            this.SalesChart.Click += new System.EventHandler(this.SalesChart_Click);
             // 
             // bunifuLabel1
             // 
@@ -938,8 +940,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
-            this.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.StateActive.Border.Rounding = 20;
             this.Text = "Dashboard";

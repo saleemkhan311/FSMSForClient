@@ -33,6 +33,7 @@ namespace Filling_Station_Management_System
                                     ROUND(SUM(Miqdar1), 2) AS Total_Quantity,
                                     ROUND(SUM(Khoraki1), 2) AS Total_Khoraki,
                                     ROUND(SUM(Safi_Miqdar1), 2) AS Total_NetQuantity,
+                                    GROUP_CONCAT(DISTINCT Rate_Per_Liter ORDER BY Rate_Per_Liter ASC SEPARATOR ', ') AS Rates,
                                     ROUND(SUM(Kharcha_Mazdoori1), 2) AS Total_Mazdoori,
                                     ROUND(SUM(Safi_Raqam1), 2) AS Net_Amount,
                                     ROUND(SUM(Total_Amount1), 2) AS Total_Amount,
@@ -54,7 +55,8 @@ namespace Filling_Station_Management_System
                                             Amount_Paid_2 AS Raqam_Wasool_3,
                                             Amount_Paid_4 AS Raqam_Wasool_4,
                                             Amount_Paid_5 AS Raqam_Wasool_5,
-                                            Baqaya AS Baqaya1
+                                            Baqaya AS Baqaya1,
+                                        	Rate_Per_Liter
                                         FROM
                                             purchase_data_diesel
                                     ) AS combined_data
@@ -86,10 +88,12 @@ namespace Filling_Station_Management_System
                                                 ROUND(SUM(NetQuantityUnit2), 2) AS NetQuantityUnit2,
                                                 ROUND(SUM(NetQuantityUnit3), 2) AS NetQuantityUnit3,
                                                 ROUND(SUM(NetQuantityUnit4), 2) AS NetQuantityUnit4,
-                                                ROUND(SUM(NetQuantityUnit2 + NetQuantityUnit3 + NetQuantityUnit4), 2) AS Total_Quantity,
+                                                ROUND(SUM(NetQuantityUnit2 + NetQuantityUnit3 + NetQuantityUnit4), 2) AS Total_NetQuantity,
+                                                GROUP_CONCAT(DISTINCT Unit_Price ORDER BY Unit_Price ASC SEPARATOR ', ') AS Rates,
                                                 ROUND(SUM(AmountUnit2 + AmountUnit3 + AmountUnit4), 2) AS Total_Amount,
                                                 ROUND(SUM(DiscountUnit2 + DiscountUnit3 + DiscountUnit4), 2) AS Total_Discount,
                                                 ROUND(SUM(BalanceUnit2 + BalanceUnit3 + BalanceUnit4), 2) AS Net_Amount
+    
                                             FROM
                                                 (
                                                     SELECT
@@ -105,7 +109,8 @@ namespace Filling_Station_Management_System
                                                         0 AS DiscountUnit4,
                                                         Balance AS BalanceUnit2,
                                                         0 AS BalanceUnit3,
-                                                        0 AS BalanceUnit4
+                                                        0 AS BalanceUnit4,
+                                                        Unit_Price
                                                     FROM
                                                         unit2_sales_data
 
@@ -124,7 +129,8 @@ namespace Filling_Station_Management_System
                                                         0 AS DiscountUnit4,
                                                         0 AS BalanceUnit2,
                                                         Balance AS BalanceUnit3,
-                                                        0 AS BalanceUnit4
+                                                        0 AS BalanceUnit4,
+                                                        Unit_Price
                                                     FROM
                                                         unit3_sales_data
 
@@ -143,7 +149,8 @@ namespace Filling_Station_Management_System
                                                         Discount AS DiscountUnit4,
                                                         0 AS BalanceUnit2,
                                                         0 AS BalanceUnit3,
-                                                        Balance AS BalanceUnit4
+                                                        Balance AS BalanceUnit4,
+                                                        Unit_Price
                                                     FROM
                                                         unit4_sales_data
                                                 ) AS combined_data
@@ -181,11 +188,14 @@ namespace Filling_Station_Management_System
                                                     ROUND(SUM(Miqdar1), 2) AS Total_Quantity,
                                                     ROUND(SUM(Khoraki1), 2) AS Total_Khoraki,
                                                     ROUND(SUM(Safi_Miqdar1), 2) AS Total_NetQuantity,
+                                                    GROUP_CONCAT(DISTINCT Rate_Per_Liter ORDER BY Rate_Per_Liter ASC SEPARATOR ', ') AS Rates,
+                                                    ROUND(SUM(Total_Amount1), 2) AS Total_Amount,
                                                     ROUND(SUM(Kharcha_Mazdoori1), 2) AS Total_Mazdoori,
                                                     ROUND(SUM(Safi_Raqam1), 2) AS Net_Amount,
-                                                    ROUND(SUM(Total_Amount1), 2) AS Total_Amount,
+    
                                                     ROUND(SUM(Raqam_Wasool_1 + Raqam_Wasool_2 + Raqam_Wasool_3 + Raqam_Wasool_4 + Raqam_Wasool_5), 2) AS Total_Raqam_Wasool,
                                                     ROUND(SUM(Baqaya1), 2) AS Baqaya
+    
                                                 FROM
                                                     (
                                                         SELECT
@@ -202,15 +212,15 @@ namespace Filling_Station_Management_System
                                                             Amount_Paid_2 AS Raqam_Wasool_3,
                                                             Amount_Paid_4 AS Raqam_Wasool_4,
                                                             Amount_Paid_5 AS Raqam_Wasool_5,
-                                                            Baqaya AS Baqaya1
+                                                            Baqaya AS Baqaya1,
+                                                            Rate_Per_Liter
                                                         FROM
                                                             purchase_data_petrol
                                                     ) AS combined_data
                                                 GROUP BY
-                                                    purchase_date
+                                                    purchase_date  
                                                 ORDER BY
-                                                    purchase_date;
-                                                ";
+                                                    purchase_date;";
                 MySqlCommand cmd = new MySqlCommand(sqlQueryPetrolPurchase, connection);
 
                 // Create a SqlDataAdapter and fill the DataTable
@@ -235,11 +245,14 @@ namespace Filling_Station_Management_System
 
                 sqlPetrolSale = @"SELECT
                                     sales_date,
-                                    ROUND(SUM(NetQuantityUnit1), 2) AS Total_NetQuantity,
                                     ROUND(SUM(NetQuantityUnit1), 2) AS Total_Quantity,
+                                    ROUND(SUM(NetQuantityUnit1), 2) AS Total_NetQuantity,
+    
+                                    GROUP_CONCAT(DISTINCT Unit_Price ORDER BY Unit_Price ASC SEPARATOR ', ') AS Rates,
                                     ROUND(SUM(AmountUnit1), 2) AS Total_Amount,
                                     ROUND(SUM(DiscountUnit1), 2) AS Total_Discount,
                                     ROUND(SUM(BalanceUnit1), 2) AS Net_Amount
+    
                                 FROM
                                     (
                                         SELECT
@@ -247,7 +260,8 @@ namespace Filling_Station_Management_System
                                             NetQuantity AS NetQuantityUnit1,
                                             Amount AS AmountUnit1,
                                             Discount AS DiscountUnit1,
-                                            Balance AS BalanceUnit1
+                                            Balance AS BalanceUnit1,
+                                            Unit_Price
                                         FROM
                                             unit1_sales_data
                                     ) AS combined_data

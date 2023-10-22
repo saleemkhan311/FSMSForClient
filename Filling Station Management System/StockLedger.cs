@@ -84,6 +84,11 @@ namespace Filling_Station_Management_System
         private void RemoveButton_Click(object sender, EventArgs e)
         {
 
+            PasswordCheckPanel passCheck = new PasswordCheckPanel();
+            passCheck.ShowDialog();
+            if (passCheck.DialogResult != DialogResult.OK)
+                return;
+
             string unit = (TabControl.SelectedTab.Text).ToLower();
             int ref_No = 0;
             if (unit == "petrol")

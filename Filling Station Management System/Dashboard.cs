@@ -310,6 +310,16 @@ namespace Filling_Station_Management_System
             }
         }
 
+        private void bunifuShadowPanel1_ControlAdded(object sender, ControlEventArgs e)
+        {
+
+        }
+
+        private void SalesChart_Click(object sender, EventArgs e)
+        {
+
+        }
+
         void DieselChartSetup()
         {
             try

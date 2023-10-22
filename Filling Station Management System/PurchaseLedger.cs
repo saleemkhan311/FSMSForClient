@@ -25,65 +25,72 @@ namespace Filling_Station_Management_System
 
         private void Calculate()
         {
-            kantaWazan = AppSettings.convertToDouble(WeightBox.Text);
-            sharah = AppSettings.convertToDouble(SharahListBox.Items[SharahListBox.SelectedIndex].ToString());
-            miqdar = kantaWazan == 0 ? 0 : kantaWazan / sharah;
-
-            QuantityBox.Text = AppSettings.RoundToString(miqdar, 2);
-
-
-
-
-
-            Khoraki = AppSettings.convertToDouble(KhorakiBox.Text);
-
-
-            saafiMiqdar = miqdar - Khoraki;
-            NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2);
-
-
-
-
-            ratePerLiter = AppSettings.convertToDouble(RateBox.Text);
-
-
-            Amount = saafiMiqdar * ratePerLiter;
-            AmountBox.Text = AppSettings.RoundToString(Amount, 0);
-
-            labour = AppSettings.convertToDouble(LabourBox.Text);
-
-
-
-
-            saafiRaqam = Amount - labour;
-            NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0);
-
-
-
-
-
-
-            sabqaBaqaya = AppSettings.convertToDouble(SabqaRaqamBox.Text);
-
-            totalAmount = saafiRaqam + sabqaBaqaya;
-            TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0);
-
-            totalAmount = saafiRaqam + sabqaBaqaya;
-            Double sum = 0;
-
-            // Loop through the first five TextBoxes and add their values if they are valid numbers
-            foreach (Bunifu.UI.WinForms.BunifuTextBox textBox in new[] { RecoveryAmountBox1, RecoveryAmountBox2, RecoveryAmountBox3, RecoveryAmountBox4, RecoveryAmountBox5 })
+            try
             {
-                if (!string.IsNullOrWhiteSpace(textBox.Text) && Double.TryParse(textBox.Text, out double value))
+                kantaWazan = AppSettings.convertToDouble(WeightBox.Text);
+                sharah = AppSettings.convertToDouble(SharahListBox.Items[SharahListBox.SelectedIndex].ToString());
+                miqdar = kantaWazan == 0 ? 0 : kantaWazan / sharah;
+
+                QuantityBox.Text = AppSettings.RoundToString(miqdar, 2);
+
+
+
+
+
+                Khoraki = AppSettings.convertToDouble(KhorakiBox.Text);
+
+
+                saafiMiqdar = miqdar - Khoraki;
+                NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2);
+
+
+
+
+                ratePerLiter = AppSettings.convertToDouble(RateBox.Text);
+
+
+                Amount = saafiMiqdar * ratePerLiter;
+                AmountBox.Text = AppSettings.RoundToString(Amount, 0);
+
+                labour = AppSettings.convertToDouble(LabourBox.Text);
+
+
+
+
+                saafiRaqam = Amount - labour;
+                NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0);
+
+
+
+
+
+
+                sabqaBaqaya = AppSettings.convertToDouble(SabqaRaqamBox.Text);
+
+                totalAmount = saafiRaqam + sabqaBaqaya;
+                TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0);
+
+                totalAmount = saafiRaqam + sabqaBaqaya;
+                Double sum = 0;
+
+                // Loop through the first five TextBoxes and add their values if they are valid numbers
+                foreach (Bunifu.UI.WinForms.BunifuTextBox textBox in new[] { RecoveryAmountBox1, RecoveryAmountBox2, RecoveryAmountBox3, RecoveryAmountBox4, RecoveryAmountBox5 })
                 {
-                    sum += value;
+                    if (!string.IsNullOrWhiteSpace(textBox.Text) && Double.TryParse(textBox.Text, out double value))
+                    {
+                        sum += value;
+                    }
                 }
+
+                // Update the value of the sixth TextBox with the calculated sum
+
+
+                RemainingAmountBox.Text = AppSettings.RoundToString(totalAmount - sum, 0);
             }
-
-            // Update the value of the sixth TextBox with the calculated sum
-
-
-            RemainingAmountBox.Text = AppSettings.RoundToString(totalAmount - sum, 0);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Calculation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
         private void WeightBox_TextChanged(object sender, EventArgs e)
@@ -384,6 +391,12 @@ namespace Filling_Station_Management_System
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
+            PasswordCheckPanel passCheck = new PasswordCheckPanel();
+            passCheck.ShowDialog();
+            if (passCheck.DialogResult != DialogResult.OK)
+                return;
+
+
             string name = TabControl.SelectedTab.Text.ToLower();
             int ref_No = 0;
             if (TabControl.SelectedIndex == 0)
@@ -569,6 +582,13 @@ namespace Filling_Station_Management_System
         private void RecoveryDescriptionBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void SaveReciept_Click(object sender, EventArgs e)
+        {
+            ReceiptPanel receipt = new ReceiptPanel();
+
+            receipt.createPDF();
         }
 
         private void DieselDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

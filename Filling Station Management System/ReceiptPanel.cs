@@ -6,6 +6,10 @@ using iTextSharp.text;
 using ComponentFactory.Krypton.Toolkit;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.codec;
+using Microsoft.Office.Interop.Excel;
+using System.Windows.Media;
+using TheArtOfDev.HtmlRenderer.Adapters;
+using System.Drawing.Printing;
 
 namespace Filling_Station_Management_System
 {
@@ -40,16 +44,6 @@ namespace Filling_Station_Management_System
             InitializeComponent();
         }
 
-        public void GenerateReceipt()
-        {
-
-        }
-
-        private void bunifuButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ReceiptPanel_Load(object sender, EventArgs e)
         {
             Assignation();
@@ -58,7 +52,7 @@ namespace Filling_Station_Management_System
         private void Assignation()
         {
 
-            RefLabel.Text = "Ref# :------------------------ " + ref_no;
+            RefLabel.Text = "Ref# :--------------- " + ref_no;
             DateLabel.Text = DateTimeValue;
             MalikNameLabel.Text = malikName;
             WazanLabel.Text = wazan;
@@ -101,31 +95,64 @@ namespace Filling_Station_Management_System
         public void printReceipt()
         {
 
+            // Create a PrintDocument for printing
+            PrintDocument printDocument1 = new PrintDocument();
 
-            Graphics graphics = Receipt.CreateGraphics();
+            // Define the A5 page size
+            PaperSize A5PageSize = new PaperSize("A5", 827, 1169); // 419x595 pixels for 300 DPI
 
-            Size size = Receipt.ClientSize;
+            // Set the paper size for the A5 receipt
+            printDocument1.DefaultPageSettings.PaperSize = A5PageSize;
 
-            bitmap = new Bitmap(size.Width, size.Height, graphics);
+            // Set the print page event handler
+            printDocument1.PrintPage += (s, e) =>
+            {
+                // Calculate the scaling factor to fit the receipt on the A5 page without distortion
+                float scaleX = (float)A5PageSize.Width / Receipt.Width * 5f; // Increase the scale factor as needed
+                float scaleY = (float)A5PageSize.Height / Receipt.Height * 5f; // Increase the scale factor as needed
+                float scale = Math.Min(scaleX, scaleY);
 
-            graphics = Graphics.FromImage(bitmap);
+                // Calculate the centered position for the receipt on the A5 page
+                int left = (A5PageSize.Width - (int)(Receipt.Width * scaleX)) / 500;
+                int top = (A5PageSize.Height - (int)(Receipt.Height * scaleY)) / 500;
 
-            Point point = Receipt.PointToScreen(Receipt.Location);
+                // Create a bitmap to render the receipt content at the A5 size
+                using (Bitmap bitmap = new Bitmap(A5PageSize.Width, A5PageSize.Height))
+                {
+                    using (Graphics graphics = Graphics.FromImage(bitmap))
+                    {
+                        // Set the higher resolution (300 DPI)
+                        graphics.PageUnit = GraphicsUnit.Pixel;
+                        graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-            graphics.CopyFromScreen(point.X - 5, point.Y - 50, 0, 0, size);
+                        // Scale the receipt to fit the A5 page without distortion
+                        graphics.ScaleTransform(scale, scale);
 
+                        // Draw the receipt content onto the bitmap
+                        Receipt.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, Receipt.Width, Receipt.Height));
+                    }
 
-            printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("Invoice", 660, 975);
+                    // Set the print page resolution (300 DPI)
+                    e.Graphics.PageUnit = GraphicsUnit.Pixel;
+
+                    // Draw the receipt content onto the page at the A5 size
+                    e.Graphics.DrawImage(bitmap, new System.Drawing.Rectangle(left, top, (int)(Receipt.Width * scaleX), (int)(Receipt.Height * scaleY)));
+                }
+            };
+
+            // Specify the page orientation (portrait or landscape)
+            printDocument1.DefaultPageSettings.Landscape = false; // Set to true for landscape orientation
 
             using (PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog())
             {
                 printPreviewDialog.Document = printDocument1;
+
                 // Perform your printing and preview setup here
                 // ...
 
                 // Show the print preview dialog
                 printPreviewDialog.ShowDialog();
-            } // The printPreviewDialog will be automatically disposed of when exiting the using block
+            }
         }
 
         void autoHide(Bunifu.UI.WinForms.BunifuLabel label1, Bunifu.UI.WinForms.BunifuLabel label2, Bunifu.UI.WinForms.BunifuLabel label3)
@@ -146,13 +173,44 @@ namespace Filling_Station_Management_System
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            e.Graphics.DrawImage(bitmap, 0, 0);
+            /* printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("Custom", 148, 210);
+             Graphics g = e.Graphics;
+             System.Drawing.Rectangle rect = e.MarginBounds;
+
+
+             // Print customer information
+             *//*g.DrawString(TitleLabel.Text, new System.Drawing.Font("Nafees Naskh v2.01", 35), System.Drawing.Brushes.Red, new System.Drawing.Point(TitleLabel.Location.X, -10));
+
+             g.DrawString(PropLabel.Text, new System.Drawing.Font("Nafees Naskh v2.01", 25), System.Drawing.Brushes.Black, new System.Drawing.Point(10, 100));
+             g.DrawString(ManLabel.Text, new System.Drawing.Font("Nafees Naskh v2.01", 25), System.Drawing.Brushes.Black, new System.Drawing.Point(ManLabel.Location.X, 100));
+
+
+             g.DrawString(NameLabel.Text, new System.Drawing.Font("Noto Nastaliq Urdu", 10), System.Drawing.Brushes.Black, new System.Drawing.Point(NameLabel.Location.X, 200));
+             g.DrawString(MalikNameLabel.Text, new System.Drawing.Font("Noto Nastaliq Urdu", 10), System.Drawing.Brushes.Black, new System.Drawing.Point(MalikNameLabel.Location.X, 200));*//*
+             //--
+
+             g.DrawString(TitleLabel.Text, new System.Drawing.Font("Nafees Naskh v2.01", 35), System.Drawing.Brushes.Red, new System.Drawing.Point(TitleLabel.Location.X, TitleLabel.Location.X));
+
+             g.DrawString(PropLabel.Text, new System.Drawing.Font("Nafees Naskh v2.01", 20), System.Drawing.Brushes.Black, new System.Drawing.Point(PropLabel.Location.X, PropLabel.Location.Y));
+             g.DrawString(ManLabel.Text, new System.Drawing.Font("Nafees Naskh v2.01", 20), System.Drawing.Brushes.Black, new System.Drawing.Point(ManLabel.Location.X, ManLabel.Location.Y));
+
+
+             g.DrawString(NameLabel.Text, new System.Drawing.Font("Noto Nastaliq Urdu", 10), System.Drawing.Brushes.Black, new System.Drawing.Point(NameLabel.Location.X, NameLabel.Location.Y));
+             g.DrawString(MalikNameLabel.Text, new System.Drawing.Font("Noto Nastaliq Urdu", 10), System.Drawing.Brushes.Black, new System.Drawing.Point(MalikNameLabel.Location.X, MalikNameLabel.Location.Y));
+
+
+             e.HasMorePages = false;
+ */
+
+            // e.Graphics.DrawImage(bitmap, 0, 0);
 
         }
+
         Bitmap bitmap;
         private void PrintReceipt_Click(object sender, EventArgs e)
         {
             printReceipt();
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -160,14 +218,17 @@ namespace Filling_Station_Management_System
 
         }
 
+        void TempPrint()
+        {
 
+        }
 
         private void SavePDF_Click(object sender, EventArgs e)
         {
             createPDF();
         }
 
-        void createPDF()
+        public void createPDF()
         {
             // Create a SaveFileDialog to specify where to save the PDF
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -237,6 +298,7 @@ namespace Filling_Station_Management_System
                     doc.Close();
                 }
             }
+
         }
 
         private void ReceiptPanel_KeyDown(object sender, KeyEventArgs e)
@@ -246,6 +308,16 @@ namespace Filling_Station_Management_System
                 // Call your function here
                 printReceipt();
             }
+        }
+
+        private void PropLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TitleLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
