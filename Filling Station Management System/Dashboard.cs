@@ -256,12 +256,12 @@ namespace Filling_Station_Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            TotalSaleDieselLabel.Text = AppSettings.RoundToString(GetTotalSaleDiesel(), 0);
-            TotalSalePetrolLabel.Text = AppSettings.RoundToString(GetTotalSalePetrol(), 0);
-            TotalPurchaseDiesel.Text = AppSettings.RoundToString(GetTotalPurchaseDiesel(), 0);
-            TotalPurchasePetrol.Text = AppSettings.RoundToString(GetTotalPurchasePetrol(), 0);
-            UnitPriceLabelDiesel.Text = AppSettings.RoundToString(GetLastRateDiesel(), 0);
-            UnitPriceLabelPetrol.Text = AppSettings.RoundToString(GetLastRatePetrol(), 0);
+            TotalSaleDieselLabel.Text = AppSettings.RoundToString(GetTotalSaleDiesel(), 0, false);
+            TotalSalePetrolLabel.Text = AppSettings.RoundToString(GetTotalSalePetrol(), 0, false);
+            TotalPurchaseDiesel.Text = AppSettings.RoundToString(GetTotalPurchaseDiesel(), 0, false);
+            TotalPurchasePetrol.Text = AppSettings.RoundToString(GetTotalPurchasePetrol(), 0, false);
+            UnitPriceLabelDiesel.Text = AppSettings.RoundToString(GetLastRateDiesel(), 0, true);
+            UnitPriceLabelPetrol.Text = AppSettings.RoundToString(GetLastRatePetrol(), 0, true);
             PetrolPercent();
             DeiselPercent();
             DieselChartSetup();
@@ -357,7 +357,7 @@ namespace Filling_Station_Management_System
                 // Now you have the data for the last 7 days from both tables in unit1Table and unit2Table.
 
                 // Assuming you have a chart control named "chart1"
-                SalesChart.Series.Clear();
+                //SalesChart.Series.Clear();
 
                 // Create series for unit1_sales_data
                 Series series1 = new Series("Unit 1 Sales");
@@ -368,7 +368,7 @@ namespace Filling_Station_Management_System
 
                     double netQuantity = Convert.ToDouble(row["netQuantity"]);
                     series1.Points.AddXY($"{i++}", netQuantity);
-                    series1.Label = AppSettings.RoundToString(netQuantity, 0); // Assign the netQuantity as the label
+                    series1.Label = AppSettings.RoundToString(netQuantity, 0, false); // Assign the netQuantity as the label
 
 
                 }
@@ -409,14 +409,14 @@ namespace Filling_Station_Management_System
 
                     double netQuantity = Convert.ToDouble(row["netQuantity"]);
                     series4.Points.AddXY($"{l + 1}", netQuantity);
-                    series4.Label = AppSettings.RoundToString(netQuantity, 0);
+                    series4.Label = AppSettings.RoundToString(netQuantity, 0, false);
                 }
 
                 // Add the series to the chart
-                SalesChart.Series.Add(series1);
+                /*SalesChart.Series.Add(series1);
                 SalesChart.Series.Add(series2);
                 SalesChart.Series.Add(series3);
-                SalesChart.Series.Add(series4);
+                SalesChart.Series.Add(series4);*/
                 // Customize chart appearance as needed
 
 

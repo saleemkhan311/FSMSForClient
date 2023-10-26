@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.bunifuShadowPanel1 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -81,8 +74,6 @@
             this.UnitPriceLabelDiesel = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel26 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.SalesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuShadowPanel2.SuspendLayout();
@@ -99,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.bunifuShadowPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SalesChart)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuShadowPanel1
@@ -868,67 +858,11 @@
             this.bunifuSeparator1.Size = new System.Drawing.Size(820, 14);
             this.bunifuSeparator1.TabIndex = 1;
             // 
-            // SalesChart
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.SalesChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.SalesChart.Legends.Add(legend1);
-            this.SalesChart.Location = new System.Drawing.Point(11, 323);
-            this.SalesChart.Name = "SalesChart";
-            this.SalesChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.Label = "#VAL";
-            series1.Legend = "Legend1";
-            series1.Name = "Unit 1 Sales";
-            series1.YValuesPerPoint = 2;
-            series2.ChartArea = "ChartArea1";
-            series2.Label = "#VAL";
-            series2.Legend = "Legend1";
-            series2.Name = "Unit 2 Sales";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Unit 3 Sales";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Unit 4 Sales";
-            this.SalesChart.Series.Add(series1);
-            this.SalesChart.Series.Add(series2);
-            this.SalesChart.Series.Add(series3);
-            this.SalesChart.Series.Add(series4);
-            this.SalesChart.Size = new System.Drawing.Size(822, 305);
-            this.SalesChart.TabIndex = 2;
-            this.SalesChart.Text = "chart1";
-            title1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Right;
-            title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Right;
-            title1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Last 7 Days Sales in Liters";
-            this.SalesChart.Titles.Add(title1);
-            this.SalesChart.Click += new System.EventHandler(this.SalesChart_Click);
-            // 
-            // bunifuLabel1
-            // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.CursorType = null;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(711, 436);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(63, 25);
-            this.bunifuLabel1.TabIndex = 0;
-            this.bunifuLabel1.Text = "886431";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // Dashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(845, 640);
-            this.Controls.Add(this.SalesChart);
             this.Controls.Add(this.bunifuSeparator1);
-            this.Controls.Add(this.bunifuLabel1);
             this.Controls.Add(this.bunifuShadowPanel7);
             this.Controls.Add(this.bunifuShadowPanel6);
             this.Controls.Add(this.bunifuShadowPanel8);
@@ -970,9 +904,7 @@
             this.bunifuShadowPanel8.ResumeLayout(false);
             this.bunifuShadowPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SalesChart)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1023,7 +955,5 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel26;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.DataVisualization.Charting.Chart SalesChart;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
     }
 }

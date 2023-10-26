@@ -295,7 +295,7 @@ namespace Filling_Station_Management_System
             sharah = AppSettings.convertToDouble(SharahListBox.Items[SharahListBox.SelectedIndex].ToString());
             miqdar = kantaWazan == 0 ? 0 : kantaWazan / sharah;
 
-            QuantityBox.Text = AppSettings.RoundToString(miqdar, 2);
+            QuantityBox.Text = AppSettings.RoundToString(miqdar, 2,false);
 
 
 
@@ -305,17 +305,17 @@ namespace Filling_Station_Management_System
 
 
             saafiMiqdar = miqdar - Khoraki;
-            NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2);
+            NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2,false);
 
-            NewStockBoxD.Text = saafiMiqdar == 0 ? "" : AppSettings.RoundToString(saafiMiqdar, 2);
+            NewStockBoxD.Text = saafiMiqdar == 0 ? "" : AppSettings.RoundToString(saafiMiqdar, 2, false);
 
 
             ratePerLiter = AppSettings.convertToDouble(RateBox.Text);
-            NewRateBoxD.Text = ratePerLiter == 0 ? "" : AppSettings.RoundToString(ratePerLiter, 2);
+            NewRateBoxD.Text = ratePerLiter == 0 ? "" : AppSettings.RoundToString(ratePerLiter, 2, true);
 
             Amount = saafiMiqdar * ratePerLiter;
-            AmountBox.Text = AppSettings.RoundToString(Amount, 0);
-            NewAmountBoxD.Text = Amount == 0 ? "" : AppSettings.RoundToString(Amount, 0);
+            AmountBox.Text = AppSettings.RoundToString(Amount, 0, true);
+            NewAmountBoxD.Text = Amount == 0 ? "" : AppSettings.RoundToString(Amount, 0, true);
 
 
             labour = AppSettings.convertToDouble(LabourBox.Text);
@@ -324,7 +324,7 @@ namespace Filling_Station_Management_System
 
 
             saafiRaqam = Amount - labour;
-            NetPriceBox.Text = saafiRaqam == 0 ? "" : AppSettings.RoundToString(saafiRaqam, 0);
+            NetPriceBox.Text = saafiRaqam == 0 ? "" : AppSettings.RoundToString(saafiRaqam, 0,true);
 
 
 
@@ -334,7 +334,7 @@ namespace Filling_Station_Management_System
             sabqaBaqaya = AppSettings.convertToDouble(SabqaRaqamBox.Text);
 
             totalAmount = saafiRaqam + sabqaBaqaya;
-            TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0);
+            TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0, true);
 
             totalAmount = saafiRaqam + sabqaBaqaya;
             Double sum = 0;
@@ -351,7 +351,7 @@ namespace Filling_Station_Management_System
             // Update the value of the sixth TextBox with the calculated sum
 
 
-            RemainingAmountBox.Text = AppSettings.RoundToString(totalAmount - sum, 0);
+            RemainingAmountBox.Text = AppSettings.RoundToString(totalAmount - sum, 0,true);
 
         }
 
@@ -362,7 +362,7 @@ namespace Filling_Station_Management_System
                 sabqaBaqaya = Math.Round(Convert.ToDouble(SabqaRaqamBox.Text), 2);
 
                 totalAmount = saafiRaqam + sabqaBaqaya;
-                TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0);
+                TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0, true);
             }
         }
 
@@ -379,7 +379,7 @@ namespace Filling_Station_Management_System
                 labour = Math.Round(Convert.ToDouble(LabourBox.Text), 2);
 
                 saafiRaqam = Amount - labour;
-                NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0);
+                NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0,true);
             }
         }
 
@@ -420,9 +420,9 @@ namespace Filling_Station_Management_System
             AvailableRateBoxD.Clear();
             AvailableAmountBoxD.Clear();
 
-            LastStockBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStock, 2);
-            LastRateBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastUnitPrice, 2);
-            LastAmountBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStockAmount, 2);
+            LastStockBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStock, 2,false);
+            LastRateBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastUnitPrice, 2, true);
+            LastAmountBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStockAmount, 2, true);
 
             EntryList.Enabled = true;
             FuelTypeBox.Enabled = false;
@@ -451,9 +451,9 @@ namespace Filling_Station_Management_System
 
 
 
-            AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, 2);
-            AvailableAmountBoxD.Text = AppSettings.RoundToString(availableAmount, 2);
-            AvailableRateBoxD.Text = AppSettings.RoundToString(availableUnitPrice, 2);
+            AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, 2, false);
+            AvailableAmountBoxD.Text = AppSettings.RoundToString(availableAmount, 2, true);
+            AvailableRateBoxD.Text = AppSettings.RoundToString(availableUnitPrice, 2, true);
 
             LastStockBoxD.Clear();
             lastStock = 0;
@@ -834,10 +834,10 @@ namespace Filling_Station_Management_System
 
             }
 
-            AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, 2);
+            AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, 2, false);
             availableUnitPrice = GetLastUnitPrice();
-            AvailableAmountBoxD.Text = AppSettings.RoundToString(availableStock * availableUnitPrice, 0);
-            AvailableRateBoxD.Text = AppSettings.RoundToString(GetLastUnitPrice(), 2);
+            AvailableAmountBoxD.Text = AppSettings.RoundToString(availableStock * availableUnitPrice, 0, true);
+            AvailableRateBoxD.Text = AppSettings.RoundToString(GetLastUnitPrice(), 2,true);
         }
 
 

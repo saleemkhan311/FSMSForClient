@@ -693,7 +693,7 @@ namespace Filling_Station_Management_System
             OpenReadingTextBox.Text = _openReading.ToString();
             QuantityTextBox.Text = newQuantity.ToString();
             NetQuantityTextBox.Text = newNetQuantity.ToString();
-            AmountTextBox.Text = newPrice.ToString();
+            AmountTextBox.Text = newPrice.ToString("C");
 
             //----------------------------------------------
 
@@ -713,7 +713,7 @@ namespace Filling_Station_Management_System
 
             balance = _price + recovery - deposit - udhar - discount;
             newBalance = Math.Round(balance, 0);
-            BalanceTB.Text = newBalance.ToString();
+            BalanceTB.Text = newBalance.ToString("C");
         }
 
         private bool isFilledMandatory()

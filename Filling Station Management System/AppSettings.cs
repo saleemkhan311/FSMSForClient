@@ -1,6 +1,7 @@
 ﻿using Bunifu.UI.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -57,7 +58,7 @@ namespace Filling_Station_Management_System
             return text;
         }
 
-        public static Func<string, double> convertToDouble = (input) =>
+        /*public static Func<string, double> convertToDouble = (input) =>
         {
             double result;
             if (string.IsNullOrWhiteSpace(input) || !double.TryParse(input, out result))
@@ -68,12 +69,36 @@ namespace Filling_Station_Management_System
             {
                 return result;
             }
+        };*/
+
+        public static Func<string, double> convertToDouble = (input) =>
+        {
+            double result;
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return 0.0;
+            }
+            else
+            {
+                // Remove commas from the input string
+                string cleanedInput = input.Replace(",", "");
+
+                if (!double.TryParse(cleanedInput, out result))
+                {
+                    return 0.0;
+                }
+                else
+                {
+                    return result;
+                }
+            }
         };
 
-        public static string RoundToString(double value, int decimals)
+        public static string RoundToString(double value, int decimals, bool isAmount)
         {
-
-            return Math.Round(value, decimals).ToString();
+            //CultureInfo culture = new CultureInfo("ur-PK");
+            if (isAmount) { return Math.Round(value, decimals).ToString("C"); }
+            else { return Math.Round(value, decimals).ToString(); }
         }
     }
 }
