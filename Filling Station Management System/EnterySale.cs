@@ -129,9 +129,9 @@ namespace Filling_Station_Management_System
         private void ClearBox()
         {
 
+            _openReading = GetLastClosingReading();
+            OpenReadingTextBox.Text = _openReading.ToString();
 
-            OpenReadingTextBox.Text = GetLastClosingReading().ToString();
-            _openReading = 0;
             CloseReadingTextBox.Clear();
             _closeReading = 0;
             CheckTextBox.Clear();

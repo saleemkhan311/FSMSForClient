@@ -33,7 +33,7 @@
     <SuiteName>Manangement System</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>19</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -614,6 +614,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pump.ico" />
+    <None Include="Resources\arrowDown.png" />
     <None Include="Resources\PDF.png" />
     <None Include="Resources\Cancel.png" />
     <None Include="Resources\PSOT5.png" />

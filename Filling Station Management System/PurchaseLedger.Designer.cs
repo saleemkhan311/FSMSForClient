@@ -36,8 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseLedger));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -130,107 +130,80 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties90 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties91 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties92 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties93 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties94 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties95 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties96 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.PetrolDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.DieselDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.ViewRecordsPanel = new Bunifu.UI.WinForms.BunifuShadowPanel();
-            this.CloseButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuShadowPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
-            this.GenerateReceipt = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.UpdateData = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.bunifuCards13 = new Bunifu.Framework.UI.BunifuCards();
-            this.NameTextBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.WeightBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel11 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel12 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.QuantityBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel13 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.KhorakiBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards8 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel23 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.NetQuantityBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel24 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards5 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel16 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.RateBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel17 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards6 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel18 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.AmountBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel20 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel14 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.LabourBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel15 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards9 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel25 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.NetPriceBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel26 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards10 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel27 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.SabqaRaqamBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel28 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards17 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel36 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.TotalRaqamBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel37 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards7 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel39 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.RecoveryAmountBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel21 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.RecoveryDescriptionBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel22 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards11 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel40 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel41 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.RecoveryDescriptionBox2 = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.RecoveryAmountBox2 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards14 = new Bunifu.Framework.UI.BunifuCards();
-            this.RecoveryAmountBox3 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.RecoveryDescriptionBox3 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel38 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel29 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards15 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel33 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.RecoveryDescriptionBox4 = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.RecoveryAmountBox4 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel30 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards16 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel35 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel42 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.RecoveryDescriptionBox5 = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.RecoveryAmountBox5 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel34 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCards12 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuLabel31 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.RemainingAmountBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel32 = new Bunifu.UI.WinForms.BunifuLabel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
             this.SharahListBox = new System.Windows.Forms.ComboBox();
             this.FuelTypeBox = new System.Windows.Forms.ComboBox();
-            this.RefTextBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -238,13 +211,38 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bunifuLabel44 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel43 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.SearchTextBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.SearchByRefRadio = new Bunifu.UI.WinForms.BunifuRadioButton();
             this.SearchByNameRadio = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.CloseButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.GenerateReceipt = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.UpdateData = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.NameTextBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.WeightBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.QuantityBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.KhorakiBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.NetQuantityBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RateBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.AmountBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.LabourBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.NetPriceBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.SabqaRaqamBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.TotalRaqamBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RecoveryAmountBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RecoveryDescriptionBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RecoveryDescriptionBox2 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RecoveryAmountBox2 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RecoveryAmountBox3 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RecoveryDescriptionBox3 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RecoveryDescriptionBox4 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RecoveryAmountBox4 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RecoveryDescriptionBox5 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RecoveryAmountBox5 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RemainingAmountBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.RefTextBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.SaveExcelButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.RefreshButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.RemoveButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.SaveReciept = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.SearchTextBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.TabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PetrolDataGrid)).BeginInit();
@@ -476,6 +474,1319 @@
             this.ViewRecordsPanel.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.ViewRecordsPanel.TabIndex = 202;
             // 
+            // bunifuShadowPanel2
+            // 
+            this.bunifuShadowPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuShadowPanel2.BorderColor = System.Drawing.Color.White;
+            this.bunifuShadowPanel2.BorderRadius = 15;
+            this.bunifuShadowPanel2.BorderThickness = 1;
+            this.bunifuShadowPanel2.Controls.Add(this.GenerateReceipt);
+            this.bunifuShadowPanel2.Controls.Add(this.UpdateData);
+            this.bunifuShadowPanel2.Controls.Add(this.flowLayoutPanel1);
+            this.bunifuShadowPanel2.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.bunifuShadowPanel2.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.bunifuShadowPanel2.Location = new System.Drawing.Point(34, 82);
+            this.bunifuShadowPanel2.Name = "bunifuShadowPanel2";
+            this.bunifuShadowPanel2.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(204)))), ((int)(((byte)(228)))));
+            this.bunifuShadowPanel2.PanelColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(204)))), ((int)(((byte)(228)))));
+            this.bunifuShadowPanel2.ShadowColor = System.Drawing.Color.DarkGray;
+            this.bunifuShadowPanel2.ShadowDept = 2;
+            this.bunifuShadowPanel2.ShadowDepth = 2;
+            this.bunifuShadowPanel2.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.bunifuShadowPanel2.ShadowTopLeftVisible = false;
+            this.bunifuShadowPanel2.Size = new System.Drawing.Size(760, 524);
+            this.bunifuShadowPanel2.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.bunifuShadowPanel2.TabIndex = 69;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards13);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards2);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards3);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards1);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards8);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards5);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards6);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards4);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards9);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards10);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards17);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards7);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards11);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards14);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards15);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards16);
+            this.flowLayoutPanel1.Controls.Add(this.bunifuCards12);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(282, 15);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(461, 494);
+            this.flowLayoutPanel1.TabIndex = 11;
+            this.flowLayoutPanel1.WrapContents = false;
+            // 
+            // bunifuCards13
+            // 
+            this.bunifuCards13.BackColor = System.Drawing.Color.White;
+            this.bunifuCards13.BorderRadius = 10;
+            this.bunifuCards13.BottomSahddow = false;
+            this.bunifuCards13.color = System.Drawing.Color.White;
+            this.bunifuCards13.Controls.Add(this.NameTextBox);
+            this.bunifuCards13.Controls.Add(this.bunifuLabel7);
+            this.bunifuCards13.LeftSahddow = false;
+            this.bunifuCards13.Location = new System.Drawing.Point(3, 3);
+            this.bunifuCards13.Name = "bunifuCards13";
+            this.bunifuCards13.RightSahddow = false;
+            this.bunifuCards13.ShadowDepth = 20;
+            this.bunifuCards13.Size = new System.Drawing.Size(432, 73);
+            this.bunifuCards13.TabIndex = 0;
+            // 
+            // bunifuLabel7
+            // 
+            this.bunifuLabel7.AllowParentOverrides = false;
+            this.bunifuLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel7.AutoEllipsis = false;
+            this.bunifuLabel7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel7.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel7.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel7.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel7.Location = new System.Drawing.Point(322, 12);
+            this.bunifuLabel7.Name = "bunifuLabel7";
+            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel7.Size = new System.Drawing.Size(107, 44);
+            this.bunifuLabel7.TabIndex = 0;
+            this.bunifuLabel7.TabStop = false;
+            this.bunifuLabel7.Text = "مالک کا نام:";
+            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards2
+            // 
+            this.bunifuCards2.BackColor = System.Drawing.Color.White;
+            this.bunifuCards2.BorderRadius = 10;
+            this.bunifuCards2.BottomSahddow = false;
+            this.bunifuCards2.color = System.Drawing.Color.White;
+            this.bunifuCards2.Controls.Add(this.bunifuLabel2);
+            this.bunifuCards2.Controls.Add(this.WeightBox);
+            this.bunifuCards2.Controls.Add(this.bunifuLabel11);
+            this.bunifuCards2.LeftSahddow = false;
+            this.bunifuCards2.Location = new System.Drawing.Point(3, 82);
+            this.bunifuCards2.Name = "bunifuCards2";
+            this.bunifuCards2.RightSahddow = false;
+            this.bunifuCards2.ShadowDepth = 20;
+            this.bunifuCards2.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards2.TabIndex = 1;
+            // 
+            // bunifuLabel2
+            // 
+            this.bunifuLabel2.AllowParentOverrides = false;
+            this.bunifuLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel2.AutoEllipsis = false;
+            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel2.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel2.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel2.Location = new System.Drawing.Point(5, 8);
+            this.bunifuLabel2.Name = "bunifuLabel2";
+            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel2.Size = new System.Drawing.Size(60, 44);
+            this.bunifuLabel2.TabIndex = 2;
+            this.bunifuLabel2.TabStop = false;
+            this.bunifuLabel2.Text = "کلوگرام";
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel11
+            // 
+            this.bunifuLabel11.AllowParentOverrides = false;
+            this.bunifuLabel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel11.AutoEllipsis = false;
+            this.bunifuLabel11.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel11.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel11.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel11.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel11.Location = new System.Drawing.Point(322, 12);
+            this.bunifuLabel11.Name = "bunifuLabel11";
+            this.bunifuLabel11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel11.Size = new System.Drawing.Size(100, 44);
+            this.bunifuLabel11.TabIndex = 2;
+            this.bunifuLabel11.TabStop = false;
+            this.bunifuLabel11.Text = "کانٹا / وزن:";
+            this.bunifuLabel11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel11.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards3
+            // 
+            this.bunifuCards3.BackColor = System.Drawing.Color.White;
+            this.bunifuCards3.BorderRadius = 10;
+            this.bunifuCards3.BottomSahddow = false;
+            this.bunifuCards3.color = System.Drawing.Color.White;
+            this.bunifuCards3.Controls.Add(this.bunifuLabel12);
+            this.bunifuCards3.Controls.Add(this.QuantityBox);
+            this.bunifuCards3.Controls.Add(this.bunifuLabel13);
+            this.bunifuCards3.LeftSahddow = false;
+            this.bunifuCards3.Location = new System.Drawing.Point(3, 149);
+            this.bunifuCards3.Name = "bunifuCards3";
+            this.bunifuCards3.RightSahddow = false;
+            this.bunifuCards3.ShadowDepth = 20;
+            this.bunifuCards3.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards3.TabIndex = 3;
+            // 
+            // bunifuLabel12
+            // 
+            this.bunifuLabel12.AllowParentOverrides = false;
+            this.bunifuLabel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel12.AutoEllipsis = false;
+            this.bunifuLabel12.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel12.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel12.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel12.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel12.Location = new System.Drawing.Point(35, 8);
+            this.bunifuLabel12.Name = "bunifuLabel12";
+            this.bunifuLabel12.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel12.Size = new System.Drawing.Size(30, 44);
+            this.bunifuLabel12.TabIndex = 500;
+            this.bunifuLabel12.TabStop = false;
+            this.bunifuLabel12.Text = "لیٹر";
+            this.bunifuLabel12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel12.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel13
+            // 
+            this.bunifuLabel13.AllowParentOverrides = false;
+            this.bunifuLabel13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel13.AutoEllipsis = false;
+            this.bunifuLabel13.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel13.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel13.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel13.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel13.Location = new System.Drawing.Point(367, 12);
+            this.bunifuLabel13.Name = "bunifuLabel13";
+            this.bunifuLabel13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel13.Size = new System.Drawing.Size(56, 44);
+            this.bunifuLabel13.TabIndex = 500;
+            this.bunifuLabel13.TabStop = false;
+            this.bunifuLabel13.Text = "مقدار:";
+            this.bunifuLabel13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel13.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards1
+            // 
+            this.bunifuCards1.BackColor = System.Drawing.Color.White;
+            this.bunifuCards1.BorderRadius = 10;
+            this.bunifuCards1.BottomSahddow = false;
+            this.bunifuCards1.color = System.Drawing.Color.White;
+            this.bunifuCards1.Controls.Add(this.bunifuLabel5);
+            this.bunifuCards1.Controls.Add(this.KhorakiBox);
+            this.bunifuCards1.Controls.Add(this.bunifuLabel10);
+            this.bunifuCards1.LeftSahddow = false;
+            this.bunifuCards1.Location = new System.Drawing.Point(3, 216);
+            this.bunifuCards1.Name = "bunifuCards1";
+            this.bunifuCards1.RightSahddow = false;
+            this.bunifuCards1.ShadowDepth = 20;
+            this.bunifuCards1.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards1.TabIndex = 4;
+            // 
+            // bunifuLabel5
+            // 
+            this.bunifuLabel5.AllowParentOverrides = false;
+            this.bunifuLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel5.AutoEllipsis = false;
+            this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel5.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel5.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel5.Location = new System.Drawing.Point(35, 8);
+            this.bunifuLabel5.Name = "bunifuLabel5";
+            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel5.Size = new System.Drawing.Size(30, 44);
+            this.bunifuLabel5.TabIndex = 500;
+            this.bunifuLabel5.TabStop = false;
+            this.bunifuLabel5.Text = "لیٹر";
+            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel10
+            // 
+            this.bunifuLabel10.AllowParentOverrides = false;
+            this.bunifuLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel10.AutoEllipsis = false;
+            this.bunifuLabel10.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel10.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel10.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel10.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel10.Location = new System.Drawing.Point(358, 12);
+            this.bunifuLabel10.Name = "bunifuLabel10";
+            this.bunifuLabel10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel10.Size = new System.Drawing.Size(65, 44);
+            this.bunifuLabel10.TabIndex = 500;
+            this.bunifuLabel10.TabStop = false;
+            this.bunifuLabel10.Text = "خوراکی:";
+            this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel10.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards8
+            // 
+            this.bunifuCards8.BackColor = System.Drawing.Color.White;
+            this.bunifuCards8.BorderRadius = 10;
+            this.bunifuCards8.BottomSahddow = false;
+            this.bunifuCards8.color = System.Drawing.Color.White;
+            this.bunifuCards8.Controls.Add(this.bunifuLabel23);
+            this.bunifuCards8.Controls.Add(this.NetQuantityBox);
+            this.bunifuCards8.Controls.Add(this.bunifuLabel24);
+            this.bunifuCards8.LeftSahddow = false;
+            this.bunifuCards8.Location = new System.Drawing.Point(3, 283);
+            this.bunifuCards8.Name = "bunifuCards8";
+            this.bunifuCards8.RightSahddow = false;
+            this.bunifuCards8.ShadowDepth = 20;
+            this.bunifuCards8.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards8.TabIndex = 5;
+            // 
+            // bunifuLabel23
+            // 
+            this.bunifuLabel23.AllowParentOverrides = false;
+            this.bunifuLabel23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel23.AutoEllipsis = false;
+            this.bunifuLabel23.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel23.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel23.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel23.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel23.Location = new System.Drawing.Point(35, 9);
+            this.bunifuLabel23.Name = "bunifuLabel23";
+            this.bunifuLabel23.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel23.Size = new System.Drawing.Size(30, 44);
+            this.bunifuLabel23.TabIndex = 500;
+            this.bunifuLabel23.TabStop = false;
+            this.bunifuLabel23.Text = "لیٹر";
+            this.bunifuLabel23.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel23.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel24
+            // 
+            this.bunifuLabel24.AllowParentOverrides = false;
+            this.bunifuLabel24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel24.AutoEllipsis = false;
+            this.bunifuLabel24.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel24.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel24.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel24.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel24.Location = new System.Drawing.Point(318, 12);
+            this.bunifuLabel24.Name = "bunifuLabel24";
+            this.bunifuLabel24.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel24.Size = new System.Drawing.Size(106, 44);
+            this.bunifuLabel24.TabIndex = 500;
+            this.bunifuLabel24.TabStop = false;
+            this.bunifuLabel24.Text = "صافی مقدار:";
+            this.bunifuLabel24.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel24.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards5
+            // 
+            this.bunifuCards5.BackColor = System.Drawing.Color.White;
+            this.bunifuCards5.BorderRadius = 10;
+            this.bunifuCards5.BottomSahddow = false;
+            this.bunifuCards5.color = System.Drawing.Color.White;
+            this.bunifuCards5.Controls.Add(this.bunifuLabel16);
+            this.bunifuCards5.Controls.Add(this.RateBox);
+            this.bunifuCards5.Controls.Add(this.bunifuLabel17);
+            this.bunifuCards5.LeftSahddow = false;
+            this.bunifuCards5.Location = new System.Drawing.Point(3, 350);
+            this.bunifuCards5.Name = "bunifuCards5";
+            this.bunifuCards5.RightSahddow = false;
+            this.bunifuCards5.ShadowDepth = 20;
+            this.bunifuCards5.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards5.TabIndex = 6;
+            // 
+            // bunifuLabel16
+            // 
+            this.bunifuLabel16.AllowParentOverrides = false;
+            this.bunifuLabel16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel16.AutoEllipsis = false;
+            this.bunifuLabel16.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel16.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel16.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel16.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel16.Location = new System.Drawing.Point(19, 8);
+            this.bunifuLabel16.Name = "bunifuLabel16";
+            this.bunifuLabel16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel16.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel16.TabIndex = 500;
+            this.bunifuLabel16.TabStop = false;
+            this.bunifuLabel16.Text = "روپے";
+            this.bunifuLabel16.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel16.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel17
+            // 
+            this.bunifuLabel17.AllowParentOverrides = false;
+            this.bunifuLabel17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel17.AutoEllipsis = false;
+            this.bunifuLabel17.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel17.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel17.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel17.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel17.Location = new System.Drawing.Point(317, 12);
+            this.bunifuLabel17.Name = "bunifuLabel17";
+            this.bunifuLabel17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel17.Size = new System.Drawing.Size(106, 44);
+            this.bunifuLabel17.TabIndex = 500;
+            this.bunifuLabel17.TabStop = false;
+            this.bunifuLabel17.Text = "ریٹ فی لیٹر:";
+            this.bunifuLabel17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel17.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards6
+            // 
+            this.bunifuCards6.BackColor = System.Drawing.Color.White;
+            this.bunifuCards6.BorderRadius = 10;
+            this.bunifuCards6.BottomSahddow = false;
+            this.bunifuCards6.color = System.Drawing.Color.White;
+            this.bunifuCards6.Controls.Add(this.bunifuLabel18);
+            this.bunifuCards6.Controls.Add(this.AmountBox);
+            this.bunifuCards6.Controls.Add(this.bunifuLabel20);
+            this.bunifuCards6.LeftSahddow = false;
+            this.bunifuCards6.Location = new System.Drawing.Point(3, 417);
+            this.bunifuCards6.Name = "bunifuCards6";
+            this.bunifuCards6.RightSahddow = false;
+            this.bunifuCards6.ShadowDepth = 20;
+            this.bunifuCards6.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards6.TabIndex = 7;
+            // 
+            // bunifuLabel18
+            // 
+            this.bunifuLabel18.AllowParentOverrides = false;
+            this.bunifuLabel18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel18.AutoEllipsis = false;
+            this.bunifuLabel18.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel18.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel18.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel18.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel18.Location = new System.Drawing.Point(19, 8);
+            this.bunifuLabel18.Name = "bunifuLabel18";
+            this.bunifuLabel18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel18.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel18.TabIndex = 500;
+            this.bunifuLabel18.TabStop = false;
+            this.bunifuLabel18.Text = "روپے";
+            this.bunifuLabel18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel18.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel20
+            // 
+            this.bunifuLabel20.AllowParentOverrides = false;
+            this.bunifuLabel20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel20.AutoEllipsis = false;
+            this.bunifuLabel20.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel20.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel20.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel20.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel20.Location = new System.Drawing.Point(358, 12);
+            this.bunifuLabel20.Name = "bunifuLabel20";
+            this.bunifuLabel20.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel20.Size = new System.Drawing.Size(65, 44);
+            this.bunifuLabel20.TabIndex = 500;
+            this.bunifuLabel20.TabStop = false;
+            this.bunifuLabel20.Text = "کل رقم:";
+            this.bunifuLabel20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel20.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards4
+            // 
+            this.bunifuCards4.BackColor = System.Drawing.Color.White;
+            this.bunifuCards4.BorderRadius = 10;
+            this.bunifuCards4.BottomSahddow = false;
+            this.bunifuCards4.color = System.Drawing.Color.White;
+            this.bunifuCards4.Controls.Add(this.bunifuLabel14);
+            this.bunifuCards4.Controls.Add(this.LabourBox);
+            this.bunifuCards4.Controls.Add(this.bunifuLabel15);
+            this.bunifuCards4.LeftSahddow = false;
+            this.bunifuCards4.Location = new System.Drawing.Point(3, 484);
+            this.bunifuCards4.Name = "bunifuCards4";
+            this.bunifuCards4.RightSahddow = false;
+            this.bunifuCards4.ShadowDepth = 20;
+            this.bunifuCards4.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards4.TabIndex = 8;
+            // 
+            // bunifuLabel14
+            // 
+            this.bunifuLabel14.AllowParentOverrides = false;
+            this.bunifuLabel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel14.AutoEllipsis = false;
+            this.bunifuLabel14.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel14.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel14.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel14.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel14.Location = new System.Drawing.Point(19, 8);
+            this.bunifuLabel14.Name = "bunifuLabel14";
+            this.bunifuLabel14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel14.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel14.TabIndex = 500;
+            this.bunifuLabel14.TabStop = false;
+            this.bunifuLabel14.Text = "روپے";
+            this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel14.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel15
+            // 
+            this.bunifuLabel15.AllowParentOverrides = false;
+            this.bunifuLabel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel15.AutoEllipsis = false;
+            this.bunifuLabel15.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel15.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel15.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel15.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel15.Location = new System.Drawing.Point(290, 8);
+            this.bunifuLabel15.Name = "bunifuLabel15";
+            this.bunifuLabel15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel15.Size = new System.Drawing.Size(132, 44);
+            this.bunifuLabel15.TabIndex = 500;
+            this.bunifuLabel15.TabStop = false;
+            this.bunifuLabel15.Text = "خرچہ مزدوری:";
+            this.bunifuLabel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel15.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards9
+            // 
+            this.bunifuCards9.BackColor = System.Drawing.Color.White;
+            this.bunifuCards9.BorderRadius = 10;
+            this.bunifuCards9.BottomSahddow = false;
+            this.bunifuCards9.color = System.Drawing.Color.White;
+            this.bunifuCards9.Controls.Add(this.bunifuLabel25);
+            this.bunifuCards9.Controls.Add(this.NetPriceBox);
+            this.bunifuCards9.Controls.Add(this.bunifuLabel26);
+            this.bunifuCards9.LeftSahddow = false;
+            this.bunifuCards9.Location = new System.Drawing.Point(3, 551);
+            this.bunifuCards9.Name = "bunifuCards9";
+            this.bunifuCards9.RightSahddow = false;
+            this.bunifuCards9.ShadowDepth = 20;
+            this.bunifuCards9.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards9.TabIndex = 9;
+            // 
+            // bunifuLabel25
+            // 
+            this.bunifuLabel25.AllowParentOverrides = false;
+            this.bunifuLabel25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel25.AutoEllipsis = false;
+            this.bunifuLabel25.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel25.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel25.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel25.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel25.Location = new System.Drawing.Point(19, 8);
+            this.bunifuLabel25.Name = "bunifuLabel25";
+            this.bunifuLabel25.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel25.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel25.TabIndex = 500;
+            this.bunifuLabel25.TabStop = false;
+            this.bunifuLabel25.Text = "روپے";
+            this.bunifuLabel25.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel25.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel26
+            // 
+            this.bunifuLabel26.AllowParentOverrides = false;
+            this.bunifuLabel26.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel26.AutoEllipsis = false;
+            this.bunifuLabel26.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel26.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel26.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel26.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel26.Location = new System.Drawing.Point(331, 8);
+            this.bunifuLabel26.Name = "bunifuLabel26";
+            this.bunifuLabel26.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel26.Size = new System.Drawing.Size(87, 44);
+            this.bunifuLabel26.TabIndex = 500;
+            this.bunifuLabel26.TabStop = false;
+            this.bunifuLabel26.Text = "صافی رقم:";
+            this.bunifuLabel26.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel26.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards10
+            // 
+            this.bunifuCards10.BackColor = System.Drawing.Color.White;
+            this.bunifuCards10.BorderRadius = 10;
+            this.bunifuCards10.BottomSahddow = false;
+            this.bunifuCards10.color = System.Drawing.Color.White;
+            this.bunifuCards10.Controls.Add(this.bunifuLabel27);
+            this.bunifuCards10.Controls.Add(this.SabqaRaqamBox);
+            this.bunifuCards10.Controls.Add(this.bunifuLabel28);
+            this.bunifuCards10.LeftSahddow = false;
+            this.bunifuCards10.Location = new System.Drawing.Point(3, 618);
+            this.bunifuCards10.Name = "bunifuCards10";
+            this.bunifuCards10.RightSahddow = false;
+            this.bunifuCards10.ShadowDepth = 20;
+            this.bunifuCards10.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards10.TabIndex = 10;
+            // 
+            // bunifuLabel27
+            // 
+            this.bunifuLabel27.AllowParentOverrides = false;
+            this.bunifuLabel27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel27.AutoEllipsis = false;
+            this.bunifuLabel27.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel27.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel27.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel27.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel27.Location = new System.Drawing.Point(19, 8);
+            this.bunifuLabel27.Name = "bunifuLabel27";
+            this.bunifuLabel27.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel27.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel27.TabIndex = 500;
+            this.bunifuLabel27.TabStop = false;
+            this.bunifuLabel27.Text = "روپے";
+            this.bunifuLabel27.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel27.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel28
+            // 
+            this.bunifuLabel28.AllowParentOverrides = false;
+            this.bunifuLabel28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel28.AutoEllipsis = false;
+            this.bunifuLabel28.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel28.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel28.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel28.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel28.Location = new System.Drawing.Point(328, 12);
+            this.bunifuLabel28.Name = "bunifuLabel28";
+            this.bunifuLabel28.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel28.Size = new System.Drawing.Size(91, 44);
+            this.bunifuLabel28.TabIndex = 500;
+            this.bunifuLabel28.TabStop = false;
+            this.bunifuLabel28.Text = "سابقہ رقم:";
+            this.bunifuLabel28.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel28.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards17
+            // 
+            this.bunifuCards17.BackColor = System.Drawing.Color.White;
+            this.bunifuCards17.BorderRadius = 10;
+            this.bunifuCards17.BottomSahddow = false;
+            this.bunifuCards17.color = System.Drawing.Color.White;
+            this.bunifuCards17.Controls.Add(this.bunifuLabel36);
+            this.bunifuCards17.Controls.Add(this.TotalRaqamBox);
+            this.bunifuCards17.Controls.Add(this.bunifuLabel37);
+            this.bunifuCards17.LeftSahddow = false;
+            this.bunifuCards17.Location = new System.Drawing.Point(3, 685);
+            this.bunifuCards17.Name = "bunifuCards17";
+            this.bunifuCards17.RightSahddow = false;
+            this.bunifuCards17.ShadowDepth = 20;
+            this.bunifuCards17.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards17.TabIndex = 11;
+            // 
+            // bunifuLabel36
+            // 
+            this.bunifuLabel36.AllowParentOverrides = false;
+            this.bunifuLabel36.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel36.AutoEllipsis = false;
+            this.bunifuLabel36.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel36.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel36.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel36.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel36.Location = new System.Drawing.Point(19, 8);
+            this.bunifuLabel36.Name = "bunifuLabel36";
+            this.bunifuLabel36.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel36.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel36.TabIndex = 500;
+            this.bunifuLabel36.TabStop = false;
+            this.bunifuLabel36.Text = "روپے";
+            this.bunifuLabel36.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel36.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel37
+            // 
+            this.bunifuLabel37.AllowParentOverrides = false;
+            this.bunifuLabel37.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel37.AutoEllipsis = false;
+            this.bunifuLabel37.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel37.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel37.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel37.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel37.Location = new System.Drawing.Point(328, 12);
+            this.bunifuLabel37.Name = "bunifuLabel37";
+            this.bunifuLabel37.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel37.Size = new System.Drawing.Size(82, 44);
+            this.bunifuLabel37.TabIndex = 500;
+            this.bunifuLabel37.TabStop = false;
+            this.bunifuLabel37.Text = "ٹوٹل رقم:";
+            this.bunifuLabel37.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel37.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards7
+            // 
+            this.bunifuCards7.BackColor = System.Drawing.Color.White;
+            this.bunifuCards7.BorderRadius = 10;
+            this.bunifuCards7.BottomSahddow = false;
+            this.bunifuCards7.color = System.Drawing.Color.White;
+            this.bunifuCards7.Controls.Add(this.bunifuLabel39);
+            this.bunifuCards7.Controls.Add(this.RecoveryAmountBox1);
+            this.bunifuCards7.Controls.Add(this.bunifuLabel21);
+            this.bunifuCards7.Controls.Add(this.RecoveryDescriptionBox1);
+            this.bunifuCards7.Controls.Add(this.bunifuLabel22);
+            this.bunifuCards7.LeftSahddow = false;
+            this.bunifuCards7.Location = new System.Drawing.Point(3, 752);
+            this.bunifuCards7.Name = "bunifuCards7";
+            this.bunifuCards7.RightSahddow = false;
+            this.bunifuCards7.ShadowDepth = 20;
+            this.bunifuCards7.Size = new System.Drawing.Size(432, 151);
+            this.bunifuCards7.TabIndex = 12;
+            // 
+            // bunifuLabel39
+            // 
+            this.bunifuLabel39.AllowParentOverrides = false;
+            this.bunifuLabel39.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel39.AutoEllipsis = false;
+            this.bunifuLabel39.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel39.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel39.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel39.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel39.Location = new System.Drawing.Point(358, 103);
+            this.bunifuLabel39.Name = "bunifuLabel39";
+            this.bunifuLabel39.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel39.Size = new System.Drawing.Size(51, 33);
+            this.bunifuLabel39.TabIndex = 501;
+            this.bunifuLabel39.TabStop = false;
+            this.bunifuLabel39.Text = "تفصیل:";
+            this.bunifuLabel39.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel39.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel21
+            // 
+            this.bunifuLabel21.AllowParentOverrides = false;
+            this.bunifuLabel21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel21.AutoEllipsis = false;
+            this.bunifuLabel21.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel21.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel21.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel21.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel21.Location = new System.Drawing.Point(17, 12);
+            this.bunifuLabel21.Name = "bunifuLabel21";
+            this.bunifuLabel21.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel21.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel21.TabIndex = 500;
+            this.bunifuLabel21.TabStop = false;
+            this.bunifuLabel21.Text = "روپے";
+            this.bunifuLabel21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel21.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel22
+            // 
+            this.bunifuLabel22.AllowParentOverrides = false;
+            this.bunifuLabel22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel22.AutoEllipsis = false;
+            this.bunifuLabel22.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel22.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel22.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel22.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel22.Location = new System.Drawing.Point(331, 12);
+            this.bunifuLabel22.Name = "bunifuLabel22";
+            this.bunifuLabel22.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel22.Size = new System.Drawing.Size(87, 33);
+            this.bunifuLabel22.TabIndex = 500;
+            this.bunifuLabel22.TabStop = false;
+            this.bunifuLabel22.Text = "رقم وصولی 1: ";
+            this.bunifuLabel22.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel22.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards11
+            // 
+            this.bunifuCards11.BackColor = System.Drawing.Color.White;
+            this.bunifuCards11.BorderRadius = 10;
+            this.bunifuCards11.BottomSahddow = false;
+            this.bunifuCards11.color = System.Drawing.Color.White;
+            this.bunifuCards11.Controls.Add(this.bunifuLabel40);
+            this.bunifuCards11.Controls.Add(this.bunifuLabel41);
+            this.bunifuCards11.Controls.Add(this.RecoveryDescriptionBox2);
+            this.bunifuCards11.Controls.Add(this.RecoveryAmountBox2);
+            this.bunifuCards11.Controls.Add(this.bunifuLabel6);
+            this.bunifuCards11.LeftSahddow = false;
+            this.bunifuCards11.Location = new System.Drawing.Point(3, 909);
+            this.bunifuCards11.Name = "bunifuCards11";
+            this.bunifuCards11.RightSahddow = false;
+            this.bunifuCards11.ShadowDepth = 20;
+            this.bunifuCards11.Size = new System.Drawing.Size(432, 151);
+            this.bunifuCards11.TabIndex = 13;
+            // 
+            // bunifuLabel40
+            // 
+            this.bunifuLabel40.AllowParentOverrides = false;
+            this.bunifuLabel40.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel40.AutoEllipsis = false;
+            this.bunifuLabel40.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel40.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel40.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel40.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel40.Location = new System.Drawing.Point(358, 103);
+            this.bunifuLabel40.Name = "bunifuLabel40";
+            this.bunifuLabel40.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel40.Size = new System.Drawing.Size(51, 33);
+            this.bunifuLabel40.TabIndex = 503;
+            this.bunifuLabel40.TabStop = false;
+            this.bunifuLabel40.Text = "تفصیل:";
+            this.bunifuLabel40.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel40.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel41
+            // 
+            this.bunifuLabel41.AllowParentOverrides = false;
+            this.bunifuLabel41.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel41.AutoEllipsis = false;
+            this.bunifuLabel41.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel41.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel41.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel41.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel41.Location = new System.Drawing.Point(332, 19);
+            this.bunifuLabel41.Name = "bunifuLabel41";
+            this.bunifuLabel41.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel41.Size = new System.Drawing.Size(90, 33);
+            this.bunifuLabel41.TabIndex = 502;
+            this.bunifuLabel41.TabStop = false;
+            this.bunifuLabel41.Text = "رقم وصولی 2: ";
+            this.bunifuLabel41.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel41.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel6
+            // 
+            this.bunifuLabel6.AllowParentOverrides = false;
+            this.bunifuLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel6.AutoEllipsis = false;
+            this.bunifuLabel6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel6.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel6.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel6.Location = new System.Drawing.Point(16, 12);
+            this.bunifuLabel6.Name = "bunifuLabel6";
+            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel6.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel6.TabIndex = 500;
+            this.bunifuLabel6.TabStop = false;
+            this.bunifuLabel6.Text = "روپے";
+            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards14
+            // 
+            this.bunifuCards14.BackColor = System.Drawing.Color.White;
+            this.bunifuCards14.BorderRadius = 10;
+            this.bunifuCards14.BottomSahddow = false;
+            this.bunifuCards14.color = System.Drawing.Color.White;
+            this.bunifuCards14.Controls.Add(this.RecoveryAmountBox3);
+            this.bunifuCards14.Controls.Add(this.bunifuLabel9);
+            this.bunifuCards14.Controls.Add(this.RecoveryDescriptionBox3);
+            this.bunifuCards14.Controls.Add(this.bunifuLabel38);
+            this.bunifuCards14.Controls.Add(this.bunifuLabel29);
+            this.bunifuCards14.LeftSahddow = false;
+            this.bunifuCards14.Location = new System.Drawing.Point(3, 1066);
+            this.bunifuCards14.Name = "bunifuCards14";
+            this.bunifuCards14.RightSahddow = false;
+            this.bunifuCards14.ShadowDepth = 20;
+            this.bunifuCards14.Size = new System.Drawing.Size(432, 151);
+            this.bunifuCards14.TabIndex = 14;
+            // 
+            // bunifuLabel9
+            // 
+            this.bunifuLabel9.AllowParentOverrides = false;
+            this.bunifuLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel9.AutoEllipsis = false;
+            this.bunifuLabel9.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel9.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel9.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel9.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel9.Location = new System.Drawing.Point(16, 12);
+            this.bunifuLabel9.Name = "bunifuLabel9";
+            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel9.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel9.TabIndex = 500;
+            this.bunifuLabel9.TabStop = false;
+            this.bunifuLabel9.Text = "روپے";
+            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel38
+            // 
+            this.bunifuLabel38.AllowParentOverrides = false;
+            this.bunifuLabel38.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel38.AutoEllipsis = false;
+            this.bunifuLabel38.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel38.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel38.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel38.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel38.Location = new System.Drawing.Point(367, 96);
+            this.bunifuLabel38.Name = "bunifuLabel38";
+            this.bunifuLabel38.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel38.Size = new System.Drawing.Size(51, 33);
+            this.bunifuLabel38.TabIndex = 500;
+            this.bunifuLabel38.TabStop = false;
+            this.bunifuLabel38.Text = " تفصیل:";
+            this.bunifuLabel38.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel38.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel29
+            // 
+            this.bunifuLabel29.AllowParentOverrides = false;
+            this.bunifuLabel29.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel29.AutoEllipsis = false;
+            this.bunifuLabel29.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel29.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel29.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel29.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel29.Location = new System.Drawing.Point(331, 12);
+            this.bunifuLabel29.Name = "bunifuLabel29";
+            this.bunifuLabel29.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel29.Size = new System.Drawing.Size(90, 33);
+            this.bunifuLabel29.TabIndex = 500;
+            this.bunifuLabel29.TabStop = false;
+            this.bunifuLabel29.Text = "رقم وصولی 3:";
+            this.bunifuLabel29.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel29.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards15
+            // 
+            this.bunifuCards15.BackColor = System.Drawing.Color.White;
+            this.bunifuCards15.BorderRadius = 10;
+            this.bunifuCards15.BottomSahddow = false;
+            this.bunifuCards15.color = System.Drawing.Color.White;
+            this.bunifuCards15.Controls.Add(this.bunifuLabel8);
+            this.bunifuCards15.Controls.Add(this.bunifuLabel33);
+            this.bunifuCards15.Controls.Add(this.RecoveryDescriptionBox4);
+            this.bunifuCards15.Controls.Add(this.RecoveryAmountBox4);
+            this.bunifuCards15.Controls.Add(this.bunifuLabel30);
+            this.bunifuCards15.LeftSahddow = false;
+            this.bunifuCards15.Location = new System.Drawing.Point(3, 1223);
+            this.bunifuCards15.Name = "bunifuCards15";
+            this.bunifuCards15.RightSahddow = false;
+            this.bunifuCards15.ShadowDepth = 20;
+            this.bunifuCards15.Size = new System.Drawing.Size(432, 151);
+            this.bunifuCards15.TabIndex = 15;
+            // 
+            // bunifuLabel8
+            // 
+            this.bunifuLabel8.AllowParentOverrides = false;
+            this.bunifuLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel8.AutoEllipsis = false;
+            this.bunifuLabel8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel8.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel8.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel8.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel8.Location = new System.Drawing.Point(367, 103);
+            this.bunifuLabel8.Name = "bunifuLabel8";
+            this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel8.Size = new System.Drawing.Size(51, 33);
+            this.bunifuLabel8.TabIndex = 501;
+            this.bunifuLabel8.TabStop = false;
+            this.bunifuLabel8.Text = " تفصیل:";
+            this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel33
+            // 
+            this.bunifuLabel33.AllowParentOverrides = false;
+            this.bunifuLabel33.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel33.AutoEllipsis = false;
+            this.bunifuLabel33.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel33.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel33.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel33.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel33.Location = new System.Drawing.Point(331, 19);
+            this.bunifuLabel33.Name = "bunifuLabel33";
+            this.bunifuLabel33.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel33.Size = new System.Drawing.Size(90, 33);
+            this.bunifuLabel33.TabIndex = 502;
+            this.bunifuLabel33.TabStop = false;
+            this.bunifuLabel33.Text = "رقم وصولی 4:";
+            this.bunifuLabel33.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel33.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel30
+            // 
+            this.bunifuLabel30.AllowParentOverrides = false;
+            this.bunifuLabel30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel30.AutoEllipsis = false;
+            this.bunifuLabel30.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel30.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel30.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel30.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel30.Location = new System.Drawing.Point(17, 12);
+            this.bunifuLabel30.Name = "bunifuLabel30";
+            this.bunifuLabel30.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel30.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel30.TabIndex = 500;
+            this.bunifuLabel30.TabStop = false;
+            this.bunifuLabel30.Text = "روپے";
+            this.bunifuLabel30.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel30.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards16
+            // 
+            this.bunifuCards16.BackColor = System.Drawing.Color.White;
+            this.bunifuCards16.BorderRadius = 10;
+            this.bunifuCards16.BottomSahddow = false;
+            this.bunifuCards16.color = System.Drawing.Color.White;
+            this.bunifuCards16.Controls.Add(this.bunifuLabel35);
+            this.bunifuCards16.Controls.Add(this.bunifuLabel42);
+            this.bunifuCards16.Controls.Add(this.RecoveryDescriptionBox5);
+            this.bunifuCards16.Controls.Add(this.RecoveryAmountBox5);
+            this.bunifuCards16.Controls.Add(this.bunifuLabel34);
+            this.bunifuCards16.LeftSahddow = false;
+            this.bunifuCards16.Location = new System.Drawing.Point(3, 1380);
+            this.bunifuCards16.Name = "bunifuCards16";
+            this.bunifuCards16.RightSahddow = false;
+            this.bunifuCards16.ShadowDepth = 20;
+            this.bunifuCards16.Size = new System.Drawing.Size(432, 151);
+            this.bunifuCards16.TabIndex = 16;
+            // 
+            // bunifuLabel35
+            // 
+            this.bunifuLabel35.AllowParentOverrides = false;
+            this.bunifuLabel35.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel35.AutoEllipsis = false;
+            this.bunifuLabel35.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel35.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel35.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel35.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel35.Location = new System.Drawing.Point(364, 103);
+            this.bunifuLabel35.Name = "bunifuLabel35";
+            this.bunifuLabel35.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel35.Size = new System.Drawing.Size(51, 33);
+            this.bunifuLabel35.TabIndex = 503;
+            this.bunifuLabel35.TabStop = false;
+            this.bunifuLabel35.Text = " تفصیل:";
+            this.bunifuLabel35.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel35.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel42
+            // 
+            this.bunifuLabel42.AllowParentOverrides = false;
+            this.bunifuLabel42.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel42.AutoEllipsis = false;
+            this.bunifuLabel42.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel42.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel42.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel42.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel42.Location = new System.Drawing.Point(328, 19);
+            this.bunifuLabel42.Name = "bunifuLabel42";
+            this.bunifuLabel42.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel42.Size = new System.Drawing.Size(90, 33);
+            this.bunifuLabel42.TabIndex = 504;
+            this.bunifuLabel42.TabStop = false;
+            this.bunifuLabel42.Text = "رقم وصولی 5:";
+            this.bunifuLabel42.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel42.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel34
+            // 
+            this.bunifuLabel34.AllowParentOverrides = false;
+            this.bunifuLabel34.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel34.AutoEllipsis = false;
+            this.bunifuLabel34.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel34.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel34.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel34.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel34.Location = new System.Drawing.Point(16, 12);
+            this.bunifuLabel34.Name = "bunifuLabel34";
+            this.bunifuLabel34.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel34.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel34.TabIndex = 500;
+            this.bunifuLabel34.TabStop = false;
+            this.bunifuLabel34.Text = "روپے";
+            this.bunifuLabel34.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel34.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuCards12
+            // 
+            this.bunifuCards12.BackColor = System.Drawing.Color.White;
+            this.bunifuCards12.BorderRadius = 10;
+            this.bunifuCards12.BottomSahddow = false;
+            this.bunifuCards12.color = System.Drawing.Color.White;
+            this.bunifuCards12.Controls.Add(this.bunifuLabel31);
+            this.bunifuCards12.Controls.Add(this.RemainingAmountBox);
+            this.bunifuCards12.Controls.Add(this.bunifuLabel32);
+            this.bunifuCards12.LeftSahddow = false;
+            this.bunifuCards12.Location = new System.Drawing.Point(3, 1537);
+            this.bunifuCards12.Name = "bunifuCards12";
+            this.bunifuCards12.RightSahddow = false;
+            this.bunifuCards12.ShadowDepth = 20;
+            this.bunifuCards12.Size = new System.Drawing.Size(432, 61);
+            this.bunifuCards12.TabIndex = 17;
+            // 
+            // bunifuLabel31
+            // 
+            this.bunifuLabel31.AllowParentOverrides = false;
+            this.bunifuLabel31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel31.AutoEllipsis = false;
+            this.bunifuLabel31.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel31.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel31.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel31.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel31.Location = new System.Drawing.Point(16, 8);
+            this.bunifuLabel31.Name = "bunifuLabel31";
+            this.bunifuLabel31.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel31.Size = new System.Drawing.Size(48, 44);
+            this.bunifuLabel31.TabIndex = 500;
+            this.bunifuLabel31.TabStop = false;
+            this.bunifuLabel31.Text = "روپے";
+            this.bunifuLabel31.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel31.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel32
+            // 
+            this.bunifuLabel32.AllowParentOverrides = false;
+            this.bunifuLabel32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel32.AutoEllipsis = false;
+            this.bunifuLabel32.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel32.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel32.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel32.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel32.Location = new System.Drawing.Point(340, 12);
+            this.bunifuLabel32.Name = "bunifuLabel32";
+            this.bunifuLabel32.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuLabel32.Size = new System.Drawing.Size(79, 44);
+            this.bunifuLabel32.TabIndex = 500;
+            this.bunifuLabel32.TabStop = false;
+            this.bunifuLabel32.Text = "بقایا رقم:";
+            this.bunifuLabel32.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel32.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(565, 45);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(229, 26);
+            this.dateTimePicker1.TabIndex = 66;
+            this.dateTimePicker1.TabStop = false;
+            // 
+            // bunifuLabel19
+            // 
+            this.bunifuLabel19.AllowParentOverrides = false;
+            this.bunifuLabel19.AutoEllipsis = false;
+            this.bunifuLabel19.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel19.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel19.Location = new System.Drawing.Point(565, 12);
+            this.bunifuLabel19.Name = "bunifuLabel19";
+            this.bunifuLabel19.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel19.Size = new System.Drawing.Size(82, 21);
+            this.bunifuLabel19.TabIndex = 65;
+            this.bunifuLabel19.TabStop = false;
+            this.bunifuLabel19.Text = "Date Time:";
+            this.bunifuLabel19.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel19.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // SharahListBox
+            // 
+            this.SharahListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SharahListBox.FormattingEnabled = true;
+            this.SharahListBox.Location = new System.Drawing.Point(385, 46);
+            this.SharahListBox.Name = "SharahListBox";
+            this.SharahListBox.Size = new System.Drawing.Size(121, 25);
+            this.SharahListBox.TabIndex = 67;
+            this.SharahListBox.TabStop = false;
+            this.SharahListBox.SelectedIndexChanged += new System.EventHandler(this.SharahBox_SelectedIndexChanged);
+            // 
+            // FuelTypeBox
+            // 
+            this.FuelTypeBox.Enabled = false;
+            this.FuelTypeBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FuelTypeBox.FormattingEnabled = true;
+            this.FuelTypeBox.Items.AddRange(new object[] {
+            "Petrol",
+            "Diesel"});
+            this.FuelTypeBox.Location = new System.Drawing.Point(198, 46);
+            this.FuelTypeBox.Name = "FuelTypeBox";
+            this.FuelTypeBox.Size = new System.Drawing.Size(121, 25);
+            this.FuelTypeBox.TabIndex = 67;
+            this.FuelTypeBox.TabStop = false;
+            this.FuelTypeBox.SelectedIndexChanged += new System.EventHandler(this.FuelTypeBox_SelectedIndexChanged);
+            // 
+            // bunifuLabel3
+            // 
+            this.bunifuLabel3.AllowParentOverrides = false;
+            this.bunifuLabel3.AutoEllipsis = false;
+            this.bunifuLabel3.CursorType = null;
+            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel3.Location = new System.Drawing.Point(385, 13);
+            this.bunifuLabel3.Name = "bunifuLabel3";
+            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel3.Size = new System.Drawing.Size(57, 21);
+            this.bunifuLabel3.TabIndex = 63;
+            this.bunifuLabel3.TabStop = false;
+            this.bunifuLabel3.Text = "Sharah:";
+            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel4
+            // 
+            this.bunifuLabel4.AllowParentOverrides = false;
+            this.bunifuLabel4.AutoEllipsis = false;
+            this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel4.Location = new System.Drawing.Point(34, 13);
+            this.bunifuLabel4.Name = "bunifuLabel4";
+            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel4.Size = new System.Drawing.Size(42, 21);
+            this.bunifuLabel4.TabIndex = 64;
+            this.bunifuLabel4.TabStop = false;
+            this.bunifuLabel4.Text = "Ref# :";
+            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Location = new System.Drawing.Point(198, 13);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(77, 21);
+            this.bunifuLabel1.TabIndex = 62;
+            this.bunifuLabel1.TabStop = false;
+            this.bunifuLabel1.Text = "Fuel Type:";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuShadowPanel1
+            // 
+            this.bunifuShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuShadowPanel1.BorderColor = System.Drawing.Color.White;
+            this.bunifuShadowPanel1.BorderRadius = 15;
+            this.bunifuShadowPanel1.BorderThickness = 1;
+            this.bunifuShadowPanel1.Controls.Add(this.groupBox1);
+            this.bunifuShadowPanel1.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.bunifuShadowPanel1.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.bunifuShadowPanel1.Location = new System.Drawing.Point(12, 15);
+            this.bunifuShadowPanel1.Name = "bunifuShadowPanel1";
+            this.bunifuShadowPanel1.PanelColor = System.Drawing.Color.White;
+            this.bunifuShadowPanel1.PanelColor2 = System.Drawing.Color.White;
+            this.bunifuShadowPanel1.ShadowColor = System.Drawing.Color.DarkGray;
+            this.bunifuShadowPanel1.ShadowDept = 2;
+            this.bunifuShadowPanel1.ShadowDepth = 2;
+            this.bunifuShadowPanel1.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.bunifuShadowPanel1.ShadowTopLeftVisible = false;
+            this.bunifuShadowPanel1.Size = new System.Drawing.Size(825, 82);
+            this.bunifuShadowPanel1.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.bunifuShadowPanel1.TabIndex = 202;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.bunifuLabel44);
+            this.groupBox1.Controls.Add(this.bunifuLabel43);
+            this.groupBox1.Controls.Add(this.SearchTextBox);
+            this.groupBox1.Controls.Add(this.SearchByRefRadio);
+            this.groupBox1.Controls.Add(this.SearchByNameRadio);
+            this.groupBox1.Location = new System.Drawing.Point(19, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(783, 65);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "SearchBar";
+            // 
+            // bunifuLabel44
+            // 
+            this.bunifuLabel44.AllowParentOverrides = false;
+            this.bunifuLabel44.AutoEllipsis = false;
+            this.bunifuLabel44.CursorType = null;
+            this.bunifuLabel44.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel44.Location = new System.Drawing.Point(538, 29);
+            this.bunifuLabel44.Name = "bunifuLabel44";
+            this.bunifuLabel44.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel44.Size = new System.Drawing.Size(97, 17);
+            this.bunifuLabel44.TabIndex = 3;
+            this.bunifuLabel44.Text = "Search By Ref# :";
+            this.bunifuLabel44.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel44.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel43
+            // 
+            this.bunifuLabel43.AllowParentOverrides = false;
+            this.bunifuLabel43.AutoEllipsis = false;
+            this.bunifuLabel43.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel43.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel43.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel43.Location = new System.Drawing.Point(388, 29);
+            this.bunifuLabel43.Name = "bunifuLabel43";
+            this.bunifuLabel43.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel43.Size = new System.Drawing.Size(102, 17);
+            this.bunifuLabel43.TabIndex = 3;
+            this.bunifuLabel43.Text = "Search By Name:";
+            this.bunifuLabel43.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel43.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // SearchByRefRadio
+            // 
+            this.SearchByRefRadio.AllowBindingControlLocation = false;
+            this.SearchByRefRadio.BackColor = System.Drawing.Color.Transparent;
+            this.SearchByRefRadio.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.SearchByRefRadio.BorderThickness = 1;
+            this.SearchByRefRadio.Checked = false;
+            this.SearchByRefRadio.Location = new System.Drawing.Point(640, 29);
+            this.SearchByRefRadio.Name = "SearchByRefRadio";
+            this.SearchByRefRadio.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.SearchByRefRadio.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.SearchByRefRadio.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.SearchByRefRadio.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.SearchByRefRadio.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.SearchByRefRadio.Size = new System.Drawing.Size(21, 21);
+            this.SearchByRefRadio.TabIndex = 2;
+            this.SearchByRefRadio.Text = null;
+            // 
+            // SearchByNameRadio
+            // 
+            this.SearchByNameRadio.AllowBindingControlLocation = false;
+            this.SearchByNameRadio.BackColor = System.Drawing.Color.Transparent;
+            this.SearchByNameRadio.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.SearchByNameRadio.BorderThickness = 1;
+            this.SearchByNameRadio.Checked = true;
+            this.SearchByNameRadio.Location = new System.Drawing.Point(496, 29);
+            this.SearchByNameRadio.Name = "SearchByNameRadio";
+            this.SearchByNameRadio.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.SearchByNameRadio.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.SearchByNameRadio.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.SearchByNameRadio.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.SearchByNameRadio.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.SearchByNameRadio.Size = new System.Drawing.Size(21, 21);
+            this.SearchByNameRadio.TabIndex = 2;
+            this.SearchByNameRadio.Text = null;
+            // 
             // CloseButton
             // 
             this.CloseButton.AllowAnimations = true;
@@ -567,31 +1878,6 @@
             this.CloseButton.UseDefaultRadiusAndThickness = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // bunifuShadowPanel2
-            // 
-            this.bunifuShadowPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuShadowPanel2.BorderColor = System.Drawing.Color.White;
-            this.bunifuShadowPanel2.BorderRadius = 15;
-            this.bunifuShadowPanel2.BorderThickness = 1;
-            this.bunifuShadowPanel2.Controls.Add(this.SaveReciept);
-            this.bunifuShadowPanel2.Controls.Add(this.GenerateReceipt);
-            this.bunifuShadowPanel2.Controls.Add(this.UpdateData);
-            this.bunifuShadowPanel2.Controls.Add(this.flowLayoutPanel1);
-            this.bunifuShadowPanel2.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
-            this.bunifuShadowPanel2.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.bunifuShadowPanel2.Location = new System.Drawing.Point(34, 82);
-            this.bunifuShadowPanel2.Name = "bunifuShadowPanel2";
-            this.bunifuShadowPanel2.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(204)))), ((int)(((byte)(228)))));
-            this.bunifuShadowPanel2.PanelColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(204)))), ((int)(((byte)(228)))));
-            this.bunifuShadowPanel2.ShadowColor = System.Drawing.Color.DarkGray;
-            this.bunifuShadowPanel2.ShadowDept = 2;
-            this.bunifuShadowPanel2.ShadowDepth = 2;
-            this.bunifuShadowPanel2.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
-            this.bunifuShadowPanel2.ShadowTopLeftVisible = false;
-            this.bunifuShadowPanel2.Size = new System.Drawing.Size(760, 524);
-            this.bunifuShadowPanel2.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
-            this.bunifuShadowPanel2.TabIndex = 69;
-            // 
             // GenerateReceipt
             // 
             this.GenerateReceipt.AllowAnimations = true;
@@ -611,11 +1897,11 @@
             this.GenerateReceipt.ColorContrastOnClick = 45;
             this.GenerateReceipt.ColorContrastOnHover = 45;
             this.GenerateReceipt.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.GenerateReceipt.CustomizableEdges = borderEdges3;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.GenerateReceipt.CustomizableEdges = borderEdges2;
             this.GenerateReceipt.DialogResult = System.Windows.Forms.DialogResult.None;
             this.GenerateReceipt.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.GenerateReceipt.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -639,7 +1925,7 @@
             this.GenerateReceipt.IdleIconLeftImage = null;
             this.GenerateReceipt.IdleIconRightImage = null;
             this.GenerateReceipt.IndicateFocus = false;
-            this.GenerateReceipt.Location = new System.Drawing.Point(117, 402);
+            this.GenerateReceipt.Location = new System.Drawing.Point(117, 467);
             this.GenerateReceipt.Name = "GenerateReceipt";
             this.GenerateReceipt.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.GenerateReceipt.OnDisabledState.BorderRadius = 15;
@@ -701,11 +1987,11 @@
             this.UpdateData.ColorContrastOnClick = 45;
             this.UpdateData.ColorContrastOnHover = 45;
             this.UpdateData.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.UpdateData.CustomizableEdges = borderEdges4;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.UpdateData.CustomizableEdges = borderEdges3;
             this.UpdateData.DialogResult = System.Windows.Forms.DialogResult.None;
             this.UpdateData.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.UpdateData.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -729,7 +2015,7 @@
             this.UpdateData.IdleIconLeftImage = null;
             this.UpdateData.IdleIconRightImage = null;
             this.UpdateData.IndicateFocus = false;
-            this.UpdateData.Location = new System.Drawing.Point(117, 335);
+            this.UpdateData.Location = new System.Drawing.Point(117, 400);
             this.UpdateData.Name = "UpdateData";
             this.UpdateData.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.UpdateData.OnDisabledState.BorderRadius = 15;
@@ -772,49 +2058,6 @@
             this.UpdateData.UseDefaultRadiusAndThickness = true;
             this.UpdateData.Click += new System.EventHandler(this.UpdateData_Click);
             this.UpdateData.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UpdateData_KeyUp);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards13);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards2);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards3);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards1);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards8);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards5);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards6);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards4);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards9);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards10);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards17);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards7);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards11);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards14);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards15);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards16);
-            this.flowLayoutPanel1.Controls.Add(this.bunifuCards12);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(282, 15);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(461, 494);
-            this.flowLayoutPanel1.TabIndex = 11;
-            this.flowLayoutPanel1.WrapContents = false;
-            // 
-            // bunifuCards13
-            // 
-            this.bunifuCards13.BackColor = System.Drawing.Color.White;
-            this.bunifuCards13.BorderRadius = 10;
-            this.bunifuCards13.BottomSahddow = false;
-            this.bunifuCards13.color = System.Drawing.Color.White;
-            this.bunifuCards13.Controls.Add(this.NameTextBox);
-            this.bunifuCards13.Controls.Add(this.bunifuLabel7);
-            this.bunifuCards13.LeftSahddow = false;
-            this.bunifuCards13.Location = new System.Drawing.Point(3, 3);
-            this.bunifuCards13.Name = "bunifuCards13";
-            this.bunifuCards13.RightSahddow = false;
-            this.bunifuCards13.ShadowDepth = 20;
-            this.bunifuCards13.Size = new System.Drawing.Size(432, 73);
-            this.bunifuCards13.TabIndex = 0;
             // 
             // NameTextBox
             // 
@@ -896,63 +2139,6 @@
             this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             this.NameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
-            // bunifuLabel7
-            // 
-            this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel7.AutoEllipsis = false;
-            this.bunifuLabel7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel7.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel7.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel7.Location = new System.Drawing.Point(322, 12);
-            this.bunifuLabel7.Name = "bunifuLabel7";
-            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel7.Size = new System.Drawing.Size(107, 44);
-            this.bunifuLabel7.TabIndex = 0;
-            this.bunifuLabel7.TabStop = false;
-            this.bunifuLabel7.Text = "مالک کا نام:";
-            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards2
-            // 
-            this.bunifuCards2.BackColor = System.Drawing.Color.White;
-            this.bunifuCards2.BorderRadius = 10;
-            this.bunifuCards2.BottomSahddow = false;
-            this.bunifuCards2.color = System.Drawing.Color.White;
-            this.bunifuCards2.Controls.Add(this.bunifuLabel2);
-            this.bunifuCards2.Controls.Add(this.WeightBox);
-            this.bunifuCards2.Controls.Add(this.bunifuLabel11);
-            this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(3, 82);
-            this.bunifuCards2.Name = "bunifuCards2";
-            this.bunifuCards2.RightSahddow = false;
-            this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(432, 61);
-            this.bunifuCards2.TabIndex = 1;
-            // 
-            // bunifuLabel2
-            // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel2.Location = new System.Drawing.Point(5, 8);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel2.Size = new System.Drawing.Size(60, 44);
-            this.bunifuLabel2.TabIndex = 2;
-            this.bunifuLabel2.TabStop = false;
-            this.bunifuLabel2.Text = "کلوگرام";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // WeightBox
             // 
             this.WeightBox.AcceptsReturn = false;
@@ -1031,63 +2217,6 @@
             this.WeightBox.WordWrap = false;
             this.WeightBox.TextChanged += new System.EventHandler(this.WeightBox_TextChanged);
             this.WeightBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
-            // 
-            // bunifuLabel11
-            // 
-            this.bunifuLabel11.AllowParentOverrides = false;
-            this.bunifuLabel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel11.AutoEllipsis = false;
-            this.bunifuLabel11.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel11.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel11.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel11.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel11.Location = new System.Drawing.Point(322, 12);
-            this.bunifuLabel11.Name = "bunifuLabel11";
-            this.bunifuLabel11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel11.Size = new System.Drawing.Size(100, 44);
-            this.bunifuLabel11.TabIndex = 2;
-            this.bunifuLabel11.TabStop = false;
-            this.bunifuLabel11.Text = "کانٹا / وزن:";
-            this.bunifuLabel11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel11.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards3
-            // 
-            this.bunifuCards3.BackColor = System.Drawing.Color.White;
-            this.bunifuCards3.BorderRadius = 10;
-            this.bunifuCards3.BottomSahddow = false;
-            this.bunifuCards3.color = System.Drawing.Color.White;
-            this.bunifuCards3.Controls.Add(this.bunifuLabel12);
-            this.bunifuCards3.Controls.Add(this.QuantityBox);
-            this.bunifuCards3.Controls.Add(this.bunifuLabel13);
-            this.bunifuCards3.LeftSahddow = false;
-            this.bunifuCards3.Location = new System.Drawing.Point(3, 149);
-            this.bunifuCards3.Name = "bunifuCards3";
-            this.bunifuCards3.RightSahddow = false;
-            this.bunifuCards3.ShadowDepth = 20;
-            this.bunifuCards3.Size = new System.Drawing.Size(432, 61);
-            this.bunifuCards3.TabIndex = 3;
-            // 
-            // bunifuLabel12
-            // 
-            this.bunifuLabel12.AllowParentOverrides = false;
-            this.bunifuLabel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel12.AutoEllipsis = false;
-            this.bunifuLabel12.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel12.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel12.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel12.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel12.Location = new System.Drawing.Point(35, 8);
-            this.bunifuLabel12.Name = "bunifuLabel12";
-            this.bunifuLabel12.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel12.Size = new System.Drawing.Size(30, 44);
-            this.bunifuLabel12.TabIndex = 500;
-            this.bunifuLabel12.TabStop = false;
-            this.bunifuLabel12.Text = "لیٹر";
-            this.bunifuLabel12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel12.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // QuantityBox
             // 
@@ -1170,63 +2299,6 @@
             this.QuantityBox.TextChanged += new System.EventHandler(this.QuantityBox_TextChanged);
             this.QuantityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
-            // bunifuLabel13
-            // 
-            this.bunifuLabel13.AllowParentOverrides = false;
-            this.bunifuLabel13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel13.AutoEllipsis = false;
-            this.bunifuLabel13.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel13.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel13.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel13.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel13.Location = new System.Drawing.Point(367, 12);
-            this.bunifuLabel13.Name = "bunifuLabel13";
-            this.bunifuLabel13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel13.Size = new System.Drawing.Size(56, 44);
-            this.bunifuLabel13.TabIndex = 500;
-            this.bunifuLabel13.TabStop = false;
-            this.bunifuLabel13.Text = "مقدار:";
-            this.bunifuLabel13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel13.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards1
-            // 
-            this.bunifuCards1.BackColor = System.Drawing.Color.White;
-            this.bunifuCards1.BorderRadius = 10;
-            this.bunifuCards1.BottomSahddow = false;
-            this.bunifuCards1.color = System.Drawing.Color.White;
-            this.bunifuCards1.Controls.Add(this.bunifuLabel5);
-            this.bunifuCards1.Controls.Add(this.KhorakiBox);
-            this.bunifuCards1.Controls.Add(this.bunifuLabel10);
-            this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(3, 216);
-            this.bunifuCards1.Name = "bunifuCards1";
-            this.bunifuCards1.RightSahddow = false;
-            this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(432, 61);
-            this.bunifuCards1.TabIndex = 4;
-            // 
-            // bunifuLabel5
-            // 
-            this.bunifuLabel5.AllowParentOverrides = false;
-            this.bunifuLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel5.AutoEllipsis = false;
-            this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel5.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel5.Location = new System.Drawing.Point(35, 8);
-            this.bunifuLabel5.Name = "bunifuLabel5";
-            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel5.Size = new System.Drawing.Size(30, 44);
-            this.bunifuLabel5.TabIndex = 500;
-            this.bunifuLabel5.TabStop = false;
-            this.bunifuLabel5.Text = "لیٹر";
-            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // KhorakiBox
             // 
             this.KhorakiBox.AcceptsReturn = false;
@@ -1305,63 +2377,6 @@
             this.KhorakiBox.WordWrap = false;
             this.KhorakiBox.TextChanged += new System.EventHandler(this.KhorakiBox_TextChanged);
             this.KhorakiBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
-            // 
-            // bunifuLabel10
-            // 
-            this.bunifuLabel10.AllowParentOverrides = false;
-            this.bunifuLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel10.AutoEllipsis = false;
-            this.bunifuLabel10.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel10.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel10.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel10.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel10.Location = new System.Drawing.Point(358, 12);
-            this.bunifuLabel10.Name = "bunifuLabel10";
-            this.bunifuLabel10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel10.Size = new System.Drawing.Size(65, 44);
-            this.bunifuLabel10.TabIndex = 500;
-            this.bunifuLabel10.TabStop = false;
-            this.bunifuLabel10.Text = "خوراکی:";
-            this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel10.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards8
-            // 
-            this.bunifuCards8.BackColor = System.Drawing.Color.White;
-            this.bunifuCards8.BorderRadius = 10;
-            this.bunifuCards8.BottomSahddow = false;
-            this.bunifuCards8.color = System.Drawing.Color.White;
-            this.bunifuCards8.Controls.Add(this.bunifuLabel23);
-            this.bunifuCards8.Controls.Add(this.NetQuantityBox);
-            this.bunifuCards8.Controls.Add(this.bunifuLabel24);
-            this.bunifuCards8.LeftSahddow = false;
-            this.bunifuCards8.Location = new System.Drawing.Point(3, 283);
-            this.bunifuCards8.Name = "bunifuCards8";
-            this.bunifuCards8.RightSahddow = false;
-            this.bunifuCards8.ShadowDepth = 20;
-            this.bunifuCards8.Size = new System.Drawing.Size(432, 61);
-            this.bunifuCards8.TabIndex = 5;
-            // 
-            // bunifuLabel23
-            // 
-            this.bunifuLabel23.AllowParentOverrides = false;
-            this.bunifuLabel23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel23.AutoEllipsis = false;
-            this.bunifuLabel23.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel23.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel23.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel23.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel23.Location = new System.Drawing.Point(35, 9);
-            this.bunifuLabel23.Name = "bunifuLabel23";
-            this.bunifuLabel23.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel23.Size = new System.Drawing.Size(30, 44);
-            this.bunifuLabel23.TabIndex = 500;
-            this.bunifuLabel23.TabStop = false;
-            this.bunifuLabel23.Text = "لیٹر";
-            this.bunifuLabel23.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel23.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // NetQuantityBox
             // 
@@ -1443,63 +2458,6 @@
             this.NetQuantityBox.WordWrap = false;
             this.NetQuantityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
-            // bunifuLabel24
-            // 
-            this.bunifuLabel24.AllowParentOverrides = false;
-            this.bunifuLabel24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel24.AutoEllipsis = false;
-            this.bunifuLabel24.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel24.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel24.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel24.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel24.Location = new System.Drawing.Point(318, 12);
-            this.bunifuLabel24.Name = "bunifuLabel24";
-            this.bunifuLabel24.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel24.Size = new System.Drawing.Size(106, 44);
-            this.bunifuLabel24.TabIndex = 500;
-            this.bunifuLabel24.TabStop = false;
-            this.bunifuLabel24.Text = "صافی مقدار:";
-            this.bunifuLabel24.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel24.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards5
-            // 
-            this.bunifuCards5.BackColor = System.Drawing.Color.White;
-            this.bunifuCards5.BorderRadius = 10;
-            this.bunifuCards5.BottomSahddow = false;
-            this.bunifuCards5.color = System.Drawing.Color.White;
-            this.bunifuCards5.Controls.Add(this.bunifuLabel16);
-            this.bunifuCards5.Controls.Add(this.RateBox);
-            this.bunifuCards5.Controls.Add(this.bunifuLabel17);
-            this.bunifuCards5.LeftSahddow = false;
-            this.bunifuCards5.Location = new System.Drawing.Point(3, 350);
-            this.bunifuCards5.Name = "bunifuCards5";
-            this.bunifuCards5.RightSahddow = false;
-            this.bunifuCards5.ShadowDepth = 20;
-            this.bunifuCards5.Size = new System.Drawing.Size(432, 61);
-            this.bunifuCards5.TabIndex = 6;
-            // 
-            // bunifuLabel16
-            // 
-            this.bunifuLabel16.AllowParentOverrides = false;
-            this.bunifuLabel16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel16.AutoEllipsis = false;
-            this.bunifuLabel16.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel16.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel16.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel16.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel16.Location = new System.Drawing.Point(19, 8);
-            this.bunifuLabel16.Name = "bunifuLabel16";
-            this.bunifuLabel16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel16.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel16.TabIndex = 500;
-            this.bunifuLabel16.TabStop = false;
-            this.bunifuLabel16.Text = "روپے";
-            this.bunifuLabel16.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel16.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // RateBox
             // 
             this.RateBox.AcceptsReturn = false;
@@ -1578,63 +2536,6 @@
             this.RateBox.WordWrap = false;
             this.RateBox.TextChanged += new System.EventHandler(this.RateBox_TextChanged);
             this.RateBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
-            // 
-            // bunifuLabel17
-            // 
-            this.bunifuLabel17.AllowParentOverrides = false;
-            this.bunifuLabel17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel17.AutoEllipsis = false;
-            this.bunifuLabel17.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel17.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel17.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel17.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel17.Location = new System.Drawing.Point(317, 12);
-            this.bunifuLabel17.Name = "bunifuLabel17";
-            this.bunifuLabel17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel17.Size = new System.Drawing.Size(106, 44);
-            this.bunifuLabel17.TabIndex = 500;
-            this.bunifuLabel17.TabStop = false;
-            this.bunifuLabel17.Text = "ریٹ فی لیٹر:";
-            this.bunifuLabel17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel17.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards6
-            // 
-            this.bunifuCards6.BackColor = System.Drawing.Color.White;
-            this.bunifuCards6.BorderRadius = 10;
-            this.bunifuCards6.BottomSahddow = false;
-            this.bunifuCards6.color = System.Drawing.Color.White;
-            this.bunifuCards6.Controls.Add(this.bunifuLabel18);
-            this.bunifuCards6.Controls.Add(this.AmountBox);
-            this.bunifuCards6.Controls.Add(this.bunifuLabel20);
-            this.bunifuCards6.LeftSahddow = false;
-            this.bunifuCards6.Location = new System.Drawing.Point(3, 417);
-            this.bunifuCards6.Name = "bunifuCards6";
-            this.bunifuCards6.RightSahddow = false;
-            this.bunifuCards6.ShadowDepth = 20;
-            this.bunifuCards6.Size = new System.Drawing.Size(432, 61);
-            this.bunifuCards6.TabIndex = 7;
-            // 
-            // bunifuLabel18
-            // 
-            this.bunifuLabel18.AllowParentOverrides = false;
-            this.bunifuLabel18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel18.AutoEllipsis = false;
-            this.bunifuLabel18.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel18.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel18.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel18.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel18.Location = new System.Drawing.Point(19, 8);
-            this.bunifuLabel18.Name = "bunifuLabel18";
-            this.bunifuLabel18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel18.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel18.TabIndex = 500;
-            this.bunifuLabel18.TabStop = false;
-            this.bunifuLabel18.Text = "روپے";
-            this.bunifuLabel18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel18.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // AmountBox
             // 
@@ -1716,63 +2617,6 @@
             this.AmountBox.WordWrap = false;
             this.AmountBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
-            // bunifuLabel20
-            // 
-            this.bunifuLabel20.AllowParentOverrides = false;
-            this.bunifuLabel20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel20.AutoEllipsis = false;
-            this.bunifuLabel20.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel20.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel20.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel20.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel20.Location = new System.Drawing.Point(358, 12);
-            this.bunifuLabel20.Name = "bunifuLabel20";
-            this.bunifuLabel20.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel20.Size = new System.Drawing.Size(65, 44);
-            this.bunifuLabel20.TabIndex = 500;
-            this.bunifuLabel20.TabStop = false;
-            this.bunifuLabel20.Text = "کل رقم:";
-            this.bunifuLabel20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel20.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards4
-            // 
-            this.bunifuCards4.BackColor = System.Drawing.Color.White;
-            this.bunifuCards4.BorderRadius = 10;
-            this.bunifuCards4.BottomSahddow = false;
-            this.bunifuCards4.color = System.Drawing.Color.White;
-            this.bunifuCards4.Controls.Add(this.bunifuLabel14);
-            this.bunifuCards4.Controls.Add(this.LabourBox);
-            this.bunifuCards4.Controls.Add(this.bunifuLabel15);
-            this.bunifuCards4.LeftSahddow = false;
-            this.bunifuCards4.Location = new System.Drawing.Point(3, 484);
-            this.bunifuCards4.Name = "bunifuCards4";
-            this.bunifuCards4.RightSahddow = false;
-            this.bunifuCards4.ShadowDepth = 20;
-            this.bunifuCards4.Size = new System.Drawing.Size(432, 61);
-            this.bunifuCards4.TabIndex = 8;
-            // 
-            // bunifuLabel14
-            // 
-            this.bunifuLabel14.AllowParentOverrides = false;
-            this.bunifuLabel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel14.AutoEllipsis = false;
-            this.bunifuLabel14.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel14.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel14.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel14.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel14.Location = new System.Drawing.Point(19, 8);
-            this.bunifuLabel14.Name = "bunifuLabel14";
-            this.bunifuLabel14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel14.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel14.TabIndex = 500;
-            this.bunifuLabel14.TabStop = false;
-            this.bunifuLabel14.Text = "روپے";
-            this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel14.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // LabourBox
             // 
             this.LabourBox.AcceptsReturn = false;
@@ -1851,63 +2695,6 @@
             this.LabourBox.WordWrap = false;
             this.LabourBox.TextChanged += new System.EventHandler(this.LabourBox_TextChanged);
             this.LabourBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
-            // 
-            // bunifuLabel15
-            // 
-            this.bunifuLabel15.AllowParentOverrides = false;
-            this.bunifuLabel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel15.AutoEllipsis = false;
-            this.bunifuLabel15.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel15.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel15.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel15.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel15.Location = new System.Drawing.Point(290, 8);
-            this.bunifuLabel15.Name = "bunifuLabel15";
-            this.bunifuLabel15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel15.Size = new System.Drawing.Size(132, 44);
-            this.bunifuLabel15.TabIndex = 500;
-            this.bunifuLabel15.TabStop = false;
-            this.bunifuLabel15.Text = "خرچہ مزدوری:";
-            this.bunifuLabel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel15.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards9
-            // 
-            this.bunifuCards9.BackColor = System.Drawing.Color.White;
-            this.bunifuCards9.BorderRadius = 10;
-            this.bunifuCards9.BottomSahddow = false;
-            this.bunifuCards9.color = System.Drawing.Color.White;
-            this.bunifuCards9.Controls.Add(this.bunifuLabel25);
-            this.bunifuCards9.Controls.Add(this.NetPriceBox);
-            this.bunifuCards9.Controls.Add(this.bunifuLabel26);
-            this.bunifuCards9.LeftSahddow = false;
-            this.bunifuCards9.Location = new System.Drawing.Point(3, 551);
-            this.bunifuCards9.Name = "bunifuCards9";
-            this.bunifuCards9.RightSahddow = false;
-            this.bunifuCards9.ShadowDepth = 20;
-            this.bunifuCards9.Size = new System.Drawing.Size(432, 61);
-            this.bunifuCards9.TabIndex = 9;
-            // 
-            // bunifuLabel25
-            // 
-            this.bunifuLabel25.AllowParentOverrides = false;
-            this.bunifuLabel25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel25.AutoEllipsis = false;
-            this.bunifuLabel25.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel25.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel25.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel25.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel25.Location = new System.Drawing.Point(19, 8);
-            this.bunifuLabel25.Name = "bunifuLabel25";
-            this.bunifuLabel25.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel25.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel25.TabIndex = 500;
-            this.bunifuLabel25.TabStop = false;
-            this.bunifuLabel25.Text = "روپے";
-            this.bunifuLabel25.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel25.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // NetPriceBox
             // 
@@ -1990,63 +2777,6 @@
             this.NetPriceBox.TextChanged += new System.EventHandler(this.NetPriceBox_TextChanged);
             this.NetPriceBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
-            // bunifuLabel26
-            // 
-            this.bunifuLabel26.AllowParentOverrides = false;
-            this.bunifuLabel26.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel26.AutoEllipsis = false;
-            this.bunifuLabel26.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel26.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel26.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel26.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel26.Location = new System.Drawing.Point(331, 8);
-            this.bunifuLabel26.Name = "bunifuLabel26";
-            this.bunifuLabel26.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel26.Size = new System.Drawing.Size(87, 44);
-            this.bunifuLabel26.TabIndex = 500;
-            this.bunifuLabel26.TabStop = false;
-            this.bunifuLabel26.Text = "صافی رقم:";
-            this.bunifuLabel26.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel26.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards10
-            // 
-            this.bunifuCards10.BackColor = System.Drawing.Color.White;
-            this.bunifuCards10.BorderRadius = 10;
-            this.bunifuCards10.BottomSahddow = false;
-            this.bunifuCards10.color = System.Drawing.Color.White;
-            this.bunifuCards10.Controls.Add(this.bunifuLabel27);
-            this.bunifuCards10.Controls.Add(this.SabqaRaqamBox);
-            this.bunifuCards10.Controls.Add(this.bunifuLabel28);
-            this.bunifuCards10.LeftSahddow = false;
-            this.bunifuCards10.Location = new System.Drawing.Point(3, 618);
-            this.bunifuCards10.Name = "bunifuCards10";
-            this.bunifuCards10.RightSahddow = false;
-            this.bunifuCards10.ShadowDepth = 20;
-            this.bunifuCards10.Size = new System.Drawing.Size(432, 61);
-            this.bunifuCards10.TabIndex = 10;
-            // 
-            // bunifuLabel27
-            // 
-            this.bunifuLabel27.AllowParentOverrides = false;
-            this.bunifuLabel27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel27.AutoEllipsis = false;
-            this.bunifuLabel27.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel27.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel27.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel27.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel27.Location = new System.Drawing.Point(19, 8);
-            this.bunifuLabel27.Name = "bunifuLabel27";
-            this.bunifuLabel27.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel27.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel27.TabIndex = 500;
-            this.bunifuLabel27.TabStop = false;
-            this.bunifuLabel27.Text = "روپے";
-            this.bunifuLabel27.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel27.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // SabqaRaqamBox
             // 
             this.SabqaRaqamBox.AcceptsReturn = false;
@@ -2125,63 +2855,6 @@
             this.SabqaRaqamBox.WordWrap = false;
             this.SabqaRaqamBox.TextChanged += new System.EventHandler(this.SabqaRaqamBox_TextChanged);
             this.SabqaRaqamBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
-            // 
-            // bunifuLabel28
-            // 
-            this.bunifuLabel28.AllowParentOverrides = false;
-            this.bunifuLabel28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel28.AutoEllipsis = false;
-            this.bunifuLabel28.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel28.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel28.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel28.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel28.Location = new System.Drawing.Point(328, 12);
-            this.bunifuLabel28.Name = "bunifuLabel28";
-            this.bunifuLabel28.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel28.Size = new System.Drawing.Size(91, 44);
-            this.bunifuLabel28.TabIndex = 500;
-            this.bunifuLabel28.TabStop = false;
-            this.bunifuLabel28.Text = "سابقہ رقم:";
-            this.bunifuLabel28.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel28.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards17
-            // 
-            this.bunifuCards17.BackColor = System.Drawing.Color.White;
-            this.bunifuCards17.BorderRadius = 10;
-            this.bunifuCards17.BottomSahddow = false;
-            this.bunifuCards17.color = System.Drawing.Color.White;
-            this.bunifuCards17.Controls.Add(this.bunifuLabel36);
-            this.bunifuCards17.Controls.Add(this.TotalRaqamBox);
-            this.bunifuCards17.Controls.Add(this.bunifuLabel37);
-            this.bunifuCards17.LeftSahddow = false;
-            this.bunifuCards17.Location = new System.Drawing.Point(3, 685);
-            this.bunifuCards17.Name = "bunifuCards17";
-            this.bunifuCards17.RightSahddow = false;
-            this.bunifuCards17.ShadowDepth = 20;
-            this.bunifuCards17.Size = new System.Drawing.Size(432, 61);
-            this.bunifuCards17.TabIndex = 11;
-            // 
-            // bunifuLabel36
-            // 
-            this.bunifuLabel36.AllowParentOverrides = false;
-            this.bunifuLabel36.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel36.AutoEllipsis = false;
-            this.bunifuLabel36.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel36.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel36.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel36.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel36.Location = new System.Drawing.Point(19, 8);
-            this.bunifuLabel36.Name = "bunifuLabel36";
-            this.bunifuLabel36.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel36.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel36.TabIndex = 500;
-            this.bunifuLabel36.TabStop = false;
-            this.bunifuLabel36.Text = "روپے";
-            this.bunifuLabel36.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel36.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // TotalRaqamBox
             // 
@@ -2263,65 +2936,6 @@
             this.TotalRaqamBox.WordWrap = false;
             this.TotalRaqamBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
-            // bunifuLabel37
-            // 
-            this.bunifuLabel37.AllowParentOverrides = false;
-            this.bunifuLabel37.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel37.AutoEllipsis = false;
-            this.bunifuLabel37.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel37.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel37.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel37.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel37.Location = new System.Drawing.Point(328, 12);
-            this.bunifuLabel37.Name = "bunifuLabel37";
-            this.bunifuLabel37.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel37.Size = new System.Drawing.Size(82, 44);
-            this.bunifuLabel37.TabIndex = 500;
-            this.bunifuLabel37.TabStop = false;
-            this.bunifuLabel37.Text = "ٹوٹل رقم:";
-            this.bunifuLabel37.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel37.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards7
-            // 
-            this.bunifuCards7.BackColor = System.Drawing.Color.White;
-            this.bunifuCards7.BorderRadius = 10;
-            this.bunifuCards7.BottomSahddow = false;
-            this.bunifuCards7.color = System.Drawing.Color.White;
-            this.bunifuCards7.Controls.Add(this.bunifuLabel39);
-            this.bunifuCards7.Controls.Add(this.RecoveryAmountBox1);
-            this.bunifuCards7.Controls.Add(this.bunifuLabel21);
-            this.bunifuCards7.Controls.Add(this.RecoveryDescriptionBox1);
-            this.bunifuCards7.Controls.Add(this.bunifuLabel22);
-            this.bunifuCards7.LeftSahddow = false;
-            this.bunifuCards7.Location = new System.Drawing.Point(3, 752);
-            this.bunifuCards7.Name = "bunifuCards7";
-            this.bunifuCards7.RightSahddow = false;
-            this.bunifuCards7.ShadowDepth = 20;
-            this.bunifuCards7.Size = new System.Drawing.Size(432, 151);
-            this.bunifuCards7.TabIndex = 12;
-            // 
-            // bunifuLabel39
-            // 
-            this.bunifuLabel39.AllowParentOverrides = false;
-            this.bunifuLabel39.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel39.AutoEllipsis = false;
-            this.bunifuLabel39.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel39.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel39.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel39.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel39.Location = new System.Drawing.Point(358, 103);
-            this.bunifuLabel39.Name = "bunifuLabel39";
-            this.bunifuLabel39.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel39.Size = new System.Drawing.Size(51, 33);
-            this.bunifuLabel39.TabIndex = 501;
-            this.bunifuLabel39.TabStop = false;
-            this.bunifuLabel39.Text = "تفصیل:";
-            this.bunifuLabel39.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel39.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // RecoveryAmountBox1
             // 
             this.RecoveryAmountBox1.AcceptsReturn = false;
@@ -2401,26 +3015,6 @@
             this.RecoveryAmountBox1.TextChanged += new System.EventHandler(this.RecoveryAmountBox1_TextChanged);
             this.RecoveryAmountBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
-            // bunifuLabel21
-            // 
-            this.bunifuLabel21.AllowParentOverrides = false;
-            this.bunifuLabel21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel21.AutoEllipsis = false;
-            this.bunifuLabel21.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel21.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel21.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel21.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel21.Location = new System.Drawing.Point(17, 12);
-            this.bunifuLabel21.Name = "bunifuLabel21";
-            this.bunifuLabel21.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel21.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel21.TabIndex = 500;
-            this.bunifuLabel21.TabStop = false;
-            this.bunifuLabel21.Text = "روپے";
-            this.bunifuLabel21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel21.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // RecoveryDescriptionBox1
             // 
             this.RecoveryDescriptionBox1.AcceptsReturn = false;
@@ -2499,85 +3093,6 @@
             this.RecoveryDescriptionBox1.UseSystemPasswordChar = false;
             this.RecoveryDescriptionBox1.WordWrap = false;
             this.RecoveryDescriptionBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
-            // 
-            // bunifuLabel22
-            // 
-            this.bunifuLabel22.AllowParentOverrides = false;
-            this.bunifuLabel22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel22.AutoEllipsis = false;
-            this.bunifuLabel22.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel22.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel22.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel22.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel22.Location = new System.Drawing.Point(331, 12);
-            this.bunifuLabel22.Name = "bunifuLabel22";
-            this.bunifuLabel22.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel22.Size = new System.Drawing.Size(87, 33);
-            this.bunifuLabel22.TabIndex = 500;
-            this.bunifuLabel22.TabStop = false;
-            this.bunifuLabel22.Text = "رقم وصولی 1: ";
-            this.bunifuLabel22.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel22.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards11
-            // 
-            this.bunifuCards11.BackColor = System.Drawing.Color.White;
-            this.bunifuCards11.BorderRadius = 10;
-            this.bunifuCards11.BottomSahddow = false;
-            this.bunifuCards11.color = System.Drawing.Color.White;
-            this.bunifuCards11.Controls.Add(this.bunifuLabel40);
-            this.bunifuCards11.Controls.Add(this.bunifuLabel41);
-            this.bunifuCards11.Controls.Add(this.RecoveryDescriptionBox2);
-            this.bunifuCards11.Controls.Add(this.RecoveryAmountBox2);
-            this.bunifuCards11.Controls.Add(this.bunifuLabel6);
-            this.bunifuCards11.LeftSahddow = false;
-            this.bunifuCards11.Location = new System.Drawing.Point(3, 909);
-            this.bunifuCards11.Name = "bunifuCards11";
-            this.bunifuCards11.RightSahddow = false;
-            this.bunifuCards11.ShadowDepth = 20;
-            this.bunifuCards11.Size = new System.Drawing.Size(432, 151);
-            this.bunifuCards11.TabIndex = 13;
-            // 
-            // bunifuLabel40
-            // 
-            this.bunifuLabel40.AllowParentOverrides = false;
-            this.bunifuLabel40.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel40.AutoEllipsis = false;
-            this.bunifuLabel40.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel40.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel40.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel40.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel40.Location = new System.Drawing.Point(358, 103);
-            this.bunifuLabel40.Name = "bunifuLabel40";
-            this.bunifuLabel40.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel40.Size = new System.Drawing.Size(51, 33);
-            this.bunifuLabel40.TabIndex = 503;
-            this.bunifuLabel40.TabStop = false;
-            this.bunifuLabel40.Text = "تفصیل:";
-            this.bunifuLabel40.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel40.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel41
-            // 
-            this.bunifuLabel41.AllowParentOverrides = false;
-            this.bunifuLabel41.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel41.AutoEllipsis = false;
-            this.bunifuLabel41.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel41.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel41.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel41.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel41.Location = new System.Drawing.Point(332, 19);
-            this.bunifuLabel41.Name = "bunifuLabel41";
-            this.bunifuLabel41.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel41.Size = new System.Drawing.Size(90, 33);
-            this.bunifuLabel41.TabIndex = 502;
-            this.bunifuLabel41.TabStop = false;
-            this.bunifuLabel41.Text = "رقم وصولی 2: ";
-            this.bunifuLabel41.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel41.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // RecoveryDescriptionBox2
             // 
@@ -2737,45 +3252,6 @@
             this.RecoveryAmountBox2.TextChanged += new System.EventHandler(this.RecoveryAmountBox2_TextChanged);
             this.RecoveryAmountBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
-            // bunifuLabel6
-            // 
-            this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel6.AutoEllipsis = false;
-            this.bunifuLabel6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel6.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel6.Location = new System.Drawing.Point(16, 12);
-            this.bunifuLabel6.Name = "bunifuLabel6";
-            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel6.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel6.TabIndex = 500;
-            this.bunifuLabel6.TabStop = false;
-            this.bunifuLabel6.Text = "روپے";
-            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards14
-            // 
-            this.bunifuCards14.BackColor = System.Drawing.Color.White;
-            this.bunifuCards14.BorderRadius = 10;
-            this.bunifuCards14.BottomSahddow = false;
-            this.bunifuCards14.color = System.Drawing.Color.White;
-            this.bunifuCards14.Controls.Add(this.RecoveryAmountBox3);
-            this.bunifuCards14.Controls.Add(this.bunifuLabel9);
-            this.bunifuCards14.Controls.Add(this.RecoveryDescriptionBox3);
-            this.bunifuCards14.Controls.Add(this.bunifuLabel38);
-            this.bunifuCards14.Controls.Add(this.bunifuLabel29);
-            this.bunifuCards14.LeftSahddow = false;
-            this.bunifuCards14.Location = new System.Drawing.Point(3, 1066);
-            this.bunifuCards14.Name = "bunifuCards14";
-            this.bunifuCards14.RightSahddow = false;
-            this.bunifuCards14.ShadowDepth = 20;
-            this.bunifuCards14.Size = new System.Drawing.Size(432, 151);
-            this.bunifuCards14.TabIndex = 14;
-            // 
             // RecoveryAmountBox3
             // 
             this.RecoveryAmountBox3.AcceptsReturn = false;
@@ -2854,26 +3330,6 @@
             this.RecoveryAmountBox3.WordWrap = false;
             this.RecoveryAmountBox3.TextChanged += new System.EventHandler(this.RecoveryAmountBox3_TextChanged);
             this.RecoveryAmountBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
-            // 
-            // bunifuLabel9
-            // 
-            this.bunifuLabel9.AllowParentOverrides = false;
-            this.bunifuLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel9.AutoEllipsis = false;
-            this.bunifuLabel9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel9.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel9.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel9.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel9.Location = new System.Drawing.Point(16, 12);
-            this.bunifuLabel9.Name = "bunifuLabel9";
-            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel9.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel9.TabIndex = 500;
-            this.bunifuLabel9.TabStop = false;
-            this.bunifuLabel9.Text = "روپے";
-            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // RecoveryDescriptionBox3
             // 
@@ -2954,105 +3410,6 @@
             this.RecoveryDescriptionBox3.WordWrap = false;
             this.RecoveryDescriptionBox3.TextChanged += new System.EventHandler(this.RecoveryDescriptionBox3_TextChanged);
             this.RecoveryDescriptionBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
-            // 
-            // bunifuLabel38
-            // 
-            this.bunifuLabel38.AllowParentOverrides = false;
-            this.bunifuLabel38.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel38.AutoEllipsis = false;
-            this.bunifuLabel38.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel38.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel38.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel38.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel38.Location = new System.Drawing.Point(367, 96);
-            this.bunifuLabel38.Name = "bunifuLabel38";
-            this.bunifuLabel38.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel38.Size = new System.Drawing.Size(51, 33);
-            this.bunifuLabel38.TabIndex = 500;
-            this.bunifuLabel38.TabStop = false;
-            this.bunifuLabel38.Text = " تفصیل:";
-            this.bunifuLabel38.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel38.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel29
-            // 
-            this.bunifuLabel29.AllowParentOverrides = false;
-            this.bunifuLabel29.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel29.AutoEllipsis = false;
-            this.bunifuLabel29.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel29.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel29.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel29.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel29.Location = new System.Drawing.Point(331, 12);
-            this.bunifuLabel29.Name = "bunifuLabel29";
-            this.bunifuLabel29.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel29.Size = new System.Drawing.Size(90, 33);
-            this.bunifuLabel29.TabIndex = 500;
-            this.bunifuLabel29.TabStop = false;
-            this.bunifuLabel29.Text = "رقم وصولی 3:";
-            this.bunifuLabel29.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel29.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards15
-            // 
-            this.bunifuCards15.BackColor = System.Drawing.Color.White;
-            this.bunifuCards15.BorderRadius = 10;
-            this.bunifuCards15.BottomSahddow = false;
-            this.bunifuCards15.color = System.Drawing.Color.White;
-            this.bunifuCards15.Controls.Add(this.bunifuLabel8);
-            this.bunifuCards15.Controls.Add(this.bunifuLabel33);
-            this.bunifuCards15.Controls.Add(this.RecoveryDescriptionBox4);
-            this.bunifuCards15.Controls.Add(this.RecoveryAmountBox4);
-            this.bunifuCards15.Controls.Add(this.bunifuLabel30);
-            this.bunifuCards15.LeftSahddow = false;
-            this.bunifuCards15.Location = new System.Drawing.Point(3, 1223);
-            this.bunifuCards15.Name = "bunifuCards15";
-            this.bunifuCards15.RightSahddow = false;
-            this.bunifuCards15.ShadowDepth = 20;
-            this.bunifuCards15.Size = new System.Drawing.Size(432, 151);
-            this.bunifuCards15.TabIndex = 15;
-            // 
-            // bunifuLabel8
-            // 
-            this.bunifuLabel8.AllowParentOverrides = false;
-            this.bunifuLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel8.AutoEllipsis = false;
-            this.bunifuLabel8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel8.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel8.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel8.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel8.Location = new System.Drawing.Point(367, 103);
-            this.bunifuLabel8.Name = "bunifuLabel8";
-            this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel8.Size = new System.Drawing.Size(51, 33);
-            this.bunifuLabel8.TabIndex = 501;
-            this.bunifuLabel8.TabStop = false;
-            this.bunifuLabel8.Text = " تفصیل:";
-            this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel33
-            // 
-            this.bunifuLabel33.AllowParentOverrides = false;
-            this.bunifuLabel33.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel33.AutoEllipsis = false;
-            this.bunifuLabel33.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel33.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel33.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel33.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel33.Location = new System.Drawing.Point(331, 19);
-            this.bunifuLabel33.Name = "bunifuLabel33";
-            this.bunifuLabel33.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel33.Size = new System.Drawing.Size(90, 33);
-            this.bunifuLabel33.TabIndex = 502;
-            this.bunifuLabel33.TabStop = false;
-            this.bunifuLabel33.Text = "رقم وصولی 4:";
-            this.bunifuLabel33.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel33.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // RecoveryDescriptionBox4
             // 
@@ -3212,85 +3569,6 @@
             this.RecoveryAmountBox4.TextChanged += new System.EventHandler(this.RecoveryAmountBox4_TextChanged);
             this.RecoveryAmountBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
-            // bunifuLabel30
-            // 
-            this.bunifuLabel30.AllowParentOverrides = false;
-            this.bunifuLabel30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel30.AutoEllipsis = false;
-            this.bunifuLabel30.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel30.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel30.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel30.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel30.Location = new System.Drawing.Point(17, 12);
-            this.bunifuLabel30.Name = "bunifuLabel30";
-            this.bunifuLabel30.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel30.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel30.TabIndex = 500;
-            this.bunifuLabel30.TabStop = false;
-            this.bunifuLabel30.Text = "روپے";
-            this.bunifuLabel30.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel30.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards16
-            // 
-            this.bunifuCards16.BackColor = System.Drawing.Color.White;
-            this.bunifuCards16.BorderRadius = 10;
-            this.bunifuCards16.BottomSahddow = false;
-            this.bunifuCards16.color = System.Drawing.Color.White;
-            this.bunifuCards16.Controls.Add(this.bunifuLabel35);
-            this.bunifuCards16.Controls.Add(this.bunifuLabel42);
-            this.bunifuCards16.Controls.Add(this.RecoveryDescriptionBox5);
-            this.bunifuCards16.Controls.Add(this.RecoveryAmountBox5);
-            this.bunifuCards16.Controls.Add(this.bunifuLabel34);
-            this.bunifuCards16.LeftSahddow = false;
-            this.bunifuCards16.Location = new System.Drawing.Point(3, 1380);
-            this.bunifuCards16.Name = "bunifuCards16";
-            this.bunifuCards16.RightSahddow = false;
-            this.bunifuCards16.ShadowDepth = 20;
-            this.bunifuCards16.Size = new System.Drawing.Size(432, 151);
-            this.bunifuCards16.TabIndex = 16;
-            // 
-            // bunifuLabel35
-            // 
-            this.bunifuLabel35.AllowParentOverrides = false;
-            this.bunifuLabel35.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel35.AutoEllipsis = false;
-            this.bunifuLabel35.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel35.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel35.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel35.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel35.Location = new System.Drawing.Point(364, 103);
-            this.bunifuLabel35.Name = "bunifuLabel35";
-            this.bunifuLabel35.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel35.Size = new System.Drawing.Size(51, 33);
-            this.bunifuLabel35.TabIndex = 503;
-            this.bunifuLabel35.TabStop = false;
-            this.bunifuLabel35.Text = " تفصیل:";
-            this.bunifuLabel35.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel35.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel42
-            // 
-            this.bunifuLabel42.AllowParentOverrides = false;
-            this.bunifuLabel42.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel42.AutoEllipsis = false;
-            this.bunifuLabel42.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel42.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel42.Font = new System.Drawing.Font("Nafees Naskh v2.01", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel42.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel42.Location = new System.Drawing.Point(328, 19);
-            this.bunifuLabel42.Name = "bunifuLabel42";
-            this.bunifuLabel42.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel42.Size = new System.Drawing.Size(90, 33);
-            this.bunifuLabel42.TabIndex = 504;
-            this.bunifuLabel42.TabStop = false;
-            this.bunifuLabel42.Text = "رقم وصولی 5:";
-            this.bunifuLabel42.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel42.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // RecoveryDescriptionBox5
             // 
             this.RecoveryDescriptionBox5.AcceptsReturn = false;
@@ -3449,63 +3727,6 @@
             this.RecoveryAmountBox5.TextChanged += new System.EventHandler(this.RecoveryAmountBox5_TextChanged);
             this.RecoveryAmountBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
-            // bunifuLabel34
-            // 
-            this.bunifuLabel34.AllowParentOverrides = false;
-            this.bunifuLabel34.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel34.AutoEllipsis = false;
-            this.bunifuLabel34.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel34.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel34.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel34.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel34.Location = new System.Drawing.Point(16, 12);
-            this.bunifuLabel34.Name = "bunifuLabel34";
-            this.bunifuLabel34.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel34.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel34.TabIndex = 500;
-            this.bunifuLabel34.TabStop = false;
-            this.bunifuLabel34.Text = "روپے";
-            this.bunifuLabel34.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel34.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuCards12
-            // 
-            this.bunifuCards12.BackColor = System.Drawing.Color.White;
-            this.bunifuCards12.BorderRadius = 10;
-            this.bunifuCards12.BottomSahddow = false;
-            this.bunifuCards12.color = System.Drawing.Color.White;
-            this.bunifuCards12.Controls.Add(this.bunifuLabel31);
-            this.bunifuCards12.Controls.Add(this.RemainingAmountBox);
-            this.bunifuCards12.Controls.Add(this.bunifuLabel32);
-            this.bunifuCards12.LeftSahddow = false;
-            this.bunifuCards12.Location = new System.Drawing.Point(3, 1537);
-            this.bunifuCards12.Name = "bunifuCards12";
-            this.bunifuCards12.RightSahddow = false;
-            this.bunifuCards12.ShadowDepth = 20;
-            this.bunifuCards12.Size = new System.Drawing.Size(432, 61);
-            this.bunifuCards12.TabIndex = 17;
-            // 
-            // bunifuLabel31
-            // 
-            this.bunifuLabel31.AllowParentOverrides = false;
-            this.bunifuLabel31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel31.AutoEllipsis = false;
-            this.bunifuLabel31.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel31.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel31.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel31.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel31.Location = new System.Drawing.Point(16, 8);
-            this.bunifuLabel31.Name = "bunifuLabel31";
-            this.bunifuLabel31.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel31.Size = new System.Drawing.Size(48, 44);
-            this.bunifuLabel31.TabIndex = 500;
-            this.bunifuLabel31.TabStop = false;
-            this.bunifuLabel31.Text = "روپے";
-            this.bunifuLabel31.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel31.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // RemainingAmountBox
             // 
             this.RemainingAmountBox.AcceptsReturn = false;
@@ -3585,77 +3806,6 @@
             this.RemainingAmountBox.WordWrap = false;
             this.RemainingAmountBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesKeyPress);
             // 
-            // bunifuLabel32
-            // 
-            this.bunifuLabel32.AllowParentOverrides = false;
-            this.bunifuLabel32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel32.AutoEllipsis = false;
-            this.bunifuLabel32.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel32.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel32.Font = new System.Drawing.Font("Nafees Naskh v2.01", 15.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel32.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel32.Location = new System.Drawing.Point(340, 12);
-            this.bunifuLabel32.Name = "bunifuLabel32";
-            this.bunifuLabel32.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuLabel32.Size = new System.Drawing.Size(79, 44);
-            this.bunifuLabel32.TabIndex = 500;
-            this.bunifuLabel32.TabStop = false;
-            this.bunifuLabel32.Text = "بقایا رقم:";
-            this.bunifuLabel32.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel32.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(565, 45);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(229, 26);
-            this.dateTimePicker1.TabIndex = 66;
-            this.dateTimePicker1.TabStop = false;
-            // 
-            // bunifuLabel19
-            // 
-            this.bunifuLabel19.AllowParentOverrides = false;
-            this.bunifuLabel19.AutoEllipsis = false;
-            this.bunifuLabel19.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel19.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel19.Location = new System.Drawing.Point(565, 12);
-            this.bunifuLabel19.Name = "bunifuLabel19";
-            this.bunifuLabel19.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel19.Size = new System.Drawing.Size(82, 21);
-            this.bunifuLabel19.TabIndex = 65;
-            this.bunifuLabel19.TabStop = false;
-            this.bunifuLabel19.Text = "Date Time:";
-            this.bunifuLabel19.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel19.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // SharahListBox
-            // 
-            this.SharahListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SharahListBox.FormattingEnabled = true;
-            this.SharahListBox.Location = new System.Drawing.Point(385, 46);
-            this.SharahListBox.Name = "SharahListBox";
-            this.SharahListBox.Size = new System.Drawing.Size(121, 25);
-            this.SharahListBox.TabIndex = 67;
-            this.SharahListBox.TabStop = false;
-            this.SharahListBox.SelectedIndexChanged += new System.EventHandler(this.SharahBox_SelectedIndexChanged);
-            // 
-            // FuelTypeBox
-            // 
-            this.FuelTypeBox.Enabled = false;
-            this.FuelTypeBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FuelTypeBox.FormattingEnabled = true;
-            this.FuelTypeBox.Items.AddRange(new object[] {
-            "Petrol",
-            "Diesel"});
-            this.FuelTypeBox.Location = new System.Drawing.Point(198, 46);
-            this.FuelTypeBox.Name = "FuelTypeBox";
-            this.FuelTypeBox.Size = new System.Drawing.Size(121, 25);
-            this.FuelTypeBox.TabIndex = 67;
-            this.FuelTypeBox.TabStop = false;
-            this.FuelTypeBox.SelectedIndexChanged += new System.EventHandler(this.FuelTypeBox_SelectedIndexChanged);
-            // 
             // RefTextBox
             // 
             this.RefTextBox.AcceptsReturn = false;
@@ -3733,235 +3883,6 @@
             this.RefTextBox.UseSystemPasswordChar = false;
             this.RefTextBox.WordWrap = true;
             // 
-            // bunifuLabel3
-            // 
-            this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.AutoEllipsis = false;
-            this.bunifuLabel3.CursorType = null;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(385, 13);
-            this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(57, 21);
-            this.bunifuLabel3.TabIndex = 63;
-            this.bunifuLabel3.TabStop = false;
-            this.bunifuLabel3.Text = "Sharah:";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel4
-            // 
-            this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.AutoEllipsis = false;
-            this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel4.Location = new System.Drawing.Point(34, 13);
-            this.bunifuLabel4.Name = "bunifuLabel4";
-            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(42, 21);
-            this.bunifuLabel4.TabIndex = 64;
-            this.bunifuLabel4.TabStop = false;
-            this.bunifuLabel4.Text = "Ref# :";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel1
-            // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(198, 13);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(77, 21);
-            this.bunifuLabel1.TabIndex = 62;
-            this.bunifuLabel1.TabStop = false;
-            this.bunifuLabel1.Text = "Fuel Type:";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuShadowPanel1
-            // 
-            this.bunifuShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuShadowPanel1.BorderColor = System.Drawing.Color.White;
-            this.bunifuShadowPanel1.BorderRadius = 15;
-            this.bunifuShadowPanel1.BorderThickness = 1;
-            this.bunifuShadowPanel1.Controls.Add(this.groupBox1);
-            this.bunifuShadowPanel1.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
-            this.bunifuShadowPanel1.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.bunifuShadowPanel1.Location = new System.Drawing.Point(12, 15);
-            this.bunifuShadowPanel1.Name = "bunifuShadowPanel1";
-            this.bunifuShadowPanel1.PanelColor = System.Drawing.Color.White;
-            this.bunifuShadowPanel1.PanelColor2 = System.Drawing.Color.White;
-            this.bunifuShadowPanel1.ShadowColor = System.Drawing.Color.DarkGray;
-            this.bunifuShadowPanel1.ShadowDept = 2;
-            this.bunifuShadowPanel1.ShadowDepth = 2;
-            this.bunifuShadowPanel1.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
-            this.bunifuShadowPanel1.ShadowTopLeftVisible = false;
-            this.bunifuShadowPanel1.Size = new System.Drawing.Size(825, 82);
-            this.bunifuShadowPanel1.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
-            this.bunifuShadowPanel1.TabIndex = 202;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.bunifuLabel44);
-            this.groupBox1.Controls.Add(this.bunifuLabel43);
-            this.groupBox1.Controls.Add(this.SearchTextBox);
-            this.groupBox1.Controls.Add(this.SearchByRefRadio);
-            this.groupBox1.Controls.Add(this.SearchByNameRadio);
-            this.groupBox1.Location = new System.Drawing.Point(19, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(783, 65);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "SearchBar";
-            // 
-            // bunifuLabel44
-            // 
-            this.bunifuLabel44.AllowParentOverrides = false;
-            this.bunifuLabel44.AutoEllipsis = false;
-            this.bunifuLabel44.CursorType = null;
-            this.bunifuLabel44.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel44.Location = new System.Drawing.Point(538, 29);
-            this.bunifuLabel44.Name = "bunifuLabel44";
-            this.bunifuLabel44.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel44.Size = new System.Drawing.Size(97, 17);
-            this.bunifuLabel44.TabIndex = 3;
-            this.bunifuLabel44.Text = "Search By Ref# :";
-            this.bunifuLabel44.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel44.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel43
-            // 
-            this.bunifuLabel43.AllowParentOverrides = false;
-            this.bunifuLabel43.AutoEllipsis = false;
-            this.bunifuLabel43.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel43.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel43.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel43.Location = new System.Drawing.Point(388, 29);
-            this.bunifuLabel43.Name = "bunifuLabel43";
-            this.bunifuLabel43.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel43.Size = new System.Drawing.Size(102, 17);
-            this.bunifuLabel43.TabIndex = 3;
-            this.bunifuLabel43.Text = "Search By Name:";
-            this.bunifuLabel43.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel43.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.AcceptsReturn = false;
-            this.SearchTextBox.AcceptsTab = false;
-            this.SearchTextBox.AnimationSpeed = 200;
-            this.SearchTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.SearchTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.SearchTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.SearchTextBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SearchTextBox.BackgroundImage")));
-            this.SearchTextBox.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.SearchTextBox.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.SearchTextBox.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.SearchTextBox.BorderColorIdle = System.Drawing.Color.Silver;
-            this.SearchTextBox.BorderRadius = 30;
-            this.SearchTextBox.BorderThickness = 1;
-            this.SearchTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.SearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.SearchTextBox.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.SearchTextBox.DefaultText = "";
-            this.SearchTextBox.FillColor = System.Drawing.Color.White;
-            this.SearchTextBox.HideSelection = true;
-            this.SearchTextBox.IconLeft = null;
-            this.SearchTextBox.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.SearchTextBox.IconPadding = 5;
-            this.SearchTextBox.IconRight = global::Filling_Station_Management_System.Properties.Resources.Search;
-            this.SearchTextBox.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchTextBox.Lines = new string[0];
-            this.SearchTextBox.Location = new System.Drawing.Point(5, 20);
-            this.SearchTextBox.MaxLength = 32767;
-            this.SearchTextBox.MinimumSize = new System.Drawing.Size(1, 1);
-            this.SearchTextBox.Modified = false;
-            this.SearchTextBox.Multiline = false;
-            this.SearchTextBox.Name = "SearchTextBox";
-            stateProperties93.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties93.FillColor = System.Drawing.Color.Empty;
-            stateProperties93.ForeColor = System.Drawing.Color.Empty;
-            stateProperties93.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.SearchTextBox.OnActiveState = stateProperties93;
-            stateProperties94.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties94.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties94.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties94.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.SearchTextBox.OnDisabledState = stateProperties94;
-            stateProperties95.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties95.FillColor = System.Drawing.Color.Empty;
-            stateProperties95.ForeColor = System.Drawing.Color.Empty;
-            stateProperties95.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.SearchTextBox.OnHoverState = stateProperties95;
-            stateProperties96.BorderColor = System.Drawing.Color.Silver;
-            stateProperties96.FillColor = System.Drawing.Color.White;
-            stateProperties96.ForeColor = System.Drawing.Color.Empty;
-            stateProperties96.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.SearchTextBox.OnIdleState = stateProperties96;
-            this.SearchTextBox.Padding = new System.Windows.Forms.Padding(3);
-            this.SearchTextBox.PasswordChar = '\0';
-            this.SearchTextBox.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.SearchTextBox.PlaceholderText = "Enter text";
-            this.SearchTextBox.ReadOnly = false;
-            this.SearchTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.SearchTextBox.SelectedText = "";
-            this.SearchTextBox.SelectionLength = 0;
-            this.SearchTextBox.SelectionStart = 0;
-            this.SearchTextBox.ShortcutsEnabled = true;
-            this.SearchTextBox.Size = new System.Drawing.Size(348, 37);
-            this.SearchTextBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.SearchTextBox.TabIndex = 1;
-            this.SearchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.SearchTextBox.TextMarginBottom = 0;
-            this.SearchTextBox.TextMarginLeft = 3;
-            this.SearchTextBox.TextMarginTop = 0;
-            this.SearchTextBox.TextPlaceholder = "Enter text";
-            this.SearchTextBox.UseSystemPasswordChar = false;
-            this.SearchTextBox.WordWrap = true;
-            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
-            this.SearchTextBox.OnIconRightClick += new System.EventHandler(this.SearchTextBox_OnIconRightClick);
-            // 
-            // SearchByRefRadio
-            // 
-            this.SearchByRefRadio.AllowBindingControlLocation = false;
-            this.SearchByRefRadio.BackColor = System.Drawing.Color.Transparent;
-            this.SearchByRefRadio.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.SearchByRefRadio.BorderThickness = 1;
-            this.SearchByRefRadio.Checked = false;
-            this.SearchByRefRadio.Location = new System.Drawing.Point(640, 29);
-            this.SearchByRefRadio.Name = "SearchByRefRadio";
-            this.SearchByRefRadio.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.SearchByRefRadio.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.SearchByRefRadio.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.SearchByRefRadio.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.SearchByRefRadio.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.SearchByRefRadio.Size = new System.Drawing.Size(21, 21);
-            this.SearchByRefRadio.TabIndex = 2;
-            this.SearchByRefRadio.Text = null;
-            // 
-            // SearchByNameRadio
-            // 
-            this.SearchByNameRadio.AllowBindingControlLocation = false;
-            this.SearchByNameRadio.BackColor = System.Drawing.Color.Transparent;
-            this.SearchByNameRadio.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.SearchByNameRadio.BorderThickness = 1;
-            this.SearchByNameRadio.Checked = true;
-            this.SearchByNameRadio.Location = new System.Drawing.Point(496, 29);
-            this.SearchByNameRadio.Name = "SearchByNameRadio";
-            this.SearchByNameRadio.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.SearchByNameRadio.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.SearchByNameRadio.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.SearchByNameRadio.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.SearchByNameRadio.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.SearchByNameRadio.Size = new System.Drawing.Size(21, 21);
-            this.SearchByNameRadio.TabIndex = 2;
-            this.SearchByNameRadio.Text = null;
-            // 
             // SaveExcelButton
             // 
             this.SaveExcelButton.AllowAnimations = true;
@@ -3981,11 +3902,11 @@
             this.SaveExcelButton.ColorContrastOnClick = 45;
             this.SaveExcelButton.ColorContrastOnHover = 45;
             this.SaveExcelButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.SaveExcelButton.CustomizableEdges = borderEdges5;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.SaveExcelButton.CustomizableEdges = borderEdges4;
             this.SaveExcelButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.SaveExcelButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.SaveExcelButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -4072,11 +3993,11 @@
             this.RefreshButton.ColorContrastOnClick = 45;
             this.RefreshButton.ColorContrastOnHover = 45;
             this.RefreshButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.RefreshButton.CustomizableEdges = borderEdges6;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.RefreshButton.CustomizableEdges = borderEdges5;
             this.RefreshButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.RefreshButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.RefreshButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -4163,11 +4084,11 @@
             this.RemoveButton.ColorContrastOnClick = 45;
             this.RemoveButton.ColorContrastOnHover = 45;
             this.RemoveButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.RemoveButton.CustomizableEdges = borderEdges7;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.RemoveButton.CustomizableEdges = borderEdges6;
             this.RemoveButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.RemoveButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.RemoveButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -4235,95 +4156,81 @@
             this.RemoveButton.UseDefaultRadiusAndThickness = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
-            // SaveReciept
+            // SearchTextBox
             // 
-            this.SaveReciept.AllowAnimations = true;
-            this.SaveReciept.AllowMouseEffects = true;
-            this.SaveReciept.AllowToggling = false;
-            this.SaveReciept.AnimationSpeed = 200;
-            this.SaveReciept.AutoGenerateColors = false;
-            this.SaveReciept.AutoRoundBorders = false;
-            this.SaveReciept.AutoSizeLeftIcon = true;
-            this.SaveReciept.AutoSizeRightIcon = true;
-            this.SaveReciept.BackColor = System.Drawing.Color.Transparent;
-            this.SaveReciept.BackColor1 = System.Drawing.Color.Transparent;
-            this.SaveReciept.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveReciept.BackgroundImage")));
-            this.SaveReciept.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.SaveReciept.ButtonText = "Save Receipt";
-            this.SaveReciept.ButtonTextMarginLeft = 0;
-            this.SaveReciept.ColorContrastOnClick = 45;
-            this.SaveReciept.ColorContrastOnHover = 45;
-            this.SaveReciept.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.SaveReciept.CustomizableEdges = borderEdges2;
-            this.SaveReciept.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.SaveReciept.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.SaveReciept.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.SaveReciept.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.SaveReciept.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.SaveReciept.Font = new System.Drawing.Font("Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveReciept.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(75)))), ((int)(((byte)(199)))));
-            this.SaveReciept.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SaveReciept.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.SaveReciept.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.SaveReciept.IconMarginLeft = 11;
-            this.SaveReciept.IconPadding = 10;
-            this.SaveReciept.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SaveReciept.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.SaveReciept.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.SaveReciept.IconSize = 25;
-            this.SaveReciept.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(75)))), ((int)(((byte)(199)))));
-            this.SaveReciept.IdleBorderRadius = 15;
-            this.SaveReciept.IdleBorderThickness = 2;
-            this.SaveReciept.IdleFillColor = System.Drawing.Color.Transparent;
-            this.SaveReciept.IdleIconLeftImage = null;
-            this.SaveReciept.IdleIconRightImage = null;
-            this.SaveReciept.IndicateFocus = false;
-            this.SaveReciept.Location = new System.Drawing.Point(117, 469);
-            this.SaveReciept.Name = "SaveReciept";
-            this.SaveReciept.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.SaveReciept.OnDisabledState.BorderRadius = 15;
-            this.SaveReciept.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.SaveReciept.OnDisabledState.BorderThickness = 2;
-            this.SaveReciept.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.SaveReciept.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.SaveReciept.OnDisabledState.IconLeftImage = null;
-            this.SaveReciept.OnDisabledState.IconRightImage = null;
-            this.SaveReciept.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(75)))), ((int)(((byte)(199)))));
-            this.SaveReciept.onHoverState.BorderRadius = 15;
-            this.SaveReciept.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.SaveReciept.onHoverState.BorderThickness = 2;
-            this.SaveReciept.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(75)))), ((int)(((byte)(199)))));
-            this.SaveReciept.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.SaveReciept.onHoverState.IconLeftImage = null;
-            this.SaveReciept.onHoverState.IconRightImage = null;
-            this.SaveReciept.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(75)))), ((int)(((byte)(199)))));
-            this.SaveReciept.OnIdleState.BorderRadius = 15;
-            this.SaveReciept.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.SaveReciept.OnIdleState.BorderThickness = 2;
-            this.SaveReciept.OnIdleState.FillColor = System.Drawing.Color.Transparent;
-            this.SaveReciept.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(75)))), ((int)(((byte)(199)))));
-            this.SaveReciept.OnIdleState.IconLeftImage = null;
-            this.SaveReciept.OnIdleState.IconRightImage = null;
-            this.SaveReciept.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.SaveReciept.OnPressedState.BorderRadius = 15;
-            this.SaveReciept.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.SaveReciept.OnPressedState.BorderThickness = 2;
-            this.SaveReciept.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.SaveReciept.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.SaveReciept.OnPressedState.IconLeftImage = null;
-            this.SaveReciept.OnPressedState.IconRightImage = null;
-            this.SaveReciept.Size = new System.Drawing.Size(146, 39);
-            this.SaveReciept.TabIndex = 22;
-            this.SaveReciept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SaveReciept.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SaveReciept.TextMarginLeft = 0;
-            this.SaveReciept.TextPadding = new System.Windows.Forms.Padding(0);
-            this.SaveReciept.UseDefaultRadiusAndThickness = true;
-            this.SaveReciept.Click += new System.EventHandler(this.SaveReciept_Click);
+            this.SearchTextBox.AcceptsReturn = false;
+            this.SearchTextBox.AcceptsTab = false;
+            this.SearchTextBox.AnimationSpeed = 200;
+            this.SearchTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.SearchTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.SearchTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.SearchTextBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SearchTextBox.BackgroundImage")));
+            this.SearchTextBox.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.SearchTextBox.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.SearchTextBox.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.SearchTextBox.BorderColorIdle = System.Drawing.Color.Silver;
+            this.SearchTextBox.BorderRadius = 30;
+            this.SearchTextBox.BorderThickness = 1;
+            this.SearchTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.SearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SearchTextBox.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.SearchTextBox.DefaultText = "";
+            this.SearchTextBox.FillColor = System.Drawing.Color.White;
+            this.SearchTextBox.HideSelection = true;
+            this.SearchTextBox.IconLeft = null;
+            this.SearchTextBox.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.SearchTextBox.IconPadding = 5;
+            this.SearchTextBox.IconRight = global::Filling_Station_Management_System.Properties.Resources.Search;
+            this.SearchTextBox.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchTextBox.Lines = new string[0];
+            this.SearchTextBox.Location = new System.Drawing.Point(5, 20);
+            this.SearchTextBox.MaxLength = 32767;
+            this.SearchTextBox.MinimumSize = new System.Drawing.Size(1, 1);
+            this.SearchTextBox.Modified = false;
+            this.SearchTextBox.Multiline = false;
+            this.SearchTextBox.Name = "SearchTextBox";
+            stateProperties93.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties93.FillColor = System.Drawing.Color.Empty;
+            stateProperties93.ForeColor = System.Drawing.Color.Empty;
+            stateProperties93.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.SearchTextBox.OnActiveState = stateProperties93;
+            stateProperties94.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties94.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties94.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties94.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.SearchTextBox.OnDisabledState = stateProperties94;
+            stateProperties95.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties95.FillColor = System.Drawing.Color.Empty;
+            stateProperties95.ForeColor = System.Drawing.Color.Empty;
+            stateProperties95.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.SearchTextBox.OnHoverState = stateProperties95;
+            stateProperties96.BorderColor = System.Drawing.Color.Silver;
+            stateProperties96.FillColor = System.Drawing.Color.White;
+            stateProperties96.ForeColor = System.Drawing.Color.Empty;
+            stateProperties96.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.SearchTextBox.OnIdleState = stateProperties96;
+            this.SearchTextBox.Padding = new System.Windows.Forms.Padding(3);
+            this.SearchTextBox.PasswordChar = '\0';
+            this.SearchTextBox.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.SearchTextBox.PlaceholderText = "Enter text";
+            this.SearchTextBox.ReadOnly = false;
+            this.SearchTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.SearchTextBox.SelectedText = "";
+            this.SearchTextBox.SelectionLength = 0;
+            this.SearchTextBox.SelectionStart = 0;
+            this.SearchTextBox.ShortcutsEnabled = true;
+            this.SearchTextBox.Size = new System.Drawing.Size(348, 37);
+            this.SearchTextBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.SearchTextBox.TabIndex = 1;
+            this.SearchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SearchTextBox.TextMarginBottom = 0;
+            this.SearchTextBox.TextMarginLeft = 3;
+            this.SearchTextBox.TextMarginTop = 0;
+            this.SearchTextBox.TextPlaceholder = "Enter text";
+            this.SearchTextBox.UseSystemPasswordChar = false;
+            this.SearchTextBox.WordWrap = true;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            this.SearchTextBox.OnIconRightClick += new System.EventHandler(this.SearchTextBox_OnIconRightClick);
             // 
             // PurchaseLedger
             // 
@@ -4505,6 +4412,5 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton SaveExcelButton;
         private Bunifu.UI.WinForms.BunifuDataGridView PetrolDataGrid;
         private Bunifu.UI.WinForms.BunifuDataGridView DieselDataGrid;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton SaveReciept;
     }
 }

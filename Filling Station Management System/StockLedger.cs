@@ -144,9 +144,9 @@ namespace Filling_Station_Management_System
         {
             if (TabControl.SelectedIndex == 0)
             {
-                SaveLedger.SaveDataGridToExcel(PetrolStockDataGrid);
+                SaveLedger.SaveDataGridToExcel(PetrolStockDataGrid, "Petrol Stock Data");
             }
-            else { SaveLedger.SaveDataGridToExcel(DieselStockDataGrid); }
+            else { SaveLedger.SaveDataGridToExcel(DieselStockDataGrid, "Diesel Stock Data"); }
 
         }
     }

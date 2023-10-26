@@ -7,7 +7,7 @@ namespace Filling_Station_Management_System
 {
     internal class SaveLedger
     {
-        public static void SaveDataGridToExcel(DataGridView dataGridView)
+        public static void SaveDataGridToExcel(DataGridView dataGridView, string fileName)
         {
 
 
@@ -15,7 +15,7 @@ namespace Filling_Station_Management_System
             {
                 SaveFileDialog save = new SaveFileDialog();
                 save.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
-                save.FileName = "DataExport.xlsx";
+                save.FileName = $"{fileName}.xlsx";
 
                 if (save.ShowDialog() == DialogResult.OK)
                 {

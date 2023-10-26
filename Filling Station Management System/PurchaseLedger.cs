@@ -521,9 +521,9 @@ namespace Filling_Station_Management_System
 
             if (TabControl.SelectedIndex == 0)
             {
-                SaveLedger.SaveDataGridToExcel(PetrolDataGrid);
+                SaveLedger.SaveDataGridToExcel(PetrolDataGrid, "Purchase Ledger Petrol");
             }
-            else if (TabControl.SelectedIndex == 1) { SaveLedger.SaveDataGridToExcel(DieselDataGrid); }
+            else if (TabControl.SelectedIndex == 1) { SaveLedger.SaveDataGridToExcel(DieselDataGrid, "Purchase Ledger Diesel"); }
 
 
 

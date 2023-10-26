@@ -34,7 +34,6 @@ namespace Filling_Station_Management_System
                     {
                         DialogResult = DialogResult.OK;
                         this.Close();
-
                     }
                     else
                     {

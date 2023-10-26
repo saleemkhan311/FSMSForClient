@@ -22,6 +22,16 @@ namespace Filling_Station_Management_System
 
         Double[] sharahPetrol = { 0.725, 0.726, 0.727, 0.728, 0.729, 0.730 };
         Double[] sharahDiesel = { 0.800, 0.801, 0.802, 0.803, 0.804, 0.805, 0.806, 0.807, 0.808, 0.809, 0.810 };
+        private bool StockAdded = false;
+
+        //----------------------------------
+        private double availableStock, availableAmount, availableUnitPrice;
+        private double newStock, newStockAmount, newUnitPrice;
+        private double lastStock, lastStockAmount, lastUnitPrice;
+        //-----------------------------------------------
+
+
+
 
 
         public EnteryPurchase()
@@ -231,7 +241,15 @@ namespace Filling_Station_Management_System
 
             if (isFilledAll())
             {
-                Query();
+                if (StockAdded)
+                {
+                    Query();
+                    ClearBox();
+                    StockAdded = false;
+                    FuelTypeBox.Enabled = true;
+                }
+                else { MessageBox.Show("Please Add the Stock to Continue"); }
+
 
             }
             else
@@ -240,21 +258,22 @@ namespace Filling_Station_Management_System
             }
 
 
-            if (FuelTypeBox.SelectedIndex == 0)
-            {
-                StockForm stock = new StockForm();
 
-                stock.RemoteQureyPetrol();
-                stock.Dispose();
-            }
-            else if (FuelTypeBox.SelectedIndex == 1)
-            {
-                StockForm stock = new StockForm();
+            /* if (FuelTypeBox.SelectedIndex == 0)
+             {
+                 StockForm stock = new StockForm();
 
-                stock.RemoteQuerryDiesel();
-                stock.Dispose();
-            }
-            ClearBox();
+                 stock.RemoteQureyPetrol();
+                 stock.Dispose();
+             }
+             else if (FuelTypeBox.SelectedIndex == 1)
+             {
+                 StockForm stock = new StockForm();
+
+                 stock.RemoteQuerryDiesel();
+                 stock.Dispose();
+             }*/
+            // ClearBox();
 
         }
 
@@ -288,14 +307,16 @@ namespace Filling_Station_Management_System
             saafiMiqdar = miqdar - Khoraki;
             NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2);
 
-
+            NewStockBoxD.Text = saafiMiqdar == 0 ? "" : AppSettings.RoundToString(saafiMiqdar, 2);
 
 
             ratePerLiter = AppSettings.convertToDouble(RateBox.Text);
-
+            NewRateBoxD.Text = ratePerLiter == 0 ? "" : AppSettings.RoundToString(ratePerLiter, 2);
 
             Amount = saafiMiqdar * ratePerLiter;
             AmountBox.Text = AppSettings.RoundToString(Amount, 0);
+            NewAmountBoxD.Text = Amount == 0 ? "" : AppSettings.RoundToString(Amount, 0);
+
 
             labour = AppSettings.convertToDouble(LabourBox.Text);
 
@@ -303,7 +324,7 @@ namespace Filling_Station_Management_System
 
 
             saafiRaqam = Amount - labour;
-            NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0);
+            NetPriceBox.Text = saafiRaqam == 0 ? "" : AppSettings.RoundToString(saafiRaqam, 0);
 
 
 
@@ -389,12 +410,73 @@ namespace Filling_Station_Management_System
 
         }
 
+        private void TurnDownButton_Click(object sender, EventArgs e)
+        {
+            lastStock = AppSettings.convertToDouble(AvailableStockBoxD.Text);
+            lastUnitPrice = AppSettings.convertToDouble(AvailableRateBoxD.Text);
+            lastStockAmount = AppSettings.convertToDouble(AvailableAmountBoxD.Text);
+
+            AvailableStockBoxD.Clear();
+            AvailableRateBoxD.Clear();
+            AvailableAmountBoxD.Clear();
+
+            LastStockBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStock, 2);
+            LastRateBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastUnitPrice, 2);
+            LastAmountBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStockAmount, 2);
+
+            EntryList.Enabled = true;
+            FuelTypeBox.Enabled = false;
+        }
+
         private void DesKeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true; // Suppress the Enter key
             }
+        }
+
+        private void AddStockButton_Click(object sender, EventArgs e)
+        {
+            lastStock = AppSettings.convertToDouble(LastStockBoxD.Text);
+            lastStockAmount = AppSettings.convertToDouble(LastAmountBoxD.Text);
+
+            newStock = AppSettings.convertToDouble(NewStockBoxD.Text);
+            newStockAmount = AppSettings.convertToDouble(NewAmountBoxD.Text);
+
+            double sumAmnt = lastStockAmount + newStockAmount;
+            availableStock = lastStock + newStock;
+            availableUnitPrice = (lastStockAmount + newStockAmount) / (lastStock + newStock);
+            availableAmount = availableUnitPrice * availableStock;
+
+
+
+            AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, 2);
+            AvailableAmountBoxD.Text = AppSettings.RoundToString(availableAmount, 2);
+            AvailableRateBoxD.Text = AppSettings.RoundToString(availableUnitPrice, 2);
+
+            LastStockBoxD.Clear();
+            lastStock = 0;
+            LastAmountBoxD.Clear();
+            lastStockAmount = 0;
+            LastRateBoxD.Clear();
+            lastUnitPrice = 0;
+
+            NewStockBoxD.Clear();
+            newStock = 0;
+            newStockAmount = 0;
+            NewAmountBoxD.Clear();
+            NewRateBoxD.Clear();
+            newUnitPrice = 0;
+            StockAdded = true;
+
+
+
+        }
+
+        private void InsertStockButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void SharahListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -413,6 +495,10 @@ namespace Filling_Station_Management_System
 
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (FuelTypeBox.SelectedIndex == 1) { StockPanel.PanelColor = Color.FromArgb(184, 204, 228); } else { StockPanel.PanelColor = Color.FromArgb(240, 147, 124); }
+            StockLabel.Text = $"{FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString()} Stock";
+
+            SetAvailableStock();
             AutoSuggestions();
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
             SharahListBox.Items.Clear();
@@ -435,6 +521,86 @@ namespace Filling_Station_Management_System
 
             Calculate();
         }
+
+
+        private void QuerryStock()
+        {
+            string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString();
+
+            try
+            {
+
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+                string sql = $"INSERT INTO {index}_stock (Ref_No, Date, Total_Sale, Total_Purchase,  Available_Stock, Available_Stock_Amount, Available_Stock_Unit_Price) VALUES " +
+                                                       "(@Ref_No, @Date, @Total_Sale, @Total_Purchase, @Available_Stock, @Available_Stock_Amount, @Available_Stock_Unit_Price)";
+
+
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+
+                cmd.Parameters.AddWithValue("@Ref_No", GetLastRefNoStock() + 1);
+                cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
+
+
+
+
+                if (FuelTypeBox.SelectedIndex == 0)
+                {
+                    cmd.Parameters.AddWithValue("@Total_Sale", GetTotalPurchasePetrol());
+                    cmd.Parameters.AddWithValue("@Total_Purchase", GetTotalPurchasePetrol());
+                }
+                else if (FuelTypeBox.SelectedIndex == 1)
+                {
+                    cmd.Parameters.AddWithValue("@Total_Purchase", GetTotalPurchaseDiesel());
+                    cmd.Parameters.AddWithValue("@Total_Sale", GetTotalSaleDiesel());
+                }
+
+                cmd.Parameters.AddWithValue("@Available_Stock", AvailableStockBoxD.Text);
+                cmd.Parameters.AddWithValue("@Available_Stock_Amount", AvailableAmountBoxD.Text);
+                cmd.Parameters.AddWithValue("@Available_Stock_Unit_Price", AvailableRateBoxD.Text);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show($"{index} Stock Inserted Successfully", $"{index} Stock Querry", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, $"{index} Stock Querry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        string RefStocksql;
+        private float GetLastRefNoStock()
+        {
+            int lastRefNo = 0;  // Default value if no data is found
+            string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString();
+            index.ToLower();
+            try
+            {
+
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+
+                RefStocksql = $"SELECT Ref_No FROM {index}_stock ORDER BY Ref_No DESC LIMIT 1";
+
+
+                MySqlCommand cmd = new MySqlCommand(RefStocksql, connection);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    lastRefNo = Convert.ToInt16(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that might occur during database access
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return lastRefNo;
+        }
+
 
         private void EnteryPurchase_Load(object sender, EventArgs e)
         {
@@ -528,7 +694,9 @@ namespace Filling_Station_Management_System
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Records Inserted Successfully");
+                MessageBox.Show("Purchase Records Inserted Successfully");
+                QuerryStock();
+
             }
             catch (Exception ex)
             {
@@ -536,6 +704,11 @@ namespace Filling_Station_Management_System
             }
 
         }
+
+
+
+
+
 
         string Refsql;
         private float GetLastRefNo()
@@ -572,7 +745,7 @@ namespace Filling_Station_Management_System
         private void ClearBox()
         {
 
-            foreach (Bunifu.UI.WinForms.BunifuTextBox textBox in new[] { RefTextBox, WeightBox, QuantityBox, KhorakiBox, NetQuantityBox, RateBox, TotalRaqamBox, AmountBox, LabourBox, NetQuantityBox, NetPriceBox, SabqaRaqamBox, RecoveryAmountBox1, RecoveryDescriptionBox2, RecoveryAmountBox2, RecoveryAmountBox3, RecoveryDescriptionBox3, RecoveryAmountBox4, RecoveryDescriptionBox4, RecoveryAmountBox5, RecoveryDescriptionBox5, RecoveryDescriptionBox1, RemainingAmountBox })
+            foreach (Bunifu.UI.WinForms.BunifuTextBox textBox in new[] { RefTextBox, NameTextBox, WeightBox, QuantityBox, KhorakiBox, NetQuantityBox, RateBox, TotalRaqamBox, AmountBox, LabourBox, NetQuantityBox, NetPriceBox, SabqaRaqamBox, RecoveryAmountBox1, RecoveryDescriptionBox2, RecoveryAmountBox2, RecoveryAmountBox3, RecoveryDescriptionBox3, RecoveryAmountBox4, RecoveryDescriptionBox4, RecoveryAmountBox5, RecoveryDescriptionBox5, RecoveryDescriptionBox1, RemainingAmountBox })
             {
                 textBox.Clear();
             }
@@ -580,6 +753,9 @@ namespace Filling_Station_Management_System
             FuelTypeBox.SelectedIndex = 0;
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
             dateTimePicker1.Value = DateTime.Now;
+            EntryList.AutoScrollPosition = new Point(Top);
+            EntryList.Enabled = false;
+
 
         }
         private bool scrolling = false;
@@ -589,14 +765,14 @@ namespace Filling_Station_Management_System
             {
                 // Calculate the position of the TextBox relative to the FlowLayoutControl
                 Point textBoxLocation = textBox.Parent.PointToScreen(textBox.Location);
-                Point flowLayoutLocation = flowLayoutPanel1.PointToScreen(Point.Empty);
+                Point flowLayoutLocation = EntryList.PointToScreen(Point.Empty);
                 int verticalScrollAmount = textBoxLocation.Y - flowLayoutLocation.Y;
 
                 // Scroll the FlowLayoutControl gradually if the TextBox is not fully visible
-                if (verticalScrollAmount < 0 || verticalScrollAmount + textBox.Height > flowLayoutPanel1.ClientRectangle.Height)
+                if (verticalScrollAmount < 0 || verticalScrollAmount + textBox.Height > EntryList.ClientRectangle.Height)
                 {
                     scrolling = true; // Set scrolling flag to prevent reentrancy
-                    int currentScrollPosition = flowLayoutPanel1.VerticalScroll.Value;
+                    int currentScrollPosition = EntryList.VerticalScroll.Value;
                     int targetScrollPosition = currentScrollPosition + verticalScrollAmount;
 
                     // Adjust the scroll speed by changing the step size
@@ -616,7 +792,7 @@ namespace Filling_Station_Management_System
                                 scrollTimer.Stop();
                                 scrolling = false; // Reset scrolling flag
                             }
-                            flowLayoutPanel1.VerticalScroll.Value = currentScrollPosition;
+                            EntryList.VerticalScroll.Value = currentScrollPosition;
                         }
                         else if (currentScrollPosition > targetScrollPosition)
                         {
@@ -627,7 +803,7 @@ namespace Filling_Station_Management_System
                                 scrollTimer.Stop();
                                 scrolling = false; // Reset scrolling flag
                             }
-                            flowLayoutPanel1.VerticalScroll.Value = currentScrollPosition;
+                            EntryList.VerticalScroll.Value = currentScrollPosition;
                         }
                         else
                         {
@@ -641,5 +817,193 @@ namespace Filling_Station_Management_System
             }
         }
 
+        //------------Stock------------
+
+        private void SetAvailableStock()
+        {
+            if (FuelTypeBox.SelectedIndex == 0)
+            {
+                availableStock = GetTotalPurchasePetrol() - GetTotalSalePetrol();
+
+
+            }
+            else if (FuelTypeBox.SelectedIndex == 1)
+            {
+                availableStock = GetTotalPurchaseDiesel() - GetTotalSaleDiesel();
+
+
+            }
+
+            AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, 2);
+            availableUnitPrice = GetLastUnitPrice();
+            AvailableAmountBoxD.Text = AppSettings.RoundToString(availableStock * availableUnitPrice, 0);
+            AvailableRateBoxD.Text = AppSettings.RoundToString(GetLastUnitPrice(), 2);
+        }
+
+
+        private float GetLastUnitPrice()
+        {
+            string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString().ToLower();
+            float lastUnitPrice = 0;
+
+            try
+            {
+
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+
+                string Idsql = $"SELECT Available_Stock_Unit_Price FROM {index}_stock ORDER BY Ref_No DESC LIMIT 1";
+
+
+                MySqlCommand cmd = new MySqlCommand(Idsql, connection);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    lastUnitPrice = Convert.ToInt16(result);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message, "Last Unit Price");
+            }
+
+            return lastUnitPrice;
+        }
+
+        //------------
+
+        private float GetTotalPurchaseDiesel()
+        {
+            float totalSaleDiesel = 0;
+
+            try
+            {
+
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+
+                string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),2) FROM purchase_data_diesel) AS TotalSumQuantity;";
+
+                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    totalSaleDiesel = float.Parse(result.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return totalSaleDiesel;
+        }
+
+        private float GetTotalSaleDiesel()
+        {
+            float lastClosingReading = 0;
+
+
+            try
+            {
+
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+
+                string sqlCom = $"SELECT \r\n    (SELECT Round(SUM(netQuantity),2) FROM unit2_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit3_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit4_sales_data) AS TotalSumQuantity;";
+
+
+
+
+
+                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    lastClosingReading = float.Parse(result.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return lastClosingReading;
+        }
+
+        //-------------------------
+        private float GetTotalPurchasePetrol()
+        {
+            float totalSalePetrol = 0;
+
+            try
+            {
+
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+
+                string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),2) FROM purchase_data_petrol) AS TotalSumQuantity;";
+
+                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    totalSalePetrol = float.Parse(result.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return totalSalePetrol;
+        }
+
+
+        private float GetTotalSalePetrol()
+        {
+            float lastClosingReading = 0;
+
+
+            try
+            {
+
+                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
+                connection.Open();
+
+                string sqlCom = $"SELECT Round(SUM(netQuantity),2) FROM unit1_sales_data";
+
+
+
+
+
+                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    lastClosingReading = float.Parse(result.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return lastClosingReading;
+        }
+
+
     }
+
+
 }

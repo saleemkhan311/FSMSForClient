@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -411,11 +411,11 @@
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 30;
             this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.SrockLedgerButton);
             this.bunifuPanel1.Controls.Add(this.pictureBox1);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel21);
             this.bunifuPanel1.Controls.Add(this.PumpNameLabel);
             this.bunifuPanel1.Controls.Add(this.bunifuButton1);
-            this.bunifuPanel1.Controls.Add(this.SrockLedgerButton);
             this.bunifuPanel1.Controls.Add(this.StockButton);
             this.bunifuPanel1.Controls.Add(this.SummeryButton);
             this.bunifuPanel1.Controls.Add(this.PurchaseLedgerButton);
@@ -492,11 +492,11 @@
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
             this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges2;
             this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -520,7 +520,7 @@
             this.bunifuButton1.IdleIconLeftImage = global::Filling_Station_Management_System.Properties.Resources.Username;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = true;
-            this.bunifuButton1.Location = new System.Drawing.Point(27, 592);
+            this.bunifuButton1.Location = new System.Drawing.Point(27, 543);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 20;
@@ -583,11 +583,11 @@
             this.SrockLedgerButton.ColorContrastOnClick = 45;
             this.SrockLedgerButton.ColorContrastOnHover = 45;
             this.SrockLedgerButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.SrockLedgerButton.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.SrockLedgerButton.CustomizableEdges = borderEdges1;
             this.SrockLedgerButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.SrockLedgerButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.SrockLedgerButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -611,7 +611,7 @@
             this.SrockLedgerButton.IdleIconLeftImage = global::Filling_Station_Management_System.Properties.Resources.StockLedger;
             this.SrockLedgerButton.IdleIconRightImage = null;
             this.SrockLedgerButton.IndicateFocus = true;
-            this.SrockLedgerButton.Location = new System.Drawing.Point(27, 543);
+            this.SrockLedgerButton.Location = new System.Drawing.Point(27, 493);
             this.SrockLedgerButton.Name = "SrockLedgerButton";
             this.SrockLedgerButton.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.SrockLedgerButton.OnDisabledState.BorderRadius = 20;
@@ -702,7 +702,7 @@
             this.StockButton.IdleIconLeftImage = global::Filling_Station_Management_System.Properties.Resources.Stock;
             this.StockButton.IdleIconRightImage = null;
             this.StockButton.IndicateFocus = true;
-            this.StockButton.Location = new System.Drawing.Point(27, 494);
+            this.StockButton.Location = new System.Drawing.Point(27, 588);
             this.StockButton.Name = "StockButton";
             this.StockButton.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.StockButton.OnDisabledState.BorderRadius = 20;
@@ -744,6 +744,7 @@
             this.StockButton.TextMarginLeft = 0;
             this.StockButton.TextPadding = new System.Windows.Forms.Padding(0);
             this.StockButton.UseDefaultRadiusAndThickness = true;
+            this.StockButton.Visible = false;
             this.StockButton.Click += new System.EventHandler(this.StockButton_Click);
             // 
             // SummeryButton

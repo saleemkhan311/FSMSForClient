@@ -29,37 +29,40 @@ namespace Filling_Station_Management_System
 
             sqlDieselPurchase = @"SELECT
                                     purchase_date,
+                                    GROUP_CONCAT(DISTINCT Malik_Name ORDER BY Malik_Name ASC SEPARATOR ', ') AS Malik_Names,
                                     ROUND(SUM(Kanta_Wazan1), 2) AS Total_Wazan,
                                     ROUND(SUM(Miqdar1), 2) AS Total_Quantity,
                                     ROUND(SUM(Khoraki1), 2) AS Total_Khoraki,
                                     ROUND(SUM(Safi_Miqdar1), 2) AS Total_NetQuantity,
                                     GROUP_CONCAT(DISTINCT Rate_Per_Liter ORDER BY Rate_Per_Liter ASC SEPARATOR ', ') AS Rates,
-                                    ROUND(SUM(Kharcha_Mazdoori1), 2) AS Total_Mazdoori,
-                                    ROUND(SUM(Safi_Raqam1), 2) AS Net_Amount,
-                                    ROUND(SUM(Total_Amount1), 2) AS Total_Amount,
-                                    ROUND(SUM(Raqam_Wasool_1 + Raqam_Wasool_2 + Raqam_Wasool_3 + Raqam_Wasool_4 + Raqam_Wasool_5), 2) AS Total_Raqam_Wasool,
-                                    ROUND(SUM(Baqaya1), 2) AS Baqaya
+                                    FORMAT(ROUND(SUM(Total_Amount1), 2), 'C') AS Total_Amount,
+                                    FORMAT(ROUND(SUM(Kharcha_Mazdoori1), 2), 'C') AS Total_Mazdoori,
+                                    FORMAT(ROUND(SUM(Safi_Raqam1), 2), 'C') AS Net_Amount,
+                                    FORMAT(ROUND(SUM(Raqam_Wasool_1 + Raqam_Wasool_2 + Raqam_Wasool_3 + Raqam_Wasool_4 + Raqam_Wasool_5), 2), 'C') AS Total_Raqam_Wasool,
+                                    FORMAT(ROUND(SUM(Baqaya1), 2), 'C') AS Baqaya
+    
                                 FROM
-                                    (
-                                        SELECT
-                                            DATE(date) AS purchase_date,
-                                            Kanta_Wazan AS Kanta_Wazan1,
-                                            Miqdar AS Miqdar1,
-                                            Khoraki AS Khoraki1,
-                                            Saafi_Miqdar AS Safi_Miqdar1,
-                                            Kharcha_Mazdoori AS Kharcha_Mazdoori1,
-                                            Saafi_Raqam AS Safi_Raqam1,
-                                            Total_Amount AS Total_Amount1,
-                                            Amount_Paid_1 AS Raqam_Wasool_1,
-                                            Amount_Paid_2 AS Raqam_Wasool_2,
-                                            Amount_Paid_2 AS Raqam_Wasool_3,
-                                            Amount_Paid_4 AS Raqam_Wasool_4,
-                                            Amount_Paid_5 AS Raqam_Wasool_5,
-                                            Baqaya AS Baqaya1,
-                                        	Rate_Per_Liter
-                                        FROM
-                                            purchase_data_diesel
-                                    ) AS combined_data
+                                (
+                                    SELECT
+                                        DATE(date) AS purchase_date,
+                                        Kanta_Wazan AS Kanta_Wazan1,
+                                        Miqdar AS Miqdar1,
+                                        Khoraki AS Khoraki1,
+                                        Saafi_Miqdar AS Safi_Miqdar1,
+                                        Kharcha_Mazdoori AS Kharcha_Mazdoori1,
+                                        Saafi_Raqam AS Safi_Raqam1,
+                                        Total_Amount AS Total_Amount1,
+                                        Amount_Paid_1 AS Raqam_Wasool_1,
+                                        Amount_Paid_2 AS Raqam_Wasool_2,
+                                        Amount_Paid_2 AS Raqam_Wasool_3,
+                                        Amount_Paid_4 AS Raqam_Wasool_4,
+                                        Amount_Paid_5 AS Raqam_Wasool_5,
+                                        Baqaya AS Baqaya1,
+                                        Rate_Per_Liter,
+                                        Malik_Name
+                                    FROM
+                                        purchase_data_diesel
+                                ) AS combined_data
                                 GROUP BY
                                     purchase_date
                                 ORDER BY
@@ -90,9 +93,9 @@ namespace Filling_Station_Management_System
                                                 ROUND(SUM(NetQuantityUnit4), 2) AS NetQuantityUnit4,
                                                 ROUND(SUM(NetQuantityUnit2 + NetQuantityUnit3 + NetQuantityUnit4), 2) AS Total_NetQuantity,
                                                 GROUP_CONCAT(DISTINCT Unit_Price ORDER BY Unit_Price ASC SEPARATOR ', ') AS Rates,
-                                                ROUND(SUM(AmountUnit2 + AmountUnit3 + AmountUnit4), 2) AS Total_Amount,
-                                                ROUND(SUM(DiscountUnit2 + DiscountUnit3 + DiscountUnit4), 2) AS Total_Discount,
-                                                ROUND(SUM(BalanceUnit2 + BalanceUnit3 + BalanceUnit4), 2) AS Net_Amount
+                                                FORMAT(ROUND(SUM(AmountUnit2 + AmountUnit3 + AmountUnit4), 2),'C') AS Total_Amount,
+                                                FORMAT(ROUND(SUM(DiscountUnit2 + DiscountUnit3 + DiscountUnit4), 2),'C') AS Total_Discount,
+                                                FORMAT(ROUND(SUM(BalanceUnit2 + BalanceUnit3 + BalanceUnit4), 2),'C') AS Net_Amount
     
                                             FROM
                                                 (
@@ -184,17 +187,18 @@ namespace Filling_Station_Management_System
                 // Create a SqlCommand with your SQL query
                 string sqlQueryPetrolPurchase = @"SELECT
                                                     purchase_date,
+                                                    GROUP_CONCAT(DISTINCT Malik_Name ORDER BY Malik_Name ASC SEPARATOR ', ') AS Malik_Names,
                                                     ROUND(SUM(Kanta_Wazan1), 2) AS Total_Wazan,
                                                     ROUND(SUM(Miqdar1), 2) AS Total_Quantity,
                                                     ROUND(SUM(Khoraki1), 2) AS Total_Khoraki,
                                                     ROUND(SUM(Safi_Miqdar1), 2) AS Total_NetQuantity,
                                                     GROUP_CONCAT(DISTINCT Rate_Per_Liter ORDER BY Rate_Per_Liter ASC SEPARATOR ', ') AS Rates,
-                                                    ROUND(SUM(Total_Amount1), 2) AS Total_Amount,
-                                                    ROUND(SUM(Kharcha_Mazdoori1), 2) AS Total_Mazdoori,
-                                                    ROUND(SUM(Safi_Raqam1), 2) AS Net_Amount,
+                                                    FORMAT(ROUND(SUM(Total_Amount1), 2),'C') AS Total_Amount,
+                                                    FORMAT(ROUND(SUM(Kharcha_Mazdoori1), 2),'C') AS Total_Mazdoori,
+                                                    FORMAT(ROUND(SUM(Safi_Raqam1), 2),'C') AS Net_Amount,
     
-                                                    ROUND(SUM(Raqam_Wasool_1 + Raqam_Wasool_2 + Raqam_Wasool_3 + Raqam_Wasool_4 + Raqam_Wasool_5), 2) AS Total_Raqam_Wasool,
-                                                    ROUND(SUM(Baqaya1), 2) AS Baqaya
+                                                    FORMAT(ROUND(SUM(Raqam_Wasool_1 + Raqam_Wasool_2 + Raqam_Wasool_3 + Raqam_Wasool_4 + Raqam_Wasool_5), 2),'C') AS Total_Raqam_Wasool,
+                                                    FORMAT(ROUND(SUM(Baqaya1), 2),'C') AS Baqaya
     
                                                 FROM
                                                     (
@@ -213,7 +217,8 @@ namespace Filling_Station_Management_System
                                                             Amount_Paid_4 AS Raqam_Wasool_4,
                                                             Amount_Paid_5 AS Raqam_Wasool_5,
                                                             Baqaya AS Baqaya1,
-                                                            Rate_Per_Liter
+                                                            Rate_Per_Liter,
+                                                        	Malik_Name
                                                         FROM
                                                             purchase_data_petrol
                                                     ) AS combined_data
@@ -249,9 +254,9 @@ namespace Filling_Station_Management_System
                                     ROUND(SUM(NetQuantityUnit1), 2) AS Total_NetQuantity,
     
                                     GROUP_CONCAT(DISTINCT Unit_Price ORDER BY Unit_Price ASC SEPARATOR ', ') AS Rates,
-                                    ROUND(SUM(AmountUnit1), 2) AS Total_Amount,
-                                    ROUND(SUM(DiscountUnit1), 2) AS Total_Discount,
-                                    ROUND(SUM(BalanceUnit1), 2) AS Net_Amount
+                                    FORMAT(ROUND(SUM(AmountUnit1), 2),'C') AS Total_Amount,
+                                    FORMAT(ROUND(SUM(DiscountUnit1), 2),'C') AS Total_Discount,
+                                    FORMAT(ROUND(SUM(BalanceUnit1), 2),'C') AS Net_Amount
     
                                 FROM
                                     (
@@ -304,8 +309,8 @@ namespace Filling_Station_Management_System
 
         private void SaveExcelButton_Click(object sender, EventArgs e)
         {
-            if (TabControl.SelectedIndex == 0) { SaveLedger.SaveDataGridToExcel(PetrolSummaryDataGrid); }
-            else if (TabControl.SelectedIndex == 1) { SaveLedger.SaveDataGridToExcel(DieselSummaryDataGrid); }
+            if (TabControl.SelectedIndex == 0) { SaveLedger.SaveDataGridToExcel(PetrolSummaryDataGrid, "Petrol Summary"); }
+            else if (TabControl.SelectedIndex == 1) { SaveLedger.SaveDataGridToExcel(DieselSummaryDataGrid, "Diesel Summary"); }
         }
     }
 }

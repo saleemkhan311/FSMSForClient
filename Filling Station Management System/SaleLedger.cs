@@ -93,12 +93,14 @@ namespace Filling_Station_Management_System
             MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
             connection.Open();
 
-            string sql = $"SELECT Ref_No, Date,Fuel_Type,Helper,ROUND( Opening_Reading, 2) AS  Opening_Reading,ROUND( Closing_Reading, 2) AS  Closing_Reading,ROUND(Quantity, 2) AS Quantity,ROUND(Test, 2) AS Test,ROUND(netQuantity, 2) AS netQuantity,ROUND(Unit_Price, 0) AS Unit_Price,ROUND(Amount, 0) AS Amount, ROUND(Recovery, 0) AS Recovery, ROUND(Deposited, 0) AS Deposited, ROUND(Udhar, 0) AS Udhar,    ROUND(Discount, 0) AS Discount,ROUND(Balance, 0) AS Balance FROM unit{unit}_sales_data"; // Add your WHERE clause
+            string sql = $"SELECT * FROM unit{unit}_sales_data"; // Add your WHERE clause
+            //string sql = $"SELECT Ref_No, Date,Fuel_Type,Helper,ROUND( Opening_Reading, 2) AS  Opening_Reading,ROUND( Closing_Reading, 2) AS  Closing_Reading,ROUND(Quantity, 2) AS Quantity,ROUND(Test, 2) AS Test,ROUND(netQuantity, 2) AS netQuantity,ROUND(Unit_Price, 0) AS Unit_Price,ROUND(Amount, 0) AS Amount, ROUND(Recovery, 0) AS Recovery, ROUND(Deposited, 0) AS Deposited, ROUND(Udhar, 0) AS Udhar,    ROUND(Discount, 0) AS Discount,ROUND(Balance, 0) AS Balance FROM unit{unit}_sales_data"; // Add your WHERE clause
 
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
+
 
             Unit1DataGrid.DataSource = dataTable;
             DataGrid2.DataSource = dataTable;
@@ -515,10 +517,10 @@ namespace Filling_Station_Management_System
 
         private void SaveExcelButton_Click(object sender, EventArgs e)
         {
-            if (TabControl.SelectedIndex == 0) { SaveLedger.SaveDataGridToExcel(Unit1DataGrid); }
-            else if (TabControl.SelectedIndex == 1) { SaveLedger.SaveDataGridToExcel(DataGrid2); }
-            else if (TabControl.SelectedIndex == 2) { SaveLedger.SaveDataGridToExcel(DataGrid3); }
-            else if (TabControl.SelectedIndex == 3) { SaveLedger.SaveDataGridToExcel(DataGrid4); }
+            if (TabControl.SelectedIndex == 0) { SaveLedger.SaveDataGridToExcel(Unit1DataGrid, "Sale Ledger Unit 1"); }
+            else if (TabControl.SelectedIndex == 1) { SaveLedger.SaveDataGridToExcel(DataGrid2, "Sale Ledger Unit 2"); }
+            else if (TabControl.SelectedIndex == 2) { SaveLedger.SaveDataGridToExcel(DataGrid3, "Sale Ledger Unit 3"); }
+            else if (TabControl.SelectedIndex == 3) { SaveLedger.SaveDataGridToExcel(DataGrid4, "Sale Ledger Unit 4"); }
         }
 
         private void SearchTextBox_OnIconRightClick(object sender, EventArgs e)
