@@ -233,6 +233,7 @@ namespace Filling_Station_Management_System
             // Create a SaveFileDialog to specify where to save the PDF
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "PDF Files|*.pdf";
+            saveFileDialog.FileName = $"Ref# {ref_no}";
             saveFileDialog.Title = "Save PDF File";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)

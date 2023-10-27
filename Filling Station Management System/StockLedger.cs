@@ -29,7 +29,7 @@ namespace Filling_Station_Management_System
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
 
-                sqlPetrolStock = $"SELECT * FROM `petrol_stock`";
+                sqlPetrolStock = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    FORMAT(Total_Sale, 'C', 'en-PK') AS Total_Sale,\r\n    FORMAT(Total_Purchase, 'C', 'en-PK') AS Total_Purchase,\r\n    Available_Stock,\r\n    FORMAT(Available_Stock_Amount, 'C', 'en-PK') AS Available_Stock_Amount,\r\n    FORMAT(Available_Stock_Unit_Price, 'C', 'en-PK') AS Available_Stock_Unit_Price\r\nFROM petrol_stock;\r\n";
 
                 MySqlCommand cmd = new MySqlCommand(sqlPetrolStock, connection);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -59,7 +59,7 @@ namespace Filling_Station_Management_System
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
 
-                sqlDieselStock = $"SELECT * FROM `diesel_stock`";
+                sqlDieselStock = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    FORMAT(Total_Sale, 'C', 'en-PK') AS Total_Sale,\r\n    FORMAT(Total_Purchase, 'C', 'en-PK') AS Total_Purchase,\r\n    Available_Stock,\r\n    FORMAT(Available_Stock_Amount, 'C', 'en-PK') AS Available_Stock_Amount,\r\n    FORMAT(Available_Stock_Unit_Price, 'C', 'en-PK') AS Available_Stock_Unit_Price\r\nFROM diesel_stock;\r\n";
 
                 MySqlCommand cmd = new MySqlCommand(sqlDieselStock, connection);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);

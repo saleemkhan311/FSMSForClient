@@ -295,7 +295,7 @@ namespace Filling_Station_Management_System
             sharah = AppSettings.convertToDouble(SharahListBox.Items[SharahListBox.SelectedIndex].ToString());
             miqdar = kantaWazan == 0 ? 0 : kantaWazan / sharah;
 
-            QuantityBox.Text = AppSettings.RoundToString(miqdar, 2,false);
+            QuantityBox.Text = AppSettings.RoundToString(miqdar, 2, false);
 
 
 
@@ -305,12 +305,13 @@ namespace Filling_Station_Management_System
 
 
             saafiMiqdar = miqdar - Khoraki;
-            NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2,false);
+            NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2, false);
 
             NewStockBoxD.Text = saafiMiqdar == 0 ? "" : AppSettings.RoundToString(saafiMiqdar, 2, false);
 
 
             ratePerLiter = AppSettings.convertToDouble(RateBox.Text);
+
             NewRateBoxD.Text = ratePerLiter == 0 ? "" : AppSettings.RoundToString(ratePerLiter, 2, true);
 
             Amount = saafiMiqdar * ratePerLiter;
@@ -324,7 +325,7 @@ namespace Filling_Station_Management_System
 
 
             saafiRaqam = Amount - labour;
-            NetPriceBox.Text = saafiRaqam == 0 ? "" : AppSettings.RoundToString(saafiRaqam, 0,true);
+            NetPriceBox.Text = saafiRaqam == 0 ? "" : AppSettings.RoundToString(saafiRaqam, 0, true);
 
 
 
@@ -349,21 +350,22 @@ namespace Filling_Station_Management_System
             }
 
             // Update the value of the sixth TextBox with the calculated sum
+            Remainings = totalAmount - sum;
 
-
-            RemainingAmountBox.Text = AppSettings.RoundToString(totalAmount - sum, 0,true);
+            RemainingAmountBox.Text = AppSettings.RoundToString(Remainings - sum, 0, true);
 
         }
 
         private void PreviousAmountBox_TextChanged(object sender, EventArgs e)
         {
-            if (Validation(SabqaRaqamBox.Text) && Validation(NetPriceBox.Text))
+            Calculate();
+            /*if (Validation(SabqaRaqamBox.Text) && Validation(NetPriceBox.Text))
             {
                 sabqaBaqaya = Math.Round(Convert.ToDouble(SabqaRaqamBox.Text), 2);
 
                 totalAmount = saafiRaqam + sabqaBaqaya;
                 TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0, true);
-            }
+            }*/
         }
 
         private void TotalPriceBox_TextChanged(object sender, EventArgs e)
@@ -374,13 +376,13 @@ namespace Filling_Station_Management_System
         private void LabourBox_TextChanged(object sender, EventArgs e)
         {
             Calculate();
-            if (Validation(LabourBox.Text) && Validation(AmountBox.Text))
+            /*if (Validation(LabourBox.Text) && Validation(AmountBox.Text))
             {
                 labour = Math.Round(Convert.ToDouble(LabourBox.Text), 2);
 
                 saafiRaqam = Amount - labour;
-                NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0,true);
-            }
+                NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0, true);
+            }*/
         }
 
         private void RateBox_TextChanged(object sender, EventArgs e)
@@ -412,15 +414,15 @@ namespace Filling_Station_Management_System
 
         private void TurnDownButton_Click(object sender, EventArgs e)
         {
-            lastStock = AppSettings.convertToDouble(AvailableStockBoxD.Text);
-            lastUnitPrice = AppSettings.convertToDouble(AvailableRateBoxD.Text);
-            lastStockAmount = AppSettings.convertToDouble(AvailableAmountBoxD.Text);
+            lastStock = AppSettings.convertToDouble(AvailableStockBoxD.Text.Replace("Rs", ""));
+            lastUnitPrice = AppSettings.convertToDouble(AvailableRateBoxD.Text.Replace("Rs", ""));
+            lastStockAmount = AppSettings.convertToDouble(AvailableAmountBoxD.Text.Replace("Rs", ""));
 
             AvailableStockBoxD.Clear();
             AvailableRateBoxD.Clear();
             AvailableAmountBoxD.Clear();
 
-            LastStockBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStock, 2,false);
+            LastStockBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStock, 2, false);
             LastRateBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastUnitPrice, 2, true);
             LastAmountBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStockAmount, 2, true);
 
@@ -438,17 +440,25 @@ namespace Filling_Station_Management_System
 
         private void AddStockButton_Click(object sender, EventArgs e)
         {
-            lastStock = AppSettings.convertToDouble(LastStockBoxD.Text);
-            lastStockAmount = AppSettings.convertToDouble(LastAmountBoxD.Text);
+            lastStock = AppSettings.convertToDouble(LastStockBoxD.Text.Replace("Rs", ""));
+            lastStockAmount = AppSettings.convertToDouble(LastAmountBoxD.Text.Replace("Rs", ""));
 
-            newStock = AppSettings.convertToDouble(NewStockBoxD.Text);
-            newStockAmount = AppSettings.convertToDouble(NewAmountBoxD.Text);
+            newStock = AppSettings.convertToDouble(NewStockBoxD.Text.Replace("Rs", ""));
+            newStockAmount = AppSettings.convertToDouble(NewAmountBoxD.Text.Replace("Rs", ""));
+
+            /*lastStock = Convert.ToDouble(LastStockBoxD.Text);
+            lastStockAmount = Convert.ToDouble(LastAmountBoxD.Text);
+
+            newStock = Convert.ToDouble(NewStockBoxD.Text);
+            newStockAmount = Convert.ToDouble(NewAmountBoxD.Text);*/
+
 
             double sumAmnt = lastStockAmount + newStockAmount;
             availableStock = lastStock + newStock;
             availableUnitPrice = (lastStockAmount + newStockAmount) / (lastStock + newStock);
             availableAmount = availableUnitPrice * availableStock;
 
+            //MessageBox.Show($"last stock {lastStock} new stock {newStock}  last Amount {lastStockAmount} new stock {newStockAmount}");
 
 
             AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, 2, false);
@@ -496,7 +506,7 @@ namespace Filling_Station_Management_System
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (FuelTypeBox.SelectedIndex == 1) { StockPanel.PanelColor = Color.FromArgb(184, 204, 228); } else { StockPanel.PanelColor = Color.FromArgb(240, 147, 124); }
-            StockLabel.Text = $"{FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString()} Stock";
+            StockLabel.Text = $"{FuelTypeBox.Items[FuelTypeBox.SelectedIndex]} Stock";
 
             SetAvailableStock();
             AutoSuggestions();
@@ -555,9 +565,9 @@ namespace Filling_Station_Management_System
                     cmd.Parameters.AddWithValue("@Total_Sale", GetTotalSaleDiesel());
                 }
 
-                cmd.Parameters.AddWithValue("@Available_Stock", AvailableStockBoxD.Text);
-                cmd.Parameters.AddWithValue("@Available_Stock_Amount", AvailableAmountBoxD.Text);
-                cmd.Parameters.AddWithValue("@Available_Stock_Unit_Price", AvailableRateBoxD.Text);
+                cmd.Parameters.AddWithValue("@Available_Stock", availableStock);
+                cmd.Parameters.AddWithValue("@Available_Stock_Amount", availableAmount);
+                cmd.Parameters.AddWithValue("@Available_Stock_Unit_Price", availableUnitPrice);
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show($"{index} Stock Inserted Successfully", $"{index} Stock Querry", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -663,34 +673,34 @@ namespace Filling_Station_Management_System
                 cmd.Parameters.AddWithValue("@Malik_Name", NameTextBox.Text);
 
 
-                cmd.Parameters.AddWithValue("@Kanta_Wazan", WeightBox.Text);
-                cmd.Parameters.AddWithValue("@Miqdar", QuantityBox.Text);
-                cmd.Parameters.AddWithValue("@Khoraki", KhorakiBox.Text);
-                cmd.Parameters.AddWithValue("@Saafi_Miqdar", NetQuantityBox.Text);
-                cmd.Parameters.AddWithValue("@Rate_per_Liter", RateBox.Text);
+                cmd.Parameters.AddWithValue("@Kanta_Wazan", kantaWazan);
+                cmd.Parameters.AddWithValue("@Miqdar", miqdar);
+                cmd.Parameters.AddWithValue("@Khoraki", Khoraki);
+                cmd.Parameters.AddWithValue("@Saafi_Miqdar", saafiMiqdar);
+                cmd.Parameters.AddWithValue("@Rate_per_Liter", ratePerLiter);
 
 
-                cmd.Parameters.AddWithValue("@Amount", AmountBox.Text);
-                cmd.Parameters.AddWithValue("@Kharcha_Mazdoori", LabourBox);
-                cmd.Parameters.AddWithValue("@Saafi_Raqam", NetPriceBox.Text);
-                cmd.Parameters.AddWithValue("@Sabqa_Baqaya", SabqaRaqamBox.Text);
-                cmd.Parameters.AddWithValue("@Total_Amount", TotalRaqamBox.Text);
-                cmd.Parameters.AddWithValue("@Amount_Paid_1", RecoveryAmountBox1.Text);
+                cmd.Parameters.AddWithValue("@Amount", Amount);
+                cmd.Parameters.AddWithValue("@Kharcha_Mazdoori", labour);
+                cmd.Parameters.AddWithValue("@Saafi_Raqam", saafiRaqam);
+                cmd.Parameters.AddWithValue("@Sabqa_Baqaya", sabqaBaqaya);
+                cmd.Parameters.AddWithValue("@Total_Amount", totalAmount);
+                cmd.Parameters.AddWithValue("@Amount_Paid_1", RecoveryAmountBox1.Text.Replace("Rs", ""));
                 cmd.Parameters.AddWithValue("@Description_Details_1", RecoveryDescriptionBox1.Text);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_2", RecoveryAmountBox2.Text);
+                cmd.Parameters.AddWithValue("@Amount_Paid_2", RecoveryAmountBox2.Text.Replace("Rs", ""));
                 cmd.Parameters.AddWithValue("@Description_Details_2", RecoveryDescriptionBox2.Text);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_3", RecoveryAmountBox3.Text);
+                cmd.Parameters.AddWithValue("@Amount_Paid_3", RecoveryAmountBox3.Text.Replace("Rs", ""));
                 cmd.Parameters.AddWithValue("@Description_Details_3", RecoveryDescriptionBox3.Text);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_4", RecoveryAmountBox4.Text);
+                cmd.Parameters.AddWithValue("@Amount_Paid_4", RecoveryAmountBox4.Text.Replace("Rs", ""));
                 cmd.Parameters.AddWithValue("@Description_Details_4", RecoveryDescriptionBox4.Text);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_5", RecoveryAmountBox5.Text);
+                cmd.Parameters.AddWithValue("@Amount_Paid_5", RecoveryAmountBox5.Text.Replace("Rs", ""));
                 cmd.Parameters.AddWithValue("@Description_Details_5", RecoveryDescriptionBox5.Text);
 
-                cmd.Parameters.AddWithValue("@Baqaya", RemainingAmountBox.Text);
+                cmd.Parameters.AddWithValue("@Baqaya", Remainings);
 
                 cmd.ExecuteNonQuery();
 
@@ -837,7 +847,7 @@ namespace Filling_Station_Management_System
             AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, 2, false);
             availableUnitPrice = GetLastUnitPrice();
             AvailableAmountBoxD.Text = AppSettings.RoundToString(availableStock * availableUnitPrice, 0, true);
-            AvailableRateBoxD.Text = AppSettings.RoundToString(GetLastUnitPrice(), 2,true);
+            AvailableRateBoxD.Text = AppSettings.RoundToString(GetLastUnitPrice(), 2, true);
         }
 
 

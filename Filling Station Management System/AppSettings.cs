@@ -82,10 +82,14 @@ namespace Filling_Station_Management_System
             {
                 // Remove commas from the input string
                 string cleanedInput = input.Replace(",", "");
+                string cleanedInput2 = input.Replace("Rs", "");
 
-                if (!double.TryParse(cleanedInput, out result))
+                if (!double.TryParse(cleanedInput, out result) || !double.TryParse(cleanedInput2, out result))
                 {
+
                     return 0.0;
+
+
                 }
                 else
                 {

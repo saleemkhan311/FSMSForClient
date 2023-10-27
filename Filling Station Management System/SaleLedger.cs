@@ -46,19 +46,19 @@ namespace Filling_Station_Management_System
                 cmd.Parameters.AddWithValue("@Helper", HelperTextBox.Text);
 
 
-                //cmd.Parameters.AddWithValue("@Opening_Reading", ConvertFloat(OpenReadingTextBox.Text));
-                cmd.Parameters.AddWithValue("@Closing_Reading", ConvertFloat(CloseReadingTextBox.Text));
+                cmd.Parameters.AddWithValue("@Opening_Reading", _openReading);
+                cmd.Parameters.AddWithValue("@Closing_Reading", _closeReading);
                 cmd.Parameters.AddWithValue("@Quantity", newQuantity);
-                cmd.Parameters.AddWithValue("@Test", ConvertFloat(CheckTextBox.Text));
+                cmd.Parameters.AddWithValue("@Test", _test);
                 cmd.Parameters.AddWithValue("@netQuantity", newNetQuantity);
-                cmd.Parameters.AddWithValue("@Unit_Price", ConvertFloat(RateTextBox.Text));
+                cmd.Parameters.AddWithValue("@Unit_Price", _rate);
 
 
                 cmd.Parameters.AddWithValue("@Amount", newPrice);
-                cmd.Parameters.AddWithValue("@Recovery", ConvertFloat(RecoveryTextBox.Text));
-                cmd.Parameters.AddWithValue("@Deposited", ConvertFloat(DepositTextBox.Text));
-                cmd.Parameters.AddWithValue("@Udhar", ConvertFloat(UdharTextBox.Text));
-                cmd.Parameters.AddWithValue("@Discount", ConvertFloat(DepositTextBox.Text));
+                cmd.Parameters.AddWithValue("@Recovery", recovery);
+                cmd.Parameters.AddWithValue("@Deposited", deposit);
+                cmd.Parameters.AddWithValue("@Udhar", udhar);
+                cmd.Parameters.AddWithValue("@Discount", discount);
                 cmd.Parameters.AddWithValue("@Balance", newPrice);
 
                 cmd.ExecuteNonQuery();
@@ -93,7 +93,7 @@ namespace Filling_Station_Management_System
             MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
             connection.Open();
 
-            string sql = $"SELECT * FROM unit{unit}_sales_data"; // Add your WHERE clause
+            string sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    Helper,\r\n    Opening_Reading,\r\n    Closing_Reading,\r\n    Quantity,\r\n    Test,\r\n    netQuantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount,\r\n    FORMAT(Recovery, 'C', 'en-PK') AS Recovery,\r\n    FORMAT(Deposited, 'C', 'en-PK') AS Deposited,\r\n    FORMAT(Udhar, 'C', 'en-PK') AS Udhar,\r\n    FORMAT(Discount, 'C', 'en-PK') AS Discount,\r\n    FORMAT(Balance, 'C', 'en-PK') AS Balance\r\nFROM unit{unit}_sales_data;\r\n"; // Add your WHERE clause
             //string sql = $"SELECT Ref_No, Date,Fuel_Type,Helper,ROUND( Opening_Reading, 2) AS  Opening_Reading,ROUND( Closing_Reading, 2) AS  Closing_Reading,ROUND(Quantity, 2) AS Quantity,ROUND(Test, 2) AS Test,ROUND(netQuantity, 2) AS netQuantity,ROUND(Unit_Price, 0) AS Unit_Price,ROUND(Amount, 0) AS Amount, ROUND(Recovery, 0) AS Recovery, ROUND(Deposited, 0) AS Deposited, ROUND(Udhar, 0) AS Udhar,    ROUND(Discount, 0) AS Discount,ROUND(Balance, 0) AS Balance FROM unit{unit}_sales_data"; // Add your WHERE clause
 
             MySqlCommand cmd = new MySqlCommand(sql, connection);

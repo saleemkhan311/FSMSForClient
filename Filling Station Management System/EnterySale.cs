@@ -88,7 +88,7 @@ namespace Filling_Station_Management_System
             Query();
             AutoIncrement();
 
-
+/*
             if (FuelTypeBox.SelectedIndex == 0)
             {
                 StockForm stock = new StockForm();
@@ -102,7 +102,7 @@ namespace Filling_Station_Management_System
 
                 stock.RemoteQuerryDiesel();
                 stock.Dispose();
-            }
+            }*/
             ClearBox();
 
         }
@@ -214,7 +214,7 @@ namespace Filling_Station_Management_System
             newNetQuantity = Math.Round(_netQuantity, 2);
 
 
-            OpenReadingTextBox.Text = AppSettings.RoundToString(_openReading,2,false);
+            OpenReadingTextBox.Text = AppSettings.RoundToString(_openReading, 2, false);
             QuantityTextBox.Text = newQuantity.ToString();
             NetQuantityTextBox.Text = newNetQuantity.ToString();
             AmountTextBox.Text = newPrice.ToString("C");
@@ -299,12 +299,12 @@ namespace Filling_Station_Management_System
                 cmd.Parameters.AddWithValue("@Unit_Price", RateTextBox.Text);
 
 
-                cmd.Parameters.AddWithValue("@Amount", AmountTextBox.Text);
+                cmd.Parameters.AddWithValue("@Amount", _price);
                 cmd.Parameters.AddWithValue("@Recovery", RecoveryTextBox.Text);
                 cmd.Parameters.AddWithValue("@Deposited", DepositTextBox.Text);
                 cmd.Parameters.AddWithValue("@Udhar", UdharTextBox.Text);
                 cmd.Parameters.AddWithValue("@Discount", DiscountTextBox.Text);
-                cmd.Parameters.AddWithValue("@Balance", BalanceTB.Text);
+                cmd.Parameters.AddWithValue("@Balance", balance);
 
                 cmd.ExecuteNonQuery();
 
@@ -369,7 +369,7 @@ namespace Filling_Station_Management_System
 
                 MySqlCommand cmd = new MySqlCommand(Refsql, connection);
                 object result = cmd.ExecuteScalar();
-                
+
                 if (result != null && result != DBNull.Value)
                 {
                     lastRefNo = Convert.ToInt16(result);

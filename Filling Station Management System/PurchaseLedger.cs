@@ -41,7 +41,7 @@ namespace Filling_Station_Management_System
 
 
                 saafiMiqdar = miqdar - Khoraki;
-                NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2,false);
+                NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2, false);
 
 
 
@@ -84,8 +84,8 @@ namespace Filling_Station_Management_System
 
                 // Update the value of the sixth TextBox with the calculated sum
 
-
-                RemainingAmountBox.Text = AppSettings.RoundToString(totalAmount - sum, 0, true);
+                Remainings = totalAmount - sum;
+                RemainingAmountBox.Text = AppSettings.RoundToString(Remainings, 0, true);
             }
             catch (Exception ex)
             {
@@ -111,7 +111,7 @@ namespace Filling_Station_Management_System
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
 
-                string sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    ROUND(Sharah, 4) AS Sharah,\r\n    Malik_Name,\r\n    ROUND(Kanta_Wazan, 0) AS Kanta_Wazan,\r\n    ROUND(Miqdar, 2) AS Miqdar,\r\n    ROUND(Khoraki, 0) AS Khoraki,\r\n    ROUND(Saafi_Miqdar, 2) AS Saafi_Miqdar,\r\n    Rate_per_Liter,\r\n    ROUND(Amount, 0) AS Amount,\r\n    ROUND(Kharcha_Mazdoori, 0) AS Kharcha_Mazdoori,\r\n    ROUND(Saafi_Raqam, 0) AS Saafi_Raqam,\r\n    ROUND(Sabqa_Baqaya, 0) AS Sabqa_Baqaya,\r\n    ROUND(Total_Amount, 0) AS Total_Amount,\r\n    ROUND(Amount_Paid_1, 0) AS Amount_Paid_1,\r\n    Description_Details_1,\r\n    ROUND(Amount_Paid_2, 0) AS Amount_Paid_2,\r\n    Description_Details_2,\r\n    ROUND(Amount_Paid_3, 0) AS Amount_Paid_3,\r\n    Description_Details_3,\r\n    ROUND(Amount_Paid_4, 0) AS Amount_Paid_4,\r\n    Description_Details_4,\r\n    ROUND(Amount_Paid_5, 0) AS Amount_Paid_5,\r\n    Description_Details_5,\r\n    ROUND(Baqaya, 0) AS Baqaya\r\n FROM purchase_data_{index};\r\n"; // Add your WHERE clause
+                string sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    ROUND(Sharah, 4) AS Sharah,\r\n    Malik_Name,\r\n    ROUND(Kanta_Wazan, 0) AS Kanta_Wazan,\r\n    ROUND(Miqdar, 2) AS Miqdar,\r\n    ROUND(Khoraki, 0) AS Khoraki,\r\n    ROUND(Saafi_Miqdar, 2) AS Saafi_Miqdar,\r\n    FORMAT(Rate_per_Liter, 'C', 'en-PK') AS Rate_per_Liter,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount,\r\n    FORMAT(Kharcha_Mazdoori, 'C', 'en-PK') AS Kharcha_Mazdoori,\r\n    FORMAT(Saafi_Raqam, 'C', 'en-PK') AS Saafi_Raqam,\r\n    FORMAT(Sabqa_Baqaya, 'C', 'en-PK') AS Sabqa_Baqaya,\r\n    FORMAT(Total_Amount, 'C', 'en-PK') AS Total_Amount,\r\n    FORMAT(Amount_Paid_1, 'C', 'en-PK') AS Amount_Paid_1,\r\n    Description_Details_1,\r\n    FORMAT(Amount_Paid_2, 'C', 'en-PK') AS Amount_Paid_2,\r\n    Description_Details_2,\r\n    FORMAT(Amount_Paid_3, 'C', 'en-PK') AS Amount_Paid_3,\r\n    Description_Details_3,\r\n    FORMAT(Amount_Paid_4, 'C', 'en-PK') AS Amount_Paid_4,\r\n    Description_Details_4,\r\n    FORMAT(Amount_Paid_5, 'C', 'en-PK') AS Amount_Paid_5,\r\n    Description_Details_5,\r\n    FORMAT(Baqaya, 'C', 'en-PK') AS Baqaya\r\nFROM purchase_data_{index};\r\n";
 
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -232,22 +232,22 @@ namespace Filling_Station_Management_System
                 cmd.Parameters.AddWithValue("@Saafi_Raqam", saafiRaqam);
                 cmd.Parameters.AddWithValue("@Sabqa_Baqaya", sabqaBaqaya);
                 cmd.Parameters.AddWithValue("@Total_Amount", totalAmount);
-                cmd.Parameters.AddWithValue("@Amount_Paid_1", RecoveryAmountBox1.Text);
+                cmd.Parameters.AddWithValue("@Amount_Paid_1", RecoveryAmountBox1.Text.Replace("Rs", ""));
                 cmd.Parameters.AddWithValue("@Description_Details_1", RecoveryDescriptionBox1.Text);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_2", RecoveryAmountBox2.Text);
+                cmd.Parameters.AddWithValue("@Amount_Paid_2", RecoveryAmountBox2.Text.Replace("Rs", ""));
                 cmd.Parameters.AddWithValue("@Description_Details_2", RecoveryDescriptionBox2.Text);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_3", RecoveryAmountBox3.Text);
+                cmd.Parameters.AddWithValue("@Amount_Paid_3", RecoveryAmountBox3.Text.Replace("Rs", ""));
                 cmd.Parameters.AddWithValue("@Description_Details_3", RecoveryDescriptionBox3.Text);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_4", RecoveryAmountBox4.Text);
+                cmd.Parameters.AddWithValue("@Amount_Paid_4", RecoveryAmountBox4.Text.Replace("Rs", ""));
                 cmd.Parameters.AddWithValue("@Description_Details_4", RecoveryDescriptionBox4.Text);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_5", RecoveryAmountBox5.Text);
+                cmd.Parameters.AddWithValue("@Amount_Paid_5", RecoveryAmountBox5.Text.Replace("Rs", ""));
                 cmd.Parameters.AddWithValue("@Description_Details_5", RecoveryDescriptionBox5.Text);
 
-                cmd.Parameters.AddWithValue("@Baqaya", RemainingAmountBox.Text);
+                cmd.Parameters.AddWithValue("@Baqaya", Remainings);
 
                 cmd.ExecuteNonQuery();
 
