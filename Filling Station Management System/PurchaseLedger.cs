@@ -31,7 +31,7 @@ namespace Filling_Station_Management_System
                 sharah = AppSettings.convertToDouble(SharahListBox.Items[SharahListBox.SelectedIndex].ToString());
                 miqdar = kantaWazan == 0 ? 0 : kantaWazan / sharah;
 
-                QuantityBox.Text = AppSettings.RoundToString(miqdar, 2, false);
+                QuantityBox.Text = AppSettings.RoundToString(miqdar, false);
 
 
 
@@ -41,7 +41,7 @@ namespace Filling_Station_Management_System
 
 
                 saafiMiqdar = miqdar - Khoraki;
-                NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2, false);
+                NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, false);
 
 
 
@@ -50,7 +50,7 @@ namespace Filling_Station_Management_System
 
 
                 Amount = saafiMiqdar * ratePerLiter;
-                AmountBox.Text = AppSettings.RoundToString(Amount, 0, true);
+                AmountBox.Text = AppSettings.RoundToString(Amount, true);
 
                 labour = AppSettings.convertToDouble(LabourBox.Text);
 
@@ -58,7 +58,7 @@ namespace Filling_Station_Management_System
 
 
                 saafiRaqam = Amount - labour;
-                NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, 0, true);
+                NetPriceBox.Text = AppSettings.RoundToString(saafiRaqam, true);
 
 
 
@@ -68,7 +68,7 @@ namespace Filling_Station_Management_System
                 sabqaBaqaya = AppSettings.convertToDouble(SabqaRaqamBox.Text);
 
                 totalAmount = saafiRaqam + sabqaBaqaya;
-                TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0, true);
+                TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, true);
 
                 totalAmount = saafiRaqam + sabqaBaqaya;
                 Double sum = 0;
@@ -85,7 +85,7 @@ namespace Filling_Station_Management_System
                 // Update the value of the sixth TextBox with the calculated sum
 
                 Remainings = totalAmount - sum;
-                RemainingAmountBox.Text = AppSettings.RoundToString(Remainings, 0, true);
+                RemainingAmountBox.Text = AppSettings.RoundToString(Remainings, true);
             }
             catch (Exception ex)
             {

@@ -17,9 +17,9 @@ namespace Filling_Station_Management_System
 
         double totalStockPetrol, availableStockPetrol;
         double totalStockDiesel, availableStockDiesel;
-        private float GetTotalSalePetrol()
+        private double GetTotalSalePetrol()
         {
-            float totalSaleDiesel = 0;
+            double totalSaleDiesel = 0;
 
 
             try
@@ -35,7 +35,7 @@ namespace Filling_Station_Management_System
 
                 if (result != null && result != DBNull.Value)
                 {
-                    totalSaleDiesel = float.Parse(result.ToString());
+                    totalSaleDiesel = Convert.ToDouble(result.ToString());
                 }
             }
             catch (Exception ex)
@@ -47,9 +47,9 @@ namespace Filling_Station_Management_System
             return totalSaleDiesel;
         }
 
-        private float GetTotalSaleDiesel()
+        private double GetTotalSaleDiesel()
         {
-            float totalSalePetrol = 0;
+            double totalSalePetrol = 0;
 
 
             try
@@ -66,7 +66,7 @@ namespace Filling_Station_Management_System
 
                 if (result != null && result != DBNull.Value)
                 {
-                    totalSalePetrol = float.Parse(result.ToString());
+                    totalSalePetrol = Convert.ToDouble(result.ToString());
                 }
             }
             catch (Exception ex)
@@ -79,9 +79,9 @@ namespace Filling_Station_Management_System
         }
 
 
-        private float GetTotalPurchaseDiesel()
+        private double GetTotalPurchaseDiesel()
         {
-            float totalSalePetrol = 0;
+            double totalSalePetrol = 0;
 
 
             try
@@ -97,7 +97,7 @@ namespace Filling_Station_Management_System
 
                 if (result != null && result != DBNull.Value)
                 {
-                    totalSalePetrol = float.Parse(result.ToString());
+                    totalSalePetrol = Convert.ToDouble(result.ToString());
                 }
             }
             catch (Exception ex)
@@ -109,9 +109,9 @@ namespace Filling_Station_Management_System
             return totalSalePetrol;
         }
 
-        private float GetTotalPurchasePetrol()
+        private double GetTotalPurchasePetrol()
         {
-            float totalPurchasePetrol = 0;
+            double totalPurchasePetrol = 0;
 
 
             try
@@ -127,7 +127,7 @@ namespace Filling_Station_Management_System
 
                 if (result != null && result != DBNull.Value)
                 {
-                    totalPurchasePetrol = float.Parse(result.ToString());
+                    totalPurchasePetrol = Convert.ToDouble(result.ToString());
                 }
             }
             catch (Exception ex)
@@ -154,7 +154,7 @@ namespace Filling_Station_Management_System
 
                 if (result != null && result != DBNull.Value)
                 {
-                    lastRate = float.Parse(result.ToString());
+                    lastRate = Convert.ToDouble(result.ToString());
                 }
             }
             catch (Exception ex)
@@ -180,7 +180,7 @@ namespace Filling_Station_Management_System
 
                 if (result != null && result != DBNull.Value)
                 {
-                    lastRate = float.Parse(result.ToString());
+                    lastRate = Convert.ToDouble(result.ToString());
                 }
             }
             catch (Exception ex)
@@ -256,12 +256,12 @@ namespace Filling_Station_Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            TotalSaleDieselLabel.Text = AppSettings.RoundToString(GetTotalSaleDiesel(), 0, false);
-            TotalSalePetrolLabel.Text = AppSettings.RoundToString(GetTotalSalePetrol(), 0, false);
-            TotalPurchaseDiesel.Text = AppSettings.RoundToString(GetTotalPurchaseDiesel(), 0, false);
-            TotalPurchasePetrol.Text = AppSettings.RoundToString(GetTotalPurchasePetrol(), 0, false);
-            UnitPriceLabelDiesel.Text = AppSettings.RoundToString(GetLastRateDiesel(), 0, true);
-            UnitPriceLabelPetrol.Text = AppSettings.RoundToString(GetLastRatePetrol(), 0, true);
+            TotalSaleDieselLabel.Text = AppSettings.RoundToString(GetTotalSaleDiesel(), false);
+            TotalSalePetrolLabel.Text = AppSettings.RoundToString(GetTotalSalePetrol(), false);
+            TotalPurchaseDiesel.Text = AppSettings.RoundToString(GetTotalPurchaseDiesel(), false);
+            TotalPurchasePetrol.Text = AppSettings.RoundToString(GetTotalPurchasePetrol(), false);
+            UnitPriceLabelDiesel.Text = AppSettings.RoundToString(GetLastRateDiesel(), true);
+            UnitPriceLabelPetrol.Text = AppSettings.RoundToString(GetLastRatePetrol(), true);
             PetrolPercent();
             DeiselPercent();
             DieselChartSetup();
@@ -366,9 +366,9 @@ namespace Filling_Station_Management_System
                 foreach (DataRow row in unit1Table.Rows)
                 {
 
-                    double netQuantity = Convert.ToDouble(row["netQuantity"]);
+                    float netQuantity = (float)Convert.ToDouble(row["netQuantity"]);
                     series1.Points.AddXY($"{i++}", netQuantity);
-                    series1.Label = AppSettings.RoundToString(netQuantity, 0, false); // Assign the netQuantity as the label
+                    series1.Label = AppSettings.RoundToString(netQuantity, false); // Assign the netQuantity as the label
 
 
                 }
@@ -409,7 +409,7 @@ namespace Filling_Station_Management_System
 
                     double netQuantity = Convert.ToDouble(row["netQuantity"]);
                     series4.Points.AddXY($"{l + 1}", netQuantity);
-                    series4.Label = AppSettings.RoundToString(netQuantity, 0, false);
+                    series4.Label = AppSettings.RoundToString(netQuantity, false);
                 }
 
                 // Add the series to the chart

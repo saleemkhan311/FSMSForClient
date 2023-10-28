@@ -88,21 +88,21 @@ namespace Filling_Station_Management_System
             Query();
             AutoIncrement();
 
-/*
-            if (FuelTypeBox.SelectedIndex == 0)
-            {
-                StockForm stock = new StockForm();
+            /*
+                        if (FuelTypeBox.SelectedIndex == 0)
+                        {
+                            StockForm stock = new StockForm();
 
-                stock.RemoteQureyPetrol();
-                stock.Dispose();
-            }
-            else if (FuelTypeBox.SelectedIndex == 1)
-            {
-                StockForm stock = new StockForm();
+                            stock.RemoteQureyPetrol();
+                            stock.Dispose();
+                        }
+                        else if (FuelTypeBox.SelectedIndex == 1)
+                        {
+                            StockForm stock = new StockForm();
 
-                stock.RemoteQuerryDiesel();
-                stock.Dispose();
-            }*/
+                            stock.RemoteQuerryDiesel();
+                            stock.Dispose();
+                        }*/
             ClearBox();
 
         }
@@ -214,7 +214,7 @@ namespace Filling_Station_Management_System
             newNetQuantity = Math.Round(_netQuantity, 2);
 
 
-            OpenReadingTextBox.Text = AppSettings.RoundToString(_openReading, 2, false);
+            OpenReadingTextBox.Text = AppSettings.RoundToString(_openReading, false);
             QuantityTextBox.Text = newQuantity.ToString();
             NetQuantityTextBox.Text = newNetQuantity.ToString();
             AmountTextBox.Text = newPrice.ToString("C");

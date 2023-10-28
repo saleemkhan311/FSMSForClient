@@ -86,10 +86,7 @@ namespace Filling_Station_Management_System
 
                 if (!double.TryParse(cleanedInput, out result) || !double.TryParse(cleanedInput2, out result))
                 {
-
                     return 0.0;
-
-
                 }
                 else
                 {
@@ -98,11 +95,11 @@ namespace Filling_Station_Management_System
             }
         };
 
-        public static string RoundToString(double value, int decimals, bool isAmount)
+        public static string RoundToString(double value, bool isAmount)
         {
             //CultureInfo culture = new CultureInfo("ur-PK");
-            if (isAmount) { return Math.Round(value, decimals).ToString("C"); }
-            else { return Math.Round(value, decimals).ToString(); }
+            if (isAmount) { return value.ToString("C4"); }
+            else { return value.ToString("0.00"); }
         }
     }
 }

@@ -238,26 +238,15 @@ namespace Filling_Station_Management_System
         private void InsertData_Click(object sender, EventArgs e)
         {
 
-
-            if (isFilledAll())
+            if (StockAdded)
             {
-                if (StockAdded)
-                {
-                    Query();
-                    ClearBox();
-                    StockAdded = false;
-                    FuelTypeBox.Enabled = true;
-                }
-                else { MessageBox.Show("Please Add the Stock to Continue"); }
-
-
-            }
-            else
-            {
-                MessageBox.Show("Please Fill All The Necessory Fields To Procced");
+                Query();
+                ClearBox();
+                StockAdded = false;
+                FuelTypeBox.Enabled = true;
             }
 
-
+            else { MessageBox.Show("Please Add the Stock to Continue"); }
 
             /* if (FuelTypeBox.SelectedIndex == 0)
              {
@@ -295,7 +284,7 @@ namespace Filling_Station_Management_System
             sharah = AppSettings.convertToDouble(SharahListBox.Items[SharahListBox.SelectedIndex].ToString());
             miqdar = kantaWazan == 0 ? 0 : kantaWazan / sharah;
 
-            QuantityBox.Text = AppSettings.RoundToString(miqdar, 2, false);
+            QuantityBox.Text = AppSettings.RoundToString(miqdar, false);
 
 
 
@@ -305,18 +294,18 @@ namespace Filling_Station_Management_System
 
 
             saafiMiqdar = miqdar - Khoraki;
-            NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, 2, false);
+            NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, false);
 
-            NewStockBoxD.Text = saafiMiqdar == 0 ? "" : AppSettings.RoundToString(saafiMiqdar, 2, false);
+            NewStockBoxD.Text = saafiMiqdar == 0 ? "" : AppSettings.RoundToString(saafiMiqdar, false);
 
 
             ratePerLiter = AppSettings.convertToDouble(RateBox.Text);
 
-            NewRateBoxD.Text = ratePerLiter == 0 ? "" : AppSettings.RoundToString(ratePerLiter, 2, true);
+            NewRateBoxD.Text = ratePerLiter == 0 ? "" : AppSettings.RoundToString(ratePerLiter, true);
 
             Amount = saafiMiqdar * ratePerLiter;
-            AmountBox.Text = AppSettings.RoundToString(Amount, 0, true);
-            NewAmountBoxD.Text = Amount == 0 ? "" : AppSettings.RoundToString(Amount, 0, true);
+            AmountBox.Text = AppSettings.RoundToString(Amount, true);
+            NewAmountBoxD.Text = Amount == 0 ? "" : AppSettings.RoundToString(Amount, true);
 
 
             labour = AppSettings.convertToDouble(LabourBox.Text);
@@ -325,7 +314,7 @@ namespace Filling_Station_Management_System
 
 
             saafiRaqam = Amount - labour;
-            NetPriceBox.Text = saafiRaqam == 0 ? "" : AppSettings.RoundToString(saafiRaqam, 0, true);
+            NetPriceBox.Text = saafiRaqam == 0 ? "" : AppSettings.RoundToString(saafiRaqam, true);
 
 
 
@@ -335,7 +324,7 @@ namespace Filling_Station_Management_System
             sabqaBaqaya = AppSettings.convertToDouble(SabqaRaqamBox.Text);
 
             totalAmount = saafiRaqam + sabqaBaqaya;
-            TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, 0, true);
+            TotalRaqamBox.Text = AppSettings.RoundToString(totalAmount, true);
 
             totalAmount = saafiRaqam + sabqaBaqaya;
             Double sum = 0;
@@ -352,7 +341,7 @@ namespace Filling_Station_Management_System
             // Update the value of the sixth TextBox with the calculated sum
             Remainings = totalAmount - sum;
 
-            RemainingAmountBox.Text = AppSettings.RoundToString(Remainings - sum, 0, true);
+            RemainingAmountBox.Text = AppSettings.RoundToString(Remainings, true);
 
         }
 
@@ -422,9 +411,9 @@ namespace Filling_Station_Management_System
             AvailableRateBoxD.Clear();
             AvailableAmountBoxD.Clear();
 
-            LastStockBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStock, 2, false);
-            LastRateBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastUnitPrice, 2, true);
-            LastAmountBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStockAmount, 2, true);
+            LastStockBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStock, false);
+            LastRateBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastUnitPrice, true);
+            LastAmountBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStockAmount, true);
 
             EntryList.Enabled = true;
             FuelTypeBox.Enabled = false;
@@ -461,9 +450,9 @@ namespace Filling_Station_Management_System
             //MessageBox.Show($"last stock {lastStock} new stock {newStock}  last Amount {lastStockAmount} new stock {newStockAmount}");
 
 
-            AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, 2, false);
-            AvailableAmountBoxD.Text = AppSettings.RoundToString(availableAmount, 2, true);
-            AvailableRateBoxD.Text = AppSettings.RoundToString(availableUnitPrice, 2, true);
+            AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, false);
+            AvailableAmountBoxD.Text = AppSettings.RoundToString(availableAmount, true);
+            AvailableRateBoxD.Text = AppSettings.RoundToString(availableUnitPrice, true);
 
             LastStockBoxD.Clear();
             lastStock = 0;
@@ -844,17 +833,17 @@ namespace Filling_Station_Management_System
 
             }
 
-            AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, 2, false);
+            AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, false);
             availableUnitPrice = GetLastUnitPrice();
-            AvailableAmountBoxD.Text = AppSettings.RoundToString(availableStock * availableUnitPrice, 0, true);
-            AvailableRateBoxD.Text = AppSettings.RoundToString(GetLastUnitPrice(), 2, true);
+            AvailableAmountBoxD.Text = AppSettings.RoundToString(availableStock * availableUnitPrice, true);
+            AvailableRateBoxD.Text = AppSettings.RoundToString(GetLastUnitPrice(), true);
         }
 
 
-        private float GetLastUnitPrice()
+        private double GetLastUnitPrice()
         {
             string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString().ToLower();
-            float lastUnitPrice = 0;
+            double lastUnitPrice = 0;
 
             try
             {
@@ -870,7 +859,7 @@ namespace Filling_Station_Management_System
 
                 if (result != null && result != DBNull.Value)
                 {
-                    lastUnitPrice = Convert.ToInt16(result);
+                    lastUnitPrice = Convert.ToDouble(result);
                 }
             }
             catch (Exception ex)
@@ -894,7 +883,7 @@ namespace Filling_Station_Management_System
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
 
-                string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),2) FROM purchase_data_diesel) AS TotalSumQuantity;";
+                string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),4) FROM purchase_data_diesel) AS TotalSumQuantity;";
 
                 MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
                 object result = cmd.ExecuteScalar();
@@ -924,7 +913,7 @@ namespace Filling_Station_Management_System
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
 
-                string sqlCom = $"SELECT \r\n    (SELECT Round(SUM(netQuantity),2) FROM unit2_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit3_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit4_sales_data) AS TotalSumQuantity;";
+                string sqlCom = $"SELECT \r\n    (SELECT Round(SUM(netQuantity),4) FROM unit2_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),4) FROM unit3_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),4) FROM unit4_sales_data) AS TotalSumQuantity;";
 
 
 
@@ -958,7 +947,7 @@ namespace Filling_Station_Management_System
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
 
-                string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),2) FROM purchase_data_petrol) AS TotalSumQuantity;";
+                string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),4) FROM purchase_data_petrol) AS TotalSumQuantity;";
 
                 MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
                 object result = cmd.ExecuteScalar();
@@ -989,7 +978,7 @@ namespace Filling_Station_Management_System
                 MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
                 connection.Open();
 
-                string sqlCom = $"SELECT Round(SUM(netQuantity),2) FROM unit1_sales_data";
+                string sqlCom = $"SELECT Round(SUM(netQuantity),4) FROM unit1_sales_data";
 
 
 
