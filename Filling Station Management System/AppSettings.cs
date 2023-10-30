@@ -98,8 +98,8 @@ namespace Filling_Station_Management_System
         public static string RoundToString(double value, bool isAmount)
         {
             //CultureInfo culture = new CultureInfo("ur-PK");
-            if (isAmount) { return value.ToString("C4"); }
-            else { return value.ToString("0.0000"); }
+            if (isAmount) { return value.ToString("C0"); }
+            else { return value.ToString("0.00"); }
         }
     }
 }

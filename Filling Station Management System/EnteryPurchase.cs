@@ -296,12 +296,12 @@ namespace Filling_Station_Management_System
             saafiMiqdar = miqdar - Khoraki;
             NetQuantityBox.Text = AppSettings.RoundToString(saafiMiqdar, false);
 
-            NewStockBoxD.Text = saafiMiqdar == 0 ? "" : AppSettings.RoundToString(saafiMiqdar, false);
+            NewStockBoxD.Text = saafiMiqdar == 0 ? "" : saafiMiqdar.ToString("C4");
 
 
             ratePerLiter = AppSettings.convertToDouble(RateBox.Text);
 
-            NewRateBoxD.Text = ratePerLiter == 0 ? "" : AppSettings.RoundToString(ratePerLiter, true);
+            NewRateBoxD.Text = ratePerLiter == 0 ? "" : ratePerLiter.ToString("C4");
 
             Amount = saafiMiqdar * ratePerLiter;
             AmountBox.Text = AppSettings.RoundToString(Amount, true);
@@ -412,7 +412,7 @@ namespace Filling_Station_Management_System
             AvailableAmountBoxD.Clear();
 
             LastStockBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStock, false);
-            LastRateBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastUnitPrice, true);
+            LastRateBoxD.Text = lastStock == 0 ? "" : lastUnitPrice.ToString("C4");
             LastAmountBoxD.Text = lastStock == 0 ? "" : AppSettings.RoundToString(lastStockAmount, true);
 
             EntryList.Enabled = true;
@@ -452,7 +452,7 @@ namespace Filling_Station_Management_System
 
             AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, false);
             AvailableAmountBoxD.Text = AppSettings.RoundToString(availableAmount, true);
-            AvailableRateBoxD.Text = AppSettings.RoundToString(availableUnitPrice, true);
+            AvailableRateBoxD.Text = availableUnitPrice.ToString("C4");
 
             LastStockBoxD.Clear();
             lastStock = 0;
@@ -836,7 +836,7 @@ namespace Filling_Station_Management_System
             AvailableStockBoxD.Text = AppSettings.RoundToString(availableStock, false);
             availableUnitPrice = GetLastUnitPrice();
             AvailableAmountBoxD.Text = AppSettings.RoundToString(availableStock * availableUnitPrice, true);
-            AvailableRateBoxD.Text = AppSettings.RoundToString(GetLastUnitPrice(), true);
+            AvailableRateBoxD.Text = GetLastUnitPrice().ToString("C4");
         }
 
 

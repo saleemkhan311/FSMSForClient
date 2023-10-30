@@ -32,15 +32,12 @@ namespace Filling_Station_Management_System
 
         private void CloseReadingTextBox_TextChanged_1(object sender, EventArgs e)
         {
-            // Calculations2();
             Calculations();
         }
 
         private void RateTextBox_TextChanged(object sender, EventArgs e)
         {
-            //Calculations2();
             Calculations();
-
         }
 
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -66,9 +63,7 @@ namespace Filling_Station_Management_System
 
         private void CheckTextBox_TextChanged(object sender, EventArgs e)
         {
-            // Calculations2();
             Calculations();
-
         }
 
 
@@ -82,29 +77,10 @@ namespace Filling_Station_Management_System
 
         private void InsertData_Click(object sender, EventArgs e)
         {
-
-
-
             Query();
             AutoIncrement();
 
-            /*
-                        if (FuelTypeBox.SelectedIndex == 0)
-                        {
-                            StockForm stock = new StockForm();
-
-                            stock.RemoteQureyPetrol();
-                            stock.Dispose();
-                        }
-                        else if (FuelTypeBox.SelectedIndex == 1)
-                        {
-                            StockForm stock = new StockForm();
-
-                            stock.RemoteQuerryDiesel();
-                            stock.Dispose();
-                        }*/
             ClearBox();
-
         }
 
         // Total Enrty ----------------------------------------------------------------------------------------
@@ -209,15 +185,15 @@ namespace Filling_Station_Management_System
 
 
 
-            newPrice = Math.Round(_price, 0);
+            /*newPrice = Math.Round(_price, 0);
             newQuantity = Math.Round(_quantity, 2);
-            newNetQuantity = Math.Round(_netQuantity, 2);
+            newNetQuantity = Math.Round(_netQuantity, 2);*/
 
 
             OpenReadingTextBox.Text = AppSettings.RoundToString(_openReading, false);
-            QuantityTextBox.Text = newQuantity.ToString();
-            NetQuantityTextBox.Text = newNetQuantity.ToString();
-            AmountTextBox.Text = newPrice.ToString("C");
+            QuantityTextBox.Text = AppSettings.RoundToString(_netQuantity, true);
+            NetQuantityTextBox.Text = AppSettings.RoundToString(_netQuantity, true);
+            AmountTextBox.Text = AppSettings.RoundToString(_price, true);
 
             //----------
 
@@ -236,8 +212,8 @@ namespace Filling_Station_Management_System
 
 
             balance = _price + recovery - deposit - udhar - discount;
-            newBalance = Math.Round(balance, 0);
-            BalanceTB.Text = newBalance.ToString("C");
+
+            BalanceTB.Text = AppSettings.RoundToString(balance, true);
 
         }
 
@@ -384,10 +360,6 @@ namespace Filling_Station_Management_System
             return lastRefNo;
         }
 
-        private bool isFilledMandatory()
-        {
-            return RefTextBox.Text != string.Empty && HelperTextBox.Text != string.Empty;
-        }
 
         private void AutoIncrement()
         {
@@ -432,20 +404,6 @@ namespace Filling_Station_Management_System
 
         }
 
-        /*  private static float ConvertFloat(string value)
-          {
-              value = string.IsNullOrEmpty(value) ? "0" : value;
 
-              if (float.TryParse(value, out float floatValue))
-              {
-
-                  return floatValue;
-              }
-              else
-              {
-                  throw new ArgumentException("Invalid Input: Not a Valid Entry");
-              }
-
-          }*/
     }
 }
