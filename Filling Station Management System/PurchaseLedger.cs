@@ -108,28 +108,29 @@ namespace Filling_Station_Management_System
                 index.ToLower();
 
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                string sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    ROUND(Sharah, 4) AS Sharah,\r\n    Malik_Name,\r\n    ROUND(Kanta_Wazan, 0) AS Kanta_Wazan,\r\n    ROUND(Miqdar, 2) AS Miqdar,\r\n    ROUND(Khoraki, 0) AS Khoraki,\r\n    ROUND(Saafi_Miqdar, 2) AS Saafi_Miqdar,\r\n    FORMAT(Rate_per_Liter, 'C', 'en-PK') AS Rate_per_Liter,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount,\r\n    FORMAT(Kharcha_Mazdoori, 'C', 'en-PK') AS Kharcha_Mazdoori,\r\n    FORMAT(Saafi_Raqam, 'C', 'en-PK') AS Saafi_Raqam,\r\n    FORMAT(Sabqa_Baqaya, 'C', 'en-PK') AS Sabqa_Baqaya,\r\n    FORMAT(Total_Amount, 'C', 'en-PK') AS Total_Amount,\r\n    FORMAT(Amount_Paid_1, 'C', 'en-PK') AS Amount_Paid_1,\r\n    Description_Details_1,\r\n    FORMAT(Amount_Paid_2, 'C', 'en-PK') AS Amount_Paid_2,\r\n    Description_Details_2,\r\n    FORMAT(Amount_Paid_3, 'C', 'en-PK') AS Amount_Paid_3,\r\n    Description_Details_3,\r\n    FORMAT(Amount_Paid_4, 'C', 'en-PK') AS Amount_Paid_4,\r\n    Description_Details_4,\r\n    FORMAT(Amount_Paid_5, 'C', 'en-PK') AS Amount_Paid_5,\r\n    Description_Details_5,\r\n    FORMAT(Baqaya, 'C', 'en-PK') AS Baqaya\r\nFROM purchase_data_{index};\r\n";
-
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                System.Data.DataTable dataTable = new System.Data.DataTable();
-                adapter.Fill(dataTable);
-
-                if (TabControl.SelectedIndex == 1)
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
-                    DieselDataGrid.DataSource = dataTable;
+                    connection.Open();
 
+                    string sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    ROUND(Sharah, 4) AS Sharah,\r\n    Malik_Name,\r\n    ROUND(Kanta_Wazan, 0) AS Kanta_Wazan,\r\n    ROUND(Miqdar, 2) AS Miqdar,\r\n    ROUND(Khoraki, 0) AS Khoraki,\r\n    ROUND(Saafi_Miqdar, 2) AS Saafi_Miqdar,\r\n    FORMAT(Rate_per_Liter, 'C', 'en-PK') AS Rate_per_Liter,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount,\r\n    FORMAT(Kharcha_Mazdoori, 'C', 'en-PK') AS Kharcha_Mazdoori,\r\n    FORMAT(Saafi_Raqam, 'C', 'en-PK') AS Saafi_Raqam,\r\n    FORMAT(Sabqa_Baqaya, 'C', 'en-PK') AS Sabqa_Baqaya,\r\n    FORMAT(Total_Amount, 'C', 'en-PK') AS Total_Amount,\r\n    FORMAT(Amount_Paid_1, 'C', 'en-PK') AS Amount_Paid_1,\r\n    Description_Details_1,\r\n    FORMAT(Amount_Paid_2, 'C', 'en-PK') AS Amount_Paid_2,\r\n    Description_Details_2,\r\n    FORMAT(Amount_Paid_3, 'C', 'en-PK') AS Amount_Paid_3,\r\n    Description_Details_3,\r\n    FORMAT(Amount_Paid_4, 'C', 'en-PK') AS Amount_Paid_4,\r\n    Description_Details_4,\r\n    FORMAT(Amount_Paid_5, 'C', 'en-PK') AS Amount_Paid_5,\r\n    Description_Details_5,\r\n    FORMAT(Baqaya, 'C', 'en-PK') AS Baqaya\r\nFROM purchase_data_{index};\r\n";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    System.Data.DataTable dataTable = new System.Data.DataTable();
+                    adapter.Fill(dataTable);
+
+                    if (TabControl.SelectedIndex == 1)
+                    {
+                        DieselDataGrid.DataSource = dataTable;
+
+                    }
+                    else if (TabControl.SelectedIndex == 0)
+                    {
+                        PetrolDataGrid.DataSource = dataTable;
+
+
+                    }
                 }
-                else if (TabControl.SelectedIndex == 0)
-                {
-                    PetrolDataGrid.DataSource = dataTable;
-
-
-                }
-
             }
             catch (Exception ex)
             {
@@ -207,49 +208,51 @@ namespace Filling_Station_Management_System
                 string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString();
                 index.ToLower();
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-                string sql = $"UPDATE purchase_data_{index} SET Ref_No=@Ref_No,Date=@Date,Fuel_Type=@Fuel_Type,Sharah=@Sharah,Malik_Name=@Malik_Name,Kanta_Wazan=@Kanta_Wazan,Miqdar=@Miqdar,Khoraki=@Khoraki,Saafi_Miqdar=@Saafi_Miqdar,Rate_per_Liter=@Rate_per_Liter,Amount=@Amount,Kharcha_Mazdoori=@Kharcha_Mazdoori,Saafi_Raqam=@Saafi_Raqam,Sabqa_Baqaya=@Sabqa_Baqaya,Total_Amount=@Total_Amount,Amount_Paid_1=@Amount_Paid_1,Description_Details_1=@Description_Details_1,Amount_Paid_2=@Amount_Paid_2,Description_Details_2=@Description_Details_2,Amount_Paid_3=@Amount_Paid_3,Description_Details_3=@Description_Details_3,Amount_Paid_4=@Amount_Paid_4,Description_Details_4=@Description_Details_4,Amount_Paid_5=@Amount_Paid_5,Description_Details_5=@Description_Details_5,Baqaya=@Baqaya WHERE Ref_No=@Ref_No";
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+                {
+                    connection.Open();
+                    string sql = $"UPDATE purchase_data_{index} SET Ref_No=@Ref_No,Date=@Date,Fuel_Type=@Fuel_Type,Sharah=@Sharah,Malik_Name=@Malik_Name,Kanta_Wazan=@Kanta_Wazan,Miqdar=@Miqdar,Khoraki=@Khoraki,Saafi_Miqdar=@Saafi_Miqdar,Rate_per_Liter=@Rate_per_Liter,Amount=@Amount,Kharcha_Mazdoori=@Kharcha_Mazdoori,Saafi_Raqam=@Saafi_Raqam,Sabqa_Baqaya=@Sabqa_Baqaya,Total_Amount=@Total_Amount,Amount_Paid_1=@Amount_Paid_1,Description_Details_1=@Description_Details_1,Amount_Paid_2=@Amount_Paid_2,Description_Details_2=@Description_Details_2,Amount_Paid_3=@Amount_Paid_3,Description_Details_3=@Description_Details_3,Amount_Paid_4=@Amount_Paid_4,Description_Details_4=@Description_Details_4,Amount_Paid_5=@Amount_Paid_5,Description_Details_5=@Description_Details_5,Baqaya=@Baqaya WHERE Ref_No=@Ref_No";
 
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
 
-                cmd.Parameters.AddWithValue("@Ref_No", Convert.ToInt16(RefTextBox.Text));
-                cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
-                cmd.Parameters.AddWithValue("@Sharah", SharahListBox.Text);
-                cmd.Parameters.AddWithValue("@Malik_Name", NameTextBox.Text);
-
-
-                cmd.Parameters.AddWithValue("@Kanta_Wazan", kantaWazan);
-                cmd.Parameters.AddWithValue("@Miqdar", miqdar);
-                cmd.Parameters.AddWithValue("@Khoraki", Khoraki);
-                cmd.Parameters.AddWithValue("@Saafi_Miqdar", saafiMiqdar);
-                cmd.Parameters.AddWithValue("@Rate_per_Liter", ratePerLiter);
+                    cmd.Parameters.AddWithValue("@Ref_No", Convert.ToInt16(RefTextBox.Text));
+                    cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
+                    cmd.Parameters.AddWithValue("@Sharah", SharahListBox.Text);
+                    cmd.Parameters.AddWithValue("@Malik_Name", NameTextBox.Text);
 
 
-                cmd.Parameters.AddWithValue("@Amount", Amount);
-                cmd.Parameters.AddWithValue("@Kharcha_Mazdoori", labour);
-                cmd.Parameters.AddWithValue("@Saafi_Raqam", saafiRaqam);
-                cmd.Parameters.AddWithValue("@Sabqa_Baqaya", sabqaBaqaya);
-                cmd.Parameters.AddWithValue("@Total_Amount", totalAmount);
-                cmd.Parameters.AddWithValue("@Amount_Paid_1", RecoveryAmountBox1.Text.Replace("Rs", ""));
-                cmd.Parameters.AddWithValue("@Description_Details_1", RecoveryDescriptionBox1.Text);
+                    cmd.Parameters.AddWithValue("@Kanta_Wazan", kantaWazan);
+                    cmd.Parameters.AddWithValue("@Miqdar", miqdar);
+                    cmd.Parameters.AddWithValue("@Khoraki", Khoraki);
+                    cmd.Parameters.AddWithValue("@Saafi_Miqdar", saafiMiqdar);
+                    cmd.Parameters.AddWithValue("@Rate_per_Liter", ratePerLiter);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_2", RecoveryAmountBox2.Text.Replace("Rs", ""));
-                cmd.Parameters.AddWithValue("@Description_Details_2", RecoveryDescriptionBox2.Text);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_3", RecoveryAmountBox3.Text.Replace("Rs", ""));
-                cmd.Parameters.AddWithValue("@Description_Details_3", RecoveryDescriptionBox3.Text);
+                    cmd.Parameters.AddWithValue("@Amount", Amount);
+                    cmd.Parameters.AddWithValue("@Kharcha_Mazdoori", labour);
+                    cmd.Parameters.AddWithValue("@Saafi_Raqam", saafiRaqam);
+                    cmd.Parameters.AddWithValue("@Sabqa_Baqaya", sabqaBaqaya);
+                    cmd.Parameters.AddWithValue("@Total_Amount", totalAmount);
+                    cmd.Parameters.AddWithValue("@Amount_Paid_1", RecoveryAmountBox1.Text.Replace("Rs", ""));
+                    cmd.Parameters.AddWithValue("@Description_Details_1", RecoveryDescriptionBox1.Text);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_4", RecoveryAmountBox4.Text.Replace("Rs", ""));
-                cmd.Parameters.AddWithValue("@Description_Details_4", RecoveryDescriptionBox4.Text);
+                    cmd.Parameters.AddWithValue("@Amount_Paid_2", RecoveryAmountBox2.Text.Replace("Rs", ""));
+                    cmd.Parameters.AddWithValue("@Description_Details_2", RecoveryDescriptionBox2.Text);
 
-                cmd.Parameters.AddWithValue("@Amount_Paid_5", RecoveryAmountBox5.Text.Replace("Rs", ""));
-                cmd.Parameters.AddWithValue("@Description_Details_5", RecoveryDescriptionBox5.Text);
+                    cmd.Parameters.AddWithValue("@Amount_Paid_3", RecoveryAmountBox3.Text.Replace("Rs", ""));
+                    cmd.Parameters.AddWithValue("@Description_Details_3", RecoveryDescriptionBox3.Text);
 
-                cmd.Parameters.AddWithValue("@Baqaya", Remainings);
+                    cmd.Parameters.AddWithValue("@Amount_Paid_4", RecoveryAmountBox4.Text.Replace("Rs", ""));
+                    cmd.Parameters.AddWithValue("@Description_Details_4", RecoveryDescriptionBox4.Text);
 
-                cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@Amount_Paid_5", RecoveryAmountBox5.Text.Replace("Rs", ""));
+                    cmd.Parameters.AddWithValue("@Description_Details_5", RecoveryDescriptionBox5.Text);
+
+                    cmd.Parameters.AddWithValue("@Baqaya", Remainings);
+
+                    cmd.ExecuteNonQuery();
+                }
 
                 MessageBox.Show("Records Updated Successfully", "Query Purchase Ledger", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -325,54 +328,56 @@ namespace Filling_Station_Management_System
             {
                 string index = TabControl.SelectedTab.Text;
 
-                MySqlConnection con = new MySqlConnection(AppSettings.ConString());
-                con.Open();
-
-                MySqlCommand cmd;
-                cmd = con.CreateCommand();
-
-                if (SearchByNameRadio.Checked)
+                using (MySqlConnection con = new MySqlConnection(AppSettings.ConString()))
                 {
-                    cmd.CommandText = $"SELECT * FROM purchase_data_{index} WHERE Malik_Name LIKE" + "'" + AppSettings.ValidateTextBoxForNumbers(SearchTextBox) + "%'";
-                    cmd.Parameters.AddWithValue("@Malik_Name", AppSettings.ValidateTextBoxForNumbers(SearchTextBox));
+                    con.Open();
 
-                }
-                else if (SearchByRefRadio.Checked)
-                {
-                    cmd.CommandText = $"SELECT * FROM purchase_data_{index} WHERE Ref_No LIKE" + "'" + AppSettings.ValidateTextBoxForAlphabets(SearchTextBox) + "%'";
-                    cmd.Parameters.AddWithValue("@Ref_No", AppSettings.ValidateTextBoxForAlphabets(SearchTextBox));
-                }
-                else
-                {
-                    MessageBox.Show("Please Select 'Search by Name' Or 'Search by ID' Option ");
-                }
+                    MySqlCommand cmd;
+                    cmd = con.CreateCommand();
 
-                MySqlDataReader reader = cmd.ExecuteReader();
-                System.Data.DataTable records = new System.Data.DataTable();
-                records.Load(reader);
-
-                if (TabControl.SelectedIndex == 0)
-                {
-                    if (records.Rows.Count >= 1)
+                    if (SearchByNameRadio.Checked)
                     {
-                        PetrolDataGrid.DataSource = records;
+                        cmd.CommandText = $"SELECT * FROM purchase_data_{index} WHERE Malik_Name LIKE" + "'" + AppSettings.ValidateTextBoxForNumbers(SearchTextBox) + "%'";
+                        cmd.Parameters.AddWithValue("@Malik_Name", AppSettings.ValidateTextBoxForNumbers(SearchTextBox));
+
+                    }
+                    else if (SearchByRefRadio.Checked)
+                    {
+                        cmd.CommandText = $"SELECT * FROM purchase_data_{index} WHERE Ref_No LIKE" + "'" + AppSettings.ValidateTextBoxForAlphabets(SearchTextBox) + "%'";
+                        cmd.Parameters.AddWithValue("@Ref_No", AppSettings.ValidateTextBoxForAlphabets(SearchTextBox));
                     }
                     else
                     {
-                        MessageBox.Show("No Records Found");
-                        LoadData();
+                        MessageBox.Show("Please Select 'Search by Name' Or 'Search by ID' Option ");
                     }
-                }
-                else
-                {
-                    if (records.Rows.Count >= 1)
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    System.Data.DataTable records = new System.Data.DataTable();
+                    records.Load(reader);
+
+                    if (TabControl.SelectedIndex == 0)
                     {
-                        DieselDataGrid.DataSource = records;
+                        if (records.Rows.Count >= 1)
+                        {
+                            PetrolDataGrid.DataSource = records;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Records Found");
+                            LoadData();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("No Records Found");
-                        LoadData();
+                        if (records.Rows.Count >= 1)
+                        {
+                            DieselDataGrid.DataSource = records;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Records Found");
+                            LoadData();
+                        }
                     }
                 }
             }
@@ -415,16 +420,19 @@ namespace Filling_Station_Management_System
                 {
                     try
                     {
-                        MySqlConnection con = new MySqlConnection(AppSettings.ConString());
-                        con.Open();
-                        MySqlCommand cmd;
+                        using (MySqlConnection con = new MySqlConnection(AppSettings.ConString()))
+                        {
+                            con.Open();
+                            MySqlCommand cmd;
 
-                        cmd = con.CreateCommand();
+                            cmd = con.CreateCommand();
 
-                        cmd.CommandText = $"DELETE FROM purchase_data_{name} WHERE Ref_No=@Ref_No;";
-                        cmd.Parameters.AddWithValue("@Ref_No", ref_No);
-                        cmd.ExecuteNonQuery();
-                        con.Close();
+                            cmd.CommandText = $"DELETE FROM purchase_data_{name} WHERE Ref_No=@Ref_No;";
+                            cmd.Parameters.AddWithValue("@Ref_No", ref_No);
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+
+                        }
                         LoadData();
                     }
                     catch (Exception ex)
@@ -447,44 +455,53 @@ namespace Filling_Station_Management_System
 
         private void GenerateReceipt_Click(object sender, EventArgs e)
         {
-            ReceiptPanel receipt = new ReceiptPanel();
-
-            receipt.ref_no = RefTextBox.Text;
-
-            receipt.DateTimeValue = dateTimePicker1.Value.ToString("d");
-
-            receipt.malikName = NameTextBox.Text;
-            receipt.wazan = WeightBox.Text;
-            receipt.miqdar = QuantityBox.Text;
-            receipt.khoraki = KhorakiBox.Text;
-            receipt.safiMiqdar = NetQuantityBox.Text;
-            receipt.rateFiLiter = RateBox.Text;
-            receipt.kulRaqam = AmountBox.Text;
-            receipt.mazdoori = LabourBox.Text;
-            receipt.safiRaqam = NetPriceBox.Text;
-            receipt.sabqaRaqam = SabqaRaqamBox.Text;
-            receipt.totalRaqam = TotalRaqamBox.Text;
-
-            receipt.raqamWasoolValue1 = RecoveryAmountBox1.Text;
-            receipt.raqamWasoolTafseel1 = RecoveryDescriptionBox1.Text;
-
-            receipt.raqamWasoolValue2 = RecoveryAmountBox2.Text;
-            receipt.raqamWasoolTafseel2 = RecoveryDescriptionBox2.Text;
-
-            receipt.raqamWasoolValue3 = RecoveryAmountBox3.Text;
-            receipt.raqamWasoolTafseel3 = RecoveryDescriptionBox3.Text;
-
-            receipt.raqamWasoolValue4 = RecoveryAmountBox4.Text;
-            receipt.raqamWasoolTafseel4 = RecoveryDescriptionBox4.Text;
-
-            receipt.raqamWasoolValue5 = RecoveryAmountBox5.Text;
-            receipt.raqamWasoolTafseel5 = RecoveryDescriptionBox5.Text;
+            try
+            {
 
 
-            receipt.baqaya = RemainingAmountBox.Text;
+                ReceiptPanel receipt = new ReceiptPanel();
+
+                receipt.ref_no = RefTextBox.Text;
+
+                receipt.DateTimeValue = dateTimePicker1.Value.ToString("d");
+
+                receipt.malikName = NameTextBox.Text;
+                receipt.wazan = WeightBox.Text;
+                receipt.miqdar = QuantityBox.Text;
+                receipt.khoraki = KhorakiBox.Text;
+                receipt.safiMiqdar = NetQuantityBox.Text;
+                receipt.rateFiLiter = RateBox.Text;
+                receipt.kulRaqam = AmountBox.Text;
+                receipt.mazdoori = LabourBox.Text;
+                receipt.safiRaqam = NetPriceBox.Text;
+                receipt.sabqaRaqam = SabqaRaqamBox.Text;
+                receipt.totalRaqam = TotalRaqamBox.Text;
+
+                receipt.raqamWasoolValue1 = RecoveryAmountBox1.Text;
+                receipt.raqamWasoolTafseel1 = RecoveryDescriptionBox1.Text;
+
+                receipt.raqamWasoolValue2 = RecoveryAmountBox2.Text;
+                receipt.raqamWasoolTafseel2 = RecoveryDescriptionBox2.Text;
+
+                receipt.raqamWasoolValue3 = RecoveryAmountBox3.Text;
+                receipt.raqamWasoolTafseel3 = RecoveryDescriptionBox3.Text;
+
+                receipt.raqamWasoolValue4 = RecoveryAmountBox4.Text;
+                receipt.raqamWasoolTafseel4 = RecoveryDescriptionBox4.Text;
+
+                receipt.raqamWasoolValue5 = RecoveryAmountBox5.Text;
+                receipt.raqamWasoolTafseel5 = RecoveryDescriptionBox5.Text;
 
 
-            receipt.ShowDialog();
+                receipt.baqaya = RemainingAmountBox.Text;
+
+
+                receipt.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
 
@@ -492,10 +509,7 @@ namespace Filling_Station_Management_System
 
         private void PurchaseLedger_Enter(object sender, EventArgs e)
         {
-            /* printPreviewDialog.Dispose(); // Close the existing dialog
-             printPreviewDialog = new PrintPreviewDialog(); // Create a new dialog
-             printPreviewDialog.Document = printDocument; // Set the document to the new dialog
-             printPreviewDialog.ShowDialog(); // Show the new dialog*/
+
         }
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -611,70 +625,6 @@ namespace Filling_Station_Management_System
             }
         }
 
-        private bool scrolling = false;
-
-        private void autoScroll(object sender)
-        {
-            if (sender is Bunifu.UI.WinForms.BunifuTextBox textBox)
-            {
-                // Calculate the position of the TextBox relative to the FlowLayoutControl
-                System.Drawing.Point textBoxLocation = textBox.Parent.PointToScreen(textBox.Location);
-                System.Drawing.Point flowLayoutLocation = flowLayoutPanel1.PointToScreen(System.Drawing.Point.Empty);
-                int verticalScrollAmount = textBoxLocation.Y - flowLayoutLocation.Y;
-
-                // Scroll the FlowLayoutControl gradually if the TextBox is not fully visible
-                if (verticalScrollAmount < 0 || verticalScrollAmount + textBox.Height > flowLayoutPanel1.ClientRectangle.Height)
-                {
-                    scrolling = true; // Set scrolling flag to prevent reentrancy
-                    int currentScrollPosition = flowLayoutPanel1.VerticalScroll.Value;
-                    int targetScrollPosition = currentScrollPosition + verticalScrollAmount;
-
-                    // Adjust the scroll speed by changing the step size
-                    int stepSize = 30; // Increase this value for faster scrolling
-
-                    // Start a timer to animate the scrolling
-                    Timer scrollTimer = new Timer();
-                    scrollTimer.Interval = 1; // Keep a small interval for smoothness
-                    scrollTimer.Tick += (senderTimer, eTimer) =>
-                    {
-                        if (currentScrollPosition < targetScrollPosition)
-                        {
-                            currentScrollPosition += stepSize;
-                            if (currentScrollPosition >= targetScrollPosition)
-                            {
-                                currentScrollPosition = targetScrollPosition;
-                                scrollTimer.Stop();
-                                scrolling = false; // Reset scrolling flag
-                            }
-                            flowLayoutPanel1.VerticalScroll.Value = currentScrollPosition;
-                        }
-                        else if (currentScrollPosition > targetScrollPosition)
-                        {
-                            currentScrollPosition -= stepSize;
-                            if (currentScrollPosition <= targetScrollPosition)
-                            {
-                                currentScrollPosition = targetScrollPosition;
-                                scrollTimer.Stop();
-                                scrolling = false; // Reset scrolling flag
-                            }
-                            flowLayoutPanel1.VerticalScroll.Value = currentScrollPosition;
-                        }
-                        else
-                        {
-                            scrollTimer.Stop();
-                            scrolling = false; // Reset scrolling flag
-                        }
-                    };
-
-                    scrollTimer.Start();
-                }
-            }
-        }
-
-        private void RateBox_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void viewDataPetrol()
         {

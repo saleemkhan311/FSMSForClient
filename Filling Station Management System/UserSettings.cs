@@ -37,14 +37,6 @@ namespace Filling_Station_Management_System
 
         private void ConfirmPassTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (PasswordTextBox.Text == ConfirmationPassTextBox.Text)
-            {
-                //ConfirmCheck.Hide();
-            }
-            else
-            {
-                //ConfirmCheck.Show();
-            }
 
         }
 
@@ -60,17 +52,19 @@ namespace Filling_Station_Management_System
             try
             {
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.UserConString());
-                connection.Open();
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.UserConString()))
+                {
+                    connection.Open();
 
-                string sql = $"SELECT * FROM users"; // Add your WHERE clause
+                    string sql = $"SELECT * FROM users"; // Add your WHERE clause
 
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
 
-                UsersDataGrid.DataSource = dataTable;
+                    UsersDataGrid.DataSource = dataTable;
+                }
 
             }
             catch (Exception ex)
@@ -87,18 +81,20 @@ namespace Filling_Station_Management_System
             try
             {
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.UserConString());
-                connection.Open();
-
-                string Idsql = $"SELECT ID FROM users ORDER BY ID DESC LIMIT 1";
-
-
-                MySqlCommand cmd = new MySqlCommand(Idsql, connection);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.UserConString()))
                 {
-                    lastId = Convert.ToInt16(result);
+                    connection.Open();
+
+                    string Idsql = $"SELECT ID FROM users ORDER BY ID DESC LIMIT 1";
+
+
+                    MySqlCommand cmd = new MySqlCommand(Idsql, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        lastId = Convert.ToInt16(result);
+                    }
                 }
             }
             catch (Exception ex)
@@ -119,22 +115,24 @@ namespace Filling_Station_Management_System
                 if (isFilled())
                 {
 
-                    MySqlConnection connection = new MySqlConnection(AppSettings.UserConString());
-                    connection.Open();
-                    string sql = $"INSERT INTO users (ID,Username,User_Type,Password,Confirmation_Password) VALUES " + "(@ID,@Username,@User_Type,@Password,@Confirmation_Password)";
+                    using (MySqlConnection connection = new MySqlConnection(AppSettings.UserConString()))
+                    {
+                        connection.Open();
+                        string sql = $"INSERT INTO users (ID,Username,User_Type,Password,Confirmation_Password) VALUES " + "(@ID,@Username,@User_Type,@Password,@Confirmation_Password)";
 
 
-                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                        MySqlCommand cmd = new MySqlCommand(sql, connection);
 
-                    cmd.Parameters.AddWithValue("@ID", Id);
-                    cmd.Parameters.AddWithValue("@Username", UserTextBox.Text);
-                    cmd.Parameters.AddWithValue("@User_Type", UserTypeBox.Text);
-                    cmd.Parameters.AddWithValue("@Password", PasswordTextBox.Text);
-                    cmd.Parameters.AddWithValue("@Confirmation_Password", ConfirmationPassTextBox.Text);
+                        cmd.Parameters.AddWithValue("@ID", Id);
+                        cmd.Parameters.AddWithValue("@Username", UserTextBox.Text);
+                        cmd.Parameters.AddWithValue("@User_Type", UserTypeBox.Text);
+                        cmd.Parameters.AddWithValue("@Password", PasswordTextBox.Text);
+                        cmd.Parameters.AddWithValue("@Confirmation_Password", ConfirmationPassTextBox.Text);
 
-                    cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Records Inserted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Records Inserted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch (Exception ex)
@@ -148,12 +146,6 @@ namespace Filling_Station_Management_System
             RemoveUser();
         }
 
-        void ClearBox()
-        {
-            UserTextBox.Clear();
-            PasswordTextBox.Clear();
-            ConfirmationPassTextBox.Clear();
-        }
         void RemoveUser()
         {
             try
@@ -162,17 +154,19 @@ namespace Filling_Station_Management_System
                 {
                     Id = Convert.ToInt32(UsersDataGrid.SelectedRows[0].Cells[0].Value);
 
-                    MySqlConnection con = new MySqlConnection(AppSettings.ConString());
-                    con.Open();
-                    MySqlCommand cmd;
+                    using (MySqlConnection con = new MySqlConnection(AppSettings.ConString()))
+                    {
+                        con.Open();
+                        MySqlCommand cmd;
 
-                    cmd = con.CreateCommand();
+                        cmd = con.CreateCommand();
 
-                    cmd.CommandText = $"DELETE FROM users WHERE ID=@ID;";
-                    cmd.Parameters.AddWithValue("@ID", Id);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    LoadData();
+                        cmd.CommandText = $"DELETE FROM users WHERE ID=@ID;";
+                        cmd.Parameters.AddWithValue("@ID", Id);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        LoadData();
+                    }
                 }
                 else
                 {
@@ -239,23 +233,24 @@ namespace Filling_Station_Management_System
             try
             {
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+                {
+                    connection.Open();
 
-                string sql = $"UPDATE users SET Username=@Username,User_Type = @User_Type,Password=@Password,Confirmation_Password=@Confirmation_Password WHERE ID=@ID";
+                    string sql = $"UPDATE users SET Username=@Username,User_Type = @User_Type,Password=@Password,Confirmation_Password=@Confirmation_Password WHERE ID=@ID";
 
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
 
-                cmd.Parameters.AddWithValue("@ID", UsersDataGrid.SelectedRows[0].Cells[0].Value.ToString());
-                cmd.Parameters.AddWithValue("@Username", UserTextBox.Text);
-                cmd.Parameters.AddWithValue("@User_Type", UserTypeBox.Text);
-                cmd.Parameters.AddWithValue("@Password", PasswordTextBox.Text);
-                cmd.Parameters.AddWithValue("@Confirmation_Password", ConfirmationPassTextBox.Text);
+                    cmd.Parameters.AddWithValue("@ID", UsersDataGrid.SelectedRows[0].Cells[0].Value.ToString());
+                    cmd.Parameters.AddWithValue("@Username", UserTextBox.Text);
+                    cmd.Parameters.AddWithValue("@User_Type", UserTypeBox.Text);
+                    cmd.Parameters.AddWithValue("@Password", PasswordTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Confirmation_Password", ConfirmationPassTextBox.Text);
 
 
 
-                cmd.ExecuteNonQuery();
-
+                    cmd.ExecuteNonQuery();
+                }
                 MessageBox.Show("Records Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }

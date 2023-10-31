@@ -33,38 +33,40 @@ namespace Filling_Station_Management_System
             try
             {
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+                {
+                    connection.Open();
 
-                sql = $"UPDATE unit{unit}_sales_data SET Ref_No = @Ref_No,Date=@Date,Fuel_Type=@Fuel_Type,Helper=@Helper,Closing_Reading=@Closing_Reading,Quantity=@Quantity,Test=@Test,netQuantity=@netQuantity,Unit_Price=@Unit_Price,Amount=@Amount,Recovery=@Recovery,Deposited=@Deposited,Udhar=@Udhar,Discount=@Discount,Balance=@Balance WHERE Ref_No=@Ref_No";
+                    sql = $"UPDATE unit{unit}_sales_data SET Ref_No = @Ref_No,Date=@Date,Fuel_Type=@Fuel_Type,Helper=@Helper,Closing_Reading=@Closing_Reading,Quantity=@Quantity,Test=@Test,netQuantity=@netQuantity,Unit_Price=@Unit_Price,Amount=@Amount,Recovery=@Recovery,Deposited=@Deposited,Udhar=@Udhar,Discount=@Discount,Balance=@Balance WHERE Ref_No=@Ref_No";
 
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
 
-                cmd.Parameters.AddWithValue("@Ref_No", ConvertFloat(RefTextBox.Text));
-                cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
-                cmd.Parameters.AddWithValue("@Helper", HelperTextBox.Text);
-
-
-                cmd.Parameters.AddWithValue("@Opening_Reading", _openReading);
-                cmd.Parameters.AddWithValue("@Closing_Reading", _closeReading);
-                cmd.Parameters.AddWithValue("@Quantity", newQuantity);
-                cmd.Parameters.AddWithValue("@Test", _test);
-                cmd.Parameters.AddWithValue("@netQuantity", newNetQuantity);
-                cmd.Parameters.AddWithValue("@Unit_Price", _rate);
+                    cmd.Parameters.AddWithValue("@Ref_No", RefTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
+                    cmd.Parameters.AddWithValue("@Helper", HelperTextBox.Text);
 
 
-                cmd.Parameters.AddWithValue("@Amount", newPrice);
-                cmd.Parameters.AddWithValue("@Recovery", recovery);
-                cmd.Parameters.AddWithValue("@Deposited", deposit);
-                cmd.Parameters.AddWithValue("@Udhar", udhar);
-                cmd.Parameters.AddWithValue("@Discount", discount);
-                cmd.Parameters.AddWithValue("@Balance", newPrice);
+                    cmd.Parameters.AddWithValue("@Opening_Reading", _openReading);
+                    cmd.Parameters.AddWithValue("@Closing_Reading", _closeReading);
+                    cmd.Parameters.AddWithValue("@Quantity", newQuantity);
+                    cmd.Parameters.AddWithValue("@Test", _test);
+                    cmd.Parameters.AddWithValue("@netQuantity", newNetQuantity);
+                    cmd.Parameters.AddWithValue("@Unit_Price", _rate);
 
-                cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Records Updated Successfully");
-                UnitBox.SelectedIndex = 0;
+                    cmd.Parameters.AddWithValue("@Amount", newPrice);
+                    cmd.Parameters.AddWithValue("@Recovery", recovery);
+                    cmd.Parameters.AddWithValue("@Deposited", deposit);
+                    cmd.Parameters.AddWithValue("@Udhar", udhar);
+                    cmd.Parameters.AddWithValue("@Discount", discount);
+                    cmd.Parameters.AddWithValue("@Balance", newPrice);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Records Updated Successfully");
+                    UnitBox.SelectedIndex = 0;
+                }
             }
             catch (Exception ex)
             {
@@ -90,22 +92,24 @@ namespace Filling_Station_Management_System
         private void LoadData()
         {
             int unit = TabControl.SelectedIndex + 1;
-            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-            connection.Open();
+            using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+            {
+                connection.Open();
 
-            string sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    Helper,\r\n    Opening_Reading,\r\n    Closing_Reading,\r\n    Quantity,\r\n    Test,\r\n    netQuantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount,\r\n    FORMAT(Recovery, 'C', 'en-PK') AS Recovery,\r\n    FORMAT(Deposited, 'C', 'en-PK') AS Deposited,\r\n    FORMAT(Udhar, 'C', 'en-PK') AS Udhar,\r\n    FORMAT(Discount, 'C', 'en-PK') AS Discount,\r\n    FORMAT(Balance, 'C', 'en-PK') AS Balance\r\nFROM unit{unit}_sales_data;\r\n"; // Add your WHERE clause
-            //string sql = $"SELECT Ref_No, Date,Fuel_Type,Helper,ROUND( Opening_Reading, 2) AS  Opening_Reading,ROUND( Closing_Reading, 2) AS  Closing_Reading,ROUND(Quantity, 2) AS Quantity,ROUND(Test, 2) AS Test,ROUND(netQuantity, 2) AS netQuantity,ROUND(Unit_Price, 0) AS Unit_Price,ROUND(Amount, 0) AS Amount, ROUND(Recovery, 0) AS Recovery, ROUND(Deposited, 0) AS Deposited, ROUND(Udhar, 0) AS Udhar,    ROUND(Discount, 0) AS Discount,ROUND(Balance, 0) AS Balance FROM unit{unit}_sales_data"; // Add your WHERE clause
+                string sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    Helper,\r\n    Opening_Reading,\r\n    Closing_Reading,\r\n    Quantity,\r\n    Test,\r\n    netQuantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount,\r\n    FORMAT(Recovery, 'C', 'en-PK') AS Recovery,\r\n    FORMAT(Deposited, 'C', 'en-PK') AS Deposited,\r\n    FORMAT(Udhar, 'C', 'en-PK') AS Udhar,\r\n    FORMAT(Discount, 'C', 'en-PK') AS Discount,\r\n    FORMAT(Balance, 'C', 'en-PK') AS Balance\r\nFROM unit{unit}_sales_data;\r\n"; // Add your WHERE clause
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        //string sql = $"SELECT Ref_No, Date,Fuel_Type,Helper,ROUND( Opening_Reading, 2) AS  Opening_Reading,ROUND( Closing_Reading, 2) AS  Closing_Reading,ROUND(Quantity, 2) AS Quantity,ROUND(Test, 2) AS Test,ROUND(netQuantity, 2) AS netQuantity,ROUND(Unit_Price, 0) AS Unit_Price,ROUND(Amount, 0) AS Amount, ROUND(Recovery, 0) AS Recovery, ROUND(Deposited, 0) AS Deposited, ROUND(Udhar, 0) AS Udhar,    ROUND(Discount, 0) AS Discount,ROUND(Balance, 0) AS Balance FROM unit{unit}_sales_data"; // Add your WHERE clause
 
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
 
 
-            Unit1DataGrid.DataSource = dataTable;
-            DataGrid2.DataSource = dataTable;
-            DataGrid3.DataSource = dataTable;
-            DataGrid4.DataSource = dataTable;
+                Unit1DataGrid.DataSource = dataTable;
+                DataGrid2.DataSource = dataTable;
+                DataGrid3.DataSource = dataTable;
+                DataGrid4.DataSource = dataTable;
+            }
 
         }
 
@@ -138,16 +142,9 @@ namespace Filling_Station_Management_System
             MainForm main = new MainForm();
             Username = main.UsernameLabel.Text;
 
-            if (isFilled() && isFilled2() && isFilledMandatory())
-            {
+            main.Dispose();
+            Query();
 
-                Query();
-
-            }
-            else
-            {
-                MessageBox.Show("Error: Please Fill All the Fields To Procced");
-            }
         }
 
 
@@ -176,85 +173,87 @@ namespace Filling_Station_Management_System
             {
                 string index = (TabControl.SelectedIndex + 1).ToString();
 
-                MySqlConnection con = new MySqlConnection(AppSettings.ConString());
-                con.Open();
-
-                MySqlCommand cmd;
-                cmd = con.CreateCommand();
-
-                if (SearchByNameRadio.Checked)
+                using (MySqlConnection con = new MySqlConnection(AppSettings.ConString()))
                 {
+                    con.Open();
 
-                    cmd.CommandText = $"SELECT * FROM unit{index}_sales_data WHERE Helper LIKE" + "'" + AppSettings.ValidateTextBoxForNumbers(SearchTextBox) + "%'";
-                    cmd.Parameters.AddWithValue("@Helper", AppSettings.ValidateTextBoxForNumbers(SearchTextBox));
+                    MySqlCommand cmd;
+                    cmd = con.CreateCommand();
 
-                }
-                else if (SearchByRefRadio.Checked)
-                {
-
-                    cmd.CommandText = $"SELECT * FROM unit{index}_sales_data WHERE Ref_No LIKE" + "'" + AppSettings.ValidateTextBoxForAlphabets(SearchTextBox) + "%'";
-                    cmd.Parameters.AddWithValue("@Ref_No", AppSettings.ValidateTextBoxForAlphabets(SearchTextBox));
-                }
-                else
-                {
-                    MessageBox.Show("Please Select 'Search by Name' Or 'Search by ID' Option ");
-                    return;
-                }
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-                DataTable records = new DataTable();
-                records.Load(reader);
-
-                if (TabControl.SelectedIndex == 0)
-                {
-                    if (records.Rows.Count >= 1)
+                    if (SearchByNameRadio.Checked)
                     {
-                        Unit1DataGrid.DataSource = records;
+
+                        cmd.CommandText = $"SELECT * FROM unit{index}_sales_data WHERE Helper LIKE" + "'" + AppSettings.ValidateTextBoxForNumbers(SearchTextBox) + "%'";
+                        cmd.Parameters.AddWithValue("@Helper", AppSettings.ValidateTextBoxForNumbers(SearchTextBox));
+
+                    }
+                    else if (SearchByRefRadio.Checked)
+                    {
+
+                        cmd.CommandText = $"SELECT * FROM unit{index}_sales_data WHERE Ref_No LIKE" + "'" + AppSettings.ValidateTextBoxForAlphabets(SearchTextBox) + "%'";
+                        cmd.Parameters.AddWithValue("@Ref_No", AppSettings.ValidateTextBoxForAlphabets(SearchTextBox));
                     }
                     else
                     {
-                        MessageBox.Show("No Records Found");
-                        LoadData();
-                    }
-                }
-                else if (TabControl.SelectedIndex == 1)
-                {
-                    if (records.Rows.Count >= 1)
-                    {
-                        DataGrid2.DataSource = records;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No Records Found");
-                        LoadData();
-                    }
-                }
-                else if (TabControl.SelectedIndex == 2)
-                {
-                    if (records.Rows.Count >= 1)
-                    {
-                        DataGrid3.DataSource = records;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No Records Found");
-                        LoadData();
-                    }
-                }
-                else if (TabControl.SelectedIndex == 3)
-                {
-                    if (records.Rows.Count >= 1)
-                    {
-                        DataGrid4.DataSource = records;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No Records Found");
-                        LoadData();
+                        MessageBox.Show("Please Select 'Search by Name' Or 'Search by ID' Option ");
+                        return;
                     }
 
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    DataTable records = new DataTable();
+                    records.Load(reader);
+
+                    if (TabControl.SelectedIndex == 0)
+                    {
+                        if (records.Rows.Count >= 1)
+                        {
+                            Unit1DataGrid.DataSource = records;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Records Found");
+                            LoadData();
+                        }
+                    }
+                    else if (TabControl.SelectedIndex == 1)
+                    {
+                        if (records.Rows.Count >= 1)
+                        {
+                            DataGrid2.DataSource = records;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Records Found");
+                            LoadData();
+                        }
+                    }
+                    else if (TabControl.SelectedIndex == 2)
+                    {
+                        if (records.Rows.Count >= 1)
+                        {
+                            DataGrid3.DataSource = records;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Records Found");
+                            LoadData();
+                        }
+                    }
+                    else if (TabControl.SelectedIndex == 3)
+                    {
+                        if (records.Rows.Count >= 1)
+                        {
+                            DataGrid4.DataSource = records;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Records Found");
+                            LoadData();
+                        }
+
+                    }
+                    con.Close();
                 }
-                con.Close();
             }
             catch (Exception ex)
             {
@@ -266,78 +265,91 @@ namespace Filling_Station_Management_System
 
         private void DataGrid2DoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            RefTextBox.Text = DataGrid2.SelectedRows[0].Cells[0].Value.ToString();
-            object date = DataGrid2.SelectedRows[0].Cells[1].Value;
-            FuelTypeBox.Text = DataGrid2.SelectedRows[0].Cells[2].Value.ToString();
-            HelperTextBox.Text = DataGrid2.SelectedRows[0].Cells[3].Value.ToString();
-            OpenReadingTextBox.Text = DataGrid2.SelectedRows[0].Cells[4].Value.ToString();
-            CloseReadingTextBox.Text = DataGrid2.SelectedRows[0].Cells[5].Value.ToString();
-            QuantityTextBox.Text = DataGrid2.SelectedRows[0].Cells[6].Value.ToString();
-            CheckTextBox.Text = DataGrid2.SelectedRows[0].Cells[7].Value.ToString();
-            NetQuantityTextBox.Text = DataGrid2.SelectedRows[0].Cells[8].Value.ToString();
-            RateTextBox.Text = DataGrid2.SelectedRows[0].Cells[9].Value.ToString();
-            AmountTextBox.Text = DataGrid2.SelectedRows[0].Cells[10].Value.ToString();
-            RecoveryTextBox.Text = DataGrid2.SelectedRows[0].Cells[11].Value.ToString();
-            DepositTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[12].Value.ToString();
-            UdharTextBox.Text = DataGrid2.SelectedRows[0].Cells[13].Value.ToString();
-            DiscountTextBox.Text = DataGrid2.SelectedRows[0].Cells[14].Value.ToString();
-
-            BalanceTB.Text = DataGrid2.SelectedRows[0].Cells[15].Value.ToString();
-
-            UnitBox.SelectedIndex = TabControl.SelectedIndex;
-            AutoSuggestions();
-
-
-
-
-            DateTime newDate;
-            if (DateTime.TryParse(date.ToString(), out newDate))
+            try
             {
-                dateTimePicker1.Value = newDate;
-            }
+                RefTextBox.Text = DataGrid2.SelectedRows[0].Cells[0].Value.ToString();
+                object date = DataGrid2.SelectedRows[0].Cells[1].Value;
+                FuelTypeBox.Text = DataGrid2.SelectedRows[0].Cells[2].Value.ToString();
+                HelperTextBox.Text = DataGrid2.SelectedRows[0].Cells[3].Value.ToString();
+                OpenReadingTextBox.Text = DataGrid2.SelectedRows[0].Cells[4].Value.ToString();
+                CloseReadingTextBox.Text = DataGrid2.SelectedRows[0].Cells[5].Value.ToString();
+                QuantityTextBox.Text = DataGrid2.SelectedRows[0].Cells[6].Value.ToString();
+                CheckTextBox.Text = DataGrid2.SelectedRows[0].Cells[7].Value.ToString();
+                NetQuantityTextBox.Text = DataGrid2.SelectedRows[0].Cells[8].Value.ToString();
+                RateTextBox.Text = DataGrid2.SelectedRows[0].Cells[9].Value.ToString();
+                AmountTextBox.Text = DataGrid2.SelectedRows[0].Cells[10].Value.ToString();
+                RecoveryTextBox.Text = DataGrid2.SelectedRows[0].Cells[11].Value.ToString();
+                DepositTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[12].Value.ToString();
+                UdharTextBox.Text = DataGrid2.SelectedRows[0].Cells[13].Value.ToString();
+                DiscountTextBox.Text = DataGrid2.SelectedRows[0].Cells[14].Value.ToString();
 
-            PasswordCheckPanel passCheck = new PasswordCheckPanel();
-            passCheck.ShowDialog();
-            if (passCheck.DialogResult == DialogResult.OK)
-                ViewRecordsPanel.Show();
+                BalanceTB.Text = DataGrid2.SelectedRows[0].Cells[15].Value.ToString();
+
+                UnitBox.SelectedIndex = TabControl.SelectedIndex;
+                AutoSuggestions();
+
+
+
+
+                DateTime newDate;
+                if (DateTime.TryParse(date.ToString(), out newDate))
+                {
+                    dateTimePicker1.Value = newDate;
+                }
+
+                PasswordCheckPanel passCheck = new PasswordCheckPanel();
+                passCheck.ShowDialog();
+                if (passCheck.DialogResult == DialogResult.OK)
+                    ViewRecordsPanel.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "Initialization", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void DataGrid3DoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            RefTextBox.Text = DataGrid3.SelectedRows[0].Cells[0].Value.ToString();
-            object date = DataGrid3.SelectedRows[0].Cells[1].Value;
-            FuelTypeBox.Text = DataGrid3.SelectedRows[0].Cells[2].Value.ToString();
-            HelperTextBox.Text = DataGrid3.SelectedRows[0].Cells[3].Value.ToString();
-            OpenReadingTextBox.Text = DataGrid3.SelectedRows[0].Cells[4].Value.ToString();
-            CloseReadingTextBox.Text = DataGrid3.SelectedRows[0].Cells[5].Value.ToString();
-            QuantityTextBox.Text = DataGrid3.SelectedRows[0].Cells[6].Value.ToString();
-            CheckTextBox.Text = DataGrid3.SelectedRows[0].Cells[7].Value.ToString();
-            NetQuantityTextBox.Text = DataGrid3.SelectedRows[0].Cells[8].Value.ToString();
-            RateTextBox.Text = DataGrid3.SelectedRows[0].Cells[9].Value.ToString();
-            AmountTextBox.Text = DataGrid3.SelectedRows[0].Cells[10].Value.ToString();
-            RecoveryTextBox.Text = DataGrid3.SelectedRows[0].Cells[11].Value.ToString();
-            DepositTextBox.Text = DataGrid3.SelectedRows[0].Cells[12].Value.ToString();
-            UdharTextBox.Text = DataGrid3.SelectedRows[0].Cells[13].Value.ToString();
-            DiscountTextBox.Text = DataGrid3.SelectedRows[0].Cells[14].Value.ToString();
-
-            BalanceTB.Text = DataGrid3.SelectedRows[0].Cells[15].Value.ToString();
-
-            UnitBox.SelectedIndex = TabControl.SelectedIndex;
-            AutoSuggestions();
-
-
-
-
-            DateTime newDate;
-            if (DateTime.TryParse(date.ToString(), out newDate))
+            try
             {
-                dateTimePicker1.Value = newDate;
+                RefTextBox.Text = DataGrid3.SelectedRows[0].Cells[0].Value.ToString();
+                object date = DataGrid3.SelectedRows[0].Cells[1].Value;
+                FuelTypeBox.Text = DataGrid3.SelectedRows[0].Cells[2].Value.ToString();
+                HelperTextBox.Text = DataGrid3.SelectedRows[0].Cells[3].Value.ToString();
+                OpenReadingTextBox.Text = DataGrid3.SelectedRows[0].Cells[4].Value.ToString();
+                CloseReadingTextBox.Text = DataGrid3.SelectedRows[0].Cells[5].Value.ToString();
+                QuantityTextBox.Text = DataGrid3.SelectedRows[0].Cells[6].Value.ToString();
+                CheckTextBox.Text = DataGrid3.SelectedRows[0].Cells[7].Value.ToString();
+                NetQuantityTextBox.Text = DataGrid3.SelectedRows[0].Cells[8].Value.ToString();
+                RateTextBox.Text = DataGrid3.SelectedRows[0].Cells[9].Value.ToString();
+                AmountTextBox.Text = DataGrid3.SelectedRows[0].Cells[10].Value.ToString();
+                RecoveryTextBox.Text = DataGrid3.SelectedRows[0].Cells[11].Value.ToString();
+                DepositTextBox.Text = DataGrid3.SelectedRows[0].Cells[12].Value.ToString();
+                UdharTextBox.Text = DataGrid3.SelectedRows[0].Cells[13].Value.ToString();
+                DiscountTextBox.Text = DataGrid3.SelectedRows[0].Cells[14].Value.ToString();
+
+                BalanceTB.Text = DataGrid3.SelectedRows[0].Cells[15].Value.ToString();
+
+                UnitBox.SelectedIndex = TabControl.SelectedIndex;
+                AutoSuggestions();
+
+
+
+
+                DateTime newDate;
+                if (DateTime.TryParse(date.ToString(), out newDate))
+                {
+                    dateTimePicker1.Value = newDate;
+                }
+                PasswordCheckPanel passCheck = new PasswordCheckPanel();
+                passCheck.ShowDialog();
+                if (passCheck.DialogResult == DialogResult.OK)
+                    ViewRecordsPanel.Show();
             }
-            PasswordCheckPanel passCheck = new PasswordCheckPanel();
-            passCheck.ShowDialog();
-            if (passCheck.DialogResult == DialogResult.OK)
-                ViewRecordsPanel.Show();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "Helper Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -368,17 +380,19 @@ namespace Filling_Station_Management_System
             {
                 if (ref_No >= 1001)
                 {
-                    MySqlConnection con = new MySqlConnection(AppSettings.ConString());
-                    con.Open();
-                    MySqlCommand cmd;
+                    using (MySqlConnection con = new MySqlConnection(AppSettings.ConString()))
+                    {
+                        con.Open();
+                        MySqlCommand cmd;
 
-                    cmd = con.CreateCommand();
+                        cmd = con.CreateCommand();
 
-                    cmd.CommandText = $"DELETE FROM unit{unit}_sales_data WHERE Ref_No=@Ref_No;";
-                    cmd.Parameters.AddWithValue("@Ref_No", ref_No);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    LoadData();
+                        cmd.CommandText = $"DELETE FROM unit{unit}_sales_data WHERE Ref_No=@Ref_No;";
+                        cmd.Parameters.AddWithValue("@Ref_No", ref_No);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        LoadData();
+                    }
                 }
                 else
                 {
@@ -404,51 +418,52 @@ namespace Filling_Station_Management_System
 
         private void DataGrid1DoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            AutoSuggestions();
-
-            RefTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[0].Value.ToString();
-            object date = Unit1DataGrid.SelectedRows[0].Cells[1].Value;
-            FuelTypeBox.Text = Unit1DataGrid.SelectedRows[0].Cells[2].Value.ToString();
-            HelperTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[3].Value.ToString();
-            OpenReadingTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[4].Value.ToString();
-            CloseReadingTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[5].Value.ToString();
-            QuantityTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[6].Value.ToString();
-            CheckTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[7].Value.ToString();
-            NetQuantityTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[8].Value.ToString();
-            RateTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[9].Value.ToString();
-            AmountTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[10].Value.ToString();
-            RecoveryTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[11].Value.ToString();
-            DepositTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[12].Value.ToString();
-            UdharTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[13].Value.ToString();
-            DiscountTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[14].Value.ToString();
-
-            BalanceTB.Text = Unit1DataGrid.SelectedRows[0].Cells[15].Value.ToString();
-
-            UnitBox.SelectedIndex = TabControl.SelectedIndex;
-
-
-
-
-            DateTime newDate;
-            if (DateTime.TryParse(date.ToString(), out newDate))
+            try
             {
-                dateTimePicker1.Value = newDate;
+
+                AutoSuggestions();
+
+                RefTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[0].Value.ToString();
+                object date = Unit1DataGrid.SelectedRows[0].Cells[1].Value;
+                FuelTypeBox.Text = Unit1DataGrid.SelectedRows[0].Cells[2].Value.ToString();
+                HelperTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[3].Value.ToString();
+                OpenReadingTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[4].Value.ToString();
+                CloseReadingTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[5].Value.ToString();
+                QuantityTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[6].Value.ToString();
+                CheckTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[7].Value.ToString();
+                NetQuantityTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[8].Value.ToString();
+                RateTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[9].Value.ToString();
+                AmountTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[10].Value.ToString();
+                RecoveryTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[11].Value.ToString();
+                DepositTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[12].Value.ToString();
+                UdharTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[13].Value.ToString();
+                DiscountTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[14].Value.ToString();
+
+                BalanceTB.Text = Unit1DataGrid.SelectedRows[0].Cells[15].Value.ToString();
+
+                UnitBox.SelectedIndex = TabControl.SelectedIndex;
+
+
+
+
+                DateTime newDate;
+                if (DateTime.TryParse(date.ToString(), out newDate))
+                {
+                    dateTimePicker1.Value = newDate;
+                }
+                PasswordCheckPanel passCheck = new PasswordCheckPanel();
+                passCheck.ShowDialog();
+                if (passCheck.DialogResult == DialogResult.OK)
+                    ViewRecordsPanel.Show();
+
             }
-            PasswordCheckPanel passCheck = new PasswordCheckPanel();
-            passCheck.ShowDialog();
-            if (passCheck.DialogResult == DialogResult.OK)
-                ViewRecordsPanel.Show();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "Initialization", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        void PopulateList()
-        {
 
-        }
-        private void EditRecords(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void CloseReadingTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -563,40 +578,47 @@ namespace Filling_Station_Management_System
 
         private void DataGrid4DoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
-            RefTextBox.Text = DataGrid4.SelectedRows[0].Cells[0].Value.ToString();
-            object date = DataGrid4.SelectedRows[0].Cells[1].Value;
-            FuelTypeBox.Text = DataGrid4.SelectedRows[0].Cells[2].Value.ToString();
-            HelperTextBox.Text = DataGrid4.SelectedRows[0].Cells[3].Value.ToString();
-            OpenReadingTextBox.Text = DataGrid4.SelectedRows[0].Cells[4].Value.ToString();
-            CloseReadingTextBox.Text = DataGrid4.SelectedRows[0].Cells[5].Value.ToString();
-            QuantityTextBox.Text = DataGrid4.SelectedRows[0].Cells[6].Value.ToString();
-            CheckTextBox.Text = DataGrid4.SelectedRows[0].Cells[7].Value.ToString();
-            NetQuantityTextBox.Text = DataGrid4.SelectedRows[0].Cells[8].Value.ToString();
-            RateTextBox.Text = DataGrid4.SelectedRows[0].Cells[9].Value.ToString();
-            AmountTextBox.Text = DataGrid4.SelectedRows[0].Cells[10].Value.ToString();
-            RecoveryTextBox.Text = DataGrid4.SelectedRows[0].Cells[11].Value.ToString();
-            DepositTextBox.Text = DataGrid4.SelectedRows[0].Cells[12].Value.ToString();
-            UdharTextBox.Text = DataGrid4.SelectedRows[0].Cells[13].Value.ToString();
-            DiscountTextBox.Text = DataGrid4.SelectedRows[0].Cells[14].Value.ToString();
-
-            BalanceTB.Text = DataGrid4.SelectedRows[0].Cells[15].Value.ToString();
-
-            UnitBox.SelectedIndex = TabControl.SelectedIndex;
-            AutoSuggestions();
-
-
-            DateTime newDate;
-            if (DateTime.TryParse(date.ToString(), out newDate))
+            try
             {
-                dateTimePicker1.Value = newDate;
-            }
 
-            PasswordCheckPanel passCheck = new PasswordCheckPanel();
-            passCheck.ShowDialog();
-            if (passCheck.DialogResult == DialogResult.OK)
-                ViewRecordsPanel.Show();
+                RefTextBox.Text = DataGrid4.SelectedRows[0].Cells[0].Value.ToString();
+                object date = DataGrid4.SelectedRows[0].Cells[1].Value;
+                FuelTypeBox.Text = DataGrid4.SelectedRows[0].Cells[2].Value.ToString();
+                HelperTextBox.Text = DataGrid4.SelectedRows[0].Cells[3].Value.ToString();
+                OpenReadingTextBox.Text = DataGrid4.SelectedRows[0].Cells[4].Value.ToString();
+                CloseReadingTextBox.Text = DataGrid4.SelectedRows[0].Cells[5].Value.ToString();
+                QuantityTextBox.Text = DataGrid4.SelectedRows[0].Cells[6].Value.ToString();
+                CheckTextBox.Text = DataGrid4.SelectedRows[0].Cells[7].Value.ToString();
+                NetQuantityTextBox.Text = DataGrid4.SelectedRows[0].Cells[8].Value.ToString();
+                RateTextBox.Text = DataGrid4.SelectedRows[0].Cells[9].Value.ToString();
+                AmountTextBox.Text = DataGrid4.SelectedRows[0].Cells[10].Value.ToString();
+                RecoveryTextBox.Text = DataGrid4.SelectedRows[0].Cells[11].Value.ToString();
+                DepositTextBox.Text = DataGrid4.SelectedRows[0].Cells[12].Value.ToString();
+                UdharTextBox.Text = DataGrid4.SelectedRows[0].Cells[13].Value.ToString();
+                DiscountTextBox.Text = DataGrid4.SelectedRows[0].Cells[14].Value.ToString();
+
+                BalanceTB.Text = DataGrid4.SelectedRows[0].Cells[15].Value.ToString();
+
+                UnitBox.SelectedIndex = TabControl.SelectedIndex;
+                AutoSuggestions();
+
+
+                DateTime newDate;
+                if (DateTime.TryParse(date.ToString(), out newDate))
+                {
+                    dateTimePicker1.Value = newDate;
+                }
+
+                PasswordCheckPanel passCheck = new PasswordCheckPanel();
+                passCheck.ShowDialog();
+                if (passCheck.DialogResult == DialogResult.OK)
+                    ViewRecordsPanel.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "Helper Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -649,15 +671,7 @@ namespace Filling_Station_Management_System
             ClearBox();
         }
 
-        private bool isFilled()
-        {
-            return RecoveryTextBox.Text != string.Empty && DepositTextBox.Text != string.Empty && UdharTextBox.Text != string.Empty;
-        }
 
-        public bool isFilled2()
-        {
-            return RateTextBox.Text != string.Empty && CloseReadingTextBox.Text != string.Empty;
-        }
 
 
         private void Calculations()
@@ -716,28 +730,8 @@ namespace Filling_Station_Management_System
             BalanceTB.Text = newBalance.ToString("C");
         }
 
-        private bool isFilledMandatory()
-        {
-            return RefTextBox.Text != string.Empty && HelperTextBox.Text != string.Empty;
-        }
-        private static float ConvertFloat(string value)
-        {
-            if (float.TryParse(value, out float floatValue))
-            {
-                return floatValue;
-            }
-            else
-            {
-                throw new ArgumentException("Invalid Input: Not a Valid Entry");
-            }
 
 
-        }
-
-        public static string FloatToString(float value, int decimalPlaces)
-        {
-            return value.ToString($"F{decimalPlaces}");
-        }
 
     }
 }

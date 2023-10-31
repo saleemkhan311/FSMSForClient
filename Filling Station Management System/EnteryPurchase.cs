@@ -180,19 +180,19 @@ namespace Filling_Station_Management_System
 
         private void LabourBox_Enter(object sender, EventArgs e)
         {
-            autoScroll(LabourBox);
+
         }
 
 
 
         private void RecoveryAmountBox2_Enter(object sender, EventArgs e)
         {
-            autoScroll(RecoveryAmountBox2);
+
         }
 
         private void RecoveryAmountBox5_Enter(object sender, EventArgs e)
         {
-            autoScroll(RecoveryAmountBox5);
+
         }
 
         private void EnteryPurchase_KeyDown(object sender, KeyEventArgs e)
@@ -206,7 +206,7 @@ namespace Filling_Station_Management_System
 
         private void RecoveryAmountBox4_Enter(object sender, EventArgs e)
         {
-            autoScroll(RecoveryAmountBox4);
+
         }
 
         private void TotalAmountBox_TextChanged(object sender, EventArgs e)
@@ -683,68 +683,7 @@ namespace Filling_Station_Management_System
             catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
 
         }
-        private bool scrolling = false;
-        private void autoScroll(object sender)
-        {
-            try
-            {
-                if (sender is Bunifu.UI.WinForms.BunifuTextBox textBox)
-                {
-                    // Calculate the position of the TextBox relative to the FlowLayoutControl
-                    Point textBoxLocation = textBox.Parent.PointToScreen(textBox.Location);
-                    Point flowLayoutLocation = EntryList.PointToScreen(Point.Empty);
-                    int verticalScrollAmount = textBoxLocation.Y - flowLayoutLocation.Y;
 
-                    // Scroll the FlowLayoutControl gradually if the TextBox is not fully visible
-                    if (verticalScrollAmount < 0 || verticalScrollAmount + textBox.Height > EntryList.ClientRectangle.Height)
-                    {
-                        scrolling = true; // Set scrolling flag to prevent reentrancy
-                        int currentScrollPosition = EntryList.VerticalScroll.Value;
-                        int targetScrollPosition = currentScrollPosition + verticalScrollAmount;
-
-                        // Adjust the scroll speed by changing the step size
-                        int stepSize = 30; // Increase this value for faster scrolling
-
-                        // Start a timer to animate the scrolling
-                        Timer scrollTimer = new Timer();
-                        scrollTimer.Interval = 1; // Keep a small interval for smoothness
-                        scrollTimer.Tick += (senderTimer, eTimer) =>
-                        {
-                            if (currentScrollPosition < targetScrollPosition)
-                            {
-                                currentScrollPosition += stepSize;
-                                if (currentScrollPosition >= targetScrollPosition)
-                                {
-                                    currentScrollPosition = targetScrollPosition;
-                                    scrollTimer.Stop();
-                                    scrolling = false; // Reset scrolling flag
-                                }
-                                EntryList.VerticalScroll.Value = currentScrollPosition;
-                            }
-                            else if (currentScrollPosition > targetScrollPosition)
-                            {
-                                currentScrollPosition -= stepSize;
-                                if (currentScrollPosition <= targetScrollPosition)
-                                {
-                                    currentScrollPosition = targetScrollPosition;
-                                    scrollTimer.Stop();
-                                    scrolling = false; // Reset scrolling flag
-                                }
-                                EntryList.VerticalScroll.Value = currentScrollPosition;
-                            }
-                            else
-                            {
-                                scrollTimer.Stop();
-                                scrolling = false; // Reset scrolling flag
-                            }
-                        };
-
-                        scrollTimer.Start();
-                    }
-                }
-            }
-            catch (Exception ex) { MessageBox.Show("Error: " + ex.Message, "Scrolling"); }
-        }
 
         //------------Stock------------
 

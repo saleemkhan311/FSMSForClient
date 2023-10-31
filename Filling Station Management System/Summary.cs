@@ -24,10 +24,11 @@ namespace Filling_Station_Management_System
         {
             string sqlDieselPurchase;
 
-            MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-            connection.Open();
+            using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+            {
+                connection.Open();
 
-            sqlDieselPurchase = @"SELECT
+                sqlDieselPurchase = @"SELECT
                                     purchase_date,
                                     GROUP_CONCAT(DISTINCT Malik_Name ORDER BY Malik_Name ASC SEPARATOR ', ') AS Malik_Names,
                                     ROUND(SUM(Kanta_Wazan1), 2) AS Total_Wazan,
@@ -68,12 +69,13 @@ namespace Filling_Station_Management_System
                                 ORDER BY
                                     purchase_date;";
 
-            MySqlCommand cmd = new MySqlCommand(sqlDieselPurchase, connection);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
+                MySqlCommand cmd = new MySqlCommand(sqlDieselPurchase, connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
 
-            DieselSummaryDataGrid.DataSource = dataTable;
+                DieselSummaryDataGrid.DataSource = dataTable;
+            }
         }
         void DieselSummarySale()
         {
@@ -244,11 +246,12 @@ namespace Filling_Station_Management_System
 
             try
             {
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+                {
+                    connection.Open();
 
 
-                sqlPetrolSale = @"SELECT
+                    sqlPetrolSale = @"SELECT
                                     sales_date,
                                     ROUND(SUM(NetQuantityUnit1), 2) AS Total_Quantity,
                                     ROUND(SUM(NetQuantityUnit1), 2) AS Total_NetQuantity,
@@ -276,12 +279,13 @@ namespace Filling_Station_Management_System
                                     sales_date;
                                 ";
 
-                MySqlCommand cmd = new MySqlCommand(sqlPetrolSale, connection);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
+                    MySqlCommand cmd = new MySqlCommand(sqlPetrolSale, connection);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
 
-                PetrolSummaryDataGrid.DataSource = dataTable;
+                    PetrolSummaryDataGrid.DataSource = dataTable;
+                }
             }
             catch (Exception ex)
             {
