@@ -47,33 +47,31 @@ namespace Filling_Station_Management_System
 
         private void UnitBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _openReading = GetLastClosingReading();
+            try
+            {
 
-            AutoIncrement();
-            OpenReadingTextBox.Text = _openReading.ToString();
-            if (UnitBox.SelectedIndex == 0)
-            {
-                FuelTypeBox.SelectedIndex = 0;
+                _openReading = GetLastClosingReading();
+
+                AutoIncrement();
+                OpenReadingTextBox.Text = _openReading.ToString();
+                if (UnitBox.SelectedIndex == 0)
+                {
+                    FuelTypeBox.SelectedIndex = 0;
+                }
+                else
+                {
+                    FuelTypeBox.SelectedIndex = 1;
+                }
+
             }
-            else
-            {
-                FuelTypeBox.SelectedIndex = 1;
-            }
+            catch { }
+
         }
 
         private void CheckTextBox_TextChanged(object sender, EventArgs e)
         {
             Calculations();
         }
-
-
-
-        public bool isFilled2()
-        {
-            return RateTextBox.Text != string.Empty && CloseReadingTextBox.Text != string.Empty && CheckTextBox.Text != string.Empty;
-        }
-
-
 
         private void InsertData_Click(object sender, EventArgs e)
         {
@@ -97,46 +95,48 @@ namespace Filling_Station_Management_System
 
         }
 
-        private void ResetButton_Click(object sender, EventArgs e)
-        {
-            ClearBox();
-        }
 
         private void ClearBox()
         {
+            try
+            {
+                _openReading = GetLastClosingReading();
+                OpenReadingTextBox.Text = _openReading.ToString();
 
-            _openReading = GetLastClosingReading();
-            OpenReadingTextBox.Text = _openReading.ToString();
-
-            CloseReadingTextBox.Clear();
-            _closeReading = 0;
-            CheckTextBox.Clear();
-            _test = 0;
-            AmountTextBox.Clear();
-            _price = 0;
-            RateTextBox.Clear();
-            _rate = 0;
-            NetQuantityTextBox.Clear();
-            _netQuantity = 0;
-            QuantityTextBox.Clear();
-            _quantity = 0;
-
-
-            RecoveryTextBox.Clear();
-            recovery = 0;
-            UdharTextBox.Clear();
-            udhar = 0;
-            DepositTextBox.Clear();
-            deposit = 0;
-            DiscountTextBox.Clear();
-            discount = 0;
-            BalanceTB.Clear();
-            balance = 0;
-
-            UnitBox.SelectedIndex = 0;
+                CloseReadingTextBox.Clear();
+                _closeReading = 0;
+                CheckTextBox.Clear();
+                _test = 0;
+                AmountTextBox.Clear();
+                _price = 0;
+                RateTextBox.Clear();
+                _rate = 0;
+                NetQuantityTextBox.Clear();
+                _netQuantity = 0;
+                QuantityTextBox.Clear();
+                _quantity = 0;
 
 
-            dateTimePicker1.Value = DateTime.Now;
+                RecoveryTextBox.Clear();
+                recovery = 0;
+                UdharTextBox.Clear();
+                udhar = 0;
+                DepositTextBox.Clear();
+                deposit = 0;
+                DiscountTextBox.Clear();
+                discount = 0;
+                BalanceTB.Clear();
+                balance = 0;
+
+                UnitBox.SelectedIndex = 0;
+
+
+                dateTimePicker1.Value = DateTime.Now;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void RecoveryTextBox_TextChanged(object sender, EventArgs e)
@@ -219,6 +219,10 @@ namespace Filling_Station_Management_System
 
         string sql;
 
+        private void EnterySale_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void InsertData_KeyUp(object sender, KeyEventArgs e)
         {
@@ -253,36 +257,38 @@ namespace Filling_Station_Management_System
             try
             {
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-                sql = $"INSERT INTO unit{unit}_sales_data (Ref_No,Date,Fuel_Type,Helper,Opening_Reading,Closing_Reading,Quantity,Test,netQuantity,Unit_Price,Amount,Recovery,Deposited,Udhar,Discount,Balance) VALUES " +
-                                                         "(@Ref_No,@Date,@Fuel_Type,@Helper,@Opening_Reading,@Closing_Reading,@Quantity,@Test,@netQuantity,@Unit_Price,@Amount,@Recovery,@Deposited,@Udhar,@Discount,@Balance)";
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+                {
+                    connection.Open();
+                    sql = $"INSERT INTO unit{unit}_sales_data (Ref_No,Date,Fuel_Type,Helper,Opening_Reading,Closing_Reading,Quantity,Test,netQuantity,Unit_Price,Amount,Recovery,Deposited,Udhar,Discount,Balance) VALUES " +
+                                                             "(@Ref_No,@Date,@Fuel_Type,@Helper,@Opening_Reading,@Closing_Reading,@Quantity,@Test,@netQuantity,@Unit_Price,@Amount,@Recovery,@Deposited,@Udhar,@Discount,@Balance)";
 
 
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
 
-                cmd.Parameters.AddWithValue("@Ref_No", Convert.ToInt16(RefTextBox.Text));
-                cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
-                cmd.Parameters.AddWithValue("@Helper", HelperTextBox.Text);
-
-
-                cmd.Parameters.AddWithValue("@Opening_Reading", OpenReadingTextBox.Text);
-                cmd.Parameters.AddWithValue("@Closing_Reading", CloseReadingTextBox.Text);
-                cmd.Parameters.AddWithValue("@Quantity", QuantityTextBox.Text);
-                cmd.Parameters.AddWithValue("@Test", CheckTextBox.Text);
-                cmd.Parameters.AddWithValue("@netQuantity", NetQuantityTextBox.Text);
-                cmd.Parameters.AddWithValue("@Unit_Price", RateTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Ref_No", Convert.ToInt16(RefTextBox.Text));
+                    cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
+                    cmd.Parameters.AddWithValue("@Helper", HelperTextBox.Text);
 
 
-                cmd.Parameters.AddWithValue("@Amount", _price);
-                cmd.Parameters.AddWithValue("@Recovery", RecoveryTextBox.Text);
-                cmd.Parameters.AddWithValue("@Deposited", DepositTextBox.Text);
-                cmd.Parameters.AddWithValue("@Udhar", UdharTextBox.Text);
-                cmd.Parameters.AddWithValue("@Discount", DiscountTextBox.Text);
-                cmd.Parameters.AddWithValue("@Balance", balance);
+                    cmd.Parameters.AddWithValue("@Opening_Reading", OpenReadingTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Closing_Reading", CloseReadingTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Quantity", QuantityTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Test", CheckTextBox.Text);
+                    cmd.Parameters.AddWithValue("@netQuantity", NetQuantityTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Unit_Price", RateTextBox.Text);
 
-                cmd.ExecuteNonQuery();
+
+                    cmd.Parameters.AddWithValue("@Amount", _price);
+                    cmd.Parameters.AddWithValue("@Recovery", RecoveryTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Deposited", DepositTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Udhar", UdharTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Discount", DiscountTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Balance", balance);
+
+                    cmd.ExecuteNonQuery();
+                }
 
                 MessageBox.Show("Records Inserted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -300,23 +306,26 @@ namespace Filling_Station_Management_System
         string sqlCom;
         private Double GetLastClosingReading()
         {
+
             Double lastClosingReading = 0;
 
             int unit = UnitBox.SelectedIndex + 1;
             try
             {
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                sqlCom = $"SELECT Closing_Reading FROM unit{unit}_sales_data ORDER BY Ref_No DESC LIMIT 1";
-
-                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
-                    lastClosingReading = AppSettings.convertToDouble(result.ToString());
+                    connection.Open();
+
+                    sqlCom = $"SELECT Closing_Reading FROM unit{unit}_sales_data ORDER BY Ref_No DESC LIMIT 1";
+
+                    MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        lastClosingReading = AppSettings.convertToDouble(result.ToString());
+                    }
                 }
             }
             catch (Exception ex)
@@ -337,18 +346,20 @@ namespace Filling_Station_Management_System
             try
             {
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                Refsql = $"SELECT Ref_No FROM unit{unit}_sales_data ORDER BY Ref_No DESC LIMIT 1";
-
-
-                MySqlCommand cmd = new MySqlCommand(Refsql, connection);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
-                    lastRefNo = Convert.ToInt16(result);
+                    connection.Open();
+
+                    Refsql = $"SELECT Ref_No FROM unit{unit}_sales_data ORDER BY Ref_No DESC LIMIT 1";
+
+
+                    MySqlCommand cmd = new MySqlCommand(Refsql, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        lastRefNo = Convert.ToInt16(result);
+                    }
                 }
             }
             catch (Exception ex)
@@ -364,7 +375,7 @@ namespace Filling_Station_Management_System
         private void AutoIncrement()
         {
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
-            OpenReadingTextBox.Text = _openReading.ToString();
+            OpenReadingTextBox.Text = _openReading.ToString("0.00");
         }
         List<string> helperNames = new List<string>();
         private void AutoSuggestions()

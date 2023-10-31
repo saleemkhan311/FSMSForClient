@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 using ComponentFactory.Krypton.Toolkit;
 using MySql.Data.MySqlClient;
 
@@ -15,27 +13,30 @@ namespace Filling_Station_Management_System
             InitializeComponent();
         }
 
+        // string[] unitData = { "Unit 1", "Unit 2", "Unit 3", "Unit 4" };
+
         double totalStockPetrol, availableStockPetrol;
         double totalStockDiesel, availableStockDiesel;
         private double GetTotalSalePetrol()
         {
             double totalSaleDiesel = 0;
 
-
             try
             {
-
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                string sqlCom = $"SELECT Round(SUM(netQuantity),2) FROM unit1_sales_data;";
-
-                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
-                    totalSaleDiesel = Convert.ToDouble(result.ToString());
+                    connection.Open();
+
+                    string sqlCom = $"SELECT Round(SUM(netQuantity),2) FROM unit1_sales_data;";
+
+                    MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        totalSaleDiesel = Convert.ToDouble(result.ToString());
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -51,22 +52,22 @@ namespace Filling_Station_Management_System
         {
             double totalSalePetrol = 0;
 
-
             try
             {
-
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                string sqlCom = $"SELECT \r\n    (SELECT Round(SUM(netQuantity),2) FROM unit2_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit3_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit4_sales_data) AS TotalSumQuantity;";
-
-
-                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
-                    totalSalePetrol = Convert.ToDouble(result.ToString());
+                    connection.Open();
+
+                    string sqlCom = $"SELECT \r\n    (SELECT Round(SUM(netQuantity),2) FROM unit2_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit3_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit4_sales_data) AS TotalSumQuantity;";
+
+
+                    MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        totalSalePetrol = Convert.ToDouble(result.ToString());
+                    }
                 }
             }
             catch (Exception ex)
@@ -82,22 +83,21 @@ namespace Filling_Station_Management_System
         private double GetTotalPurchaseDiesel()
         {
             double totalSalePetrol = 0;
-
-
             try
             {
-
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),2) FROM purchase_data_diesel) AS TotalSumQuantity;";
-
-                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
-                    totalSalePetrol = Convert.ToDouble(result.ToString());
+                    connection.Open();
+
+                    string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),2) FROM purchase_data_diesel) AS TotalSumQuantity;";
+
+                    MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        totalSalePetrol = Convert.ToDouble(result.ToString());
+                    }
                 }
             }
             catch (Exception ex)
@@ -117,17 +117,19 @@ namespace Filling_Station_Management_System
             try
             {
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),2) FROM purchase_data_petrol) AS TotalSumQuantity;";
-
-                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
-                    totalPurchasePetrol = Convert.ToDouble(result.ToString());
+                    connection.Open();
+
+                    string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),2) FROM purchase_data_petrol) AS TotalSumQuantity;";
+
+                    MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        totalPurchasePetrol = Convert.ToDouble(result.ToString());
+                    }
                 }
             }
             catch (Exception ex)
@@ -144,17 +146,19 @@ namespace Filling_Station_Management_System
             try
             {
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                string sqlCom = $"SELECT Round(Available_Stock_Unit_Price,2) FROM petrol_stock ORDER BY Ref_No DESC LIMIT 1;";
-
-                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
-                    lastRate = Convert.ToDouble(result.ToString());
+                    connection.Open();
+
+                    string sqlCom = $"SELECT Available_Stock_Unit_Price FROM petrol_stock ORDER BY Ref_No DESC LIMIT 1;";
+
+                    MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        lastRate = Convert.ToDouble(result);
+                    }
                 }
             }
             catch (Exception ex)
@@ -170,17 +174,20 @@ namespace Filling_Station_Management_System
             try
             {
 
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
 
-                string sqlCom = $"SELECT Round(Available_Stock_Unit_Price,2) FROM diesel_stock ORDER BY Ref_No DESC LIMIT 1;";
-
-                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
                 {
-                    lastRate = Convert.ToDouble(result.ToString());
+                    connection.Open();
+
+                    string sqlCom = $"SELECT Round(Available_Stock_Unit_Price,2) FROM diesel_stock ORDER BY Ref_No DESC LIMIT 1;";
+
+                    MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        lastRate = Convert.ToDouble(result.ToString());
+                    }
                 }
             }
             catch (Exception ex)
@@ -192,79 +199,17 @@ namespace Filling_Station_Management_System
         }
 
 
-        private double GetLastAvailableStockPetrol()
-        {
-
-            float availableStock = 0;
-            float totalSale = 0;
-            try
-            {
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                string sqlCom = "SELECT Round(Available_Stock, 2), Round(Total_Sale, 2) FROM petrol_stock ORDER BY Ref_No DESC LIMIT 1;";
-
-                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    // Read the values of the two columns
-                    availableStock = reader.GetFloat(0);
-                    totalSale = reader.GetFloat(1);
-
-                    // Now you have the values in the variables availableStock and totalSale
-                }
-
-                reader.Close();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Available Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return availableStock + totalSale;
-        }
-
-        private double GetLastAvailableStockDiesel()
-        {
-            double lastDieselStock = 0;
-            try
-            {
-
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                string sqlCom = $"SELECT Round(Available_Stock,2) FROM Diesel_stock ORDER BY Ref_No DESC LIMIT 1;";
-
-                MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
-                {
-                    lastDieselStock = float.Parse(result.ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error: " + ex.Message, "Availalbe Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return lastDieselStock;
-        }
-
-
         private void Dashboard_Load(object sender, EventArgs e)
         {
             TotalSaleDieselLabel.Text = AppSettings.RoundToString(GetTotalSaleDiesel(), false);
             TotalSalePetrolLabel.Text = AppSettings.RoundToString(GetTotalSalePetrol(), false);
             TotalPurchaseDiesel.Text = AppSettings.RoundToString(GetTotalPurchaseDiesel(), false);
             TotalPurchasePetrol.Text = AppSettings.RoundToString(GetTotalPurchasePetrol(), false);
-            UnitPriceLabelDiesel.Text = AppSettings.RoundToString(GetLastRateDiesel(), true);
-            UnitPriceLabelPetrol.Text = AppSettings.RoundToString(GetLastRatePetrol(), true);
+            UnitPriceLabelDiesel.Text = GetLastRateDiesel().ToString("C4");
+            UnitPriceLabelPetrol.Text = GetLastRatePetrol().ToString("C4");
             PetrolPercent();
             DeiselPercent();
-            DieselChartSetup();
+
         }
 
 
@@ -310,129 +255,6 @@ namespace Filling_Station_Management_System
             }
         }
 
-        private void bunifuShadowPanel1_ControlAdded(object sender, ControlEventArgs e)
-        {
 
-        }
-
-        private void SalesChart_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        void DieselChartSetup()
-        {
-            try
-            {
-                MySqlConnection connection = new MySqlConnection(AppSettings.ConString());
-                connection.Open();
-
-                // Retrieve data for unit1_sales_data for the last 7 days
-                string unit1Query = "SELECT Date,  netQuantity FROM unit1_sales_data WHERE Date >= DATE(NOW()) - INTERVAL 7 DAY";
-
-                string unit2Query = "SELECT  netQuantity FROM unit2_sales_data WHERE Date >= DATE(NOW()) - INTERVAL 7 DAY";
-                string unit3Query = "SELECT  netQuantity FROM unit3_sales_data WHERE Date >= DATE(NOW()) - INTERVAL 7 DAY";
-                string unit4Query = "SELECT  netQuantity FROM unit4_sales_data WHERE Date >= DATE(NOW()) - INTERVAL 7 DAY";
-
-                MySqlCommand unit1Cmd = new MySqlCommand(unit1Query, connection);
-                MySqlCommand unit2Cmd = new MySqlCommand(unit2Query, connection);
-                MySqlCommand unit3Cmd = new MySqlCommand(unit3Query, connection);
-                MySqlCommand unit4Cmd = new MySqlCommand(unit4Query, connection);
-
-                MySqlDataAdapter unit1Adapter = new MySqlDataAdapter(unit1Cmd);
-                MySqlDataAdapter unit2Adapter = new MySqlDataAdapter(unit2Cmd);
-                MySqlDataAdapter unit3Adapter = new MySqlDataAdapter(unit3Cmd);
-                MySqlDataAdapter unit4Adapter = new MySqlDataAdapter(unit4Cmd);
-
-                DataTable unit1Table = new DataTable();
-                DataTable unit2Table = new DataTable();
-                DataTable unit3Table = new DataTable();
-                DataTable unit4Table = new DataTable();
-
-                unit1Adapter.Fill(unit1Table);
-                unit2Adapter.Fill(unit2Table);
-                unit3Adapter.Fill(unit3Table);
-                unit4Adapter.Fill(unit4Table);
-
-                // Now you have the data for the last 7 days from both tables in unit1Table and unit2Table.
-
-                // Assuming you have a chart control named "chart1"
-                //SalesChart.Series.Clear();
-
-                // Create series for unit1_sales_data
-                Series series1 = new Series("Unit 1 Sales");
-                series1.ChartType = SeriesChartType.Column;
-                int i = 1;
-                foreach (DataRow row in unit1Table.Rows)
-                {
-
-                    float netQuantity = (float)Convert.ToDouble(row["netQuantity"]);
-                    series1.Points.AddXY($"{i++}", netQuantity);
-                    series1.Label = AppSettings.RoundToString(netQuantity, false); // Assign the netQuantity as the label
-
-
-                }
-
-                int j = 1;
-                // Create series for unit2_sales_data
-                Series series2 = new Series("Unit 2 Sales");
-                series2.ChartType = SeriesChartType.Column;
-
-                foreach (DataRow row in unit2Table.Rows)
-                {
-
-                    double netQuantity = Convert.ToDouble(row["netQuantity"]);
-                    series2.Points.AddXY($"{j++}", netQuantity);
-                    series2.Label = netQuantity.ToString();
-                }
-
-
-                int k = 0;
-                // Create series for unit1_sales_data
-                Series series3 = new Series("Unit 3 Sales");
-                series3.ChartType = SeriesChartType.Column;
-
-                foreach (DataRow row in unit3Table.Rows)
-                {
-
-                    double netQuantity = Convert.ToDouble(row["netQuantity"]);
-                    series3.Points.AddXY($"{k + 1}", netQuantity);
-                    series3.Label = netQuantity.ToString();
-                }
-                int l = 0;
-                // Create series for unit2_sales_data
-                Series series4 = new Series("Unit 4 Sales");
-                series4.ChartType = SeriesChartType.Column;
-
-                foreach (DataRow row in unit4Table.Rows)
-                {
-
-                    double netQuantity = Convert.ToDouble(row["netQuantity"]);
-                    series4.Points.AddXY($"{l + 1}", netQuantity);
-                    series4.Label = AppSettings.RoundToString(netQuantity, false);
-                }
-
-                // Add the series to the chart
-                /*SalesChart.Series.Add(series1);
-                SalesChart.Series.Add(series2);
-                SalesChart.Series.Add(series3);
-                SalesChart.Series.Add(series4);*/
-                // Customize chart appearance as needed
-
-
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Data Retrieval Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-
-        }
-        private void bunifuRadialGauge2_ValueChanged(object sender, Bunifu.UI.WinForms.BunifuRadialGauge.ValueChangedEventArgs e)
-        {
-
-        }
     }
 }

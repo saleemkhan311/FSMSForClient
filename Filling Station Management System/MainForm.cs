@@ -15,7 +15,7 @@ namespace Filling_Station_Management_System
         }
 
         public string username;
-        public void loadForm(object Form)
+        /*public void loadForm(object Form)
         {
             if (this.MainPanel.Controls.Count > 0)
             {
@@ -30,7 +30,30 @@ namespace Filling_Station_Management_System
             this.MainPanel.Tag = f;
             f.Show();
 
+        }*/
+
+        public void loadForm(object newForm)
+        {
+            if (this.MainPanel.Controls.Count > 0)
+            {
+                KryptonForm previousForm = this.MainPanel.Controls[0] as KryptonForm;
+                if (previousForm != null)
+                {
+                    previousForm.Close(); // Close the previous form
+                    previousForm.Dispose(); // Dispose of the previous form
+                }
+                this.MainPanel.Controls.Clear(); // Remove any remaining controls
+            }
+
+            KryptonForm f = newForm as KryptonForm;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.MainPanel.Controls.Add(f);
+            this.MainPanel.Tag = f;
+            f.Show();
         }
+
+
 
 
         private void Form1_Load(object sender, EventArgs e)

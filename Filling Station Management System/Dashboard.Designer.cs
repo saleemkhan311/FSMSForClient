@@ -117,7 +117,6 @@
             this.bunifuShadowPanel1.Size = new System.Drawing.Size(160, 140);
             this.bunifuShadowPanel1.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel1.TabIndex = 0;
-            this.bunifuShadowPanel1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.bunifuShadowPanel1_ControlAdded);
             // 
             // pictureBox1
             // 
@@ -518,7 +517,6 @@
             this.DieselStockGuage.ValueByTransition = 0;
             this.DieselStockGuage.ValueLabelColor = System.Drawing.Color.Black;
             this.DieselStockGuage.WarningMark = 20;
-            this.DieselStockGuage.ValueChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuRadialGauge.ValueChangedEventArgs>(this.bunifuRadialGauge2_ValueChanged);
             // 
             // bunifuLabel10
             // 
