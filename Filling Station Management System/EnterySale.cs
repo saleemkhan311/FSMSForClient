@@ -191,8 +191,8 @@ namespace Filling_Station_Management_System
 
 
             OpenReadingTextBox.Text = AppSettings.RoundToString(_openReading, false);
-            QuantityTextBox.Text = AppSettings.RoundToString(_netQuantity, true);
-            NetQuantityTextBox.Text = AppSettings.RoundToString(_netQuantity, true);
+            QuantityTextBox.Text = AppSettings.RoundToString(_quantity, false);
+            NetQuantityTextBox.Text = AppSettings.RoundToString(_netQuantity, false);
             AmountTextBox.Text = AppSettings.RoundToString(_price, true);
 
             //----------

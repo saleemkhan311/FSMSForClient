@@ -60,26 +60,26 @@ namespace Filling_Station_Management_System
             KhorakiLabel.Text = khoraki;
             SafiMiqdarLabel.Text = safiMiqdar;
             RateFiLiterLabel.Text = rateFiLiter;
-            KulRaqamLAbel.Text = kulRaqam;
-            MazdooriLabel.Text = mazdoori;
-            SafiRaqmLabel.Text = safiRaqam;
-            SabqaRaqamLabel.Text = sabqaRaqam;
-            TotalRaqamLabel.Text = totalRaqam;
+            KulRaqamLAbel.Text = kulRaqam.Replace("Rs", "");
+            MazdooriLabel.Text = mazdoori.Replace("Rs", "");
+            SafiRaqmLabel.Text = safiRaqam.Replace("Rs", "");
+            SabqaRaqamLabel.Text = sabqaRaqam.Replace("Rs", "");
+            TotalRaqamLabel.Text = totalRaqam.Replace("Rs", "");
 
 
-            RaqamWasoolValue1Label.Text = raqamWasoolValue1;
+            RaqamWasoolValue1Label.Text = raqamWasoolValue1.Replace("Rs", "");
             RaqamWasoolTafseel1Label.Text = raqamWasoolTafseel1;
 
-            RaqamWasoolValue2Label.Text = raqamWasoolValue2;
+            RaqamWasoolValue2Label.Text = raqamWasoolValue2.Replace("Rs", "");
             RaqamWasoolTafseel2Label.Text = raqamWasoolTafseel2;
 
-            RaqamWasoolValue3Label.Text = raqamWasoolValue3;
+            RaqamWasoolValue3Label.Text = raqamWasoolValue3.Replace("Rs", "");
             RaqamWasoolTafseel3Label.Text = raqamWasoolTafseel3;
 
-            RaqamWasoolValue4Label.Text = raqamWasoolValue4;
+            RaqamWasoolValue4Label.Text = raqamWasoolValue4.Replace("Rs", "");
             RaqamWasoolTafseel4Label.Text = raqamWasoolTafseel4;
 
-            RaqamWasoolValue5Label.Text = raqamWasoolValue5;
+            RaqamWasoolValue5Label.Text = raqamWasoolValue5.Replace("Rs", "");
             RaqamWasoolTafseel5Label.Text = raqamWasoolTafseel5;
 
             autoHide(RaqamWasoolValue1Label, RaqamWasoolValue1Label, Rupay1);
@@ -88,7 +88,7 @@ namespace Filling_Station_Management_System
             autoHide(RaqamWasoolValue4Label, RaqamWasoolValue4Label, Rupay4);
             autoHide(RaqamWasoolValue5Label, RaqamWasoolValue5Label, Rupay5);
 
-            BaqayaLabel.Text = baqaya;
+            BaqayaLabel.Text = baqaya.Replace("Rs", "");
             Receipt.Show();
         }
 
