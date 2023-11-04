@@ -488,7 +488,7 @@ namespace Filling_Station_Management_System
 
                     if (FuelTypeBox.SelectedIndex == 0)
                     {
-                        cmd.Parameters.AddWithValue("@Total_Sale", GetTotalPurchasePetrol());
+                        cmd.Parameters.AddWithValue("@Total_Sale", GetTotalSalePetrol());
                         cmd.Parameters.AddWithValue("@Total_Purchase", GetTotalPurchasePetrol());
                     }
                     else if (FuelTypeBox.SelectedIndex == 1)

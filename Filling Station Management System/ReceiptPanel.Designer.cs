@@ -2824,7 +2824,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(915, 122);
+            this.ClientSize = new System.Drawing.Size(949, 122);
             this.Controls.Add(this.Receipt);
             this.Controls.Add(this.bunifuButton2);
             this.Controls.Add(this.PrintReciept);

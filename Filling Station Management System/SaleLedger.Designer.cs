@@ -274,6 +274,7 @@
             this.Unit1DataGrid.TabStop = false;
             this.Unit1DataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.Unit1DataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid1DoubleClick);
+            this.Unit1DataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Unit1DataGrid_CellFormatting);
             // 
             // tabPage2
             // 
@@ -354,6 +355,7 @@
             this.DataGrid2.TabStop = false;
             this.DataGrid2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.DataGrid2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid2DoubleClick);
+            this.DataGrid2.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DataGrid2_CellFormatting);
             // 
             // tabPage3
             // 
@@ -432,6 +434,7 @@
             this.DataGrid3.TabStop = false;
             this.DataGrid3.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.DataGrid3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid3DoubleClick);
+            this.DataGrid3.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DataGrid3_CellFormatting);
             // 
             // tabPage4
             // 
@@ -510,6 +513,7 @@
             this.DataGrid4.TabStop = false;
             this.DataGrid4.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.DataGrid4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid4DoubleClick);
+            this.DataGrid4.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DataGrid4_CellFormatting);
             // 
             // ViewRecordsPanel
             // 
@@ -533,7 +537,7 @@
             this.ViewRecordsPanel.Controls.Add(this.RefTextBox);
             this.ViewRecordsPanel.Controls.Add(this.UnitBox);
             this.ViewRecordsPanel.Controls.Add(this.bunifuLabel19);
-            this.ViewRecordsPanel.Location = new System.Drawing.Point(8, 13);
+            this.ViewRecordsPanel.Location = new System.Drawing.Point(8, 11);
             this.ViewRecordsPanel.Name = "ViewRecordsPanel";
             this.ViewRecordsPanel.ShowBorders = false;
             this.ViewRecordsPanel.Size = new System.Drawing.Size(826, 615);

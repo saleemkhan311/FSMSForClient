@@ -588,6 +588,22 @@ namespace Filling_Station_Management_System
 
         }
 
+        private void PetrolDataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == PetrolDataGrid.Rows.Count - 1)
+            {
+                e.CellStyle.BackColor = Color.Tomato;
+            }
+        }
+
+        private void DieselDataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == DieselDataGrid.Rows.Count - 1)
+            {
+                e.CellStyle.BackColor = Color.Tomato;
+            }
+        }
+
         private void RecoveryDescriptionBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
 

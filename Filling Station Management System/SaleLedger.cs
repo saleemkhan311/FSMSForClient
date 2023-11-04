@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using MySql.Data.MySqlClient;
@@ -16,6 +17,7 @@ namespace Filling_Station_Management_System
             LoadData();
             ViewRecordsPanel.Hide();
             this.KeyPreview = true;
+
             //SetTabStopTrue();
         }
 
@@ -24,7 +26,7 @@ namespace Filling_Station_Management_System
         double recovery, deposit, discount, udhar;
         double balance;
         private Double _openReading, _closeReading, _rate, _test, _price, _quantity, _netQuantity, _readCount;
-        Double newPrice, newBalance, newQuantity, newNetQuantity;
+        //Double newPrice, newBalance, newQuantity, newNetQuantity;
 
         string sql;
         private void Query()
@@ -49,18 +51,18 @@ namespace Filling_Station_Management_System
 
                     cmd.Parameters.AddWithValue("@Opening_Reading", _openReading);
                     cmd.Parameters.AddWithValue("@Closing_Reading", _closeReading);
-                    cmd.Parameters.AddWithValue("@Quantity", newQuantity);
+                    cmd.Parameters.AddWithValue("@Quantity", _quantity);
                     cmd.Parameters.AddWithValue("@Test", _test);
-                    cmd.Parameters.AddWithValue("@netQuantity", newNetQuantity);
+                    cmd.Parameters.AddWithValue("@netQuantity", _netQuantity);
                     cmd.Parameters.AddWithValue("@Unit_Price", _rate);
 
 
-                    cmd.Parameters.AddWithValue("@Amount", newPrice);
+                    cmd.Parameters.AddWithValue("@Amount", _price);
                     cmd.Parameters.AddWithValue("@Recovery", recovery);
                     cmd.Parameters.AddWithValue("@Deposited", deposit);
                     cmd.Parameters.AddWithValue("@Udhar", udhar);
                     cmd.Parameters.AddWithValue("@Discount", discount);
-                    cmd.Parameters.AddWithValue("@Balance", newPrice);
+                    cmd.Parameters.AddWithValue("@Balance", balance);
 
                     cmd.ExecuteNonQuery();
 
@@ -75,11 +77,6 @@ namespace Filling_Station_Management_System
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -545,6 +542,38 @@ namespace Filling_Station_Management_System
 
         }
 
+        private void Unit1DataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == Unit1DataGrid.Rows.Count - 1)
+            {
+                e.CellStyle.BackColor = Color.Tomato;
+            }
+        }
+
+        private void DataGrid2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == DataGrid2.Rows.Count - 1)
+            {
+                e.CellStyle.BackColor = Color.Tomato;
+            }
+        }
+
+        private void DataGrid3_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == DataGrid3.Rows.Count - 1)
+            {
+                e.CellStyle.BackColor = Color.Tomato;
+            }
+        }
+
+        private void DataGrid4_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == DataGrid4.Rows.Count - 1)
+            {
+                e.CellStyle.BackColor = Color.Tomato;
+            }
+        }
+
         private void UpdateData_KeyUp(object sender, KeyEventArgs e)
         {
 
@@ -699,15 +728,12 @@ namespace Filling_Station_Management_System
 
 
 
-            newPrice = Math.Round(_price, 0);
-            newQuantity = Math.Round(_quantity, 2);
-            newNetQuantity = Math.Round(_netQuantity, 2);
 
 
-            OpenReadingTextBox.Text = _openReading.ToString();
-            QuantityTextBox.Text = newQuantity.ToString();
-            NetQuantityTextBox.Text = newNetQuantity.ToString();
-            AmountTextBox.Text = newPrice.ToString("C");
+            OpenReadingTextBox.Text = AppSettings.RoundToString(_openReading, false);
+            QuantityTextBox.Text = AppSettings.RoundToString(_quantity, false);
+            NetQuantityTextBox.Text = AppSettings.RoundToString(_netQuantity, false);
+            AmountTextBox.Text = AppSettings.RoundToString(_price, true);
 
             //----------------------------------------------
 
@@ -726,8 +752,8 @@ namespace Filling_Station_Management_System
 
 
             balance = _price + recovery - deposit - udhar - discount;
-            newBalance = Math.Round(balance, 0);
-            BalanceTB.Text = newBalance.ToString("C");
+
+            BalanceTB.Text = AppSettings.RoundToString(balance, true);
         }
 
 

@@ -140,6 +140,7 @@
             this.PetrolSummaryDataGrid.TabIndex = 0;
             this.PetrolSummaryDataGrid.TabStop = false;
             this.PetrolSummaryDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.PetrolSummaryDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.PetrolSummaryDataGrid_CellFormatting);
             // 
             // tabPage2
             // 
@@ -218,6 +219,7 @@
             this.DieselSummaryDataGrid.TabIndex = 100;
             this.DieselSummaryDataGrid.TabStop = false;
             this.DieselSummaryDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.DieselSummaryDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DieselSummaryDataGrid_CellFormatting);
             // 
             // bunifuLabel3
             // 

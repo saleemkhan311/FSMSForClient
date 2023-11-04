@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using MySql.Data.MySqlClient;
@@ -315,6 +316,22 @@ namespace Filling_Station_Management_System
         {
             if (TabControl.SelectedIndex == 0) { SaveLedger.SaveDataGridToExcel(PetrolSummaryDataGrid, "Petrol Summary"); }
             else if (TabControl.SelectedIndex == 1) { SaveLedger.SaveDataGridToExcel(DieselSummaryDataGrid, "Diesel Summary"); }
+        }
+
+        private void PetrolSummaryDataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == PetrolSummaryDataGrid.Rows.Count - 1)
+            {
+                e.CellStyle.BackColor = Color.Tomato;
+            }
+        }
+
+        private void DieselSummaryDataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == DieselSummaryDataGrid.Rows.Count - 1)
+            {
+                e.CellStyle.BackColor = Color.Tomato;
+            }
         }
     }
 }

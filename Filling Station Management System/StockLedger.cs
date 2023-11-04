@@ -149,5 +149,21 @@ namespace Filling_Station_Management_System
             else { SaveLedger.SaveDataGridToExcel(DieselStockDataGrid, "Diesel Stock Data"); }
 
         }
+
+        private void PetrolStockDataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == PetrolStockDataGrid.Rows.Count - 1)
+            {
+                e.CellStyle.BackColor = Color.Tomato;
+            }
+        }
+
+        private void DieselStockDataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == PetrolStockDataGrid.Rows.Count - 1)
+            {
+                e.CellStyle.BackColor = Color.Tomato;
+            }
+        }
     }
 }
