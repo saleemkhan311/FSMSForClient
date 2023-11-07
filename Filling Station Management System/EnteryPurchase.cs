@@ -787,7 +787,7 @@ namespace Filling_Station_Management_System
                 {
                     connection.Open();
 
-                    string sqlCom = $"SELECT \r\n    (SELECT Round(SUM(netQuantity),4) FROM unit2_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),4) FROM unit3_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),4) FROM unit4_sales_data) AS TotalSumQuantity;";
+                    string sqlCom = $"SELECT (SELECT Round(SUM(netQuantity),4) FROM unit2_sales_data) +(SELECT Round(SUM(netQuantity),4) FROM unit3_sales_data) +(SELECTRound(SUM(netQuantity),4) FROM unit4_sales_data)+ (SELECT Round(SUM(Quantity),4) FROM direct_sale_diesel) AS TotalSumQuantity;";
 
 
 
@@ -856,10 +856,7 @@ namespace Filling_Station_Management_System
                 {
                     connection.Open();
 
-                    string sqlCom = $"SELECT Round(SUM(netQuantity),4) FROM unit1_sales_data";
-
-
-
+                    string sqlCom = @"SELECT (SELECT Round(SUM(netQuantity),4) FROM unit1_sales_data) +(SELECT Round(SUM(Quantity),4) FROM direct_sale_petrol) AS TotalSumQuantity;";
 
 
                     MySqlCommand cmd = new MySqlCommand(sqlCom, connection);

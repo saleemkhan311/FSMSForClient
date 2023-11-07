@@ -39,13 +39,14 @@ namespace Filling_Station_Management_System
                 using (MySqlConnection conn = new MySqlConnection(AppSettings.ConString()))
                 {
                     conn.Open();
-                    string directQuery = $"UPDATE {unit} SET Ref_No = @Ref_No,Date=@Date,Fuel_Type=@Fuel_Type,Quantity=@Quantity,Unit_Price=@Unit_Price,Amount=@Amount WHERE Ref_No=@Ref_No";
+                    string directQuery = $"UPDATE {unit} SET Ref_No = @Ref_No,Date=@Date,Fuel_Type=@Fuel_Type,Customer=@Customer,Quantity=@Quantity,Unit_Price=@Unit_Price,Amount=@Amount WHERE Ref_No=@Ref_No";
                     MySqlCommand cmd = new MySqlCommand(directQuery, conn);
 
 
                     cmd.Parameters.AddWithValue("@Ref_No", RefTextBox.Text);
                     cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
+                    cmd.Parameters.AddWithValue("@Customer", FuelTypeBox.Text);
                     cmd.Parameters.AddWithValue("@Quantity", DirectQuantityBox.Text);
                     cmd.Parameters.AddWithValue("@Unit_Price", DirectUnitPBox.Text);
                     cmd.Parameters.AddWithValue("@Amount", DirectAmount);
@@ -58,7 +59,7 @@ namespace Filling_Station_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: ", "Direct Query" + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Direct Query", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -137,13 +138,8 @@ namespace Filling_Station_Management_System
                 else if (unit >= 5)
                 {
                     table = TableMenu.SelectedItem.ToString().ToLower();
-                    sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    Quantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount\r\nFROM {table};";
+                    sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n  , Customer , Quantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount\r\nFROM {table};";
                 }
-                /*else if (unit == 6)
-                {
-                    sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    Quantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount\r\nFROM direct_sale_diesel;";
-                }*/
-                //string sql = $"SELECT Ref_No, Date,Fuel_Type,Helper,ROUND( Opening_Reading, 2) AS  Opening_Reading,ROUND( Closing_Reading, 2) AS  Closing_Reading,ROUND(Quantity, 2) AS Quantity,ROUND(Test, 2) AS Test,ROUND(netQuantity, 2) AS netQuantity,ROUND(Unit_Price, 0) AS Unit_Price,ROUND(Amount, 0) AS Amount, ROUND(Recovery, 0) AS Recovery, ROUND(Deposited, 0) AS Deposited, ROUND(Udhar, 0) AS Udhar,    ROUND(Discount, 0) AS Discount,ROUND(Balance, 0) AS Balance FROM unit{unit}_sales_data"; // Add your WHERE clause
 
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -152,11 +148,7 @@ namespace Filling_Station_Management_System
 
 
                 Unit1DataGrid.DataSource = dataTable;
-                /* DataGrid2.DataSource = dataTable;
-                 DataGrid3.DataSource = dataTable;
-                 DataGrid4.DataSource = dataTable;
-                 PetrolDataGrid.DataSource = dataTable;
-                 DieselDataGrid.DataSource = dataTable;*/
+
             }
 
         }
@@ -283,132 +275,11 @@ namespace Filling_Station_Management_System
 
         }
 
-        private void PetrolDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-
-
-                RefTextBox.Text = PetrolDataGrid.SelectedRows[0].Cells[0].Value.ToString();
-                object date = PetrolDataGrid.SelectedRows[0].Cells[1].Value;
-                FuelTypeBox.Text = PetrolDataGrid.SelectedRows[0].Cells[2].Value.ToString();
-                DirectQuantityBox.Text = PetrolDataGrid.SelectedRows[0].Cells[3].Value.ToString();
-                DirectUnitPBox.Text = PetrolDataGrid.SelectedRows[0].Cells[4].Value.ToString();
-                DirectAmountBox.Text = PetrolDataGrid.SelectedRows[0].Cells[5].Value.ToString();
-                DateTime newDate;
-                if (DateTime.TryParse(date.ToString(), out newDate))
-                {
-                    dateTimePicker1.Value = newDate;
-                }
-                PasswordCheckPanel passCheck = new PasswordCheckPanel();
-                passCheck.ShowDialog();
-                if (passCheck.DialogResult == DialogResult.OK)
-                {
-                    Modification(true);
-                    ViewRecordsPanel.Show();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex, "Initialization", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void DataGrid2DoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-
-                RefTextBox.Text = DataGrid2.SelectedRows[0].Cells[0].Value.ToString();
-                object date = DataGrid2.SelectedRows[0].Cells[1].Value;
-                FuelTypeBox.Text = DataGrid2.SelectedRows[0].Cells[2].Value.ToString();
-                HelperTextBox.Text = DataGrid2.SelectedRows[0].Cells[3].Value.ToString();
-                OpenReadingTextBox.Text = DataGrid2.SelectedRows[0].Cells[4].Value.ToString();
-                CloseReadingTextBox.Text = DataGrid2.SelectedRows[0].Cells[5].Value.ToString();
-                QuantityTextBox.Text = DataGrid2.SelectedRows[0].Cells[6].Value.ToString();
-                CheckTextBox.Text = DataGrid2.SelectedRows[0].Cells[7].Value.ToString();
-                NetQuantityTextBox.Text = DataGrid2.SelectedRows[0].Cells[8].Value.ToString();
-                RateTextBox.Text = DataGrid2.SelectedRows[0].Cells[9].Value.ToString();
-                AmountTextBox.Text = DataGrid2.SelectedRows[0].Cells[10].Value.ToString();
-                RecoveryTextBox.Text = DataGrid2.SelectedRows[0].Cells[11].Value.ToString();
-                DepositTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[12].Value.ToString();
-                UdharTextBox.Text = DataGrid2.SelectedRows[0].Cells[13].Value.ToString();
-                DiscountTextBox.Text = DataGrid2.SelectedRows[0].Cells[14].Value.ToString();
-
-                BalanceTB.Text = DataGrid2.SelectedRows[0].Cells[15].Value.ToString();
-
-                UnitBox.SelectedIndex = TabsControl.SelectedIndex;
-                AutoSuggestions();
 
 
 
 
-                DateTime newDate;
-                if (DateTime.TryParse(date.ToString(), out newDate))
-                {
-                    dateTimePicker1.Value = newDate;
-                }
 
-                PasswordCheckPanel passCheck = new PasswordCheckPanel();
-                passCheck.ShowDialog();
-                if (passCheck.DialogResult == DialogResult.OK)
-                {
-                    Modification(false);
-                    ViewRecordsPanel.Show();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex, "Initialization", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void DataGrid3DoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                RefTextBox.Text = DataGrid3.SelectedRows[0].Cells[0].Value.ToString();
-                object date = DataGrid3.SelectedRows[0].Cells[1].Value;
-                FuelTypeBox.Text = DataGrid3.SelectedRows[0].Cells[2].Value.ToString();
-                HelperTextBox.Text = DataGrid3.SelectedRows[0].Cells[3].Value.ToString();
-                OpenReadingTextBox.Text = DataGrid3.SelectedRows[0].Cells[4].Value.ToString();
-                CloseReadingTextBox.Text = DataGrid3.SelectedRows[0].Cells[5].Value.ToString();
-                QuantityTextBox.Text = DataGrid3.SelectedRows[0].Cells[6].Value.ToString();
-                CheckTextBox.Text = DataGrid3.SelectedRows[0].Cells[7].Value.ToString();
-                NetQuantityTextBox.Text = DataGrid3.SelectedRows[0].Cells[8].Value.ToString();
-                RateTextBox.Text = DataGrid3.SelectedRows[0].Cells[9].Value.ToString();
-                AmountTextBox.Text = DataGrid3.SelectedRows[0].Cells[10].Value.ToString();
-                RecoveryTextBox.Text = DataGrid3.SelectedRows[0].Cells[11].Value.ToString();
-                DepositTextBox.Text = DataGrid3.SelectedRows[0].Cells[12].Value.ToString();
-                UdharTextBox.Text = DataGrid3.SelectedRows[0].Cells[13].Value.ToString();
-                DiscountTextBox.Text = DataGrid3.SelectedRows[0].Cells[14].Value.ToString();
-
-                BalanceTB.Text = DataGrid3.SelectedRows[0].Cells[15].Value.ToString();
-
-                UnitBox.SelectedIndex = TabsControl.SelectedIndex;
-                AutoSuggestions();
-
-
-
-
-                DateTime newDate;
-                if (DateTime.TryParse(date.ToString(), out newDate))
-                {
-                    dateTimePicker1.Value = newDate;
-                }
-                PasswordCheckPanel passCheck = new PasswordCheckPanel();
-                passCheck.ShowDialog();
-                if (passCheck.DialogResult == DialogResult.OK)
-                {
-                    Modification(false);
-                    ViewRecordsPanel.Show();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex, "Helper Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
 
 
@@ -493,7 +364,7 @@ namespace Filling_Station_Management_System
 
                     BalanceTB.Text = Unit1DataGrid.SelectedRows[0].Cells[15].Value.ToString();
 
-                    UnitBox.SelectedIndex = TabsControl.SelectedIndex;
+
 
                 }
                 else if (TableMenu.SelectedIndex > 3)
@@ -501,9 +372,10 @@ namespace Filling_Station_Management_System
                     RefTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[0].Value.ToString();
                     date = Unit1DataGrid.SelectedRows[0].Cells[1].Value;
                     FuelTypeBox.Text = Unit1DataGrid.SelectedRows[0].Cells[2].Value.ToString();
-                    DirectQuantityBox.Text = Unit1DataGrid.SelectedRows[0].Cells[3].Value.ToString();
-                    DirectUnitPBox.Text = Unit1DataGrid.SelectedRows[0].Cells[4].Value.ToString();
-                    DirectAmountBox.Text = Unit1DataGrid.SelectedRows[0].Cells[5].Value.ToString();
+                    HelperTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[3].Value.ToString();
+                    DirectQuantityBox.Text = Unit1DataGrid.SelectedRows[0].Cells[4].Value.ToString();
+                    DirectUnitPBox.Text = Unit1DataGrid.SelectedRows[0].Cells[5].Value.ToString();
+                    DirectAmountBox.Text = Unit1DataGrid.SelectedRows[0].Cells[6].Value.ToString();
                 }
 
 
@@ -547,37 +419,52 @@ namespace Filling_Station_Management_System
         {
             try
             {
-                int unit = TabsControl.SelectedIndex + 1;
-                helperNames.Clear();
+
+
+
+                int unit = UnitBox.SelectedIndex + 1;
+                string fuel = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString().ToLower();
+                string query;
+                string type;
+                string table;
+
                 using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
                     connection.Open();
 
-                    // SQL query to retrieve "Helper Name" values
-                    string query = $"SELECT `Helper` FROM unit{unit}_sales_data";
+                    if (TableMenu.SelectedIndex > 3)
+                    {
+                        type = "Customer";
+                        table = $"direct_sale_{fuel}";
+                    }
+                    else
+                    {
+                        type = "Helper";
+                        table = $"unit{unit}_sales_data";
+                    }
 
-
+                    query = $"SELECT `{type}` FROM {table} LIMIT 50";
+                    MessageBox.Show(query);
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                string helperName = reader["Helper"].ToString();
+                                string helperName = reader[type].ToString();
                                 helperNames.Add(helperName);
                             }
                         }
-
                     }
                 }
-
                 AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
                 autoCompleteCollection.AddRange(helperNames.ToArray());
+
                 HelperTextBox.AutoCompleteCustomSource = autoCompleteCollection;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex, "Helper Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error :" + ex.Message, "Name Fetch", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
 
@@ -616,29 +503,8 @@ namespace Filling_Station_Management_System
             }
         }
 
-        private void DataGrid2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.RowIndex == DataGrid2.Rows.Count - 1)
-            {
-                e.CellStyle.BackColor = Color.Tomato;
-            }
-        }
 
-        private void DataGrid3_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.RowIndex == DataGrid3.Rows.Count - 1)
-            {
-                e.CellStyle.BackColor = Color.Tomato;
-            }
-        }
 
-        private void DataGrid4_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.RowIndex == DataGrid4.Rows.Count - 1)
-            {
-                e.CellStyle.BackColor = Color.Tomato;
-            }
-        }
 
         private void Modification(bool check)
         {
@@ -651,9 +517,8 @@ namespace Filling_Station_Management_System
                 FuelTypeBox.Enabled = true;
 
                 UnitBox.Enabled = false;
-                HelperTextBox.Enabled = false;
-                HelperTextBox.Visible = false;
-                HelperLabel.Visible = false;
+
+                HelperLabel.Text = "Customer:";
             }
             else if (!check)
             {
@@ -665,46 +530,26 @@ namespace Filling_Station_Management_System
                 BalancePanel.Enabled = true;
                 BalancePanel.Visible = true;
                 UnitBox.Enabled = true;
-                HelperTextBox.Enabled = true;
-                HelperTextBox.Visible = true;
-                HelperLabel.Visible = true;
-            }
 
+                HelperLabel.Text = "Helper:";
+            }
+            FuelTypeLabel.Text = $"Direct Sale {FuelTypeBox.SelectedItem.ToString()}";
+
+            DirectSalePanel.PanelColor = Color.FromArgb(113, 175, 184);
+            if (FuelTypeBox.SelectedIndex == 1)
+            { DirectSalePanel.PanelColor = Color.FromArgb(255, 218, 185); }
+            else { DirectSalePanel.PanelColor = Color.FromArgb(113, 175, 184); }
         }
-        private void DieselDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                RefTextBox.Text = DieselDataGrid.SelectedRows[0].Cells[0].Value.ToString();
-                object date = DieselDataGrid.SelectedRows[0].Cells[1].Value;
-                FuelTypeBox.Text = DieselDataGrid.SelectedRows[0].Cells[2].Value.ToString();
-                DirectQuantityBox.Text = DieselDataGrid.SelectedRows[0].Cells[3].Value.ToString();
-                DirectUnitPBox.Text = DieselDataGrid.SelectedRows[0].Cells[4].Value.ToString();
-                DirectAmountBox.Text = DieselDataGrid.SelectedRows[0].Cells[5].Value.ToString();
 
-                DateTime newDate;
-                if (DateTime.TryParse(date.ToString(), out newDate))
-                {
-                    dateTimePicker1.Value = newDate;
-                }
-                PasswordCheckPanel passCheck = new PasswordCheckPanel();
-                passCheck.ShowDialog();
-                if (passCheck.DialogResult == DialogResult.OK)
-                {
-                    Modification(true);
-                    ViewRecordsPanel.Show();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex, "Initialization", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void DirectQuantityBox_TextChanged(object sender, EventArgs e)
         {
             DirectSaleCal();
+        }
+
+        private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void DirectUnitPBox_TextChanged(object sender, EventArgs e)
@@ -761,53 +606,7 @@ namespace Filling_Station_Management_System
 
         }
 
-        private void DataGrid4DoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
 
-                RefTextBox.Text = DataGrid4.SelectedRows[0].Cells[0].Value.ToString();
-                object date = DataGrid4.SelectedRows[0].Cells[1].Value;
-                FuelTypeBox.Text = DataGrid4.SelectedRows[0].Cells[2].Value.ToString();
-                HelperTextBox.Text = DataGrid4.SelectedRows[0].Cells[3].Value.ToString();
-                OpenReadingTextBox.Text = DataGrid4.SelectedRows[0].Cells[4].Value.ToString();
-                CloseReadingTextBox.Text = DataGrid4.SelectedRows[0].Cells[5].Value.ToString();
-                QuantityTextBox.Text = DataGrid4.SelectedRows[0].Cells[6].Value.ToString();
-                CheckTextBox.Text = DataGrid4.SelectedRows[0].Cells[7].Value.ToString();
-                NetQuantityTextBox.Text = DataGrid4.SelectedRows[0].Cells[8].Value.ToString();
-                RateTextBox.Text = DataGrid4.SelectedRows[0].Cells[9].Value.ToString();
-                AmountTextBox.Text = DataGrid4.SelectedRows[0].Cells[10].Value.ToString();
-                RecoveryTextBox.Text = DataGrid4.SelectedRows[0].Cells[11].Value.ToString();
-                DepositTextBox.Text = DataGrid4.SelectedRows[0].Cells[12].Value.ToString();
-                UdharTextBox.Text = DataGrid4.SelectedRows[0].Cells[13].Value.ToString();
-                DiscountTextBox.Text = DataGrid4.SelectedRows[0].Cells[14].Value.ToString();
-
-                BalanceTB.Text = DataGrid4.SelectedRows[0].Cells[15].Value.ToString();
-
-                UnitBox.SelectedIndex = TabsControl.SelectedIndex;
-                AutoSuggestions();
-
-
-                DateTime newDate;
-                if (DateTime.TryParse(date.ToString(), out newDate))
-                {
-                    dateTimePicker1.Value = newDate;
-                }
-
-                PasswordCheckPanel passCheck = new PasswordCheckPanel();
-                passCheck.ShowDialog();
-                if (passCheck.DialogResult == DialogResult.OK)
-                {
-                    Modification(false);
-                    ViewRecordsPanel.Show();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex, "Helper Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
 
 

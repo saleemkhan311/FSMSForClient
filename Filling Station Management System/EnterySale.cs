@@ -41,6 +41,16 @@ namespace Filling_Station_Management_System
         {
             AutoSuggestions();
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
+
+            if (!ToggleSwitch.Checked)
+                return;
+
+            FuelTypeLabel.Text = $"Direct Sale {FuelTypeBox.SelectedItem}";
+
+            DirectSalePanel.PanelColor = Color.FromArgb(113, 175, 184);
+            if (FuelTypeBox.SelectedIndex == 1)
+            { DirectSalePanel.PanelColor = Color.FromArgb(255, 218, 185); }
+            else { DirectSalePanel.PanelColor = Color.FromArgb(113, 175, 184); }
         }
 
         private void UnitBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -272,9 +282,7 @@ namespace Filling_Station_Management_System
                 FuelTypeBox.Enabled = true;
 
                 UnitBox.Enabled = false;
-                HelperTextBox.Enabled = false;
-                HelperTextBox.Visible = false;
-                HelperLabel.Visible = false;
+                HelperLabel.Text = "Customer:";
             }
             else if (!ToggleSwitch.Checked)
             {
@@ -286,12 +294,12 @@ namespace Filling_Station_Management_System
                 BalancePanel.Enabled = true;
                 BalancePanel.Visible = true;
                 UnitBox.Enabled = true;
-                HelperTextBox.Enabled = true;
-                HelperTextBox.Visible = true;
-                HelperLabel.Visible = true;
+
+                HelperLabel.Text = "Helper:";
             }
 
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
+            AutoSuggestions();
         }
 
         private void InsertData_KeyUp(object sender, KeyEventArgs e)
@@ -331,13 +339,14 @@ namespace Filling_Station_Management_System
                 using (MySqlConnection conn = new MySqlConnection(AppSettings.ConString()))
                 {
                     conn.Open();
-                    directQuery = $"INSERT INTO direct_sale_{unit} (Ref_No, Date, Fuel_Type, Quantity, Unit_Price,Amount) VALUES (@Ref_No, @Date, @Fuel_Type, @Quantity, @Unit_Price,@Amount)";
+                    directQuery = $"INSERT INTO direct_sale_{unit} (Ref_No, Date, Fuel_Type, Customer, Quantity, Unit_Price,Amount) VALUES (@Ref_No, @Date, @Fuel_Type,@Customer, @Quantity, @Unit_Price,@Amount)";
                     MySqlCommand cmd = new MySqlCommand(directQuery, conn);
 
 
                     cmd.Parameters.AddWithValue("@Ref_No", RefTextBox.Text);
                     cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
+                    cmd.Parameters.AddWithValue("@Customer", HelperTextBox.Text);
                     cmd.Parameters.AddWithValue("@Quantity", DirectQuantityBox.Text);
                     cmd.Parameters.AddWithValue("@Unit_Price", DirectUnitPBox.Text);
                     cmd.Parameters.AddWithValue("@Amount", DirectAmount);
@@ -350,7 +359,7 @@ namespace Filling_Station_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: ", "Direct Query" + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Direct Query", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -492,24 +501,42 @@ namespace Filling_Station_Management_System
         List<string> helperNames = new List<string>();
         private void AutoSuggestions()
         {
+
             try
             {
+
+
+
                 int unit = UnitBox.SelectedIndex + 1;
+                string fuel = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString().ToLower();
+                string query;
+                string type;
+                string table;
 
                 using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
                     connection.Open();
 
+                    if (ToggleSwitch.Checked)
+                    {
+                        type = "Customer";
+                        table = $"direct_sale_{fuel}";
+                    }
+                    else
+                    {
+                        type = "Helper";
+                        table = $"unit{unit}_sales_data";
+                    }
 
-                    string query = $"SELECT `Helper` FROM unit{unit}_sales_data LIMIT 50";
-
+                    query = $"SELECT `{type}` FROM {table} LIMIT 50";
+                    MessageBox.Show(query);
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                string helperName = reader["Helper"].ToString();
+                                string helperName = reader[type].ToString();
                                 helperNames.Add(helperName);
                             }
                         }
@@ -522,7 +549,7 @@ namespace Filling_Station_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error :" + ex.Message, "Helper Fetch", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Error :" + ex.Message, "Name Fetch", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
 
         }

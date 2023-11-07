@@ -111,7 +111,7 @@
             this.SaleEntery = new Bunifu.UI.WinForms.BunifuPanel();
             this.SalePanel = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.DirectSalePanel = new Bunifu.UI.WinForms.BunifuShadowPanel();
-            this.bunifuLabel20 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.FuelTypeLabel = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel23 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel25 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel27 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -353,7 +353,7 @@
             this.DirectSalePanel.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.DirectSalePanel.BorderRadius = 10;
             this.DirectSalePanel.BorderThickness = 1;
-            this.DirectSalePanel.Controls.Add(this.bunifuLabel20);
+            this.DirectSalePanel.Controls.Add(this.FuelTypeLabel);
             this.DirectSalePanel.Controls.Add(this.bunifuLabel23);
             this.DirectSalePanel.Controls.Add(this.bunifuLabel25);
             this.DirectSalePanel.Controls.Add(this.bunifuLabel27);
@@ -375,22 +375,22 @@
             this.DirectSalePanel.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.DirectSalePanel.TabIndex = 2;
             // 
-            // bunifuLabel20
+            // FuelTypeLabel
             // 
-            this.bunifuLabel20.AllowParentOverrides = false;
-            this.bunifuLabel20.AutoEllipsis = false;
-            this.bunifuLabel20.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel20.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel20.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel20.Location = new System.Drawing.Point(28, 14);
-            this.bunifuLabel20.Name = "bunifuLabel20";
-            this.bunifuLabel20.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel20.Size = new System.Drawing.Size(122, 32);
-            this.bunifuLabel20.TabIndex = 100;
-            this.bunifuLabel20.TabStop = false;
-            this.bunifuLabel20.Text = "Direct Sale";
-            this.bunifuLabel20.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel20.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.FuelTypeLabel.AllowParentOverrides = false;
+            this.FuelTypeLabel.AutoEllipsis = false;
+            this.FuelTypeLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FuelTypeLabel.CursorType = System.Windows.Forms.Cursors.Default;
+            this.FuelTypeLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.FuelTypeLabel.Location = new System.Drawing.Point(28, 14);
+            this.FuelTypeLabel.Name = "FuelTypeLabel";
+            this.FuelTypeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.FuelTypeLabel.Size = new System.Drawing.Size(122, 32);
+            this.FuelTypeLabel.TabIndex = 100;
+            this.FuelTypeLabel.TabStop = false;
+            this.FuelTypeLabel.Text = "Direct Sale";
+            this.FuelTypeLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.FuelTypeLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel23
             // 
@@ -471,7 +471,7 @@
             this.DirectQuantityBox.IconRight = null;
             this.DirectQuantityBox.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.DirectQuantityBox.Lines = new string[0];
-            this.DirectQuantityBox.Location = new System.Drawing.Point(195, 59);
+            this.DirectQuantityBox.Location = new System.Drawing.Point(195, 58);
             this.DirectQuantityBox.MaxLength = 32767;
             this.DirectQuantityBox.MinimumSize = new System.Drawing.Size(1, 1);
             this.DirectQuantityBox.Modified = false;
@@ -1513,7 +1513,7 @@
             this.HelperTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.HelperTextBox.PasswordChar = '\0';
             this.HelperTextBox.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.HelperTextBox.PlaceholderText = "Enter Helper Name";
+            this.HelperTextBox.PlaceholderText = "Enter Name";
             this.HelperTextBox.ReadOnly = false;
             this.HelperTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.HelperTextBox.SelectedText = "";
@@ -1527,7 +1527,7 @@
             this.HelperTextBox.TextMarginBottom = 0;
             this.HelperTextBox.TextMarginLeft = 3;
             this.HelperTextBox.TextMarginTop = 0;
-            this.HelperTextBox.TextPlaceholder = "Enter Helper Name";
+            this.HelperTextBox.TextPlaceholder = "Enter Name";
             this.HelperTextBox.UseSystemPasswordChar = false;
             this.HelperTextBox.WordWrap = true;
             this.HelperTextBox.TextChanged += new System.EventHandler(this.HelperTextBox_TextChanged_1);
@@ -2251,7 +2251,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(845, 640);
+            this.ClientSize = new System.Drawing.Size(846, 640);
             this.Controls.Add(this.SaleEntery);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EnterySale";
@@ -2330,6 +2330,6 @@
         private Bunifu.UI.WinForms.BunifuTextBox DirectUnitPBox;
         private Bunifu.UI.WinForms.BunifuToggleSwitch ToggleSwitch;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel30;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel20;
+        private Bunifu.UI.WinForms.BunifuLabel FuelTypeLabel;
     }
 }
