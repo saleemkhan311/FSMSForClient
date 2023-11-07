@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
@@ -12,11 +13,6 @@ namespace Filling_Station_Management_System
         public EnterySale()
         {
             InitializeComponent();
-            UnitBox.SelectedIndex = 0;
-            dateTimePicker1.Value = DateTime.Now;
-            AutoIncrement();
-            this.KeyPreview = true;
-
 
         }
 
@@ -26,6 +22,7 @@ namespace Filling_Station_Management_System
         Double balance;
         private Double _openReading, _closeReading, _rate, _test, _price, _quantity, _netQuantity;
         Double newPrice, newBalance, newOpenReading, newQuantity, newNetQuantity;
+        Double DirectQuantity, DirectUnitPrice, DirectAmount;
 
         // Reading Entry -------------------------------------------------------------------------------------------
 
@@ -43,6 +40,7 @@ namespace Filling_Station_Management_System
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             AutoSuggestions();
+            RefTextBox.Text = (GetLastRefNo() + 1).ToString();
         }
 
         private void UnitBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,7 +73,12 @@ namespace Filling_Station_Management_System
 
         private void InsertData_Click(object sender, EventArgs e)
         {
-            Query();
+            if (ToggleSwitch.Checked)
+            {
+                DirectSaleQuery();
+            }
+            else { Query(); }
+
             AutoIncrement();
 
             ClearBox();
@@ -132,6 +135,12 @@ namespace Filling_Station_Management_System
 
 
                 dateTimePicker1.Value = DateTime.Now;
+                DirectQuantityBox.Clear();
+                DirectQuantity = 0;
+                DirectUnitPBox.Clear();
+                DirectUnitPrice = 0;
+                DirectAmountBox.Clear();
+                DirectAmount = 0;
             }
             catch (Exception ex)
             {
@@ -222,6 +231,67 @@ namespace Filling_Station_Management_System
         private void EnterySale_Load(object sender, EventArgs e)
         {
 
+
+            UnitBox.SelectedIndex = 0;
+            ToggleSwitch.Checked = false;
+            dateTimePicker1.Value = DateTime.Now;
+            AutoIncrement();
+            this.KeyPreview = true;
+
+        }
+
+        private void DirectQuantityBox_TextChanged(object sender, EventArgs e)
+        {
+            DirectSaleCal();
+        }
+
+        private void DirectUnitPBox_TextChanged(object sender, EventArgs e)
+        {
+            DirectSaleCal();
+        }
+
+
+
+        private void DirectSaleCal()
+        {
+            DirectQuantity = AppSettings.convertToDouble(DirectQuantityBox.Text);
+            DirectUnitPrice = AppSettings.convertToDouble(DirectUnitPBox.Text);
+            DirectAmount = DirectQuantity * DirectUnitPrice;
+
+            DirectAmountBox.Text = AppSettings.RoundToString(DirectAmount, true);
+        }
+        private void ToggleSwitch_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)
+        {
+
+            if (ToggleSwitch.Checked)
+            {
+                DirectSalePanel.Visible = true;
+                DirectSalePanel.BringToFront();
+                BalancePanel.Enabled = false;
+                BalancePanel.Visible = false;
+                FuelTypeBox.Enabled = true;
+
+                UnitBox.Enabled = false;
+                HelperTextBox.Enabled = false;
+                HelperTextBox.Visible = false;
+                HelperLabel.Visible = false;
+            }
+            else if (!ToggleSwitch.Checked)
+            {
+                DirectSalePanel.Visible = false;
+                SalePanel.Visible = true;
+                SalePanel.BringToFront();
+                FuelTypeBox.Enabled = false;
+
+                BalancePanel.Enabled = true;
+                BalancePanel.Visible = true;
+                UnitBox.Enabled = true;
+                HelperTextBox.Enabled = true;
+                HelperTextBox.Visible = true;
+                HelperLabel.Visible = true;
+            }
+
+            RefTextBox.Text = (GetLastRefNo() + 1).ToString();
         }
 
         private void InsertData_KeyUp(object sender, KeyEventArgs e)
@@ -248,6 +318,39 @@ namespace Filling_Station_Management_System
             {
                 SendKeys.Send("{TAB}");
                 e.Handled = true;
+            }
+        }
+
+        string directQuery;
+        private void DirectSaleQuery()
+        {
+            string unit = FuelTypeBox.SelectedItem.ToString();
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(AppSettings.ConString()))
+                {
+                    conn.Open();
+                    directQuery = $"INSERT INTO direct_sale_{unit} (Ref_No, Date, Fuel_Type, Quantity, Unit_Price,Amount) VALUES (@Ref_No, @Date, @Fuel_Type, @Quantity, @Unit_Price,@Amount)";
+                    MySqlCommand cmd = new MySqlCommand(directQuery, conn);
+
+
+                    cmd.Parameters.AddWithValue("@Ref_No", RefTextBox.Text);
+                    cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
+                    cmd.Parameters.AddWithValue("@Quantity", DirectQuantityBox.Text);
+                    cmd.Parameters.AddWithValue("@Unit_Price", DirectUnitPBox.Text);
+                    cmd.Parameters.AddWithValue("@Amount", DirectAmount);
+
+                    cmd.ExecuteNonQuery();
+
+                    conn.Close();
+                    MessageBox.Show("Records Inserted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: ", "Direct Query" + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -288,6 +391,7 @@ namespace Filling_Station_Management_System
                     cmd.Parameters.AddWithValue("@Balance", balance);
 
                     cmd.ExecuteNonQuery();
+                    connection.Close();
                 }
 
                 MessageBox.Show("Records Inserted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -342,15 +446,23 @@ namespace Filling_Station_Management_System
         private float GetLastRefNo()
         {
             int lastRefNo = 0;
-            int unit = UnitBox.SelectedIndex + 1;
+            int index = UnitBox.SelectedIndex + 1;
+            //MessageBox.Show("Unit Box: " + UnitBox.SelectedIndex + " Index: " + index);
+
             try
             {
 
                 using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
                 {
                     connection.Open();
+                    if (ToggleSwitch.Checked)
+                    {
+                        string fuel = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString();
+                        Refsql = $"SELECT Ref_No FROM direct_sale_{fuel} ORDER BY Ref_No DESC LIMIT 1";
+                    }
+                    else if (!ToggleSwitch.Checked) { Refsql = $"SELECT Ref_No FROM unit{index}_sales_data ORDER BY Ref_No DESC LIMIT 1"; }
 
-                    Refsql = $"SELECT Ref_No FROM unit{unit}_sales_data ORDER BY Ref_No DESC LIMIT 1";
+
 
 
                     MySqlCommand cmd = new MySqlCommand(Refsql, connection);
@@ -365,7 +477,7 @@ namespace Filling_Station_Management_System
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error: ", "Get Last Ref" + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Get Last Ref", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return lastRefNo;

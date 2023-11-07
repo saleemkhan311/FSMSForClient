@@ -463,7 +463,7 @@
             this.ViewRecordsPanel.Controls.Add(this.bunifuLabel1);
             this.ViewRecordsPanel.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
             this.ViewRecordsPanel.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.ViewRecordsPanel.Location = new System.Drawing.Point(8, 184);
+            this.ViewRecordsPanel.Location = new System.Drawing.Point(8, 10);
             this.ViewRecordsPanel.Name = "ViewRecordsPanel";
             this.ViewRecordsPanel.PanelColor = System.Drawing.Color.WhiteSmoke;
             this.ViewRecordsPanel.PanelColor2 = System.Drawing.Color.WhiteSmoke;
