@@ -17,7 +17,7 @@ namespace Filling_Station_Management_System
 
             ViewRecordsPanel.Hide();
             this.KeyPreview = true;
-            TableMenu.SelectedIndex = 0;
+
             //SetTabStopTrue();
         }
 
@@ -46,7 +46,7 @@ namespace Filling_Station_Management_System
                     cmd.Parameters.AddWithValue("@Ref_No", RefTextBox.Text);
                     cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
-                    cmd.Parameters.AddWithValue("@Customer", FuelTypeBox.Text);
+                    cmd.Parameters.AddWithValue("@Customer", HelperTextBox.Text);
                     cmd.Parameters.AddWithValue("@Quantity", DirectQuantityBox.Text);
                     cmd.Parameters.AddWithValue("@Unit_Price", DirectUnitPBox.Text);
                     cmd.Parameters.AddWithValue("@Amount", DirectAmount);
@@ -118,7 +118,7 @@ namespace Filling_Station_Management_System
 
         private void SaleLedger_Load(object sender, EventArgs e)
         {
-
+            TableMenu.SelectedIndex = 0;
         }
 
         private void LoadData()
@@ -138,7 +138,7 @@ namespace Filling_Station_Management_System
                 else if (unit >= 5)
                 {
                     table = TableMenu.SelectedItem.ToString().ToLower();
-                    sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n  , Customer , Quantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount\r\nFROM {table};";
+                    sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n   Customer,\r\n Quantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount\r\nFROM {table};";
                 }
 
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
@@ -341,8 +341,10 @@ namespace Filling_Station_Management_System
         {
             try
             {
+
+
                 object date = null;
-                AutoSuggestions();
+
                 if (TableMenu.SelectedIndex <= 3)
                 {
 
@@ -378,6 +380,7 @@ namespace Filling_Station_Management_System
                     DirectAmountBox.Text = Unit1DataGrid.SelectedRows[0].Cells[6].Value.ToString();
                 }
 
+                AutoSuggestions();
 
                 DateTime newDate;
                 if (DateTime.TryParse(date.ToString(), out newDate))
@@ -392,6 +395,7 @@ namespace Filling_Station_Management_System
                 {
                     ViewRecordsPanel.Show();
                 }
+
 
 
             }
@@ -423,6 +427,7 @@ namespace Filling_Station_Management_System
 
 
                 int unit = UnitBox.SelectedIndex + 1;
+                string unitTable = TableMenu.Items[TableMenu.SelectedIndex].ToString();
                 string fuel = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString().ToLower();
                 string query;
                 string type;
@@ -440,11 +445,10 @@ namespace Filling_Station_Management_System
                     else
                     {
                         type = "Helper";
-                        table = $"unit{unit}_sales_data";
+                        table = $"{TableMenu.Items[TableMenu.SelectedIndex]}";
                     }
 
                     query = $"SELECT `{type}` FROM {table} LIMIT 50";
-                    MessageBox.Show(query);
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -514,9 +518,9 @@ namespace Filling_Station_Management_System
                 DirectSalePanel.BringToFront();
                 BalancePanel.Enabled = false;
                 BalancePanel.Visible = false;
-                FuelTypeBox.Enabled = true;
+                /* FuelTypeBox.Enabled = true;*/
 
-                UnitBox.Enabled = false;
+                /* UnitBox.Enabled = false;*/
 
                 HelperLabel.Text = "Customer:";
             }
@@ -525,20 +529,16 @@ namespace Filling_Station_Management_System
                 DirectSalePanel.Visible = false;
                 SalePanel.Visible = true;
                 SalePanel.BringToFront();
-                FuelTypeBox.Enabled = false;
+                /*FuelTypeBox.Enabled = false;*/
 
                 BalancePanel.Enabled = true;
                 BalancePanel.Visible = true;
-                UnitBox.Enabled = true;
+                /*UnitBox.Enabled = true;*/
 
                 HelperLabel.Text = "Helper:";
             }
-            FuelTypeLabel.Text = $"Direct Sale {FuelTypeBox.SelectedItem.ToString()}";
 
-            DirectSalePanel.PanelColor = Color.FromArgb(113, 175, 184);
-            if (FuelTypeBox.SelectedIndex == 1)
-            { DirectSalePanel.PanelColor = Color.FromArgb(255, 218, 185); }
-            else { DirectSalePanel.PanelColor = Color.FromArgb(113, 175, 184); }
+
         }
 
 
@@ -549,7 +549,23 @@ namespace Filling_Station_Management_System
 
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (TableMenu.SelectedIndex <= 3)
+            {
+                Modification(false);
 
+            }
+            else
+            {
+                Modification(true);
+
+            }
+
+            FuelTypeLabel.Text = $"Direct Sale {FuelTypeBox.SelectedItem}";
+
+
+            if (TableMenu.SelectedIndex > 4)
+            { DirectSalePanel.PanelColor = Color.FromArgb(184, 204, 228); }
+            else { DirectSalePanel.PanelColor = Color.FromArgb(240, 147, 124); }
         }
 
         private void DirectUnitPBox_TextChanged(object sender, EventArgs e)
@@ -560,6 +576,7 @@ namespace Filling_Station_Management_System
         private void TableMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadData();
+
             if (TableMenu.SelectedIndex <= 3)
             {
                 Modification(false);
@@ -573,6 +590,7 @@ namespace Filling_Station_Management_System
                 SearchByNameRadio.Enabled = false;
                 SearchByRefRadio.Checked = true;
             }
+
         }
 
         private void UpdateData_KeyUp(object sender, KeyEventArgs e)

@@ -417,10 +417,10 @@
             this.DirectSalePanel.Controls.Add(this.DirectUnitPBox);
             this.DirectSalePanel.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
             this.DirectSalePanel.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.DirectSalePanel.Location = new System.Drawing.Point(2, 2);
+            this.DirectSalePanel.Location = new System.Drawing.Point(2, 0);
             this.DirectSalePanel.Name = "DirectSalePanel";
-            this.DirectSalePanel.PanelColor = System.Drawing.Color.PeachPuff;
-            this.DirectSalePanel.PanelColor2 = System.Drawing.Color.PeachPuff;
+            this.DirectSalePanel.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(147)))), ((int)(((byte)(124)))));
+            this.DirectSalePanel.PanelColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(147)))), ((int)(((byte)(124)))));
             this.DirectSalePanel.ShadowColor = System.Drawing.Color.DarkGray;
             this.DirectSalePanel.ShadowDept = 2;
             this.DirectSalePanel.ShadowDepth = 5;
@@ -440,10 +440,10 @@
             this.FuelTypeLabel.Location = new System.Drawing.Point(28, 14);
             this.FuelTypeLabel.Name = "FuelTypeLabel";
             this.FuelTypeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FuelTypeLabel.Size = new System.Drawing.Size(122, 32);
+            this.FuelTypeLabel.Size = new System.Drawing.Size(198, 32);
             this.FuelTypeLabel.TabIndex = 100;
             this.FuelTypeLabel.TabStop = false;
-            this.FuelTypeLabel.Text = "Direct Sale";
+            this.FuelTypeLabel.Text = "Direct Sale Petrol";
             this.FuelTypeLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.FuelTypeLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -2014,7 +2014,7 @@
             this.FuelTypeBox.FormattingEnabled = true;
             this.FuelTypeBox.Items.AddRange(new object[] {
             "Petrol",
-            "Deisel"});
+            "Diesel"});
             this.FuelTypeBox.Location = new System.Drawing.Point(227, 49);
             this.FuelTypeBox.Name = "FuelTypeBox";
             this.FuelTypeBox.Size = new System.Drawing.Size(121, 25);

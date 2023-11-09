@@ -787,7 +787,7 @@ namespace Filling_Station_Management_System
                 {
                     connection.Open();
 
-                    string sqlCom = $"SELECT (SELECT Round(SUM(netQuantity),4) FROM unit2_sales_data) +(SELECT Round(SUM(netQuantity),4) FROM unit3_sales_data) +(SELECTRound(SUM(netQuantity),4) FROM unit4_sales_data)+ (SELECT Round(SUM(Quantity),4) FROM direct_sale_diesel) AS TotalSumQuantity;";
+                    string sqlCom = $"SELECT (SELECT Round(SUM(netQuantity),4) FROM unit2_sales_data) +(SELECT Round(SUM(netQuantity),4) FROM unit3_sales_data) +(SELECT Round(SUM(netQuantity),4) FROM unit4_sales_data)+ (SELECT Round(SUM(Quantity),4) FROM direct_sale_diesel) AS TotalSumQuantity;";
 
 
 

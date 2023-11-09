@@ -47,10 +47,10 @@ namespace Filling_Station_Management_System
 
             FuelTypeLabel.Text = $"Direct Sale {FuelTypeBox.SelectedItem}";
 
-            DirectSalePanel.PanelColor = Color.FromArgb(113, 175, 184);
+
             if (FuelTypeBox.SelectedIndex == 1)
-            { DirectSalePanel.PanelColor = Color.FromArgb(255, 218, 185); }
-            else { DirectSalePanel.PanelColor = Color.FromArgb(113, 175, 184); }
+            { DirectSalePanel.PanelColor = Color.FromArgb(184, 204, 228); }
+            else { DirectSalePanel.PanelColor = Color.FromArgb(240, 147, 124); }
         }
 
         private void UnitBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -508,6 +508,7 @@ namespace Filling_Station_Management_System
 
 
                 int unit = UnitBox.SelectedIndex + 1;
+
                 string fuel = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString().ToLower();
                 string query;
                 string type;
@@ -529,7 +530,6 @@ namespace Filling_Station_Management_System
                     }
 
                     query = $"SELECT `{type}` FROM {table} LIMIT 50";
-                    MessageBox.Show(query);
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         using (MySqlDataReader reader = cmd.ExecuteReader())
