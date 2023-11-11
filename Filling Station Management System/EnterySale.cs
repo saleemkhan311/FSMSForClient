@@ -209,7 +209,7 @@ namespace Filling_Station_Management_System
             newNetQuantity = Math.Round(_netQuantity, 2);*/
 
 
-            OpenReadingTextBox.Text = AppSettings.RoundToString(_openReading, false);
+            OpenReadingTextBox.Text = _openReading.ToString("0.000");
             QuantityTextBox.Text = AppSettings.RoundToString(_quantity, false);
             NetQuantityTextBox.Text = AppSettings.RoundToString(_netQuantity, false);
             AmountTextBox.Text = AppSettings.RoundToString(_price, true);

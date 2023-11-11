@@ -2686,7 +2686,7 @@
             this.PrintReciept.IdleIconLeftImage = null;
             this.PrintReciept.IdleIconRightImage = null;
             this.PrintReciept.IndicateFocus = false;
-            this.PrintReciept.Location = new System.Drawing.Point(293, 34);
+            this.PrintReciept.Location = new System.Drawing.Point(394, 34);
             this.PrintReciept.Name = "PrintReciept";
             this.PrintReciept.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.PrintReciept.OnDisabledState.BorderRadius = 15;
@@ -2776,7 +2776,7 @@
             this.bunifuButton1.IdleIconLeftImage = global::Filling_Station_Management_System.Properties.Resources.PDF;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(624, 34);
+            this.bunifuButton1.Location = new System.Drawing.Point(785, 34);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 15;
@@ -2824,7 +2824,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(949, 122);
+            this.ClientSize = new System.Drawing.Size(1051, 122);
             this.Controls.Add(this.Receipt);
             this.Controls.Add(this.bunifuButton2);
             this.Controls.Add(this.PrintReciept);

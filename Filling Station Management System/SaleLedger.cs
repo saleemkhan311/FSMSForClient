@@ -133,7 +133,7 @@ namespace Filling_Station_Management_System
                 if (unit <= 4)
                 {
                     table = TableMenu.Items[TableMenu.SelectedIndex].ToString().ToLower();
-                    sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    Helper,\r\n    Opening_Reading,\r\n    Closing_Reading,\r\n    Quantity,\r\n    Test,\r\n    netQuantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount,\r\n    FORMAT(Recovery, 'C', 'en-PK') AS Recovery,\r\n    FORMAT(Deposited, 'C', 'en-PK') AS Deposited,\r\n    FORMAT(Udhar, 'C', 'en-PK') AS Udhar,\r\n    FORMAT(Discount, 'C', 'en-PK') AS Discount,\r\n    FORMAT(Balance, 'C', 'en-PK') AS Balance\r\nFROM {table};\r\n"; // Add your WHERE clause
+                    sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    Helper,\r\n    ROUND(Opening_Reading,3) AS Opening_Reading,\r\n    Round(Closing_Reading,3) AS Closing_Reading,\r\n    Quantity,\r\n    Test,\r\n    netQuantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount,\r\n    FORMAT(Recovery, 'C', 'en-PK') AS Recovery,\r\n    FORMAT(Deposited, 'C', 'en-PK') AS Deposited,\r\n    FORMAT(Udhar, 'C', 'en-PK') AS Udhar,\r\n    FORMAT(Discount, 'C', 'en-PK') AS Discount,\r\n    FORMAT(Balance, 'C', 'en-PK') AS Balance\r\nFROM {table};\r\n"; // Add your WHERE clause
                 }
                 else if (unit >= 5)
                 {
@@ -695,6 +695,7 @@ namespace Filling_Station_Management_System
 
             try
             {
+                _openReading = AppSettings.convertToDouble(OpenReadingTextBox.Text);
                 _closeReading = AppSettings.convertToDouble(CloseReadingTextBox.Text);
                 _rate = AppSettings.convertToDouble(RateTextBox.Text);
                 _test = AppSettings.convertToDouble(CheckTextBox.Text);
