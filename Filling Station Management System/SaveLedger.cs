@@ -26,7 +26,7 @@ namespace Filling_Station_Management_System
                     try
                     {
                         Excel.Workbook workbook = excelApp.Workbooks.Add();
-                        Excel.Worksheet worksheet = workbook.Sheets[1];
+                        Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
 
                         // Write DataGridView column headers to Excel
                         for (int col = 0; col < dataGridView.Columns.Count; col++)
@@ -49,16 +49,16 @@ namespace Filling_Station_Management_System
                         excelApp.Quit();
 
                         MessageBox.Show("Data saved successfully as Excel!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("An error occurred while exporting data!" + ex.Message, "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("An error occurred while exporting data!" + ex.Message, "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                     finally
                     {
-                        // Marshal.ReleaseComObject(excelApp);
-                    }
+                    // Marshal.ReleaseComObject(excelApp);
                 }
+            }
             }
         }
     }

@@ -27,7 +27,7 @@ namespace Filling_Station_Management_System
                 {
                     connection.Open();
 
-                    string sqlCom = $"SELECT Round(SUM(netQuantity),2) FROM unit1_sales_data;";
+                    string sqlCom = $"SELECT ROUND(SUM(netQuantity), 2) AS total_net_quantity FROM ( SELECT netQuantity FROM unit1_sales_data UNION ALL SELECT netQuantity FROM unit2_sales_data UNION ALL SELECT netQuantity FROM unit3_sales_data ) AS combined_sales_data;";
 
                     MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
                     object result = cmd.ExecuteScalar();
@@ -58,7 +58,7 @@ namespace Filling_Station_Management_System
                 {
                     connection.Open();
 
-                    string sqlCom = $"SELECT \r\n    (SELECT Round(SUM(netQuantity),2) FROM unit2_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit3_sales_data) +\r\n    (SELECT Round(SUM(netQuantity),2) FROM unit4_sales_data) + (SELECT Round(SUM(Quantity),2) FROM direct_sale_diesel) AS TotalSumQuantity;";
+                    string sqlCom = $"SELECT \r\n    ROUND(\r\n        (SELECT SUM(netQuantity) FROM unit4_sales_data) +\r\n        (SELECT SUM(netQuantity) FROM unit5_sales_data) +\r\n        (SELECT SUM(netQuantity) FROM unit6_sales_data) +\r\n        (SELECT SUM(netQuantity) FROM unit7_sales_data) +\r\n        (SELECT SUM(netQuantity) FROM unit8_sales_data) +\r\n        (SELECT SUM(Quantity) FROM direct_sale_diesel), \r\n    2) AS TotalSumQuantity;";
 
 
                     MySqlCommand cmd = new MySqlCommand(sqlCom, connection);

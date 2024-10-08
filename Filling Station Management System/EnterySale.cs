@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
@@ -18,11 +19,16 @@ namespace Filling_Station_Management_System
 
 
 
+
+
         Double recovery, deposit, discount, udhar;
         Double balance;
         private Double _openReading, _closeReading, _rate, _test, _price, _quantity, _netQuantity;
         Double newPrice, newBalance, newOpenReading, newQuantity, newNetQuantity;
         Double DirectQuantity, DirectUnitPrice, DirectAmount;
+
+        string[] PetrolUnits = { "Unit 1", "Unit 2", "Unit 3" };
+        string[] DieselUnits =  { "Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5", };
 
         // Reading Entry -------------------------------------------------------------------------------------------
 
@@ -39,6 +45,28 @@ namespace Filling_Station_Management_System
 
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            if(FuelTypeBox.SelectedIndex == 0)
+            {
+                UnitBox.Items.Clear();
+                for (int i = 0; i < PetrolUnits.Length; i++)
+                {
+                    UnitBox.Items.Add(PetrolUnits[i].ToString());
+                    //SharahListBox.SelectedIndex = 0;
+                }
+                
+            }else if(FuelTypeBox.SelectedIndex == 1)
+            {
+                UnitBox.Items.Clear();
+                for (int i = 0; i < DieselUnits.Length; i++)
+                {
+                    UnitBox.Items.Add(DieselUnits[i].ToString());
+                    //SharahListBox.SelectedIndex = 0;
+                }
+            }
+            UnitBox.SelectedIndex = 0;
+
+
             AutoSuggestions();
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
 
@@ -59,17 +87,17 @@ namespace Filling_Station_Management_System
             {
 
                 _openReading = GetLastClosingReading();
-
+                RefTextBox.Text = (GetLastRefNo() + 1).ToString();
                 AutoIncrement();
                 OpenReadingTextBox.Text = _openReading.ToString();
-                if (UnitBox.SelectedIndex == 0)
+                /*if (UnitBox.SelectedIndex == 0)
                 {
                     FuelTypeBox.SelectedIndex = 0;
                 }
                 else
                 {
                     FuelTypeBox.SelectedIndex = 1;
-                }
+                }*/
 
             }
             catch { }
@@ -242,7 +270,9 @@ namespace Filling_Station_Management_System
         {
 
 
-            UnitBox.SelectedIndex = 0;
+            //UnitBox.SelectedIndex = 0;
+            FuelTypeBox.Enabled = true;
+            FuelTypeBox.SelectedIndex = 0;
             ToggleSwitch.Checked = false;
             dateTimePicker1.Value = DateTime.Now;
             AutoIncrement();
@@ -289,7 +319,7 @@ namespace Filling_Station_Management_System
                 DirectSalePanel.Visible = false;
                 SalePanel.Visible = true;
                 SalePanel.BringToFront();
-                FuelTypeBox.Enabled = false;
+                //FuelTypeBox.Enabled = false;
 
                 BalancePanel.Enabled = true;
                 BalancePanel.Visible = true;
@@ -300,6 +330,11 @@ namespace Filling_Station_Management_System
 
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
             AutoSuggestions();
+        }
+
+        private void SaleEntery_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void InsertData_KeyUp(object sender, KeyEventArgs e)
@@ -365,7 +400,10 @@ namespace Filling_Station_Management_System
 
         private void Query()
         {
-            int unit = UnitBox.SelectedIndex + 1;
+            int unit = 0;
+            if (FuelTypeBox.SelectedIndex == 0) { unit = UnitBox.SelectedIndex + 1; }
+            else if (FuelTypeBox.SelectedIndex == 1) {unit = UnitBox.SelectedIndex + 4; }    
+            
             try
             {
 
@@ -422,7 +460,9 @@ namespace Filling_Station_Management_System
 
             Double lastClosingReading = 0;
 
-            int unit = UnitBox.SelectedIndex + 1;
+            int unit = 0;
+            if (FuelTypeBox.SelectedIndex == 0) { unit = UnitBox.SelectedIndex + 1; }
+            else if (FuelTypeBox.SelectedIndex == 1) { unit = UnitBox.SelectedIndex + 4; }
             try
             {
 
@@ -455,7 +495,10 @@ namespace Filling_Station_Management_System
         private float GetLastRefNo()
         {
             int lastRefNo = 0;
-            int index = UnitBox.SelectedIndex + 1;
+            int index = 0;
+            if (FuelTypeBox.SelectedIndex == 0) { index = UnitBox.SelectedIndex + 1; }
+            else if(FuelTypeBox.SelectedIndex == 1) {  index = UnitBox.SelectedIndex + 4;}
+            
             //MessageBox.Show("Unit Box: " + UnitBox.SelectedIndex + " Index: " + index);
 
             try

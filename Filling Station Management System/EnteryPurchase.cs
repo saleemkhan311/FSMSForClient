@@ -221,7 +221,9 @@ namespace Filling_Station_Management_System
 
             if (StockAdded)
             {
+                
                 Query();
+                
                 ClearBox();
                 StockAdded = false;
                 FuelTypeBox.Enabled = true;
@@ -577,7 +579,7 @@ namespace Filling_Station_Management_System
 
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
 
-                    cmd.Parameters.AddWithValue("@Ref_No", Convert.ToInt16(RefTextBox.Text));
+                    cmd.Parameters.AddWithValue("@Ref_No", (GetLastRefNo()+1));
                     cmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@Fuel_Type", FuelTypeBox.Text);
                     cmd.Parameters.AddWithValue("@Sharah", SharahListBox.Items[SharahListBox.SelectedIndex]);
@@ -787,7 +789,16 @@ namespace Filling_Station_Management_System
                 {
                     connection.Open();
 
-                    string sqlCom = $"SELECT (SELECT Round(SUM(netQuantity),4) FROM unit2_sales_data) +(SELECT Round(SUM(netQuantity),4) FROM unit3_sales_data) +(SELECT Round(SUM(netQuantity),4) FROM unit4_sales_data)+ (SELECT Round(SUM(Quantity),4) FROM direct_sale_diesel) AS TotalSumQuantity;";
+                    string sqlCom = @"SELECT 
+                                            ROUND(
+                                                (SELECT SUM(Quantity) FROM unit4_sales_data) +
+                                                (SELECT SUM(Quantity) FROM unit5_sales_data) +
+                                                (SELECT SUM(Quantity) FROM unit6_sales_data) +
+                                                (SELECT SUM(Quantity) FROM unit7_sales_data) +
+                                                (SELECT SUM(Quantity) FROM unit8_sales_data) +
+                                                (SELECT SUM(Quantity) FROM direct_sale_diesel), 
+                                            2) AS TotalSumQuantity;
+                                        ";
 
 
 
@@ -856,7 +867,15 @@ namespace Filling_Station_Management_System
                 {
                     connection.Open();
 
-                    string sqlCom = @"SELECT (SELECT Round(SUM(netQuantity),4) FROM unit1_sales_data) +(SELECT Round(SUM(Quantity),4) FROM direct_sale_petrol) AS TotalSumQuantity;";
+                    string sqlCom = @"SELECT ROUND(SUM(Quantity), 2) AS total_quantity
+                                        FROM (
+                                            SELECT Quantity FROM unit1_sales_data
+                                            UNION ALL
+                                            SELECT Quantity FROM unit2_sales_data
+                                            UNION ALL
+                                            SELECT Quantity FROM unit3_sales_data
+                                        ) AS combined_sales_data;
+                                        ";
 
 
                     MySqlCommand cmd = new MySqlCommand(sqlCom, connection);

@@ -283,7 +283,6 @@ D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\bin\Deb
 D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling Station Management System.csproj.AssemblyReference.cache
 D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling Station Management System.csproj.ResolveComReference.cache
 D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling_Station_Management_System.Dashboard.resources
-D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling_Station_Management_System.EditPanel.resources
 D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling_Station_Management_System.EnteryPurchase.resources
 D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling_Station_Management_System.EnterySale.resources
 D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling_Station_Management_System.LoginForm.resources
@@ -307,3 +306,6 @@ D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Deb
 D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling Station Management System.csproj.CopyComplete
 D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling Station Management System.exe
 D:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling Station Management System.pdb
+E:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling Station Management System.csproj.AssemblyReference.cache
+E:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling Station Management System.exe
+E:\Work\WinForm\Projects\FSMSForClient\Filling Station Management System\obj\Debug\Filling Station Management System.pdb
