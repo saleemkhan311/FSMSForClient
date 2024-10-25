@@ -1,19 +1,15 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using MySql.Data.MySqlClient;
+using Mysqlx.Prepare;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Filling_Station_Management_System
 {
     public partial class LoginForm : KryptonForm
     {
+        private string outputDirectory;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -130,5 +126,170 @@ namespace Filling_Station_Management_System
                 e.Handled = true; // Prevent normal Enter behavior.
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            //ResetButton.PerformClick();
+
+            //ExportTables();
+            ResetTables();
+
+
+        }
+
+
+
+        private void ExportTables()
+        {
+
+            /* using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+             {
+                 if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                 {
+                     outputDirectory = folderBrowserDialog.SelectedPath;
+                     MessageBox.Show($"Selected Output Path: {outputDirectory}", "Path Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 }
+             }*/
+
+            //ModifyStoredProcedure(outputDirectory);
+
+            using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+            {
+                try
+                {
+                    connection.Open();
+                    MySqlCommand cmd = new MySqlCommand("CALL ExportAllTablesToCSV()", connection);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Tables exported successfully to CSV files!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        void ResetTables()
+        {
+            using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+            {
+                try
+                {
+                    connection.Open();
+                    MySqlCommand cmd = new MySqlCommand("CALL DeleteAllExceptFirstRow()", connection);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Database Reseted successfully ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            ExportTables();
+        }
+
+
+        /*        private void ModifyStoredProcedure(string path)
+                {
+
+
+                    // Define your connection string
+                    //string connectionString = "Server=localhost;Database=your_database;Uid=root;Pwd=your_password;";
+
+                    using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+                    {
+
+
+                        using (MySqlConnection con = new MySqlConnection(AppSettings.ConString()))
+                        {
+                           *//* try
+                            {*//*
+
+                                connection.Open();
+                            *//*
+                                                    // Check if the procedure exists
+                                                    string checkProcedureQuery = @"
+                                            SELECT COUNT(*) 
+                                            FROM information_schema.ROUTINES 
+                                            WHERE ROUTINE_SCHEMA = 'your_database' 
+                                            AND ROUTINE_NAME = 'ExportAllTablesToCSV' 
+                                            AND ROUTINE_TYPE = 'PROCEDURE'";
+
+                                                    MySqlCommand checkCmd = new MySqlCommand(checkProcedureQuery, connection);
+                                                    int procedureCount = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                                                    // Drop the procedure if it exists
+                                                   // if (procedureCount > 0)
+                                                    //{
+                                                    //    MySqlCommand dropCmd = new MySqlCommand("DROP PROCEDURE IF EXISTS ExportAllTablesToCSV", connection);
+                                                   //     dropCmd.ExecuteNonQuery();
+                                                    //}
+                                                   // MySqlCommand dropCmd = new MySqlCommand("DROP PROCEDURE IF EXISTS ExportAllTablesToCSV", connection);
+                                                   // dropCmd.ExecuteNonQuery(); *//*
+
+                            string path1 = path.Replace("\\", "/");
+
+
+                            string q1=$"'{path1}', tableName, '.csv'' ',\r\n                            'FIELDS TERMINATED BY '','' ENCLOSED BY ''\\\"'' LINES TERMINATED BY ''\\n'' ',\r\n                            'FROM ', tableName);";
+                            string conc = @" SET @query = CONCAT('SELECT * INTO OUTFILE '" + q1;
+                            string createProcedureQuery = @"
+        DROP PROCEDURE IF EXISTS ExportAllTablesToCSV;
+
+        CREATE DEFINER=`root`@`localhost` PROCEDURE `ExportAllTablesToCSV`()
+        BEGIN
+            DECLARE done INT DEFAULT FALSE;
+            DECLARE tableName VARCHAR(255);
+            DECLARE cur CURSOR FOR
+                SELECT table_name FROM information_schema.tables WHERE table_schema = 'filling_station_management_system1';
+            DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+            OPEN cur;
+
+            read_loop: LOOP
+                FETCH cur INTO tableName;
+                IF done THEN
+                    LEAVE read_loop;
+                END IF;
+
+
+
+                SET @query = CONCAT('SELECT * INTO OUTFILE ''D:/new/', tableName, '.csv'' ',
+                                   'FIELDS TERMINATED BY '','' ENCLOSED BY ''""'' LINES TERMINATED BY ''\n'' ',
+                                   'FROM ', tableName);
+
+                PREPARE stmt FROM @query;
+                EXECUTE stmt;
+                DEALLOCATE PREPARE stmt;
+            END LOOP;
+
+            CLOSE cur;
+        END;";
+                                MessageBox.Show(createProcedureQuery);
+                                MySqlCommand createCmd = new MySqlCommand(createProcedureQuery, connection);
+                                createCmd.ExecuteNonQuery();
+
+                                MessageBox.Show("Stored procedure modified successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            *//*}
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"An error occurred: {ex.Message}", "Error Po", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }*//*
+                        }
+                    }
+
+
+
+                }*/
     }
 }
