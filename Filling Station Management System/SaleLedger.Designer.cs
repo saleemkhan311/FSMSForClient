@@ -169,6 +169,7 @@
             this.RemoveButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.TablePanel = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.TableMenu = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.FuelType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Unit1DataGrid)).BeginInit();
             this.ViewRecordsPanel.SuspendLayout();
             this.SalePanel.SuspendLayout();
@@ -237,6 +238,7 @@
             this.Unit1DataGrid.ReadOnly = true;
             this.Unit1DataGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Unit1DataGrid.RowHeadersVisible = false;
+            this.Unit1DataGrid.RowHeadersWidth = 51;
             this.Unit1DataGrid.RowTemplate.Height = 40;
             this.Unit1DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Unit1DataGrid.Size = new System.Drawing.Size(797, 463);
@@ -268,7 +270,7 @@
             this.ViewRecordsPanel.Controls.Add(this.RefTextBox);
             this.ViewRecordsPanel.Controls.Add(this.UnitBox);
             this.ViewRecordsPanel.Controls.Add(this.bunifuLabel19);
-            this.ViewRecordsPanel.Location = new System.Drawing.Point(10, 13);
+            this.ViewRecordsPanel.Location = new System.Drawing.Point(839, 17);
             this.ViewRecordsPanel.Name = "ViewRecordsPanel";
             this.ViewRecordsPanel.ShowBorders = false;
             this.ViewRecordsPanel.Size = new System.Drawing.Size(826, 615);
@@ -304,7 +306,7 @@
             this.UpdateData.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.UpdateData.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.UpdateData.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.UpdateData.Font = new System.Drawing.Font("Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(75)))), ((int)(((byte)(199)))));
             this.UpdateData.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.UpdateData.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -440,7 +442,7 @@
             this.FuelTypeLabel.Location = new System.Drawing.Point(28, 14);
             this.FuelTypeLabel.Name = "FuelTypeLabel";
             this.FuelTypeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FuelTypeLabel.Size = new System.Drawing.Size(198, 32);
+            this.FuelTypeLabel.Size = new System.Drawing.Size(244, 41);
             this.FuelTypeLabel.TabIndex = 100;
             this.FuelTypeLabel.TabStop = false;
             this.FuelTypeLabel.Text = "Direct Sale Petrol";
@@ -475,7 +477,7 @@
             this.bunifuLabel25.Location = new System.Drawing.Point(36, 101);
             this.bunifuLabel25.Name = "bunifuLabel25";
             this.bunifuLabel25.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel25.Size = new System.Drawing.Size(78, 23);
+            this.bunifuLabel25.Size = new System.Drawing.Size(97, 30);
             this.bunifuLabel25.TabIndex = 100;
             this.bunifuLabel25.TabStop = false;
             this.bunifuLabel25.Text = "Unit Price:";
@@ -492,7 +494,7 @@
             this.bunifuLabel27.Location = new System.Drawing.Point(39, 148);
             this.bunifuLabel27.Name = "bunifuLabel27";
             this.bunifuLabel27.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel27.Size = new System.Drawing.Size(66, 23);
+            this.bunifuLabel27.Size = new System.Drawing.Size(83, 30);
             this.bunifuLabel27.TabIndex = 100;
             this.bunifuLabel27.TabStop = false;
             this.bunifuLabel27.Text = "Amount:";
@@ -735,7 +737,7 @@
             this.bunifuLabel5.Location = new System.Drawing.Point(379, 25);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(128, 23);
+            this.bunifuLabel5.Size = new System.Drawing.Size(159, 31);
             this.bunifuLabel5.TabIndex = 100;
             this.bunifuLabel5.TabStop = false;
             this.bunifuLabel5.Text = "Closing Reading:";
@@ -828,7 +830,7 @@
             this.bunifuLabel4.Location = new System.Drawing.Point(36, 25);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(138, 23);
+            this.bunifuLabel4.Size = new System.Drawing.Size(171, 30);
             this.bunifuLabel4.TabIndex = 100;
             this.bunifuLabel4.TabStop = false;
             this.bunifuLabel4.Text = "Opening Reading:";
@@ -939,7 +941,7 @@
             this.bunifuLabel7.Location = new System.Drawing.Point(379, 70);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(35, 23);
+            this.bunifuLabel7.Size = new System.Drawing.Size(45, 30);
             this.bunifuLabel7.TabIndex = 100;
             this.bunifuLabel7.TabStop = false;
             this.bunifuLabel7.Text = "Test:";
@@ -956,7 +958,7 @@
             this.bunifuLabel10.Location = new System.Drawing.Point(36, 116);
             this.bunifuLabel10.Name = "bunifuLabel10";
             this.bunifuLabel10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel10.Size = new System.Drawing.Size(104, 23);
+            this.bunifuLabel10.Size = new System.Drawing.Size(129, 30);
             this.bunifuLabel10.TabIndex = 100;
             this.bunifuLabel10.TabStop = false;
             this.bunifuLabel10.Text = "Net Quantity:";
@@ -1049,7 +1051,7 @@
             this.bunifuLabel9.Location = new System.Drawing.Point(36, 156);
             this.bunifuLabel9.Name = "bunifuLabel9";
             this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel9.Size = new System.Drawing.Size(66, 23);
+            this.bunifuLabel9.Size = new System.Drawing.Size(83, 30);
             this.bunifuLabel9.TabIndex = 100;
             this.bunifuLabel9.TabStop = false;
             this.bunifuLabel9.Text = "Amount:";
@@ -1295,7 +1297,7 @@
             this.bunifuLabel13.Location = new System.Drawing.Point(379, 116);
             this.bunifuLabel13.Name = "bunifuLabel13";
             this.bunifuLabel13.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel13.Size = new System.Drawing.Size(78, 23);
+            this.bunifuLabel13.Size = new System.Drawing.Size(97, 30);
             this.bunifuLabel13.TabIndex = 100;
             this.bunifuLabel13.TabStop = false;
             this.bunifuLabel13.Text = "Unit Price:";
@@ -1388,7 +1390,7 @@
             this.HelperLabel.Location = new System.Drawing.Point(66, 89);
             this.HelperLabel.Name = "HelperLabel";
             this.HelperLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.HelperLabel.Size = new System.Drawing.Size(55, 21);
+            this.HelperLabel.Size = new System.Drawing.Size(68, 28);
             this.HelperLabel.TabIndex = 28;
             this.HelperLabel.TabStop = false;
             this.HelperLabel.Text = "Helper:";
@@ -1527,7 +1529,7 @@
             this.bunifuLabel26.Location = new System.Drawing.Point(41, 18);
             this.bunifuLabel26.Name = "bunifuLabel26";
             this.bunifuLabel26.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel26.Size = new System.Drawing.Size(75, 23);
+            this.bunifuLabel26.Size = new System.Drawing.Size(93, 31);
             this.bunifuLabel26.TabIndex = 100;
             this.bunifuLabel26.TabStop = false;
             this.bunifuLabel26.Text = "Recovery:";
@@ -1772,7 +1774,7 @@
             this.bunifuLabel29.Location = new System.Drawing.Point(41, 72);
             this.bunifuLabel29.Name = "bunifuLabel29";
             this.bunifuLabel29.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel29.Size = new System.Drawing.Size(81, 23);
+            this.bunifuLabel29.Size = new System.Drawing.Size(103, 30);
             this.bunifuLabel29.TabIndex = 100;
             this.bunifuLabel29.TabStop = false;
             this.bunifuLabel29.Text = "Deposited:";
@@ -1865,7 +1867,7 @@
             this.bunifuLabel31.Location = new System.Drawing.Point(41, 140);
             this.bunifuLabel31.Name = "bunifuLabel31";
             this.bunifuLabel31.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel31.Size = new System.Drawing.Size(81, 30);
+            this.bunifuLabel31.Size = new System.Drawing.Size(101, 36);
             this.bunifuLabel31.TabIndex = 100;
             this.bunifuLabel31.TabStop = false;
             this.bunifuLabel31.Text = "Balance:";
@@ -1882,7 +1884,7 @@
             this.bunifuLabel21.Location = new System.Drawing.Point(370, 72);
             this.bunifuLabel21.Name = "bunifuLabel21";
             this.bunifuLabel21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel21.Size = new System.Drawing.Size(71, 23);
+            this.bunifuLabel21.Size = new System.Drawing.Size(89, 30);
             this.bunifuLabel21.TabIndex = 100;
             this.bunifuLabel21.TabStop = false;
             this.bunifuLabel21.Text = "Discount:";
@@ -1975,7 +1977,7 @@
             this.bunifuLabel32.Location = new System.Drawing.Point(370, 20);
             this.bunifuLabel32.Name = "bunifuLabel32";
             this.bunifuLabel32.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel32.Size = new System.Drawing.Size(51, 23);
+            this.bunifuLabel32.Size = new System.Drawing.Size(64, 30);
             this.bunifuLabel32.TabIndex = 100;
             this.bunifuLabel32.TabStop = false;
             this.bunifuLabel32.Text = "Udhar:";
@@ -1986,7 +1988,7 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(533, 51);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(229, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(229, 22);
             this.dateTimePicker1.TabIndex = 26;
             this.dateTimePicker1.TabStop = false;
             // 
@@ -2000,7 +2002,7 @@
             this.bunifuLabel1.Location = new System.Drawing.Point(227, 20);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(77, 21);
+            this.bunifuLabel1.Size = new System.Drawing.Size(96, 28);
             this.bunifuLabel1.TabIndex = 14;
             this.bunifuLabel1.TabStop = false;
             this.bunifuLabel1.Text = "Fuel Type:";
@@ -2017,7 +2019,7 @@
             "Diesel"});
             this.FuelTypeBox.Location = new System.Drawing.Point(227, 49);
             this.FuelTypeBox.Name = "FuelTypeBox";
-            this.FuelTypeBox.Size = new System.Drawing.Size(121, 25);
+            this.FuelTypeBox.Size = new System.Drawing.Size(121, 29);
             this.FuelTypeBox.TabIndex = 18;
             this.FuelTypeBox.TabStop = false;
             this.FuelTypeBox.SelectedIndexChanged += new System.EventHandler(this.FuelTypeBox_SelectedIndexChanged);
@@ -2031,7 +2033,7 @@
             this.bunifuLabel2.Location = new System.Drawing.Point(385, 20);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(64, 21);
+            this.bunifuLabel2.Size = new System.Drawing.Size(79, 28);
             this.bunifuLabel2.TabIndex = 15;
             this.bunifuLabel2.TabStop = false;
             this.bunifuLabel2.Text = "Unit No.";
@@ -2048,7 +2050,7 @@
             this.bunifuLabel3.Location = new System.Drawing.Point(65, 20);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(42, 21);
+            this.bunifuLabel3.Size = new System.Drawing.Size(55, 28);
             this.bunifuLabel3.TabIndex = 16;
             this.bunifuLabel3.TabStop = false;
             this.bunifuLabel3.Text = "Ref# :";
@@ -2219,7 +2221,7 @@
             "Unit 4"});
             this.UnitBox.Location = new System.Drawing.Point(385, 49);
             this.UnitBox.Name = "UnitBox";
-            this.UnitBox.Size = new System.Drawing.Size(116, 25);
+            this.UnitBox.Size = new System.Drawing.Size(116, 29);
             this.UnitBox.TabIndex = 19;
             this.UnitBox.TabStop = false;
             this.UnitBox.SelectedIndexChanged += new System.EventHandler(this.UnitBox_SelectedIndexChanged);
@@ -2234,7 +2236,7 @@
             this.bunifuLabel19.Location = new System.Drawing.Point(533, 20);
             this.bunifuLabel19.Name = "bunifuLabel19";
             this.bunifuLabel19.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel19.Size = new System.Drawing.Size(82, 21);
+            this.bunifuLabel19.Size = new System.Drawing.Size(103, 28);
             this.bunifuLabel19.TabIndex = 17;
             this.bunifuLabel19.TabStop = false;
             this.bunifuLabel19.Text = "Date Time:";
@@ -2288,7 +2290,7 @@
             this.bunifuLabel44.Location = new System.Drawing.Point(568, 24);
             this.bunifuLabel44.Name = "bunifuLabel44";
             this.bunifuLabel44.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel44.Size = new System.Drawing.Size(97, 17);
+            this.bunifuLabel44.Size = new System.Drawing.Size(117, 21);
             this.bunifuLabel44.TabIndex = 3;
             this.bunifuLabel44.Text = "Search By Ref# :";
             this.bunifuLabel44.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -2304,7 +2306,7 @@
             this.bunifuLabel43.Location = new System.Drawing.Point(418, 24);
             this.bunifuLabel43.Name = "bunifuLabel43";
             this.bunifuLabel43.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel43.Size = new System.Drawing.Size(102, 17);
+            this.bunifuLabel43.Size = new System.Drawing.Size(122, 21);
             this.bunifuLabel43.TabIndex = 3;
             this.bunifuLabel43.Text = "Search By Name:";
             this.bunifuLabel43.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -2373,7 +2375,7 @@
             this.SearchTextBox.SelectionLength = 0;
             this.SearchTextBox.SelectionStart = 0;
             this.SearchTextBox.ShortcutsEnabled = true;
-            this.SearchTextBox.Size = new System.Drawing.Size(394, 37);
+            this.SearchTextBox.Size = new System.Drawing.Size(394, 41);
             this.SearchTextBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.SearchTextBox.TabIndex = 1;
             this.SearchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -2750,13 +2752,6 @@
             this.TableMenu.ItemHeight = 26;
             this.TableMenu.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.TableMenu.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.TableMenu.Items.AddRange(new object[] {
-            "Unit1_Sales_Data",
-            "Unit2_Sales_Data",
-            "Unit3_Sales_Data",
-            "Unit4_Sales_Data",
-            "Direct_Sale_Petrol",
-            "Direct_Sale_Diesel"});
             this.TableMenu.ItemTopMargin = 3;
             this.TableMenu.Location = new System.Drawing.Point(12, 103);
             this.TableMenu.Name = "TableMenu";
@@ -2767,11 +2762,25 @@
             this.TableMenu.TextLeftMargin = 5;
             this.TableMenu.SelectedIndexChanged += new System.EventHandler(this.TableMenu_SelectedIndexChanged);
             // 
+            // FuelType
+            // 
+            this.FuelType.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FuelType.FormattingEnabled = true;
+            this.FuelType.Items.AddRange(new object[] {
+            "Petrol",
+            "Diesel"});
+            this.FuelType.Location = new System.Drawing.Point(289, 103);
+            this.FuelType.Name = "FuelType";
+            this.FuelType.Size = new System.Drawing.Size(121, 33);
+            this.FuelType.TabIndex = 207;
+            this.FuelType.SelectedIndexChanged += new System.EventHandler(this.FuelType_SelectedIndexChanged);
+            // 
             // SaleLedger
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(850, 640);
+            this.Controls.Add(this.FuelType);
             this.Controls.Add(this.ViewRecordsPanel);
             this.Controls.Add(this.TableMenu);
             this.Controls.Add(this.TablePanel);
@@ -2865,5 +2874,6 @@
         private Bunifu.UI.WinForms.BunifuTextBox DirectUnitPBox;
         private Bunifu.UI.WinForms.BunifuShadowPanel TablePanel;
         private Bunifu.UI.WinForms.BunifuDropdown TableMenu;
+        private System.Windows.Forms.ComboBox FuelType;
     }
 }

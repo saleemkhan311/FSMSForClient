@@ -30,6 +30,8 @@ namespace Filling_Station_Management_System
 
         //Double newPrice, newBalance, newQuantity, newNetQuantity;
 
+        readonly string[] PetrolUnits = { "Unit1_Sales_Data", "Unit2_Sales_Data", "Unit3_Sales_Data", "Direct_Sale_Petrol",  };
+        readonly string[] DieselUnits = { "Unit1_Sales_Data", "Unit2_Sales_Data", "Unit3_Sales_Data", "Unit4_Sales_Data", "Unit5_Sales_Data", "Direct_Sale_Diesel" };
         private void DirectSaleQuery()
         {
             string unit = TableMenu.SelectedItem.ToString().ToLower();
@@ -118,7 +120,7 @@ namespace Filling_Station_Management_System
 
         private void SaleLedger_Load(object sender, EventArgs e)
         {
-            TableMenu.SelectedIndex = 0;
+            FuelType.SelectedIndex = 0;
         }
 
         private void LoadData()
@@ -130,13 +132,22 @@ namespace Filling_Station_Management_System
             {
                 string sql = "";
                 connection.Open();
-                if (unit <= 4)
-                {
+                
                     table = TableMenu.Items[TableMenu.SelectedIndex].ToString().ToLower();
+                    
+                    if(FuelType.SelectedIndex == 1)
+                    {
+                        string[] DieselUnits = { "Unit4_Sales_Data", "Unit5_Sales_Data", "Unit6_Sales_Data", "Unit7_Sales_Data", "Unit8_Sales_Data", "Direct_Sale_Diesel" };
+                        
+                        table = DieselUnits[unit-1];
+
+                    }
+                    
                     sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n    Helper,\r\n    ROUND(Opening_Reading,3) AS Opening_Reading,\r\n    Round(Closing_Reading,3) AS Closing_Reading,\r\n    Quantity,\r\n    Test,\r\n    netQuantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount,\r\n    FORMAT(Recovery, 'C', 'en-PK') AS Recovery,\r\n    FORMAT(Deposited, 'C', 'en-PK') AS Deposited,\r\n    FORMAT(Udhar, 'C', 'en-PK') AS Udhar,\r\n    FORMAT(Discount, 'C', 'en-PK') AS Discount,\r\n    FORMAT(Balance, 'C', 'en-PK') AS Balance\r\nFROM {table};\r\n"; // Add your WHERE clause
-                }
-                else if (unit >= 5)
+                
+                if (TableMenu.SelectedIndex == TableMenu.Items.Count-1)
                 {
+                    
                     table = TableMenu.SelectedItem.ToString().ToLower();
                     sql = $"SELECT\r\n    Ref_No,\r\n    Date,\r\n    Fuel_Type,\r\n   Customer,\r\n Quantity,\r\n    FORMAT(Unit_Price, 'C', 'en-PK') AS Unit_Price,\r\n    FORMAT(Amount, 'C', 'en-PK') AS Amount\r\nFROM {table};";
                 }
@@ -566,6 +577,31 @@ namespace Filling_Station_Management_System
             if (TableMenu.SelectedIndex > 4)
             { DirectSalePanel.PanelColor = Color.FromArgb(184, 204, 228); }
             else { DirectSalePanel.PanelColor = Color.FromArgb(240, 147, 124); }
+        }
+
+        private void FuelType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (FuelType.SelectedIndex == 0)
+            {
+                TableMenu.Items.Clear();
+                for (int i = 0; i < PetrolUnits.Length; i++)
+                {
+                    TableMenu.Items.Add(PetrolUnits[i].ToString());
+                    
+                }
+
+            }
+            else if (FuelType.SelectedIndex == 1)
+            {
+                TableMenu.Items.Clear();
+                for (int i = 0; i < DieselUnits.Length; i++)
+                {
+                    TableMenu.Items.Add(DieselUnits[i].ToString());
+                   
+                }
+            }
+            TableMenu.SelectedIndex = 0;
+           
         }
 
         private void DirectUnitPBox_TextChanged(object sender, EventArgs e)

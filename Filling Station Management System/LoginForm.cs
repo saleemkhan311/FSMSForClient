@@ -137,7 +137,11 @@ namespace Filling_Station_Management_System
             //ResetButton.PerformClick();
 
             //ExportTables();
-            ResetTables();
+
+            PasswordCheckPanel passCheck = new PasswordCheckPanel();
+            passCheck.ShowDialog();
+            if (passCheck.DialogResult == DialogResult.OK)
+            { ResetTables(); }
 
 
         }
