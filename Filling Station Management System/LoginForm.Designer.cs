@@ -192,7 +192,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 23);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Version 1.0.3.14";
+            this.label1.Text = "Version 1.0.3.15";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // bunifuPictureBox1

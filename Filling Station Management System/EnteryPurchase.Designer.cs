@@ -689,6 +689,7 @@
             this.AvailableStockBoxD.TextPlaceholder = "";
             this.AvailableStockBoxD.UseSystemPasswordChar = false;
             this.AvailableStockBoxD.WordWrap = false;
+            this.AvailableStockBoxD.TextChanged += new System.EventHandler(this.AvailableStockBoxD_TextChanged);
             // 
             // bunifuLabel53
             // 

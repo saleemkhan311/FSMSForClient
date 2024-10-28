@@ -414,6 +414,11 @@ namespace Filling_Station_Management_System
 
         }
 
+        private void AvailableStockBoxD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void SharahListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Calculate();
@@ -791,12 +796,12 @@ namespace Filling_Station_Management_System
 
                     string sqlCom = @"SELECT 
                                             ROUND(
-                                                (SELECT SUM(Quantity) FROM unit4_sales_data) +
-                                                (SELECT SUM(Quantity) FROM unit5_sales_data) +
-                                                (SELECT SUM(Quantity) FROM unit6_sales_data) +
-                                                (SELECT SUM(Quantity) FROM unit7_sales_data) +
-                                                (SELECT SUM(Quantity) FROM unit8_sales_data) +
-                                                (SELECT SUM(Quantity) FROM direct_sale_diesel), 
+                                                (SELECT SUM(netQuantity) FROM unit4_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit5_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit6_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit7_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit8_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM direct_sale_diesel), 
                                             2) AS TotalSumQuantity;
                                         ";
 
@@ -867,13 +872,13 @@ namespace Filling_Station_Management_System
                 {
                     connection.Open();
 
-                    string sqlCom = @"SELECT ROUND(SUM(Quantity), 2) AS total_quantity
+                    string sqlCom = @"SELECT ROUND(SUM(netQuantity), 2) AS total_quantity
                                         FROM (
-                                            SELECT Quantity FROM unit1_sales_data
+                                            SELECT netQuantity FROM unit1_sales_data
                                             UNION ALL
-                                            SELECT Quantity FROM unit2_sales_data
+                                            SELECT netQuantity FROM unit2_sales_data
                                             UNION ALL
-                                            SELECT Quantity FROM unit3_sales_data
+                                            SELECT netQuantity FROM unit3_sales_data
                                         ) AS combined_sales_data;
                                         ";
 
