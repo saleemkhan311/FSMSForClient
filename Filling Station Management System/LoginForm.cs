@@ -132,76 +132,15 @@ namespace Filling_Station_Management_System
 
         }
 
-        private void ResetButton_Click(object sender, EventArgs e)
-        {
-            //ResetButton.PerformClick();
-
-            //ExportTables();
-
-            PasswordCheckPanel passCheck = new PasswordCheckPanel();
-            passCheck.ShowDialog();
-            if (passCheck.DialogResult == DialogResult.OK)
-            { ResetTables(); }
-
-
-        }
+       
 
 
 
-        private void ExportTables()
-        {
+        
 
-            /* using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
-             {
-                 if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-                 {
-                     outputDirectory = folderBrowserDialog.SelectedPath;
-                     MessageBox.Show($"Selected Output Path: {outputDirectory}", "Path Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 }
-             }*/
+        
 
-            //ModifyStoredProcedure(outputDirectory);
-
-            using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
-            {
-                try
-                {
-                    connection.Open();
-                    MySqlCommand cmd = new MySqlCommand("CALL ExportAllTablesToCSV()", connection);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Tables exported successfully to CSV files!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        void ResetTables()
-        {
-            using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
-            {
-                try
-                {
-                    connection.Open();
-                    MySqlCommand cmd = new MySqlCommand("CALL DeleteAllExceptFirstRow()", connection);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Database Reseted successfully ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            ExportTables();
-        }
+       
 
 
         /*        private void ModifyStoredProcedure(string path)
