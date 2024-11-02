@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using MySql.Data.MySqlClient;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 
 namespace Filling_Station_Management_System
@@ -27,8 +28,16 @@ namespace Filling_Station_Management_System
                 {
                     connection.Open();
 
-                    string sqlCom = $"SELECT ROUND(SUM(netQuantity), 2) AS total_net_quantity FROM ( SELECT netQuantity FROM unit1_sales_data UNION ALL SELECT netQuantity FROM unit2_sales_data UNION ALL SELECT netQuantity FROM unit3_sales_data ) AS combined_sales_data;";
-
+                    string sqlCom = @"SELECT ROUND(SUM(netQuantity), 2) AS total_quantity
+                                        FROM(
+                                            SELECT netQuantity FROM unit1_sales_data
+                                            UNION ALL
+                                            SELECT netQuantity FROM unit2_sales_data
+                                            UNION ALL
+                                            SELECT netQuantity FROM unit3_sales_data
+                                            UNION ALL
+                                            SELECT Quantity FROM direct_sale_petrol
+                                        ) AS combined_sales_data;";
                     MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
                     object result = cmd.ExecuteScalar();
 
@@ -58,8 +67,16 @@ namespace Filling_Station_Management_System
                 {
                     connection.Open();
 
-                    string sqlCom = $"SELECT \r\n    ROUND(\r\n        (SELECT SUM(netQuantity) FROM unit4_sales_data) +\r\n        (SELECT SUM(netQuantity) FROM unit5_sales_data) +\r\n        (SELECT SUM(netQuantity) FROM unit6_sales_data) +\r\n        (SELECT SUM(netQuantity) FROM unit7_sales_data) +\r\n        (SELECT SUM(netQuantity) FROM unit8_sales_data) +\r\n        (SELECT SUM(Quantity) FROM direct_sale_diesel), \r\n    2) AS TotalSumQuantity;";
-
+                    string sqlCom = @"SELECT 
+                                            ROUND(
+                                                (SELECT SUM(netQuantity) FROM unit4_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit5_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit6_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit7_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit8_sales_data) +
+                                                (SELECT SUM(Quantity) FROM direct_sale_diesel), 
+                                            2) AS TotalSumQuantity;
+                                        ";
 
                     MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
                     object result = cmd.ExecuteScalar();
@@ -292,7 +309,8 @@ namespace Filling_Station_Management_System
 
             totalStockPetrol = Convert.ToInt32(GetTotalPurchasePetrol());
             availableStockPetrol = Convert.ToInt32(GetTotalPurchasePetrol() - GetTotalSalePetrol());
-            PetrolStockLable.Text = ((int)availableStockPetrol).ToString();
+            //PetrolStockLable.Text = ((int)availableStockPetrol).ToString();
+            PetrolStockLable.Text = AppSettings.RoundToString(availableStockPetrol,false);
             if (availableStockPetrol > 0)
             {
                 var value = ((availableStockPetrol / totalStockPetrol) * 100);
@@ -315,7 +333,8 @@ namespace Filling_Station_Management_System
         {
             totalStockDiesel = Convert.ToInt32(GetTotalPurchaseDiesel());
             availableStockDiesel = Convert.ToInt32(GetTotalPurchaseDiesel() - GetTotalSaleDiesel());
-            DieselStockLable.Text = ((int)availableStockDiesel).ToString();
+            //DieselStockLable.Text = ((int)availableStockDiesel).ToString();
+            DieselStockLable.Text = AppSettings.RoundToString(availableStockDiesel,false);
             if (availableStockDiesel > 0)
             {
                 var value = ((availableStockDiesel / totalStockDiesel) * 100);

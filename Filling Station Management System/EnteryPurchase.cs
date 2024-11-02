@@ -772,7 +772,7 @@ namespace Filling_Station_Management_System
                         totalSaleDiesel = float.Parse(result.ToString());
                     }
                 }
-            }
+        }
             catch (Exception ex)
             {
 
@@ -801,7 +801,7 @@ namespace Filling_Station_Management_System
                                                 (SELECT SUM(netQuantity) FROM unit6_sales_data) +
                                                 (SELECT SUM(netQuantity) FROM unit7_sales_data) +
                                                 (SELECT SUM(netQuantity) FROM unit8_sales_data) +
-                                                (SELECT SUM(netQuantity) FROM direct_sale_diesel), 
+                                                (SELECT SUM(Quantity) FROM direct_sale_diesel), 
                                             2) AS TotalSumQuantity;
                                         ";
 
@@ -817,7 +817,7 @@ namespace Filling_Station_Management_System
                         lastClosingReading = float.Parse(result.ToString());
                     }
                 }
-            }
+        }
             catch (Exception ex)
             {
 
@@ -879,6 +879,8 @@ namespace Filling_Station_Management_System
                                             SELECT netQuantity FROM unit2_sales_data
                                             UNION ALL
                                             SELECT netQuantity FROM unit3_sales_data
+                                            UNION ALL
+                                            SELECT Quantity FROM direct_sale_petrol
                                         ) AS combined_sales_data;
                                         ";
 
