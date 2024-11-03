@@ -157,8 +157,21 @@ namespace Filling_Station_Management_System
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
 
+                int currentRowIndex = Unit1DataGrid.FirstDisplayedScrollingRowIndex; // Gets the row at the top of the view
+                int selectedRowIndex = Unit1DataGrid.CurrentCell != null ? Unit1DataGrid.CurrentCell.RowIndex : -1;
 
                 Unit1DataGrid.DataSource = dataTable;
+
+                if (currentRowIndex >= 0 && currentRowIndex < Unit1DataGrid.Rows.Count)
+                {
+                    Unit1DataGrid.FirstDisplayedScrollingRowIndex = currentRowIndex; // Set scroll position
+                }
+
+                if (selectedRowIndex >= 0 && selectedRowIndex < Unit1DataGrid.Rows.Count)
+                {
+                    Unit1DataGrid.Rows[selectedRowIndex].Selected = true; // Re-select the row
+                    Unit1DataGrid.CurrentCell = Unit1DataGrid.Rows[selectedRowIndex].Cells[0]; // Optionally focus the first cell
+                }
 
             }
 
@@ -303,7 +316,11 @@ namespace Filling_Station_Management_System
 
 
             string table = TableMenu.SelectedItem.ToString().ToLower();
-
+            if(FuelType.SelectedIndex == 1)
+            {
+                string[] DieselUnits = { "Unit4_Sales_Data", "Unit5_Sales_Data", "Unit6_Sales_Data", "Unit7_Sales_Data", "Unit8_Sales_Data", "Direct_Sale_Diesel" };
+                table = DieselUnits[TableMenu.SelectedIndex].ToString().ToLower();
+            }
             int ref_No = int.Parse(Unit1DataGrid.SelectedRows[0].Cells[0].Value.ToString());
 
             int selectedIndex = Unit1DataGrid.SelectedRows[0].Index;
@@ -356,7 +373,7 @@ namespace Filling_Station_Management_System
 
                 object date = null;
 
-                if (TableMenu.SelectedIndex <= 3)
+                if (TableMenu.SelectedIndex != TableMenu.Items.Count - 1)
                 {
 
                     RefTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[0].Value.ToString();
@@ -380,7 +397,7 @@ namespace Filling_Station_Management_System
 
 
                 }
-                else if (TableMenu.SelectedIndex > 3)
+                else if (TableMenu.SelectedIndex == TableMenu.Items.Count - 1)
                 {
                     RefTextBox.Text = Unit1DataGrid.SelectedRows[0].Cells[0].Value.ToString();
                     date = Unit1DataGrid.SelectedRows[0].Cells[1].Value;
@@ -448,7 +465,7 @@ namespace Filling_Station_Management_System
                 {
                     connection.Open();
 
-                    if (TableMenu.SelectedIndex > 3)
+                    if (TableMenu.SelectedIndex == TableMenu.Items.Count-1)
                     {
                         type = "Customer";
                         table = $"direct_sale_{fuel}";
@@ -560,7 +577,7 @@ namespace Filling_Station_Management_System
 
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TableMenu.SelectedIndex <= 3)
+            if (TableMenu.SelectedIndex == TableMenu.Items.Count -1)
             {
                 Modification(false);
 
@@ -613,7 +630,7 @@ namespace Filling_Station_Management_System
         {
             LoadData();
 
-            if (TableMenu.SelectedIndex <= 3)
+            if (TableMenu.SelectedIndex != TableMenu.Items.Count -1)
             {
                 Modification(false);
                 SearchByNameRadio.Checked = true;
@@ -710,6 +727,7 @@ namespace Filling_Station_Management_System
         {
             ViewRecordsPanel.Hide();
             ClearBox();
+            LoadData();
         }
 
 
