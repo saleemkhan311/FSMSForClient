@@ -121,6 +121,8 @@ namespace Filling_Station_Management_System
         private void SaleLedger_Load(object sender, EventArgs e)
         {
             FuelType.SelectedIndex = 0;
+            TableMenu.SelectedIndex = 0;
+
         }
 
         private void LoadData()
@@ -407,8 +409,8 @@ namespace Filling_Station_Management_System
                     DirectUnitPBox.Text = Unit1DataGrid.SelectedRows[0].Cells[5].Value.ToString();
                     DirectAmountBox.Text = Unit1DataGrid.SelectedRows[0].Cells[6].Value.ToString();
                 }
-
-                AutoSuggestions();
+                //if (TableMenu.SelectedIndex == TableMenu.Items.Count - 1)
+                    AutoSuggestions();
 
                 DateTime newDate;
                 if (DateTime.TryParse(date.ToString(), out newDate))
@@ -577,12 +579,12 @@ namespace Filling_Station_Management_System
 
         private void FuelTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TableMenu.SelectedIndex == TableMenu.Items.Count -1)
+            if (TableMenu.SelectedIndex != TableMenu.Items.Count - 1)
             {
                 Modification(false);
 
             }
-            else
+            else if(TableMenu.SelectedIndex == TableMenu.Items.Count - 1)
             {
                 Modification(true);
 
@@ -617,6 +619,7 @@ namespace Filling_Station_Management_System
                    
                 }
             }
+            TableMenu.SelectedIndex = 1;
             TableMenu.SelectedIndex = 0;
            
         }
@@ -628,22 +631,22 @@ namespace Filling_Station_Management_System
 
         private void TableMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadData();
+           
 
-            if (TableMenu.SelectedIndex != TableMenu.Items.Count -1)
+            if (TableMenu.SelectedIndex != TableMenu.Items.Count - 1)
             {
                 Modification(false);
                 SearchByNameRadio.Checked = true;
                 SearchByNameRadio.Enabled = true;
             }
-            else
+            else if(TableMenu.SelectedIndex == TableMenu.Items.Count - 1)
             {
                 Modification(true);
                 SearchByNameRadio.Checked = false;
                 SearchByNameRadio.Enabled = false;
                 SearchByRefRadio.Checked = true;
             }
-
+            LoadData();
         }
 
         private void UpdateData_KeyUp(object sender, KeyEventArgs e)

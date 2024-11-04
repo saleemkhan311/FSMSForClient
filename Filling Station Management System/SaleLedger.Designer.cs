@@ -270,7 +270,7 @@
             this.ViewRecordsPanel.Controls.Add(this.RefTextBox);
             this.ViewRecordsPanel.Controls.Add(this.UnitBox);
             this.ViewRecordsPanel.Controls.Add(this.bunifuLabel19);
-            this.ViewRecordsPanel.Location = new System.Drawing.Point(10, 14);
+            this.ViewRecordsPanel.Location = new System.Drawing.Point(7, 14);
             this.ViewRecordsPanel.Name = "ViewRecordsPanel";
             this.ViewRecordsPanel.ShowBorders = false;
             this.ViewRecordsPanel.Size = new System.Drawing.Size(826, 615);
@@ -2780,7 +2780,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(850, 640);
-            this.Controls.Add(this.FuelType);
             this.Controls.Add(this.ViewRecordsPanel);
             this.Controls.Add(this.TableMenu);
             this.Controls.Add(this.TablePanel);
@@ -2788,6 +2787,7 @@
             this.Controls.Add(this.SearchBarPanel);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.RemoveButton);
+            this.Controls.Add(this.FuelType);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SaleLedger";
             this.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
