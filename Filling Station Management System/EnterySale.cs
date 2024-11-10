@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms.BunifuButton;
 using ComponentFactory.Krypton.Toolkit;
 using MySql.Data.MySqlClient;
 
@@ -28,7 +29,9 @@ namespace Filling_Station_Management_System
         Double DirectQuantity, DirectUnitPrice, DirectAmount;
 
         string[] PetrolUnits = { "Unit 1", "Unit 2", "Unit 3" };
-        string[] DieselUnits =  { "Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5", };
+        string[] DieselUnits = { "Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5", };
+
+        //BunifuButton[] PetrolUnitsB = { PetrolUnit1, };
 
         // Reading Entry -------------------------------------------------------------------------------------------
 
@@ -277,7 +280,42 @@ namespace Filling_Station_Management_System
             dateTimePicker1.Value = DateTime.Now;
             AutoIncrement();
             this.KeyPreview = true;
+            LoadStock();
+            
 
+        }
+
+        private double GetLastUnitPrice()
+        {
+            string index = FuelTypeBox.Items[FuelTypeBox.SelectedIndex].ToString().ToLower();
+            double lastUnitPrice = 0;
+
+            try
+            {
+
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+                {
+                    connection.Open();
+
+                    string Idsql = $"SELECT Available_Stock_Unit_Price FROM {index}_stock ORDER BY Ref_No DESC LIMIT 1";
+
+
+                    MySqlCommand cmd = new MySqlCommand(Idsql, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        lastUnitPrice = Convert.ToDouble(result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message, "Last Unit Price");
+            }
+
+            return lastUnitPrice;
         }
 
         private void DirectQuantityBox_TextChanged(object sender, EventArgs e)
@@ -337,10 +375,304 @@ namespace Filling_Station_Management_System
 
         }
 
-        private void InsertData_KeyUp(object sender, KeyEventArgs e)
+        private void bunifuButton2_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void PetrolPanel_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void PetrolBtn_Click(object sender, EventArgs e)
+        {
+            foreach (BunifuButton b in new[] { DieselUnit1, DieselUnit2, DieselUnit3, DieselUnit4, DieselUnit5 })
+            {
+                b.Enabled = false;
+            }
+
+            foreach (BunifuButton b in new[] { PetrolUnit1, PetrolUnit2, PetrolUnit3 })
+            {
+                b.Enabled = true;
+            }
+
+            FuelTypeBox.SelectedIndex = 0;
+            PetrolUnit1.PerformClick();
+            LoadStock();
+        }
+
+        private void LoadStock()
+        {
+            availableStock = GetTotalPurchasePetrol() - GetTotalSalePetrol();
+            StockLabel.Text = AppSettings.RoundToString(availableStock, false);
+            StockPriceLabel.Text = GetLastUnitPrice().ToString("C2");
+            StockAmountLabel.Text = AppSettings.RoundToString(availableStock * GetLastUnitPrice(), true);
+            StockName.Text = "Petrol Stock";
+
+            StockPill1.PanelColor = Color.FromArgb(240, 147, 124);
+            StockPill2.PanelColor = Color.FromArgb(240, 147, 124);
+            StockPill3.PanelColor = Color.FromArgb(240, 147, 124);
+        }
+
+
+        private float GetTotalPurchaseDiesel()
+        {
+            float totalSaleDiesel = 0;
+
+            try
+            {
+
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+                {
+                    connection.Open();
+
+                    string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),4) FROM purchase_data_diesel) AS TotalSumQuantity;";
+
+                    MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        totalSaleDiesel = float.Parse(result.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return totalSaleDiesel;
+        }
+
+        private float GetTotalSaleDiesel()
+        {
+            float lastClosingReading = 0;
+
+
+            try
+            {
+
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+                {
+                    connection.Open();
+
+                    string sqlCom = @"SELECT 
+                                            ROUND(
+                                                (SELECT SUM(netQuantity) FROM unit4_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit5_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit6_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit7_sales_data) +
+                                                (SELECT SUM(netQuantity) FROM unit8_sales_data) +
+                                                (SELECT SUM(Quantity) FROM direct_sale_diesel), 
+                                            2) AS TotalSumQuantity;
+                                        ";
+
+
+
+
+
+                    MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        lastClosingReading = float.Parse(result.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return lastClosingReading;
+        }
+
+
+
+        private double GetTotalPurchasePetrol()
+        {
+            double totalPurchasePetrol = 0;
+
+
+            try
+            {
+
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+                {
+                    connection.Open();
+
+                    string sqlCom = "SELECT \r\n    (SELECT Round(SUM(Saafi_Miqdar),2) FROM purchase_data_petrol) AS TotalSumQuantity;";
+
+                    MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        totalPurchasePetrol = Convert.ToDouble(result.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message, "Total Purchase Petrol", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return totalPurchasePetrol;
+        }
+
+
+        private float GetTotalSalePetrol()
+        {
+            float lastClosingReading = 0;
+
+
+            try
+            {
+
+                using (MySqlConnection connection = new MySqlConnection(AppSettings.ConString()))
+                {
+                    connection.Open();
+
+                    string sqlCom = @"SELECT ROUND(SUM(netQuantity), 2) AS total_quantity
+                                        FROM (
+                                            SELECT netQuantity FROM unit1_sales_data
+                                            UNION ALL
+                                            SELECT netQuantity FROM unit2_sales_data
+                                            UNION ALL
+                                            SELECT netQuantity FROM unit3_sales_data
+                                            UNION ALL
+                                            SELECT Quantity FROM direct_sale_petrol
+                                        ) AS combined_sales_data;
+                                        ";
+
+
+                    MySqlCommand cmd = new MySqlCommand(sqlCom, connection);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        lastClosingReading = float.Parse(result.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return lastClosingReading;
+        }
+
+
+        private void PetrolPanel_ControlAdded(object sender, ControlEventArgs e)
+        {
+
+        }
+
+        private void DieselBtn_Click(object sender, EventArgs e)
+        {
+            foreach (BunifuButton b in new[] { DieselUnit1, DieselUnit2, DieselUnit3, DieselUnit4, DieselUnit5 })
+            {
+                b.Enabled = true;
+            }
+
+            foreach (BunifuButton b in new[] { PetrolUnit1, PetrolUnit2, PetrolUnit3 })
+            {
+                b.Enabled = false;
+            }
+
+            FuelTypeBox.SelectedIndex = 1;
+            DieselUnit1.PerformClick();
+
+            availableStock = GetTotalPurchaseDiesel() - GetTotalSaleDiesel();
+            StockLabel.Text = AppSettings.RoundToString(availableStock, false);
+            StockPriceLabel.Text = GetLastUnitPrice().ToString("C2");
+            StockAmountLabel.Text = AppSettings.RoundToString(availableStock * GetLastUnitPrice(), true);
+            StockName.Text = "Diesel Stock";
+
+            StockPill1.PanelColor = Color.FromArgb(184, 204, 228);
+            StockPill2.PanelColor = Color.FromArgb(184, 204, 228);
+            StockPill3.PanelColor = Color.FromArgb(184, 204, 228);
+        }
+
+        private void PetrolUnit1_Click(object sender, EventArgs e)
+        {
+            FuelTypeBox.SelectedIndex = 0;
+            UnitBox.SelectedIndex = 0;
+        }
+
+        private void PetrolUnit2_Click(object sender, EventArgs e)
+        {
+            FuelTypeBox.SelectedIndex = 0;
+            UnitBox.SelectedIndex = 1;
+        }
+
+        private void PetrolUnit3_Click(object sender, EventArgs e)
+        {
+            FuelTypeBox.SelectedIndex = 0;
+            UnitBox.SelectedIndex= 2;
+        }
+
+        private void DieselUnit1_Click(object sender, EventArgs e)
+        {
+            FuelTypeBox.SelectedIndex= 1;
+            UnitBox.SelectedIndex = 0;
+        }
+
+        private void DieselUnit2_Click(object sender, EventArgs e)
+        {
+            FuelTypeBox.SelectedIndex = 1;
+            UnitBox.SelectedIndex = 1;
+        }
+
+        private void DieselUnit3_Click(object sender, EventArgs e)
+        {
+            FuelTypeBox.SelectedIndex = 1;
+            UnitBox.SelectedIndex = 2;
+        }
+
+        private void DieselUnit4_Click(object sender, EventArgs e)
+        {
+            FuelTypeBox.SelectedIndex = 1;
+            UnitBox.SelectedIndex = 3;
+        }
+
+        private void DieselUnit5_Click(object sender, EventArgs e)
+        {
+
+            FuelTypeBox.SelectedIndex = 1;
+            UnitBox.SelectedIndex = 4;
+        }
+
+        private void bunifuLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuShadowPanel1_ControlAdded(object sender, ControlEventArgs e)
+        {
+
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void DesKeyPress(object sender, KeyPressEventArgs e)
         {
@@ -542,6 +874,8 @@ namespace Filling_Station_Management_System
             OpenReadingTextBox.Text = _openReading.ToString("0.00");
         }
         List<string> helperNames = new List<string>();
+        private double availableStock;
+
         private void AutoSuggestions()
         {
 
