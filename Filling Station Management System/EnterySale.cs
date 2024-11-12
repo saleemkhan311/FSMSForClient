@@ -123,6 +123,8 @@ namespace Filling_Station_Management_System
             AutoIncrement();
 
             ClearBox();
+
+            if(FuelTypeBox.SelectedIndex == 0) { LoadStock(); }else if(FuelTypeBox.SelectedIndex == 1) { LoadStockDiesel(); }
         }
 
         // Total Enrty ----------------------------------------------------------------------------------------
@@ -422,6 +424,19 @@ namespace Filling_Station_Management_System
             StockPill3.PanelColor = Color.FromArgb(240, 147, 124);
         }
 
+        private void LoadStockDiesel()
+        {
+            availableStock = GetTotalPurchaseDiesel() - GetTotalSaleDiesel();
+            StockLabel.Text = AppSettings.RoundToString(availableStock, false);
+            StockPriceLabel.Text = GetLastUnitPrice().ToString("C2");
+            StockAmountLabel.Text = AppSettings.RoundToString(availableStock * GetLastUnitPrice(), true);
+            StockName.Text = "Diesel Stock";
+
+            StockPill1.PanelColor = Color.FromArgb(184, 204, 228);
+            StockPill2.PanelColor = Color.FromArgb(184, 204, 228);
+            StockPill3.PanelColor = Color.FromArgb(184, 204, 228);
+        }
+
 
         private float GetTotalPurchaseDiesel()
         {
@@ -598,16 +613,10 @@ namespace Filling_Station_Management_System
             FuelTypeBox.SelectedIndex = 1;
             DieselUnit1.PerformClick();
 
-            availableStock = GetTotalPurchaseDiesel() - GetTotalSaleDiesel();
-            StockLabel.Text = AppSettings.RoundToString(availableStock, false);
-            StockPriceLabel.Text = GetLastUnitPrice().ToString("C2");
-            StockAmountLabel.Text = AppSettings.RoundToString(availableStock * GetLastUnitPrice(), true);
-            StockName.Text = "Diesel Stock";
-
-            StockPill1.PanelColor = Color.FromArgb(184, 204, 228);
-            StockPill2.PanelColor = Color.FromArgb(184, 204, 228);
-            StockPill3.PanelColor = Color.FromArgb(184, 204, 228);
+            LoadStockDiesel();
         }
+
+        
 
         private void PetrolUnit1_Click(object sender, EventArgs e)
         {
