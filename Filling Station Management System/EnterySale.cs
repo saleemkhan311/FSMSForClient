@@ -283,7 +283,7 @@ namespace Filling_Station_Management_System
             AutoIncrement();
             this.KeyPreview = true;
             LoadStock();
-            
+            AutoSuggestions();
 
         }
 
@@ -792,6 +792,10 @@ namespace Filling_Station_Management_System
 
         private void HelperTextBox_TextChanged_1(object sender, EventArgs e)
         {
+            AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+            autoCompleteCollection.AddRange(helperNames.ToArray());
+
+            HelperTextBox.AutoCompleteCustomSource = autoCompleteCollection;
 
         }
 
@@ -880,7 +884,7 @@ namespace Filling_Station_Management_System
         private void AutoIncrement()
         {
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
-            OpenReadingTextBox.Text = _openReading.ToString("0.00");
+            OpenReadingTextBox.Text = _openReading.ToString("0.000");
         }
         List<string> helperNames = new List<string>();
         private double availableStock;
@@ -915,7 +919,30 @@ namespace Filling_Station_Management_System
                         table = $"unit{unit}_sales_data";
                     }
 
-                    query = $"SELECT `{type}` FROM {table} LIMIT 50";
+                    
+
+                    if (UnitBox.SelectedIndex != UnitBox.Items.Count - 1)
+                    {
+
+                        query = @"SELECT Helper FROM unit1_sales_data
+                                UNION ALL
+                                SELECT Helper FROM unit2_sales_data
+                                UNION ALL
+                                SELECT Helper FROM unit3_sales_data
+                                UNION ALL
+                                SELECT Helper FROM unit4_sales_data
+                                UNION ALL
+                                SELECT Helper FROM unit5_sales_data
+                                UNION ALL
+                                SELECT Helper FROM unit6_sales_data
+                                UNION ALL
+                                SELECT Helper FROM unit7_sales_data
+                                UNION ALL
+                                SELECT Helper FROM unit8_sales_data;
+                                ";
+
+                    }
+                    else { query = $"SELECT `{type}` FROM {table} LIMIT 50"; }
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         using (MySqlDataReader reader = cmd.ExecuteReader())
