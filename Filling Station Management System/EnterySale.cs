@@ -92,7 +92,7 @@ namespace Filling_Station_Management_System
                 _openReading = GetLastClosingReading();
                 RefTextBox.Text = (GetLastRefNo() + 1).ToString();
                 AutoIncrement();
-                OpenReadingTextBox.Text = _openReading.ToString();
+                OpenReadingTextBox.Text = GetLastClosingReading().ToString();
                 /*if (UnitBox.SelectedIndex == 0)
                 {
                     FuelTypeBox.SelectedIndex = 0;
@@ -147,7 +147,7 @@ namespace Filling_Station_Management_System
             try
             {
                 _openReading = GetLastClosingReading();
-                OpenReadingTextBox.Text = _openReading.ToString();
+                OpenReadingTextBox.Text = GetLastClosingReading().ToString();
 
                 CloseReadingTextBox.Clear();
                 _closeReading = 0;
@@ -242,7 +242,8 @@ namespace Filling_Station_Management_System
             newNetQuantity = Math.Round(_netQuantity, 2);*/
 
 
-            OpenReadingTextBox.Text = _openReading.ToString("0.000");
+            //OpenReadingTextBox.Text = _openReading.ToString("0.0000");
+            OpenReadingTextBox.Text = GetLastClosingReading().ToString();
             QuantityTextBox.Text = AppSettings.RoundToString(_quantity, false);
             NetQuantityTextBox.Text = AppSettings.RoundToString(_netQuantity, false);
             AmountTextBox.Text = AppSettings.RoundToString(_price, true);
@@ -822,7 +823,10 @@ namespace Filling_Station_Management_System
 
                     if (result != null && result != DBNull.Value)
                     {
+                        
+
                         lastClosingReading = AppSettings.convertToDouble(result.ToString());
+
                     }
                 }
             }
@@ -884,7 +888,7 @@ namespace Filling_Station_Management_System
         private void AutoIncrement()
         {
             RefTextBox.Text = (GetLastRefNo() + 1).ToString();
-            OpenReadingTextBox.Text = _openReading.ToString("0.000");
+            OpenReadingTextBox.Text = GetLastClosingReading().ToString();
         }
         List<string> helperNames = new List<string>();
         private double availableStock;

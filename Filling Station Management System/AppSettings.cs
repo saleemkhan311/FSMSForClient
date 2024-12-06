@@ -99,7 +99,7 @@ namespace Filling_Station_Management_System
         {
             //CultureInfo culture = new CultureInfo("ur-PK");
             if (isAmount) { return value.ToString("C0"); }
-            else { return value.ToString("0.00"); }
+            else { return value.ToString("0.0000"); }
         }
     }
 }
